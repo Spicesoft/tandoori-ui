@@ -141,11 +141,14 @@
     .card .header .picture img {
       max-height: 50px; }
     .card .header .title h3 {
-      margin: 0; }
+      margin: 0;
+      color: #696969; }
   .card .rich-media .media {
     width: 100%; }
   .card .body {
-    padding: 15px; }
+    padding: 15px 15px 5px 15px; }
+    .card .body .body-text {
+      color: #7F7F7F; }
     .card .body .actions {
       margin-top: 15px;
       display: flex;
