@@ -4,67 +4,53 @@
   box-shadow: 1px 2px 2px $darkgrey;
   border-radius: 2px;
   background-color: $white;
-  .header {
+
+  .card__rich-media {
+    width: 100%;
+  }
+
+  .card__text {
+    padding: 15px 15px 5px 15px;
+    color: $lightblack;
+  }
+
+
+}
+
+.card__header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+
+  .card__header-picture {
+    max-height: 50px;
+  }
+
+  .card__header-title {
+    margin: 0;
+    color: $lightblack;
+  }
+}
+
+.card__actions {
+  padding: 15px 15px 5px 15px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  .card__actions-buttons {
     display: flex;
     align-items: center;
-    div {
-      padding: 15px;
-    }
-
-    .picture {
-      img {
-        max-height: 50px;
-      }
-    }
-
-    .title {
-      h3 {
-        margin: 0;
-        color: $lightblack;
-      }
-    }
   }
+}
 
-  .rich-media {
 
-    .media {
-      width: 100%;
-    }
-  }
+// TODO move this into actions scss file
+.action-icon {
+  font-size: 2em;
+  color: $grey;
+  margin-right: 15px;
 
-  .body {
-    padding: 15px 15px 5px 15px;
-    .body-text {
-      color: $darkgrey;
-    }
-
-    .actions {
-      margin-top: 15px;
-      display: flex;
-      justify-content: space-between;
-      .secondary-actions {
-        display: flex;
-        align-items: center;
-        a {
-          font-size: 2em;
-          color: $grey;
-          margin-right: 15px;
-
-          &:hover {
-            color: $dark-blue;
-          }
-
-          span {
-
-          }
-        }
-      }
-
-      .main-actions {
-        button {
-
-        }
-      }
-    }
+  &:hover {
+    color: $dark-blue;
   }
 }
