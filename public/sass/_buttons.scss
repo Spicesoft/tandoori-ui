@@ -1,0 +1,123 @@
+@import "_colors.scss";
+
+/***********************
+    -- MIXINS --
+***********************/
+
+@mixin btn-colors($color, $background) {
+  background-color: $background;
+  border-color: $background;
+  color: $color;
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:active:focus,
+  &:focus {
+    color: $color;
+    background-color: scale-color($background, $lightness: -10%);
+    border-color: scale-color($background, $lightness: -10%);
+  }
+}
+
+
+/*************************
+  ------ BUTTONS --------
+*************************/
+
+.buttons {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.buttons .btn {
+  border-radius: 4px;
+}
+
+.btn {
+  border-radius: 3px;
+  &.label-shift {
+    margin-top: 26px;
+  }
+
+  .icon {
+    float: left;
+    position: relative;
+    top: 3px;
+    left: 0;
+  }
+  &.circle {
+    border-radius: 50%;
+  }
+}
+
+.btn-xs {
+  .icon {
+    font-weight: 900;
+    margin-right: 5px;
+  }
+}
+
+.btn-lg {
+  font-family: "LatoWeb";
+  .icon {
+    font-size: 1em;
+    font-weight: 700;
+    margin-right: 10px;
+  }
+}
+
+.btn-full-width {
+  width: 100%;
+  font-family: "LatoWebBold";
+}
+
+@each $class, $code in $colors {
+  $text: $white;
+  .btn-#{$class} {
+    @include btn-colors($text, $code);
+  }
+}
+.btn-default {
+  @include btn-colors($primary, $white);
+}
+
+.btn-linkedin {
+  background-color: #0077B5;
+}
+
+.btn-sign-in {
+  margin-top: 0!important;
+}
+
+
+/**********************
+    -- BTN STATES --
+*********************/
+
+.btn:focus, .btn:active:focus {
+  outline: 0px;
+}
+
+/********************
+  -- BTN GROUP --
+********************/
+
+.btn-group {
+  .btn-default {
+    box-shadow: 1px 1px 1px $lightgrey;
+    &.active {
+      background-color: $primary;
+      color: $white;
+      border-color: $primary;
+      &:hover {
+        border-color: $primary;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    &.active.focus {
+      outline: none;
+    }
+  }
+}

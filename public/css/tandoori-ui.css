@@ -1,0 +1,173 @@
+/***********************
+    -- MIXINS --
+***********************/
+/*************************
+  ------ BUTTONS --------
+*************************/
+.buttons {
+  margin-top: 15px;
+  margin-bottom: 30px; }
+
+.buttons .btn {
+  border-radius: 4px; }
+
+.btn {
+  border-radius: 3px; }
+  .btn.label-shift {
+    margin-top: 26px; }
+  .btn .icon {
+    float: left;
+    position: relative;
+    top: 3px;
+    left: 0; }
+  .btn.circle {
+    border-radius: 50%; }
+
+.btn-xs .icon {
+  font-weight: 900;
+  margin-right: 5px; }
+
+.btn-lg {
+  font-family: "LatoWeb"; }
+  .btn-lg .icon {
+    font-size: 1em;
+    font-weight: 700;
+    margin-right: 10px; }
+
+.btn-full-width {
+  width: 100%;
+  font-family: "LatoWebBold"; }
+
+.btn-primary {
+  background-color: #14b9d6;
+  border-color: #14b9d6;
+  color: #fff; }
+  .btn-primary:hover, .btn-primary:active, .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #12a7c1;
+    border-color: #12a7c1; }
+
+.btn-primary2 {
+  background-color: #b27ddb;
+  border-color: #b27ddb;
+  color: #fff; }
+  .btn-primary2:hover, .btn-primary2:active, .btn-primary2:active:hover, .btn-primary2:active:focus, .btn-primary2:focus {
+    color: #fff;
+    background-color: #a262d4;
+    border-color: #a262d4; }
+
+.btn-info {
+  background-color: #0074a6;
+  border-color: #0074a6;
+  color: #fff; }
+  .btn-info:hover, .btn-info:active, .btn-info:active:hover, .btn-info:active:focus, .btn-info:focus {
+    color: #fff;
+    background-color: #006895;
+    border-color: #006895; }
+
+.btn-success {
+  background-color: #1fbba6;
+  border-color: #1fbba6;
+  color: #fff; }
+  .btn-success:hover, .btn-success:active, .btn-success:active:hover, .btn-success:active:focus, .btn-success:focus {
+    color: #fff;
+    background-color: #1ca895;
+    border-color: #1ca895; }
+
+.btn-warning {
+  background-color: #f27935;
+  border-color: #f27935;
+  color: #fff; }
+  .btn-warning:hover, .btn-warning:active, .btn-warning:active:hover, .btn-warning:active:focus, .btn-warning:focus {
+    color: #fff;
+    background-color: #f06719;
+    border-color: #f06719; }
+
+.btn-danger {
+  background-color: #ed4530;
+  border-color: #ed4530;
+  color: #fff; }
+  .btn-danger:hover, .btn-danger:active, .btn-danger:active:hover, .btn-danger:active:focus, .btn-danger:focus {
+    color: #fff;
+    background-color: #eb2d16;
+    border-color: #eb2d16; }
+
+.btn-default {
+  background-color: #fff;
+  border-color: #fff;
+  color: #14b9d6; }
+  .btn-default:hover, .btn-default:active, .btn-default:active:hover, .btn-default:active:focus, .btn-default:focus {
+    color: #14b9d6;
+    background-color: #e6e6e6;
+    border-color: #e6e6e6; }
+
+.btn-linkedin {
+  background-color: #0077B5; }
+
+.btn-sign-in {
+  margin-top: 0 !important; }
+
+/**********************
+    -- BTN STATES --
+*********************/
+.btn:focus, .btn:active:focus {
+  outline: 0px; }
+
+/********************
+  -- BTN GROUP --
+********************/
+.btn-group .btn-default {
+  box-shadow: 1px 1px 1px #E6E6E6; }
+  .btn-group .btn-default.active {
+    background-color: #14b9d6;
+    color: #fff;
+    border-color: #14b9d6; }
+    .btn-group .btn-default.active:hover {
+      border-color: #14b9d6; }
+    .btn-group .btn-default.active:focus {
+      outline: none; }
+  .btn-group .btn-default.active.focus {
+    outline: none; }
+
+.card {
+  box-shadow: 1px 2px 2px #7F7F7F;
+  border-radius: 2px;
+  background-color: #fff; }
+  .card .header {
+    display: flex;
+    align-items: center; }
+    .card .header div {
+      padding: 15px; }
+    .card .header .picture img {
+      max-height: 50px; }
+    .card .header .title h3 {
+      margin: 0; }
+  .card .rich-media .media {
+    width: 100%; }
+  .card .body {
+    padding: 15px; }
+    .card .body .actions {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between; }
+      .card .body .actions .secondary-actions {
+        display: flex;
+        align-items: center; }
+        .card .body .actions .secondary-actions a {
+          font-size: 2em;
+          color: #979797;
+          margin-right: 15px; }
+          .card .body .actions .secondary-actions a:hover {
+            color: #0074A6; }
+
+* {
+  font-family: "Lato"; }
+
+body {
+  background: #F2F2F2;
+  padding-bottom: 100px; }
+
+.navbar .navbar-header .navbar-brand img {
+  height: 100%; }
+
+/*# sourceMappingURL=tandoori-ui.css.map */
