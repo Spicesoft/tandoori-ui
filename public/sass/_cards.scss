@@ -5,45 +5,37 @@
   border-radius: 2px;
   background-color: $white;
 
-  .card__rich-media {
-    width: 100%;
-  }
-
-  .card__text {
-    padding: 15px 15px 5px 15px;
-    color: $lightblack;
-  }
-
-
 }
-
+.card__rich-media {
+  width: 100%;
+}
+.card__text {
+  padding: 15px 15px 5px 15px;
+  color: $lightblack;
+}
 .card__header {
-  padding: 15px;
   display: flex;
+  padding: 15px;
   align-items: center;
 
-  .card__header-picture {
-    max-height: 50px;
-  }
-
-  .card__header-title {
-    margin: 0;
-    color: $lightblack;
-  }
 }
-
+.card__header-picture {
+  max-height: 50px;
+}
+.card__header-title {
+  margin: $no-margin;
+  color: $lightblack;
+}
 .card__actions {
-  padding: 15px 15px 5px 15px;
-  margin-top: 15px;
   display: flex;
+  margin-top: 15px;
+  padding: 15px 15px 5px 15px;
   justify-content: space-between;
-  .card__actions-buttons {
-    display: flex;
-    align-items: center;
-  }
 }
-
-
+.card__actions-buttons {
+  display: flex;
+  align-items: center;
+}
 // TODO move this into actions scss file
 .action-icon {
   font-size: 2em;

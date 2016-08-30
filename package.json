@@ -1,0 +1,23 @@
+{
+  "name": "tandoori-ui",
+  "version": "1.0.0",
+  "description": "Tandoori user interface's elements.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spicesoft/tandoori-ui.git"
+  },
+  "author": "dev@tandoori.pro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Spicesoft/tandoori-ui/issues"
+  },
+  "homepage": "https://github.com/Spicesoft/tandoori-ui#readme",
+  "sasslintConfig": "./.sass-lint.yml",
+  "devDependencies": {
+    "sass-lint": "^1.9.1"
+  }
+}
