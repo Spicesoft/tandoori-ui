@@ -21,6 +21,14 @@ h2 {
   font-weight: 900;
 }
 
+.code {
+  background-color: $lightgrey;
+  font-family: "monospace";
+  padding: 3px;
+  border-radius: 3px;
+  color: $dark-blue;
+}
+
 .navbar {
   .navbar-header {
     .navbar-brand {

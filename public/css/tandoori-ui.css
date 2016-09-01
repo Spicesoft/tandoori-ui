@@ -132,7 +132,8 @@
 .card {
   box-shadow: 1px 2px 2px #7F7F7F;
   border-radius: 2px;
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  margin-bottom: 15px; }
 
 .card__rich-media {
   width: 100%; }
@@ -764,6 +765,13 @@ body {
 h2 {
   color: #0074A6;
   font-weight: 900; }
+
+.code {
+  background-color: #E6E6E6;
+  font-family: "monospace";
+  padding: 3px;
+  border-radius: 3px;
+  color: #0074A6; }
 
 .navbar .navbar-header .navbar-brand img {
   height: 100%; }
