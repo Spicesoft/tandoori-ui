@@ -27,6 +27,12 @@ $default-margin: 15px;
   margin: $no-margin;
   color: $lightblack;
 }
+.card__header-actions {
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  font-size: 30px;
+}
 .card__actions {
   display: flex;
   margin-top: 15px;
@@ -47,6 +53,10 @@ $default-margin: 15px;
   margin-top: 15px;
   padding: 15px 15px 5px 15px;
   justify-content: space-between;
+}
+form > .actions {
+  padding-right: 0;
+  padding-bottom: 0;
 }
 .actions--right {
   justify-content: flex-end;

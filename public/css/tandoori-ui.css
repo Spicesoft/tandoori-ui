@@ -129,6 +129,20 @@
   .btn-group .btn-default.active.focus {
     outline: none; }
 
+.dropdown-menu--trigger {
+  cursor: pointer; }
+
+.dropdown-menu {
+  border: none;
+  border-radius: 2px;
+  box-shadow: 1px 2px 2px #7F7F7F; }
+
+.dropdown-menu > li > a {
+  padding: 10px 20px; }
+
+.dropdown-menu__item {
+  padding: 10px 20px; }
+
 .card {
   box-shadow: 1px 2px 2px #7F7F7F;
   border-radius: 2px;
@@ -154,6 +168,12 @@
   margin: 0;
   color: #696969; }
 
+.card__header-actions {
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  font-size: 30px; }
+
 .card__actions {
   display: flex;
   margin-top: 15px;
@@ -172,6 +192,10 @@
   margin-top: 15px;
   padding: 15px 15px 5px 15px;
   justify-content: space-between; }
+
+form > .actions {
+  padding-right: 0;
+  padding-bottom: 0; }
 
 .actions--right {
   justify-content: flex-end; }
