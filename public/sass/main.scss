@@ -1,4 +1,5 @@
 @import "_colors.scss";
+@import "_globals.scss";
 @import "_buttons.scss";
 @import "_contextual-menu.scss";
 @import "_cards.scss";
@@ -8,11 +9,8 @@
 
 $no-margin: 0;
 
-* {
-  font-family: "Lato";
-}
-
 body {
+  font-family: "Lato";
   background: $app-background;
   padding-bottom: 100px;
 }
@@ -24,7 +22,7 @@ h2 {
 
 .code {
   background-color: $lightgrey;
-  font-family: "monospace";
+  font-family: monospace;
   padding: 3px;
   border-radius: 3px;
   color: $dark-blue;

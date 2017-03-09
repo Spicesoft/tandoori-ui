@@ -1,4 +1,5 @@
 
+$app-background: #F1F1F1;
 
 // Left Panel
 
@@ -32,7 +33,6 @@ $shadow: #EAEAEA;
 
 // backgrounds
 
-$app-background: #F2F2F2;
 $grey-bg: #CCCCCC;
 
 // Navbar
@@ -40,6 +40,12 @@ $grey-bg: #CCCCCC;
 $navbar-background: #FFFFFF;
 $navbar-color: #000000;
 $navbar-color-hover: #FFFFFF;
+
+// Navbar
+
+$navbar-admin-background: #3F3F3F;
+$navbar-admin-color: #FFFFFF;
+$navbar-admin-color-hover: #000000;
 
 // service category
 $parking: #449D44;
