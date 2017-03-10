@@ -133,136 +133,70 @@
 .v2_list-item__info {
   color: #979797; }
 
-/***********************
-    -- MIXINS --
-***********************/
-/*************************
-  ------ BUTTONS --------
-*************************/
-.buttons {
-  margin-top: 15px;
-  margin-bottom: 30px; }
-
-.buttons .btn {
-  border-radius: 4px; }
-
-.btn {
+/* STRUCTURE */
+.v2_btn {
+  background: none;
+  border: none;
+  padding: 5px;
   border-radius: 2px; }
-  .btn.label-shift {
-    margin-top: 26px; }
-  .btn .icon {
-    float: left;
-    position: relative;
-    top: 3px;
-    left: 0; }
-  .btn.circle {
-    border-radius: 50%; }
 
-.btn-xs .icon {
-  font-weight: 900;
-  margin-right: 5px; }
+.v2_btn:focus {
+  outline: none; }
 
-.btn-lg {
-  font-family: "LatoWeb"; }
-  .btn-lg .icon {
-    font-size: 1em;
-    font-weight: 700;
-    margin-right: 10px; }
+.v2_btn-group {
+  display: flex; }
+  .v2_btn-group .v2_btn {
+    border-radius: 0; }
+  .v2_btn-group .v2_btn:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px; }
+  .v2_btn-group .v2_btn:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px; }
 
-.btn-full-width {
-  width: 100%;
-  font-family: "LatoWebBold"; }
+/* SKINS */
+.v2_btn:hover {
+  text-decoration: none; }
 
-.btn-primary {
-  background-color: #14B9D6;
-  border-color: #14B9D6;
-  color: #FFFFFF; }
-  .btn-primary:hover, .btn-primary:active, .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:focus {
-    color: #FFFFFF;
-    background-color: #12a7c1;
-    border-color: #12a7c1; }
+.v2_btn--default:active {
+  background-color: #E6E6E6; }
 
-.btn-primary2 {
-  background-color: #B27DDB;
-  border-color: #B27DDB;
-  color: #FFFFFF; }
-  .btn-primary2:hover, .btn-primary2:active, .btn-primary2:active:hover, .btn-primary2:active:focus, .btn-primary2:focus {
-    color: #FFFFFF;
-    background-color: #a262d4;
-    border-color: #a262d4; }
-
-.btn-info {
-  background-color: #0074A6;
-  border-color: #0074A6;
-  color: #FFFFFF; }
-  .btn-info:hover, .btn-info:active, .btn-info:active:hover, .btn-info:active:focus, .btn-info:focus {
-    color: #FFFFFF;
-    background-color: #006895;
-    border-color: #006895; }
-
-.btn-success {
-  background-color: #1FBBA6;
-  border-color: #1FBBA6;
-  color: #FFFFFF; }
-  .btn-success:hover, .btn-success:active, .btn-success:active:hover, .btn-success:active:focus, .btn-success:focus {
-    color: #FFFFFF;
-    background-color: #1ca895;
-    border-color: #1ca895; }
-
-.btn-warning {
-  background-color: #F27935;
-  border-color: #F27935;
-  color: #FFFFFF; }
-  .btn-warning:hover, .btn-warning:active, .btn-warning:active:hover, .btn-warning:active:focus, .btn-warning:focus {
-    color: #FFFFFF;
-    background-color: #f06719;
-    border-color: #f06719; }
-
-.btn-danger {
-  background-color: #ED4530;
-  border-color: #ED4530;
-  color: #FFFFFF; }
-  .btn-danger:hover, .btn-danger:active, .btn-danger:active:hover, .btn-danger:active:focus, .btn-danger:focus {
-    color: #FFFFFF;
-    background-color: #eb2d16;
-    border-color: #eb2d16; }
-
-.btn-default {
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
+.v2_btn--default:hover {
   color: #14B9D6; }
-  .btn-default:hover, .btn-default:active, .btn-default:active:hover, .btn-default:active:focus, .btn-default:focus {
-    color: #14B9D6;
-    background-color: #e6e6e6;
-    border-color: #e6e6e6; }
 
-.btn-linkedin {
-  background-color: #0077B5; }
+.v2_btn--primary:active {
+  background-color: #31d0ec; }
 
-.btn-sign-in {
-  margin-top: 0; }
+.v2_btn--primary:hover {
+  color: #FFFFFF; }
 
-/**********************
-    -- BTN STATES --
-*********************/
-.btn:focus, .btn:active:focus {
-  outline: 0px; }
+.v2_btn--warning:active {
+  background-color: #f59965; }
 
-/********************
-  -- BTN GROUP --
-********************/
-.btn-group .btn-default {
-  box-shadow: 1px 1px 1px #E6E6E6; }
-  .btn-group .btn-default.active {
-    background-color: #14B9D6;
-    color: #FFFFFF;
-    border-color: #14B9D6; }
-    .btn-group .btn-default.active:hover {
-      border-color: #14B9D6; }
-    .btn-group .btn-default.active:focus {
-      outline: none; }
-  .btn-group .btn-default.active.focus {
-    outline: none; }
+.v2_btn--warning:hover {
+  color: #FFFFFF; }
+
+.v2_btn--raised {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+
+.v2_btn--lg {
+  font-size: 18px;
+  padding: 10px; }
+
+.v2_btn--sm {
+  font-size: 10px;
+  padding: 3px; }
+
+.v2_btn--default {
+  color: #14B9D6; }
+
+.v2_btn--primary {
+  background-color: #14B9D6;
+  color: #FFFFFF; }
+
+.v2_btn--warning {
+  background-color: #F27935;
+  color: #FFFFFF; }
 
 .dropdown-menu--trigger {
   cursor: pointer; }
@@ -280,10 +214,11 @@
 
 /* STRUCTURES */
 .v2_card {
-  margin: 0 10px 10px 10px; }
+  margin: 0 10px 10px 10px;
+  border-radius: 2px; }
 
 .v2_card__block {
-  padding: 5px 10px; }
+  padding: 10px; }
 
 /* SKINS */
 .v2_card--default-skin {

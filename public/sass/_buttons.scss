@@ -1,123 +1,85 @@
-@import "_colors.scss";
+/* STRUCTURE */
 
-/***********************
-    -- MIXINS --
-***********************/
-
-@mixin btn-colors($color, $background) {
-  background-color: $background;
-  border-color: $background;
-  color: $color;
-  &:hover,
-  &:active,
-  &:active:hover,
-  &:active:focus,
-  &:focus {
-    color: $color;
-    background-color: scale-color($background, $lightness: -10%);
-    border-color: scale-color($background, $lightness: -10%);
-  }
-}
-
-
-/*************************
-  ------ BUTTONS --------
-*************************/
-
-.buttons {
-  margin-top: 15px;
-  margin-bottom: 30px;
-}
-
-.buttons .btn {
-  border-radius: 4px;
-}
-
-.btn {
+.#{$current}btn {
+  background: none;
+  border: none;
+  padding: 5px;
   border-radius: 2px;
-  &.label-shift {
-    margin-top: 26px;
-  }
-
-  .icon {
-    float: left;
-    position: relative;
-    top: 3px;
-    left: 0;
-  }
-  &.circle {
-    border-radius: 50%;
-  }
 }
 
-.btn-xs {
-  .icon {
-    font-weight: 900;
-    margin-right: 5px;
-  }
+.#{$current}btn:focus {
+  outline: none;
 }
 
-.btn-lg {
-  font-family: "LatoWeb";
-  .icon {
-    font-size: 1em;
-    font-weight: 700;
-    margin-right: 10px;
+.#{$current}btn-group {
+  display: flex;
+  .#{$current}btn {
+    border-radius: 0;
+  }
+  .#{$current}btn:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  .#{$current}btn:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
   }
 }
 
-.btn-full-width {
-  width: 100%;
-  font-family: "LatoWebBold";
+/* SKINS */
+
+.#{$current}btn:hover {
+  text-decoration: none;
 }
 
-@each $class, $code in $colors {
-  $text: $white;
-  .btn-#{$class} {
-    @include btn-colors($text, $code);
-  }
-}
-.btn-default {
-  @include btn-colors($primary, $white);
+.#{$current}btn--default:active {
+  background-color: $lightgrey;
 }
 
-.btn-linkedin {
-  background-color: #0077B5;
+.#{$current}btn--default:hover {
+  color: $primary;
 }
 
-.btn-sign-in {
-  margin-top: 0;
+.#{$current}btn--primary:active {
+  background-color: lighten($primary, 10%);
 }
 
-
-/**********************
-    -- BTN STATES --
-*********************/
-
-.btn:focus, .btn:active:focus {
-  outline: 0px;
+.#{$current}btn--primary:hover {
+  color: $white;
 }
 
-/********************
-  -- BTN GROUP --
-********************/
+.#{$current}btn--warning:active {
+  background-color: lighten($warning, 10%);
+}
 
-.btn-group {
-  .btn-default {
-    box-shadow: 1px 1px 1px $lightgrey;
-    &.active {
-      background-color: $primary;
-      color: $white;
-      border-color: $primary;
-      &:hover {
-        border-color: $primary;
-      }
-      &:focus {
-        outline: none;
-      }
-    }
-    &.active.focus {
-      outline: none;
-    }
-  }
+.#{$current}btn--warning:hover {
+  color: $white;
+}
+
+.#{$current}btn--raised {
+  box-shadow: $material-shadow;
+}
+
+.#{$current}btn--lg {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.#{$current}btn--sm {
+  font-size: 10px;
+  padding: 3px;
+}
+
+.#{$current}btn--default {
+  color: $primary;
+}
+
+.#{$current}btn--primary {
+  background-color: $primary;
+  color: $white;
+}
+
+.#{$current}btn--warning {
+  background-color: $warning;
+  color: $white;
 }

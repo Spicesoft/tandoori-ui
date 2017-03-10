@@ -1,10 +1,11 @@
 /* STRUCTURES */
 
 $card-margin: 0 10px 10px 10px;
-$card__block-padding: 5px 10px;
+$card__block-padding: 10px;
 
 .#{$current}card {
   margin: $card-margin;
+  border-radius: 2px;
 }
 
 .#{$current}card__block {
