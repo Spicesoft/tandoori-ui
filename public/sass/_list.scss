@@ -24,6 +24,16 @@
   flex-grow: 3;
 }
 
+.#{$current}list-item__text:first-child {
+  margin: 0 10px 0 0;
+  flex-grow: 3;
+}
+
+.#{$current}list-item__text--multiline {
+  display: flex;
+  flex-direction: column;
+}
+
 /* SKINS */
 
 .#{$current}list--stripped {
