@@ -1,0 +1,21 @@
+/* STRUCTURE */
+
+.#{$current}text-input {
+  @include transition();
+  outline: none;
+}
+
+/* SKINS */
+
+.#{$current}text-input:focus {
+  outline: none;
+}
+
+.#{$current}text-input--default-skin {
+  border: none;
+  border-bottom: 1px solid $lightgrey;
+}
+
+.#{$current}text-input--default-skin:focus {
+  border-bottom: 1px solid $primary;
+}

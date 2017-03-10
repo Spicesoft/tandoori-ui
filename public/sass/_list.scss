@@ -22,6 +22,8 @@
 .#{$current}list-item__text {
   margin: 0 10px;
   flex-grow: 3;
+  max-height: 20px;
+  overflow: hidden;
 }
 
 .#{$current}list-item__text:first-child {
@@ -32,6 +34,8 @@
 .#{$current}list-item__text--multiline {
   display: flex;
   flex-direction: column;
+  max-height: 40px;
+  overflow: hidden;
 }
 
 /* SKINS */
