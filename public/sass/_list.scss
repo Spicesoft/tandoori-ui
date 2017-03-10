@@ -62,3 +62,7 @@
 .#{$current}list-item--divider {
   border-bottom: 1px solid $lightgrey;
 }
+
+.#{$current}list-item__info {
+  color: $grey;
+}

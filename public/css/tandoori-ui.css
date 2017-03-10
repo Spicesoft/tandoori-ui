@@ -130,6 +130,9 @@
 .v2_list-item--divider {
   border-bottom: 1px solid #E6E6E6; }
 
+.v2_list-item__info {
+  color: #979797; }
+
 /***********************
     -- MIXINS --
 ***********************/
