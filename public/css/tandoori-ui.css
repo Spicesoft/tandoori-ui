@@ -91,24 +91,36 @@
   padding: 0;
   list-style-type: none; }
 
-.v2_list__item {
-  padding: 10px; }
+.v2_list-item {
+  height: 56px;
+  padding: 10px;
+  display: flex;
+  align-items: center; }
+
+.v2_list-item__graphic {
+  height: 46px;
+  width: 46px;
+  background-color: #14B9D6; }
+
+.v2_list-item__text {
+  margin: 0 10px;
+  flex-grow: 3; }
 
 /* SKINS */
-.v2_list--stripped .v2_list__item:nth-child(odd) {
+.v2_list--stripped .v2_list-item:nth-child(odd) {
   background-color: #E6E6E6; }
 
-.v2_list--hover .v2_list__item:hover {
+.v2_list--hover .v2_list-item:hover {
   transition: all 0.2s, ease;
   background-color: #E6E6E6; }
 
-.v2_list--clickable .v2_list__item {
+.v2_list--clickable .v2_list-item {
   cursor: pointer; }
-.v2_list--clickable .v2_list__item:hover {
+.v2_list--clickable .v2_list-item:hover {
   transition: all 0.2s, ease;
   background-color: #E6E6E6; }
 
-.v2_list__item--divider {
+.v2_list-item--divider {
   border-bottom: 1px solid #E6E6E6; }
 
 /***********************

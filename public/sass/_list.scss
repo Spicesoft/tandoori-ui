@@ -7,35 +7,48 @@
   list-style-type: none;
 }
 
-.#{$current}list__item {
+.#{$current}list-item {
+  height: 56px;
   padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.#{$current}list-item__graphic {
+  height: 46px;
+  width: 46px;
+}
+
+.#{$current}list-item__text {
+  margin: 0 10px;
+  flex-grow: 3;
 }
 
 /* SKINS */
 
 .#{$current}list--stripped {
-  .#{$current}list__item:nth-child(odd) {
+  .#{$current}list-item:nth-child(odd) {
     background-color: $lightgrey;
   }
 }
 
 .#{$current}list--hover {
-  .#{$current}list__item:hover {
+  .#{$current}list-item:hover {
     @include transition;
     background-color: $lightgrey;
   }
 }
 
 .#{$current}list--clickable {
-  .#{$current}list__item {
+  .#{$current}list-item {
     cursor: pointer;
   }
-  .#{$current}list__item:hover {
+  .#{$current}list-item:hover {
     @include transition;
     background-color: $lightgrey;
   }
 }
 
-.#{$current}list__item--divider {
+.#{$current}list-item--divider {
   border-bottom: 1px solid $lightgrey;
 }
