@@ -1,0 +1,45 @@
+/* STRUCTURES */
+
+.#{$current}title {
+  font-size: 24px;
+}
+
+.#{$current}subtitle {
+  font-size: 16px;
+}
+
+/* SKINS */
+
+/* -- Colors -- */
+
+.#{$current}text--white {
+  color: $white;
+}
+
+.#{$current}text--black {
+  color: $black;
+}
+
+.#{$current}text--lightblack {
+  color: $lightblack;
+}
+
+.#{$current}text--grey {
+  color: $grey;
+}
+
+.#{$current}text--darkgrey {
+  color: $darkgrey;
+}
+
+.#{$current}text--lightgrey {
+  color: $lightgrey;
+}
+
+.#{$current}text--primary {
+  color: $primary;
+}
+
+.#{$current}text--warning {
+  color: $warning;
+}

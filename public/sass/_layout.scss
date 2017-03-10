@@ -1,0 +1,66 @@
+.#{$current}absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.#{$current}vbox {
+  display: flex;
+  /* stylelint-disable-next-line */
+  display: -ms-flexbox;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.#{$current}hbox {
+  display: flex;
+  /* stylelint-disable-next-line */
+  display: -ms-flexbox;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.#{$current}hbox--wrappable {
+  @extend .#{$current}hbox;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.#{$current}hbox--sa {
+  justify-content: space-around;
+}
+
+.#{$current}hbox--sb {
+  justify-content: space-between;
+}
+
+.#{$current}flex-1 {
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.#{$current}scrollbox {
+  overflow: auto;
+}
+
+/* -- Grid -- */
+
+.#{$current}flex-row {
+  @extend .#{$current}hbox;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.#{$current}flex-col--2 {
+  width: 50%;
+}
+
+.#{$current}flex-col--3 {
+  width: 33%;
+}
+
+.#{$current}flex-col--4 {
+  width: 25%;
+}

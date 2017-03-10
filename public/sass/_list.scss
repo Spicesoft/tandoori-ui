@@ -1,0 +1,41 @@
+/* STRUCTURES */
+
+.#{$current}list {
+  display: flex;
+  flex-direction: column;
+  padding: $zero;
+  list-style-type: none;
+}
+
+.#{$current}list__item {
+  padding: 10px;
+}
+
+/* SKINS */
+
+.#{$current}list--stripped {
+  .#{$current}list__item:nth-child(odd) {
+    background-color: $lightgrey;
+  }
+}
+
+.#{$current}list--hover {
+  .#{$current}list__item:hover {
+    @include transition;
+    background-color: $lightgrey;
+  }
+}
+
+.#{$current}list--clickable {
+  .#{$current}list__item {
+    cursor: pointer;
+  }
+  .#{$current}list__item:hover {
+    @include transition;
+    background-color: $lightgrey;
+  }
+}
+
+.#{$current}list__item--divider {
+  border-bottom: 1px solid $lightgrey;
+}
