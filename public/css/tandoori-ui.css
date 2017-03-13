@@ -1264,20 +1264,6 @@
   background-color: #F27935;
   color: #FFFFFF; }
 
-.dropdown-menu--trigger {
-  cursor: pointer; }
-
-.dropdown-menu {
-  border: none;
-  border-radius: 2px;
-  box-shadow: 1px 2px 2px #7F7F7F; }
-
-.dropdown-menu > li > a {
-  padding: 10px 20px; }
-
-.dropdown-menu__item {
-  padding: 10px 20px; }
-
 /* STRUCTURES */
 .tuiv2_card {
   margin: 0 10px 10px 10px;
