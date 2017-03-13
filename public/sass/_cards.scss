@@ -12,6 +12,16 @@ $card__block-padding: 10px;
   padding: $card__block-padding;
 }
 
+.#{$current}card__actions {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px;
+}
+
+.#{$current}card__rich-media {
+  @include aspect-ratio(16, 9);
+}
+
 /* SKINS */
 
 .#{$current}card--default-skin {

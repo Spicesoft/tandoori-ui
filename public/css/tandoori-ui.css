@@ -58,6 +58,12 @@
 .v2_subtitle {
   font-size: 16px; }
 
+.v2_text--center {
+  text-align: center; }
+
+.v2_text--right {
+  text-align: right; }
+
 /* SKINS */
 /* -- Colors -- */
 .v2_text--white {
@@ -164,6 +170,11 @@
 .v2_text-input--default-skin:focus {
   border-bottom: 1px solid #14B9D6; }
 
+.v2_label--default-skin {
+  color: #979797;
+  font-weight: 400;
+  font-size: 11px; }
+
 /* STRUCTURE */
 .v2_btn {
   background: none;
@@ -250,6 +261,28 @@
 
 .v2_card__block {
   padding: 10px; }
+
+.v2_card__actions {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px; }
+
+.v2_card__rich-media {
+  position: relative;
+  overflow: hidden; }
+  .v2_card__rich-media::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 56.25%; }
+  .v2_card__rich-media > img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; }
 
 /* SKINS */
 .v2_card--default-skin {

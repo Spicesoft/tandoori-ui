@@ -32,3 +32,9 @@
 .#{$current}text-input--default-skin:focus {
   border-bottom: 1px solid $primary;
 }
+
+.#{$current}label--default-skin {
+  color: $grey;
+  font-weight: 400;
+  font-size: 11px;
+}
