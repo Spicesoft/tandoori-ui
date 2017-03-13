@@ -47,20 +47,37 @@
 
 /* -- Grid -- */
 
+$sm-breakpoint: 768px;
+$md-breakpoint: 992px;
+$lg-breakpoint: 1200px;
+
 .#{$current}flex-row {
   @extend .#{$current}hbox;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
-.#{$current}flex-col--2 {
-  width: 50%;
-}
+$sizes: (
+  ("lg", $lg-breakpoint),
+  ("md", $md-breakpoint),
+  ("sm", $sm-breakpoint)
+);
+$nb-columns: 13; // 1 more for the loop
+$col-width: 100% / 12;
 
-.#{$current}flex-col--3 {
-  width: 33%;
-}
-
-.#{$current}flex-col--4 {
-  width: 25%;
+@each $size, $breakpoint in $sizes {
+  @for $i from 1 to $nb-columns {
+    .#{$current}flex-col--#{$size}-#{$i} {
+      width: 100%;
+      @media (min-width: $breakpoint) {
+        width: (100% / 12) * $i;
+      }
+    }
+    .#{$current}flex-offset--#{$size}-#{$i} {
+      margin-left: auto;
+      @media (min-width: $breakpoint) {
+        margin-left: (100% / 12) * $i;
+      }
+    }
+  }
 }
