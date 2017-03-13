@@ -18,6 +18,12 @@ $card__block-padding: 10px;
   padding: 10px;
 }
 
+.#{$current}card__actions--secondary {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .#{$current}card__rich-media {
   @include aspect-ratio(16, 9);
 }
