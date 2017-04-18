@@ -38,3 +38,19 @@
   font-weight: 400;
   font-size: 11px;
 }
+
+// Tandoori-ui uses Bootstrap from utilities
+// Juste overriding Bs styles here
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid $lightgrey;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: $primary;
+  box-shadow: none;
+}

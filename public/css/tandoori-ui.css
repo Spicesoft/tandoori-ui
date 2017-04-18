@@ -1199,6 +1199,17 @@
   font-weight: 400;
   font-size: 11px; }
 
+.form-control {
+  border: none;
+  border-bottom: 1px solid #E6E6E6;
+  box-shadow: none;
+  border-radius: 0; }
+
+.form-control:focus {
+  outline: none;
+  border-color: #14B9D6;
+  box-shadow: none; }
+
 /* STRUCTURE */
 .tuiv2_btn {
   background: none;
