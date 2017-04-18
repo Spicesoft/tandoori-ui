@@ -2,21 +2,24 @@
 
 /* SKINS */
 
+@mixin form-control-border () {
+  border: none;
+  border-bottom: 1px solid $lightgrey;
+  &:focus {
+    border-color: $primary;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
 // Tandoori-ui uses Bootstrap from utilities
 // Juste overriding Bs styles here
 
 .form-control {
-  border: none;
-  border-bottom: 1px solid $lightgrey;
+  @include form-control-border;
   box-shadow: none;
   border-radius: 0;
   padding-left: 0;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: $primary;
-  box-shadow: none;
 }
 
 .form-inline {
@@ -26,13 +29,11 @@
 }
 
 .input-group-addon:first-child {
-  border: none;
-  border-bottom: 1px solid $lightgrey;
+  @include form-control-border;
 }
 
 .input-group-addon:last-child {
-  border: none;
-  border-bottom: 1px solid $lightgrey;
+  @include form-control-border;
 }
 
 /* stylelint-disable-next-line */
@@ -80,4 +81,33 @@ $validations: (
       }
     }
   }
+}
+
+// Select2 overrides
+.select2-container--default {
+  .select2-selection--single {
+    border: none;
+    border-bottom: 1px solid $lightgrey;
+    border-radius: 0;
+  }
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  @include form-control-border;
+}
+
+/* stylelint-disable-next-line */
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+  background-color: $primary;
+}
+
+.select2-container--default .select2-selection--multiple {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid $lightgrey;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: none;
+  border-bottom: 1px solid $primary;
 }

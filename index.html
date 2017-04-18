@@ -6,6 +6,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="public/css/tandoori-ui.css">
   </head>
   <body>
@@ -503,6 +504,38 @@
           <div class="tuiv2_card tuiv2_card--default-skin">
             <div class="tuiv2_card__block">
               <h3 class="tuiv2_title">
+                Select 2
+              </h3>
+            </div>
+            <div class="tuiv2_card__block">
+              <div class="form-group">
+                <label for="selectErrorExample">Select 2</label>
+                <select class="select2 form-control" id="selectErrorExample">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="selectErrorExample">Select 2 multiple</label>
+                <select class="select2 form-control" id="selectErrorExample" multiple="multiple">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuiv2_flex-col--md-6">
+          <div class="tuiv2_card tuiv2_card--default-skin">
+            <div class="tuiv2_card__block">
+              <h3 class="tuiv2_title">
                 Card
               </h3>
               <h4 class="tuiv2_subtitle">
@@ -676,6 +709,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="./public/js/all.js"></script>
   </body>
 </html>

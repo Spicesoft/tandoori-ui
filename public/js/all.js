@@ -12,4 +12,6 @@ $(function ($) {
     $(".dropdown").on("hide.bs.dropdown", function () {
         $(this).find(".dropdown-menu").slideUp(150);
     });
+
+    $('.select2').select2();
 });
