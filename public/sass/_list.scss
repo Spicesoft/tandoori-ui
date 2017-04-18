@@ -5,6 +5,7 @@
   flex-direction: column;
   padding: $zero;
   list-style-type: none;
+  margin: 0;
 }
 
 .#{$current}list-item {
@@ -12,6 +13,10 @@
   padding: 10px;
   display: flex;
   align-items: center;
+}
+
+.#{$current}list-item--active {
+  background-color: $lightgrey;
 }
 
 .#{$current}list-item__graphic {

@@ -1,16 +1,25 @@
 $(function ($) {
-    $(".list__collapsable").collapse();
-
-    $(".list__clickable").on("click", function(ev) {
-        $(this).next().collapse("toggle");
+    var $panes = $(".js-pane");
+    $.each($panes, function (index, pane) {
+        if (index !== 0) {
+            $(pane).hide();
+        }
     });
-
-    $(".dropdown-menu").dropdown();
-    $(".dropdown").on("show.bs.dropdown", function () {
-        $(this).find(".dropdown-menu").slideDown(150);
-    });
-    $(".dropdown").on("hide.bs.dropdown", function () {
-        $(this).find(".dropdown-menu").slideUp(150);
+    var $listItems = $("#widget-list li");
+    $listItems.on("click", function (ev) {
+        var activeClass = "tuiv2_list-item--active";
+        var $target = $(ev.target).closest("li");
+        $("." + activeClass).removeClass(activeClass);
+        $target.addClass(activeClass);
+        $.each($panes, function (index, pane) {
+            var $pane = $(pane);
+            if ($pane.css('display') !== "none" && $pane.attr("id") !== $target.data().pane) {
+                $pane.hide();
+            }
+            else if ($pane.attr("id") === $target.data().pane) {
+                $pane.show();
+            }
+        });
     });
 
     $('.select2').select2();
