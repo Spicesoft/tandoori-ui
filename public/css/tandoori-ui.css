@@ -1219,7 +1219,51 @@ select.form-control {
   -webkit-appearance: none;
   -webkit-border-radius: 0; }
 
-/* stylelint-disable-next-line */
+.has-success .control-label,
+.has-success .help-block,
+.has-success .radio,
+.has-success .radio-inline {
+  color: #1FBBA6; }
+.has-success .checkbox label,
+.has-success .checkbox-inline label,
+.has-success .radio label,
+.has-success .radio-inline label {
+  color: #1FBBA6; }
+.has-success .form-control {
+  box-shadow: none; }
+  .has-success .form-control:focus {
+    box-shadow: none; }
+
+.has-warning .control-label,
+.has-warning .help-block,
+.has-warning .radio,
+.has-warning .radio-inline {
+  color: #F27935; }
+.has-warning .checkbox label,
+.has-warning .checkbox-inline label,
+.has-warning .radio label,
+.has-warning .radio-inline label {
+  color: #F27935; }
+.has-warning .form-control {
+  box-shadow: none; }
+  .has-warning .form-control:focus {
+    box-shadow: none; }
+
+.has-error .control-label,
+.has-error .help-block,
+.has-error .radio,
+.has-error .radio-inline {
+  color: #ED4530; }
+.has-error .checkbox label,
+.has-error .checkbox-inline label,
+.has-error .radio label,
+.has-error .radio-inline label {
+  color: #ED4530; }
+.has-error .form-control {
+  box-shadow: none; }
+  .has-error .form-control:focus {
+    box-shadow: none; }
+
 /* STRUCTURE */
 .tuiv2_btn {
   background: none;

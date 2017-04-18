@@ -62,15 +62,39 @@
   }
 }
 
-// Specific <select> tweaks
 /* stylelint-disable-next-line */
-select.form-control {
+select.form-control { // Specific <select> tweaks
   -webkit-appearance: none;
   -webkit-border-radius: 0;
 }
-/* stylelint-disable-next-line */
-select.form-control::after {
-  // content: "&#x25B2";
-  // display: block;
-  // position: relative;
+
+$validations: (
+  "has-success": $success,
+  "has-warning": $warning,
+  "has-error": $danger
+);
+
+@each $validation, $color in $validations {
+  .#{$validation} {
+    .control-label,
+    .help-block,
+    .radio,
+    .radio-inline {
+      color: $color;
+    }
+    .checkbox,
+    .checkbox-inline,
+    .radio,
+    .radio-inline {
+      label {
+        color: $color;
+      }
+    }
+    .form-control {
+      box-shadow: none;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
 }
