@@ -23,6 +23,11 @@
 
 /* SKINS */
 
+.#{$current}text--well {
+  background-color: $lightgrey;
+  padding: 10px;
+}
+
 /* -- Colors -- */
 
 .#{$current}text--white {

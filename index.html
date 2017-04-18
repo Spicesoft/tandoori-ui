@@ -6,6 +6,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="public/css/tandoori-ui.css">
   </head>
   <body>
@@ -298,38 +299,234 @@
           <div class="tuiv2_card tuiv2_card--default-skin">
             <div class="tuiv2_card__block">
               <h3 class="tuiv2_title">
-                Inputs
+                Form
               </h3>
             </div>
             <div class="tuiv2_card__block">
-              <input type="text" class="tuiv2_text-input tuiv2_text-input--default-skin">
+              <p class="tuiv2_text--well">
+                Because we are overriding Bootstrap's forms, css classes here are not following BEM recommandations.
+              </p>
             </div>
             <div class="tuiv2_card__block">
-              <div class="tuiv2_hbox">
-                <p class="tuiv2_label--horizontal">Horizontal label: </p>
-                <input type="text" class="tuiv2_text-input tuiv2_text-input--default-skin" placeholder="Type something sexy...">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">File input</label>
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="form-group">
+                  <label for="textAreaExample">Textarea</label>
+                  <textarea class="form-control" rows="3" id="textAreaExample"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="disableExample">Disabled</label>
+                  <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                </div>
+                <div class="form-group">
+                  <label for="selectExample">Select</label>
+                  <div class="select-wrapper">
+                    <select class="form-control" id="selectExample">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="disabledSelect">Disabled select menu</label>
+                  <select id="disabledSelect" class="form-control" disabled>
+                    <option>Disabled select</option>
+                  </select>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Check me out
+                  </label>
+                </div>
+                <button type="submit" class="tuiv2_btn tuiv2_btn--primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuiv2_flex-col--md-6">
+          <div class="tuiv2_card tuiv2_card--default-skin">
+            <div class="tuiv2_card__block">
+              <h3 class="tuiv2_title">
+                Form validation
+              </h3>
+            </div>
+            <div class="tuiv2_card__block">
+              <div class="form-group has-success">
+                <label class="control-label" for="inputSuccess1">Input with success</label>
+                <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
+                <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+              </div>
+              <div class="form-group has-warning">
+                <label class="control-label" for="inputWarning1">Input with warning</label>
+                <input type="text" class="form-control" id="inputWarning1">
+              </div>
+              <div class="form-group has-error">
+                <label class="control-label" for="inputError1">Input with error</label>
+                <input type="text" class="form-control" id="inputError1">
+              </div>
+              <div class="has-success">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="checkboxSuccess" value="option1">
+                    Checkbox with success
+                  </label>
+                </div>
+              </div>
+              <div class="has-warning">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="checkboxWarning" value="option1">
+                    Checkbox with warning
+                  </label>
+                </div>
+              </div>
+              <div class="has-error">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="checkboxError" value="option1">
+                    Checkbox with error
+                  </label>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="tuiv2_flex-col--md-6">
+          <div class="tuiv2_card tuiv2_card--default-skin">
             <div class="tuiv2_card__block">
-              <label for="toto" class="tuiv2_label">
-                Write me a story:
-              </label>
-              <input type="text" name="toto" class="tuiv2_text-input tuiv2_text-input--default-skin">
+              <h3 class="tuiv2_title">
+                Form inline
+              </h3>
             </div>
             <div class="tuiv2_card__block">
-              <label for="text-area" class="tuiv2_label">Textarea:</label>
-              <textarea name="text-area" rows="8" class="tuiv2_text-input tuiv2_text-input--default-skin" cols="50" placeholder="Fill meeeee"></textarea>
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Remember me
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="tuiv2_btn tuiv2_btn--default">Sign in</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuiv2_flex-col--md-6">
+          <div class="tuiv2_card tuiv2_card--default-skin">
+            <div class="tuiv2_card__block">
+              <h3 class="tuiv2_title">
+                Input with icons
+              </h3>
             </div>
             <div class="tuiv2_card__block">
-              <div class="tuiv2_hbox">
-                <label for="checkme" class="tuiv2_label--horizontal">Checkbox : </label>
-                <input type="checkbox" name="checkme">
+              <div class="form-group has-success has-feedback">
+                <label class="control-label" for="inputSuccess2">Input with success</label>
+                <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputSuccess2Status" class="sr-only">(success)</span>
+              </div>
+              <div class="form-group has-warning has-feedback">
+                <label class="control-label" for="inputWarning2">Input with warning</label>
+                <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+                <span id="inputWarning2Status" class="sr-only">(warning)</span>
+              </div>
+              <div class="form-group has-error has-feedback">
+                <label class="control-label" for="inputError2">Input with error</label>
+                <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                <span id="inputError2Status" class="sr-only">(error)</span>
+              </div>
+              <div class="form-group has-success has-feedback">
+                <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+                <div class="input-group">
+                  <span class="input-group-addon">@</span>
+                  <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+              </div>
+              <div class="form-group has-error has-feedback">
+                <label for="selectErrorExample">Select</label>
+                <select class="form-control" id="selectErrorExample">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                <span class="glyphicon glyphicon-triangle-bottom form-control-feedback" aria-hidden="true"></span>
+                <span id="inputError2Status" class="sr-only">(error)</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="tuiv2_flex-col--md-6">
+          <div class="tuiv2_card tuiv2_card--default-skin">
             <div class="tuiv2_card__block">
-              <div class="tuiv2_hbox">
-                <label class="tuiv2_label--horizontal" for="radme">Radio : </label>
-                <input type="radio" name="radme">
+              <h3 class="tuiv2_title">
+                Select 2
+              </h3>
+            </div>
+            <div class="tuiv2_card__block">
+              <div class="form-group">
+                <label for="selectErrorExample">Select 2</label>
+                <select class="select2 form-control" id="selectErrorExample">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="selectErrorExample">Select 2 multiple</label>
+                <select class="select2 form-control" id="selectErrorExample" multiple="multiple">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
             </div>
           </div>
@@ -706,6 +903,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="./public/js/all.js"></script>
   </body>
 </html>
