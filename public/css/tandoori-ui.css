@@ -1184,6 +1184,10 @@
 .form-inline .form-control {
   padding-left: 5px; }
 
+.input-group-addon:first-child {
+  border: none;
+  border-bottom: 1px solid #E6E6E6; }
+
 /* stylelint-disable-next-line */
 select.form-control {
   -webkit-appearance: none;

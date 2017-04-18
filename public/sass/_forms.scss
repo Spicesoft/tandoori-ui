@@ -25,6 +25,16 @@
   }
 }
 
+.input-group-addon:first-child {
+  border: none;
+  border-bottom: 1px solid $lightgrey;
+}
+
+.input-group-addon:last-child {
+  border: none;
+  border-bottom: 1px solid $lightgrey;
+}
+
 /* stylelint-disable-next-line */
 select.form-control { // Specific <select> tweaks
   -webkit-appearance: none;
