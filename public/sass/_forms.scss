@@ -1,43 +1,6 @@
 /* STRUCTURE */
 
-.#{$current}text-input {
-  @include transition();
-  outline: none;
-}
-
-.#{$current}label {
-  display: block;
-  color: $grey;
-  font-weight: 400;
-  font-size: 11px;
-}
-
-.#{$current}label--horizontal {
-  font-weight: 400;
-  width: 50%;
-  margin: $zero;
-}
-
 /* SKINS */
-
-.#{$current}text-input:focus {
-  outline: none;
-}
-
-.#{$current}text-input--default-skin {
-  border: none;
-  border-bottom: 1px solid $lightgrey;
-}
-
-.#{$current}text-input--default-skin:focus {
-  border-bottom: 1px solid $primary;
-}
-
-.#{$current}label--default-skin {
-  color: $grey;
-  font-weight: 400;
-  font-size: 11px;
-}
 
 // Tandoori-ui uses Bootstrap from utilities
 // Juste overriding Bs styles here
