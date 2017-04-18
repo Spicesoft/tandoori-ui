@@ -39,6 +39,16 @@
 select.form-control { // Specific <select> tweaks
   -webkit-appearance: none;
   -webkit-border-radius: 0;
+  border: none;
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $lightgrey;
+  padding-right: 5px;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 $validations: (

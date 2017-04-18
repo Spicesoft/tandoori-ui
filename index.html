@@ -326,13 +326,16 @@
                 </div>
                 <div class="form-group">
                   <label for="selectExample">Select</label>
-                  <select class="form-control" id="selectExample">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
+                  <div class="select-wrapper">
+                    <select class="form-control" id="selectExample">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="disabledSelect">Disabled select menu</label>
@@ -474,6 +477,18 @@
                 </div>
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+              </div>
+              <div class="form-group has-error has-feedback">
+                <label for="selectErrorExample">Select</label>
+                <select class="form-control" id="selectErrorExample">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                <span class="glyphicon glyphicon-triangle-bottom form-control-feedback" aria-hidden="true"></span>
+                <span id="inputError2Status" class="sr-only">(error)</span>
               </div>
             </div>
           </div>

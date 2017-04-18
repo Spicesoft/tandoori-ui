@@ -1188,10 +1188,23 @@
   border: none;
   border-bottom: 1px solid #E6E6E6; }
 
+.input-group-addon:last-child {
+  border: none;
+  border-bottom: 1px solid #E6E6E6; }
+
 /* stylelint-disable-next-line */
 select.form-control {
   -webkit-appearance: none;
-  -webkit-border-radius: 0; }
+  -webkit-border-radius: 0;
+  border: none; }
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E6E6E6;
+  padding-right: 5px;
+  flex-wrap: nowrap;
+  overflow: hidden; }
 
 .has-success .control-label,
 .has-success .help-block,
