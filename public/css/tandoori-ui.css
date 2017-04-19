@@ -1,4 +1,7 @@
 /* Globals */
+:focus {
+  outline: none; }
+
 .tuiv2_absolute-center {
   position: absolute;
   top: 50%;
@@ -1210,7 +1213,9 @@
 /* stylelint-disable-next-line */
 select.form-control {
   -webkit-appearance: none;
+  -moz-appearance: none;
   -webkit-border-radius: 0;
+  -moz-border-radius: 0;
   border: none; }
 
 .select-wrapper {
@@ -1288,6 +1293,7 @@ select.form-control {
   border: none;
   border-bottom: 1px solid #E6E6E6; }
 
+/* stylelint-disable-next-line */
 .select2-container--default.select2-container--focus .select2-selection--multiple {
   border: none;
   border-bottom: 1px solid #14B9D6; }

@@ -39,7 +39,9 @@
 /* stylelint-disable-next-line */
 select.form-control { // Specific <select> tweaks
   -webkit-appearance: none;
+  -moz-appearance: none;
   -webkit-border-radius: 0;
+  -moz-border-radius: 0;
   border: none;
 }
 
@@ -107,6 +109,7 @@ $validations: (
   border-bottom: 1px solid $lightgrey;
 }
 
+/* stylelint-disable-next-line */
 .select2-container--default.select2-container--focus .select2-selection--multiple {
   border: none;
   border-bottom: 1px solid $primary;
