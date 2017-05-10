@@ -924,16 +924,16 @@
     bottom: 0;
     margin: auto; }
 
-.tuiv2_sixtee-nein-img {
+.tuiv2_sixty-nine-img {
   position: relative;
   overflow: hidden;
   width: 100%; }
-  .tuiv2_sixtee-nein-img::before {
+  .tuiv2_sixty-nine-img::before {
     display: block;
     content: "";
     width: 100%;
     padding-top: 56.25%; }
-  .tuiv2_sixtee-nein-img > img {
+  .tuiv2_sixty-nine-img > img {
     position: absolute;
     width: 100%;
     top: 0;
@@ -1835,7 +1835,7 @@ select.form-control {
   content: "\e8a9"; }
 
 .tuiv2_gallery {
-  margin: 0, 10px, 10px; }
+  margin: 0 10px 10px; }
 
 .tuiv2_gallery__container {
   border: 1px solid #FFFFFF;

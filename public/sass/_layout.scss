@@ -14,6 +14,10 @@
   height: 100%;
 }
 
+.#{$current}vbox--center {
+  justify-content: center;
+}
+
 .#{$current}hbox {
   display: flex;
   /* stylelint-disable-next-line */

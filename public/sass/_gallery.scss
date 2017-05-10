@@ -1,13 +1,13 @@
-.tuiv2_gallery {
-  margin: 0, 10px, 10px;
+.#{$current}gallery {
+  margin: 0 10px 10px;
 }
 
-.tuiv2_gallery__container {
+.#{$current}gallery__container {
   border: 1px solid $white;
   width: 100%;
   @include aspect-ratio(16, 9);
 }
 
-.tuiv2_gallery__img {
+.#{$current}gallery__img {
   cursor: pointer;
 }
