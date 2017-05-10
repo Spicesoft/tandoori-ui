@@ -47,39 +47,33 @@
 
 /* -- Grid -- */
 
-$xs-breakpoint: 576px;
-$sm-breakpoint: 768px;
-$md-breakpoint: 992px;
-$lg-breakpoint: 1200px;
+$xs-breakpoint: 0px;    // xs = [    0 →  768 [
+$sm-breakpoint: 768px;  // sm = [  768 →  992 [
+$md-breakpoint: 992px;  // md = [  992 → 1200 [
+$lg-breakpoint: 1200px; // lg = [ 1200 →    ∞ [
 
 .#{$current}flex-row {
-  width: 100%;
   @extend .#{$current}hbox;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
 $sizes: (
-  ("lg", $lg-breakpoint),
-  ("md", $md-breakpoint),
+  ("xs", $xs-breakpoint),
   ("sm", $sm-breakpoint),
-  ("xs", $xs-breakpoint)
+  ("md", $md-breakpoint),
+  ("lg", $lg-breakpoint)
 );
-
 $nb-columns: 13; // 1 more for the loop
 $col-width: 100% / 12;
 
 @each $size, $breakpoint in $sizes {
-  @for $i from 1 to $nb-columns {
-    .#{$current}flex-col--#{$size}-#{$i} {
-      width: 100%;
-      @media (min-width: $breakpoint) {
+  @media (min-width: $breakpoint) {
+    @for $i from 1 to $nb-columns {
+      .#{$current}flex-col--#{$size}-#{$i} {
         width: (100% / 12) * $i;
       }
-    }
-    .#{$current}flex-offset--#{$size}-#{$i} {
-      margin-left: auto;
-      @media (min-width: $breakpoint) {
+      .#{$current}flex-offset--#{$size}-#{$i} {
         margin-left: (100% / 12) * $i;
       }
     }
