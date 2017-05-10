@@ -52,6 +52,7 @@ $md-breakpoint: 992px;
 $lg-breakpoint: 1200px;
 
 .#{$current}flex-row {
+  width: 100%;
   @extend .#{$current}hbox;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
