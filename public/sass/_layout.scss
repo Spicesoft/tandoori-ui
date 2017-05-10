@@ -47,6 +47,7 @@
 
 /* -- Grid -- */
 
+$xs-breakpoint: 576px;
 $sm-breakpoint: 768px;
 $md-breakpoint: 992px;
 $lg-breakpoint: 1200px;
@@ -61,8 +62,10 @@ $lg-breakpoint: 1200px;
 $sizes: (
   ("lg", $lg-breakpoint),
   ("md", $md-breakpoint),
-  ("sm", $sm-breakpoint)
+  ("sm", $sm-breakpoint),
+  ("xs", $xs-breakpoint)
 );
+
 $nb-columns: 13; // 1 more for the loop
 $col-width: 100% / 12;
 
