@@ -1,18 +1,17 @@
-@import "_globals.scss";
-@import "_utils.scss";
-@import "_colors.scss";
-@import "_layout.scss";
+@import "dist/_globals.scss";
+@import "dist/_utils.scss";
+@import "dist/_colors.scss";
+@import "dist/_layout.scss";
+@import "dist/_text.scss";
+@import "dist/_images.scss";
+@import "dist/_headers.scss";
+@import "dist/_list.scss";
+@import "dist/_forms.scss";
+@import "dist/_buttons.scss";
+@import "dist/_cards.scss";
+@import "dist/_list.scss";
+@import "dist/_gallery.scss";
 @import "_linearicons.scss";
-@import "_text.scss";
-@import "_images.scss";
-@import "_headers.scss";
-@import "_list.scss";
-@import "_forms.scss";
-@import "_buttons.scss";
-@import "_cards.scss";
-@import "_lists.scss";
-@import "_linearicons.scss";
-@import "_gallery.scss";
 
 $zero: 0;
 

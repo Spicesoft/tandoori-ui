@@ -51,12 +51,13 @@
 
 /* -- Grid -- */
 
-$xs-breakpoint: 0px;    // xs = [    0 →  768 [
+$xs-breakpoint: 0;    // xs = [    0 →  768 [
 $sm-breakpoint: 768px;  // sm = [  768 →  992 [
 $md-breakpoint: 992px;  // md = [  992 → 1200 [
 $lg-breakpoint: 1200px; // lg = [ 1200 →    ∞ [
 
 .#{$current}flex-row {
+  width: 100%;
   @extend .#{$current}hbox;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -66,19 +67,22 @@ $sizes: (
   ("xs", $xs-breakpoint),
   ("sm", $sm-breakpoint),
   ("md", $md-breakpoint),
-  ("lg", $lg-breakpoint)
+  ("lg", $lg-breakpoint),
 );
 $nb-columns: 13; // 1 more for the loop
 $col-width: 100% / 12;
 
 @each $size, $breakpoint in $sizes {
-  @media (min-width: $breakpoint) {
-    @for $i from 1 to $nb-columns {
-      .#{$current}flex-col--#{$size}-#{$i} {
+  @for $i from 1 to $nb-columns {
+    .#{$current}flex-col--#{$size}-#{$i} {
+      @media (min-width: $breakpoint) {
         width: (100% / 12) * $i;
       }
       .#{$current}flex-offset--#{$size}-#{$i} {
-        margin-left: (100% / 12) * $i;
+        margin-left: auto;
+        @media (min-width: $breakpoint) {
+          margin-left: (100% / 12) * $i;
+        }
       }
     }
   }
