@@ -64,15 +64,15 @@ $lg-breakpoint: 1200px; // lg = [ 1200 →    ∞ [
 }
 
 $sizes: (
-  ("xs", $xs-breakpoint, $sm-breakpoint),
-  ("sm", $sm-breakpoint, $md-breakpoint),
-  ("md", $md-breakpoint, $lg-breakpoint),
-  ("lg", $lg-breakpoint, 4000px),
+  ("xs", $xs-breakpoint),
+  ("sm", $sm-breakpoint),
+  ("md", $md-breakpoint),
+  ("lg", $lg-breakpoint),
 );
 $nb-columns: 13; // 1 more for the loop
 $col-width: 100% / 12;
 
-@each $size, $breakpoint, $max in $sizes {
+@each $size, $breakpoint in $sizes {
   @for $i from 1 to $nb-columns {
     .#{$current}flex-col--#{$size}-#{$i} {
       box-sizing: border-box;
@@ -83,7 +83,7 @@ $col-width: 100% / 12;
     }
     .#{$current}flex-offset--#{$size}-#{$i} {
       margin-left: auto;
-      @media (min-width: $breakpoint) and (max-width: $max) {
+      @media (min-width: $breakpoint) {
         margin-left: (100% / 12) * $i;
       }
     }
