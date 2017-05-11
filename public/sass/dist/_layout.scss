@@ -64,25 +64,28 @@ $lg-breakpoint: 1200px; // lg = [ 1200 →    ∞ [
 }
 
 $sizes: (
-  ("xs", $xs-breakpoint),
-  ("sm", $sm-breakpoint),
-  ("md", $md-breakpoint),
-  ("lg", $lg-breakpoint),
+  ("lg", $lg-breakpoint, 4000px),
+  ("md", $md-breakpoint, $lg-breakpoint),
+  ("sm", $sm-breakpoint, $md-breakpoint),
+  ("xs", $xs-breakpoint, $sm-breakpoint),
 );
 $nb-columns: 13; // 1 more for the loop
 $col-width: 100% / 12;
 
-@each $size, $breakpoint in $sizes {
+@each $size, $min, $max in $sizes {
   @for $i from 1 to $nb-columns {
     .#{$current}flex-col--#{$size}-#{$i} {
-      @media (min-width: $breakpoint) {
+      @media (min-width: $min) and (max-width: $max) {
         width: (100% / 12) * $i;
       }
-      .#{$current}flex-offset--#{$size}-#{$i} {
-        margin-left: auto;
-        @media (min-width: $breakpoint) {
-          margin-left: (100% / 12) * $i;
-        }
+      @media (max-width: $min) {
+        width: 100%;
+      }
+    }
+    .#{$current}flex-offset--#{$size}-#{$i} {
+      margin-left: auto;
+      @media (min-width: $min) and (max-width: $max) {
+        margin-left: (100% / 12) * $i;
       }
     }
   }
