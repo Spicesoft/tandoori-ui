@@ -13,7 +13,7 @@ $(function ($) {
         $target.addClass(activeClass);
         $.each($panes, function (index, pane) {
             var $pane = $(pane);
-            if ($pane.css('display') !== "none" && $pane.attr("id") !== $target.data().pane) {
+            if ($pane.css("display") !== "none" && $pane.attr("id") !== $target.data().pane) {
                 $pane.hide();
             }
             else if ($pane.attr("id") === $target.data().pane) {
@@ -22,5 +22,5 @@ $(function ($) {
         });
     });
 
-    $('.select2').select2();
+    $(".select2").select2();
 });
