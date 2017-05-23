@@ -17,3 +17,8 @@
     margin: auto;
   }
 }
+
+@mixin trans-all-ease($duration) {
+  transition: all $duration ease;
+  -webkit-transition: all $duration ease;
+}
