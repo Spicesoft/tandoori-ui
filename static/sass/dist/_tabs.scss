@@ -1,28 +1,33 @@
 /* Only overrides */
 /* stylelint-disable */
+@mixin flat-tab() {
+  color: $primary;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid transparent;
+}
 .nav-tabs {
   margin: 0 10px 10px;
   border-bottom: none;
   li {
     a {
-      color: $primary;
-      border: none;
-      border-bottom: 2px solid transparent;
+      @include flat-tab();
       @include trans-all-ease(0.2s);
       &:hover {
-        background-color: transparent;
-        color: $primary;
-        border: none;
+        @include flat-tab();
         border-bottom: 2px solid $primary;
       }
     }
   }
   li.active {
     a {
-      color: $primary;
-      background-color: transparent;
-      border: none;
+      @include flat-tab();
       border-bottom: 2px solid $primary;
+      &:hover,
+      &:focus {
+        @include flat-tab();
+        border-bottom: 2px solid $primary;
+      }
     }
   }
 }
