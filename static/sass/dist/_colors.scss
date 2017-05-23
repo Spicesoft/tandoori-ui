@@ -1,0 +1,85 @@
+
+$app-background: #F1F1F1;
+
+// Left Panel
+
+$left-panel-bg: #E5E5E5;
+$left-panel-bg-active: #F5F5F5;
+$left-panel-active-border: #F05732;
+$left-panel-active: #000000;
+$left-panel-color-hover: #000000;
+$left-panel-color: #98A2AD;
+$left-panel-color-active: #343D47;
+$left-panel-border-color: #C2C2C2;
+$sub-menu-bg: #2EBFD6;
+// Tiles
+$tile-purple: #9269D6;
+$tile-green: #71D398;
+$tile-blue: #4AA3DE;
+$magenta: #E65097;
+
+//Fonts
+
+$white: #FFFFFF;
+$black: #323A45;
+$lightgrey: #E6E6E6;
+$grey: #979797;
+$darkgrey: #7F7F7F;
+$lightblack: #696969;
+
+// Misc
+$dark-blue: #0074A6;
+$shadow: #EAEAEA;
+
+// backgrounds
+
+$grey-bg: #CCCCCC;
+
+// Navbar
+
+$navbar-background: #FFFFFF;
+$navbar-color: #000000;
+$navbar-color-hover: #FFFFFF;
+
+// Navbar
+
+$navbar-admin-background: #3F3F3F;
+$navbar-admin-color: #FFFFFF;
+$navbar-admin-color-hover: #000000;
+
+// service category
+$parking: #449D44;
+
+@if function-exists(colors) {
+  $colors-map: colors() !global;
+}
+@else {
+  $colors-map: () !global;
+}
+
+// get colors from compiler
+$primary: map-get($colors-map, "primary");
+$primary2: map-get($colors-map, "primary2");
+$info: map-get($colors-map, "info");
+$success: map-get($colors-map, "success");
+$warning: map-get($colors-map, "warning");
+$danger: map-get($colors-map, "danger");
+
+// Bootstrap color type
+$primary: #14B9D6 !default;
+$primary2: #B27DDB !default;
+$info: #0074A6 !default;
+$success: #1FBBA6 !default;
+$warning: #F27935 !default;
+$danger: #ED4530 !default;
+
+// Main colors
+$colors: (
+  "primary": $primary,
+  "primary2": $primary2,
+  "info": $info,
+  "success": $success,
+  "warning": $warning,
+  "danger": $danger
+  // "default": $white
+);

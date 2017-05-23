@@ -1,0 +1,77 @@
+/* STRUCTURES */
+
+.#{$current}list {
+  display: flex;
+  flex-direction: column;
+  padding: $zero;
+  list-style-type: none;
+  margin: 0;
+}
+
+.#{$current}list-item {
+  height: 56px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.#{$current}list-item--active {
+  background-color: $lightgrey;
+}
+
+.#{$current}list-item__graphic {
+  height: 46px;
+  width: 46px;
+}
+
+.#{$current}list-item__text {
+  margin: 0 10px;
+  flex-grow: 3;
+  max-height: 20px;
+  overflow: hidden;
+}
+
+.#{$current}list-item__text:first-child {
+  margin: 0 10px 0 0;
+  flex-grow: 3;
+}
+
+.#{$current}list-item__text--multiline {
+  display: flex;
+  flex-direction: column;
+  max-height: 40px;
+  overflow: hidden;
+}
+
+/* SKINS */
+
+.#{$current}list--stripped {
+  .#{$current}list-item:nth-child(odd) {
+    background-color: $lightgrey;
+  }
+}
+
+.#{$current}list--hover {
+  .#{$current}list-item:hover {
+    @include transition;
+    background-color: $lightgrey;
+  }
+}
+
+.#{$current}list--clickable {
+  .#{$current}list-item {
+    cursor: pointer;
+  }
+  .#{$current}list-item:hover {
+    @include transition;
+    background-color: $lightgrey;
+  }
+}
+
+.#{$current}list-item--divider {
+  border-bottom: 1px solid $lightgrey;
+}
+
+.#{$current}list-item__info {
+  color: $grey;
+}
