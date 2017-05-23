@@ -1,0 +1,29 @@
+/* Only overrides */
+/* stylelint-disable */
+.nav-tabs {
+  margin: 0 10px 10px;
+  border-bottom: none;
+  li {
+    a {
+      color: $primary;
+      border: none;
+      border-bottom: 2px solid transparent;
+      @include trans-all-ease(0.2s);
+      &:hover {
+        background-color: transparent;
+        color: $primary;
+        border: none;
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+  li.active {
+    a {
+      color: $primary;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid $primary;
+    }
+  }
+}
+/* stylelint-enable */

@@ -1065,6 +1065,29 @@ select.form-control {
 .tuiv2_gallery__img {
   cursor: pointer; }
 
+/* Only overrides */
+/* stylelint-disable */
+.nav-tabs {
+  margin: 0 10px 10px;
+  border-bottom: none; }
+  .nav-tabs li a {
+    color: #14B9D6;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease; }
+    .nav-tabs li a:hover {
+      background-color: transparent;
+      color: #14B9D6;
+      border: none;
+      border-bottom: 2px solid #14B9D6; }
+  .nav-tabs li.active a {
+    color: #14B9D6;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #14B9D6; }
+
+/* stylelint-enable */
 @font-face {
   font-family: 'Linearicons-Free';
   src: url("../font/linearicons/Linearicons-Free.eot?w118d");
