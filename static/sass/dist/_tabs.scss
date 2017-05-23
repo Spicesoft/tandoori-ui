@@ -9,6 +9,9 @@
 .nav-tabs {
   margin: 0 10px 10px;
   border-bottom: none;
+  display: flex;
+  overflow-x: auto;
+  position: relative;
   li {
     a {
       @include flat-tab();

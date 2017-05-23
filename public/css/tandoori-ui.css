@@ -1069,7 +1069,10 @@ select.form-control {
 /* stylelint-disable */
 .nav-tabs {
   margin: 0 10px 10px;
-  border-bottom: none; }
+  border-bottom: none;
+  display: flex;
+  overflow-x: auto;
+  position: relative; }
   .nav-tabs li a {
     color: #14B9D6;
     border: none;
