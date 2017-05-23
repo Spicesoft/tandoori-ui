@@ -18,6 +18,12 @@
   "homepage": "https://github.com/Spicesoft/tandoori-ui#readme",
   "sasslintConfig": "./.sass-lint.yml",
   "devDependencies": {
-    "sass-lint": "^1.9.1"
+    "eslint": "3.12.2",
+    "eslint-plugin-html": "1.7.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsdoc": "2.4.0",
+    "eslint-plugin-react": "6.8.0",
+    "eslint-plugin-requirejs": "3.1.0",
+    "stylelint": "^7.10.1"
   }
 }
