@@ -16,6 +16,7 @@
     a {
       @include flat-tab();
       @include trans-all-ease(0.2s);
+      white-space: nowrap;
       &:hover {
         @include flat-tab();
         border-bottom: 2px solid $primary;
