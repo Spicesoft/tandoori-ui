@@ -1,0 +1,9 @@
+.#{$current}dropdown {
+  cursor: pointer;
+  position: relative;
+}
+
+.#{$current}dropdown-menu {
+  position: absolute;
+  top: 0;
+}

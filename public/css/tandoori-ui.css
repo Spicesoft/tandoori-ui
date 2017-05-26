@@ -1118,9 +1118,10 @@ select.form-control {
   height: 54px;
   margin-bottom: 15px;
   display: flex;
+  justify-content: space-between;
   padding: 10px; }
 
-.tuiv2_navbar__brand {
+.tuiv2_navbar__part {
   display: flex;
   align-items: center;
   max-width: 50%; }
@@ -1140,6 +1141,25 @@ select.form-control {
 .tuiv2_navbar--default-skin {
   background-color: #323A45;
   color: #FFFFFF; }
+
+.tuiv2_navbar__action {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 5px;
+  transition: all 0.3s ease; }
+  .tuiv2_navbar__action:hover, .tuiv2_navbar__action:focus {
+    color: #FFFFFF;
+    text-decoration: none;
+    transform: scale(1.3); }
+
+.tuiv2_dropdown {
+  cursor: pointer;
+  position: relative; }
+
+.tuiv2_dropdown-menu {
+  position: absolute;
+  top: 0; }
 
 @font-face {
   font-family: 'Linearicons-Free';

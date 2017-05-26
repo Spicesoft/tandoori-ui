@@ -129,7 +129,7 @@
     "requirejs/no-conditional-require": "warn", // Disallow use of conditional require calls (off by default)
     "requirejs/no-assign-require": "warn", // Disallow assignment to require or window.require (off by default)
     "requirejs/no-require-tourl": "warn", // Disallow use of require.toUrl and require.nameToUrl (off by default)
-    "requirejs/enforce-define": "warn", // Require that all files be wrapped in a define call (off by default)
+    "requirejs/enforce-define": "off", // Require that all files be wrapped in a define call (off by default)
     "requirejs/one-dependency-per-line": "warn", // Enforce line-break rules for AMD dependencies (off by default)
     "requirejs/amd-function-arity": "error", // Ensure AMD callbacks have correct number of parameters (off by default)
     "requirejs/sort-amd-paths": "off", // Ensure that required paths are in alphabetical order (off by default)

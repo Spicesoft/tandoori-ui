@@ -4,10 +4,11 @@
   height: 54px;
   margin-bottom: $default-margin;
   display: flex;
+  justify-content: space-between;
   padding: 10px;
 }
 
-.#{$current}navbar__brand {
+.#{$current}navbar__part {
   display: flex;
   align-items: center;
   max-width: 50%;
@@ -35,4 +36,18 @@
 .#{$current}navbar--default-skin {
   background-color: $black;
   color: $white;
+}
+
+.#{$current}navbar__action {
+  color: $white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 5px;
+  transition: all 0.3s ease;
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: none;
+    transform: scale(1.3);
+  }
 }

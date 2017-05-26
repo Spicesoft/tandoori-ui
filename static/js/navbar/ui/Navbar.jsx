@@ -1,15 +1,27 @@
 import React from "react";
+import Dropdown from "../../shared/Dropdown.jsx";
 
 export default class Navbar extends React.PureComponent {
     render() {
+        const items = [
+            {
+                label: "Item 1",
+                target: "#",
+                action: () => {console.log("Clicked item 1");}
+            },
+            {
+                label: "Item 2",
+                target: "prout"
+            }
+        ];
         return (
             <nav className="tuiv2_navbar tuiv2_navbar--default-skin">
-                <div className="tuiv2_navbar__brand">
+                <div className="tuiv2_navbar__part">
                     <img
                         src="public/img/logo.png"
                         className="tuiv2_navbar__logo"
                     />
-                    <p className="tuiv2_navbar__slogan">Hello Moto</p>
+                    <p className="tuiv2_navbar__slogan">Cowork.io's Tandoori UI</p>
                     <div className="tuiv2_navbar__search">
                         <div className="form-group">
                             <input
@@ -20,7 +32,18 @@ export default class Navbar extends React.PureComponent {
                         </div>
                     </div>
                 </div>
-                <div className="tuiv2_navbar__icons"></div>
+                <div className="tuiv2_navbar__part">
+                    <Dropdown
+                        items={items}
+                        spanClass="lnr-user"
+                        containerClass="tuiv2_navbar__action"
+                    />
+                    <Dropdown
+                        items={items}
+                        text="Toto"
+                        containerClass="tuiv2_navbar__action"
+                    />
+                </div>
             </nav>
         );
     }
