@@ -752,6 +752,9 @@
 
 /* STRUCTURE */
 /* SKINS */
+textarea {
+  resize: vertical; }
+
 .form-control {
   border: none;
   border-bottom: 1px solid #E6E6E6;
@@ -1169,11 +1172,18 @@ select.form-control {
   left: 0;
   top: 100%;
   min-width: 200px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform-origin: 0 0;
+  animation: dropFromTop 0.2s; }
 
 .tuiv2_dropdown-menu__item {
   white-space: nowrap; }
 
+@keyframes dropFromTop {
+  from {
+    transform: scaleY(0); }
+  to {
+    transform: scaleY(1); } }
 @font-face {
   font-family: 'Linearicons-Free';
   src: url("../font/linearicons/Linearicons-Free.eot?w118d");

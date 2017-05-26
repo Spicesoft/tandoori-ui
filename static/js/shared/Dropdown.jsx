@@ -21,35 +21,37 @@ export default class Dropdown extends React.PureComponent {
                 onBlur={this.handleBlur.bind(this)}
             >
                 <span className={spanClassNames}>{text}</span>
-                <ul
-                    className="
-                        tuiv2_dropdown-menu
-                        tuiv2_list
-                        tuiv2_list--clickable"
-                    style={this.getPosition()}
-                >
-                    {this.renderMenu()}
-                </ul>
+                {this.renderMenu()}
             </div>
         );
     }
 
     renderMenu() {
         if (this.state.open) {
-            return this.props.items.map((item, index) => (
-                <li
-                    className="tuiv2_dropdown-menu__item tuiv2_list-item"
-                    key={index}
+            return (
+                <ul
+                    className="
+                    tuiv2_dropdown-menu
+                    tuiv2_list
+                    tuiv2_list--clickable"
+                    style={this.getPosition()}
                 >
-                    <a
-                        href={item.target}
-                        className="tuiv2_dropdown-menu__link"
-                        onClick={item.action ? item.action : null}
+                {this.props.items.map((item, index) => (
+                    <li
+                        className="tuiv2_dropdown-menu__item tuiv2_list-item"
+                        key={index}
                     >
-                        {item.label}
-                    </a>
-                </li>
-            ));
+                        <a
+                            href={item.target}
+                            className="tuiv2_dropdown-menu__link"
+                            onClick={item.action ? item.action : null}
+                            >
+                                {item.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            );
         }
         return "";
     }

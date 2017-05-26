@@ -15,6 +15,10 @@
 // Tandoori-ui uses Bootstrap from utilities
 // Just overriding Bs styles here
 
+textarea {
+  resize: vertical;
+}
+
 .form-control {
   @include form-control-border;
   box-shadow: none;

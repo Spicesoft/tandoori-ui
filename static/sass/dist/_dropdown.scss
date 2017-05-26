@@ -12,8 +12,19 @@
   top: 100%;
   min-width: 200px;
   box-shadow: $material-deep-shadow;
+  transform-origin: 0 0;
+  animation: dropFromTop 0.2s;
 }
 
 .#{$current}dropdown-menu__item {
   white-space: nowrap;
+}
+
+@keyframes dropFromTop {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }

@@ -22324,38 +22324,38 @@ var Dropdown = function (_React$PureComponent) {
                     { className: spanClassNames },
                     text
                 ),
-                _react2.default.createElement(
-                    "ul",
-                    {
-                        className: " tuiv2_dropdown-menu tuiv2_list tuiv2_list--clickable",
-                        style: this.getPosition()
-                    },
-                    this.renderMenu()
-                )
+                this.renderMenu()
             );
         }
     }, {
         key: "renderMenu",
         value: function renderMenu() {
             if (this.state.open) {
-                return this.props.items.map(function (item, index) {
-                    return _react2.default.createElement(
-                        "li",
-                        {
-                            className: "tuiv2_dropdown-menu__item tuiv2_list-item",
-                            key: index
-                        },
-                        _react2.default.createElement(
-                            "a",
+                return _react2.default.createElement(
+                    "ul",
+                    {
+                        className: " tuiv2_dropdown-menu tuiv2_list tuiv2_list--clickable",
+                        style: this.getPosition()
+                    },
+                    this.props.items.map(function (item, index) {
+                        return _react2.default.createElement(
+                            "li",
                             {
-                                href: item.target,
-                                className: "tuiv2_dropdown-menu__link",
-                                onClick: item.action ? item.action : null
+                                className: "tuiv2_dropdown-menu__item tuiv2_list-item",
+                                key: index
                             },
-                            item.label
-                        )
-                    );
-                });
+                            _react2.default.createElement(
+                                "a",
+                                {
+                                    href: item.target,
+                                    className: "tuiv2_dropdown-menu__link",
+                                    onClick: item.action ? item.action : null
+                                },
+                                item.label
+                            )
+                        );
+                    })
+                );
             }
             return "";
         }
