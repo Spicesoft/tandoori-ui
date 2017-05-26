@@ -3,10 +3,12 @@ const path = require("path");
 
 
 module.exports = {
-    entry: "./static/js/App.jsx",
+    entry: {
+        navbar: "./static/js/navbar/App.jsx"
+    },
     output: {
         path: path.resolve(__dirname, "public/js"),
-        filename: "dist.js"
+        filename: "[name].dist.js"
     },
     module: {
         rules: [

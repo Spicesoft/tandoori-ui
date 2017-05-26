@@ -1,0 +1,38 @@
+/* STRUCT */
+
+.#{$current}navbar {
+  height: 54px;
+  margin-bottom: $default-margin;
+  display: flex;
+  padding: 10px;
+}
+
+.#{$current}navbar__brand {
+  display: flex;
+  align-items: center;
+  max-width: 50%;
+}
+
+.#{$current}navbar__logo {
+  max-height: 100%;
+}
+
+.#{$current}navbar__slogan {
+  margin: 0 15px;
+}
+
+.#{$current}navbar__search {
+  .form-group {
+    margin: 0;
+    .form-control {
+      background-color: $black;
+    }
+  }
+}
+
+/* SKINS */
+
+.#{$current}navbar--default-skin {
+  background-color: $black;
+  color: $white;
+}

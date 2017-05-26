@@ -1065,6 +1065,18 @@ select.form-control {
 .tuiv2_gallery__img {
   cursor: pointer; }
 
+.tuiv2_gallery__img--darker {
+  filter: brightness(0.5); }
+
+.tuiv2_gallery__img-count {
+  color: #FFFFFF;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  margin: auto;
+  text-align: center; }
+
 /* Only overrides */
 /* stylelint-disable */
 .nav-tabs {
@@ -1079,7 +1091,8 @@ select.form-control {
     background-color: transparent;
     border-bottom: 2px solid transparent;
     transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease; }
+    -webkit-transition: all 0.2s ease;
+    white-space: nowrap; }
     .nav-tabs li a:hover {
       color: #14B9D6;
       border: none;
@@ -1100,6 +1113,34 @@ select.form-control {
       border-bottom: 2px solid #14B9D6; }
 
 /* stylelint-enable */
+/* STRUCT */
+.tuiv2_navbar {
+  height: 54px;
+  margin-bottom: 15px;
+  display: flex;
+  padding: 10px; }
+
+.tuiv2_navbar__brand {
+  display: flex;
+  align-items: center;
+  max-width: 50%; }
+
+.tuiv2_navbar__logo {
+  max-height: 100%; }
+
+.tuiv2_navbar__slogan {
+  margin: 0 15px; }
+
+.tuiv2_navbar__search .form-group {
+  margin: 0; }
+  .tuiv2_navbar__search .form-group .form-control {
+    background-color: #323A45; }
+
+/* SKINS */
+.tuiv2_navbar--default-skin {
+  background-color: #323A45;
+  color: #FFFFFF; }
+
 @font-face {
   font-family: 'Linearicons-Free';
   src: url("../font/linearicons/Linearicons-Free.eot?w118d");
