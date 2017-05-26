@@ -12,6 +12,7 @@ export default class Dropdown extends React.PureComponent {
     render() {
         const {spanClass, containerClass, text} = this.props;
         const classNames = "tuiv2_dropdown " + containerClass || "";
+        const spanClassNames = "tuiv2_dropdown__label " + spanClass || "";
         return (
             <div
                 className={classNames}
@@ -19,8 +20,14 @@ export default class Dropdown extends React.PureComponent {
                 onClick={this.toggleOpen.bind(this)}
                 onBlur={this.handleBlur.bind(this)}
             >
-                <span className={spanClass}>{text}</span>
-                <ul className="tuiv2_dropdown-menu">
+                <span className={spanClassNames}>{text}</span>
+                <ul
+                    className="
+                        tuiv2_dropdown-menu
+                        tuiv2_list
+                        tuiv2_list--clickable"
+                    style={this.getPosition()}
+                >
                     {this.renderMenu()}
                 </ul>
             </div>
@@ -31,7 +38,7 @@ export default class Dropdown extends React.PureComponent {
         if (this.state.open) {
             return this.props.items.map((item, index) => (
                 <li
-                    className="tuiv2_dropdown-menu__item"
+                    className="tuiv2_dropdown-menu__item tuiv2_list-item"
                     key={index}
                 >
                     <a
@@ -58,12 +65,26 @@ export default class Dropdown extends React.PureComponent {
             open: this.state.open ? false : true
         });
     }
+
+    getPosition() {
+        if (this.props.align === "right") {
+            return {
+                left: "auto",
+                right: 0
+            };
+        }
+        return {
+            right: "auto",
+            left: 0
+        };
+    }
 }
 
 Dropdown.propTypes = {
     spanClass: T.string,
     containerClass: T.string,
     text: T.string,
+    align: T.string,
     items: T.arrayOf(
         T.shape({
             label: T.string.isRequired,

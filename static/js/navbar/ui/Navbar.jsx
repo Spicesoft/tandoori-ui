@@ -37,11 +37,13 @@ export default class Navbar extends React.PureComponent {
                         items={items}
                         spanClass="lnr-user"
                         containerClass="tuiv2_navbar__action"
+                        align="right"
                     />
                     <Dropdown
                         items={items}
                         text="Toto"
                         containerClass="tuiv2_navbar__action"
+                        align="right"
                     />
                 </div>
             </nav>

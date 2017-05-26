@@ -1,9 +1,19 @@
+/* STRUCT */
+
 .#{$current}dropdown {
   cursor: pointer;
   position: relative;
 }
 
+
 .#{$current}dropdown-menu {
   position: absolute;
-  top: 0;
+  left: 0;
+  top: 100%;
+  min-width: 200px;
+  box-shadow: $material-deep-shadow;
+}
+
+.#{$current}dropdown-menu__item {
+  white-space: nowrap;
 }

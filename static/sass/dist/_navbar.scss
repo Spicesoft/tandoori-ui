@@ -35,19 +35,19 @@
 
 .#{$current}navbar--default-skin {
   background-color: $black;
-  color: $white;
+  color: $lightgrey;
 }
 
 .#{$current}navbar__action {
-  color: $white;
-  text-decoration: none;
+  &:focus {
+    outline: none;
+  }
   font-size: 18px;
+  text-decoration: none;
   padding: 0 5px;
   transition: all 0.3s ease;
-  &:hover,
-  &:focus {
+  &:hover {
     color: $white;
     text-decoration: none;
-    transform: scale(1.3);
   }
 }

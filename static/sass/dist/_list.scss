@@ -13,6 +13,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  font-size: 14px;
 }
 
 .#{$current}list-item--active {
@@ -59,6 +60,7 @@
 }
 
 .#{$current}list--clickable {
+  background-color: $white;
   .#{$current}list-item {
     cursor: pointer;
   }
