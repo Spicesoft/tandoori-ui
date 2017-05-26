@@ -11,3 +11,17 @@
 .#{$current}gallery__img {
   cursor: pointer;
 }
+
+.#{$current}gallery__img--darker {
+  filter: brightness(0.5);
+}
+
+.#{$current}gallery__img-count {
+  color: $white;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
