@@ -22341,14 +22341,14 @@ var Dropdown = function (_React$PureComponent) {
                         return _react2.default.createElement(
                             "li",
                             {
-                                className: "tuiv2_dropdown-menu__item tuiv2_list-item",
+                                className: "tuiv2_list-item",
                                 key: index
                             },
                             _react2.default.createElement(
                                 "a",
                                 {
                                     href: item.target,
-                                    className: "tuiv2_dropdown-menu__link",
+                                    className: "tuiv2_list-item__link",
                                     onClick: item.action ? item.action : null
                                 },
                                 item.label

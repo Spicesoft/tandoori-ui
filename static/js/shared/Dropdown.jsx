@@ -38,12 +38,12 @@ export default class Dropdown extends React.PureComponent {
                 >
                 {this.props.items.map((item, index) => (
                     <li
-                        className="tuiv2_dropdown-menu__item tuiv2_list-item"
+                        className="tuiv2_list-item"
                         key={index}
                     >
                         <a
                             href={item.target}
-                            className="tuiv2_dropdown-menu__link"
+                            className="tuiv2_list-item__link"
                             onClick={item.action ? item.action : null}
                             >
                                 {item.label}
