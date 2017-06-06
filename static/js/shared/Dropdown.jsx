@@ -42,9 +42,10 @@ export default class Dropdown extends React.PureComponent {
                         key={index}
                     >
                         <a
-                            href={item.target}
-                            className="tuiv2_list-item__link"
-                            onClick={item.action ? item.action : null}
+                            className="tuiv2_list-item__link tuiv2_dropdown-menu__item"
+                            onClick={item.action ? item.action : () => {
+                                window.location = item.target;
+                            }}
                             >
                                 {item.label}
                             </a>

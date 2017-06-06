@@ -732,8 +732,8 @@
   display: inline-block;
   width: 100%;
   height: 100%;
-  margin: -10px;
-  padding: 10px; }
+  margin: -10px 0;
+  padding: 10px 0; }
 
 /* SKINS */
 .tuiv2_list--stripped .tuiv2_list-item:nth-child(odd) {
@@ -1038,8 +1038,8 @@ select.form-control {
   display: inline-block;
   width: 100%;
   height: 100%;
-  margin: -10px;
-  padding: 10px; }
+  margin: -10px 0;
+  padding: 10px 0; }
 
 /* SKINS */
 .tuiv2_list--stripped .tuiv2_list-item:nth-child(odd) {
