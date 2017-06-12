@@ -1172,11 +1172,6 @@ select.form-control {
     .tuiv2_navbar__search .form-group .form-control {
       background-color: #323A45; }
 
-/* SKINS */
-.tuiv2_navbar--default-skin {
-  background-color: #323A45;
-  color: #E6E6E6; }
-
 .tuiv2_navbar__action {
   cursor: pointer;
   font-size: 18px;
@@ -1188,6 +1183,11 @@ select.form-control {
   .tuiv2_navbar__action:hover {
     color: #FFFFFF;
     text-decoration: none; }
+
+/* SKINS */
+.tuiv2_navbar--default-skin {
+  background-color: #323A45;
+  color: #E6E6E6; }
 
 /* STRUCT */
 .tuiv2_dropdown {

@@ -48,13 +48,6 @@ $navbar-height: 54px;
   }
 }
 
-/* SKINS */
-
-.#{$current}navbar--default-skin {
-  background-color: $black;
-  color: $lightgrey;
-}
-
 .#{$current}navbar__action {
   cursor: pointer;
   &:focus {
@@ -68,4 +61,11 @@ $navbar-height: 54px;
     color: $white;
     text-decoration: none;
   }
+}
+
+/* SKINS */
+
+.#{$current}navbar--default-skin {
+  background-color: $black;
+  color: $lightgrey;
 }
