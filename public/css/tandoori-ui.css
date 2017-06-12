@@ -3,7 +3,7 @@
   0% {
     transform: scale(1); }
   50% {
-    transform: scale(1.2); }
+    transform: scale(1.1); }
   100% {
     transform: scale(1); } }
 .tuiv2_absolute-center {
@@ -899,7 +899,8 @@ select.form-control {
   background: none;
   border: none;
   padding: 5px;
-  border-radius: 2px; }
+  border-radius: 2px;
+  transition: ease 0.1s; }
 
 .tuiv2_btn:focus {
   outline: none; }
@@ -916,29 +917,16 @@ select.form-control {
     border-bottom-left-radius: 2px; }
 
 /* SKINS */
+.tuiv2_btn:active {
+  animation: bump 0.1s; }
+
 .tuiv2_btn:hover {
   text-decoration: none; }
 
-.tuiv2_btn--default:active {
-  background-color: #E6E6E6; }
-
-.tuiv2_btn--default:hover {
-  color: #14B9D6; }
-
-.tuiv2_btn--primary:active {
-  background-color: #31d0ec; }
-
-.tuiv2_btn--primary:hover {
-  color: #FFFFFF; }
-
-.tuiv2_btn--warning:active {
-  background-color: #f59965; }
-
-.tuiv2_btn--warning:hover {
-  color: #FFFFFF; }
-
 .tuiv2_btn--raised {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+  .tuiv2_btn--raised.tuiv2_btn--active, .tuiv2_btn--raised:active, .tuiv2_btn--raised:focus, .tuiv2_btn--raised:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
 .tuiv2_btn--lg {
   font-size: 18px;
@@ -950,14 +938,20 @@ select.form-control {
 
 .tuiv2_btn--default {
   color: #14B9D6; }
+  .tuiv2_btn--default.tuiv2_btn--active, .tuiv2_btn--default:active, .tuiv2_btn--default:focus, .tuiv2_btn--default:hover {
+    background-color: #ecfbfd; }
 
 .tuiv2_btn--primary {
   background-color: #14B9D6;
   color: #FFFFFF; }
+  .tuiv2_btn--primary.tuiv2_btn--active, .tuiv2_btn--primary:active, .tuiv2_btn--primary:focus, .tuiv2_btn--primary:hover {
+    background-color: #1091a7; }
 
 .tuiv2_btn--warning {
   background-color: #F27935;
   color: #FFFFFF; }
+  .tuiv2_btn--warning.tuiv2_btn--active, .tuiv2_btn--warning:active, .tuiv2_btn--warning:focus, .tuiv2_btn--warning:hover {
+    background-color: #e55c0f; }
 
 /* STRUCTURES */
 .tuiv2_card {
@@ -1109,13 +1103,13 @@ select.form-control {
 
 /* Only overrides */
 /* stylelint-disable */
-.nav-tabs {
+.tuiv2_nav-tabs {
   margin: 0 10px 10px;
   border-bottom: none;
   display: flex;
   overflow-x: auto;
   position: relative; }
-  .nav-tabs li a {
+  .tuiv2_nav-tabs li a {
     color: #14B9D6;
     border: none;
     background-color: transparent;
@@ -1123,19 +1117,19 @@ select.form-control {
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
     white-space: nowrap; }
-    .nav-tabs li a:hover {
+    .tuiv2_nav-tabs li a:hover {
       color: #14B9D6;
       border: none;
       background-color: transparent;
       border-bottom: 2px solid transparent;
       border-bottom: 2px solid #14B9D6; }
-  .nav-tabs li.active a {
+  .tuiv2_nav-tabs li.active a {
     color: #14B9D6;
     border: none;
     background-color: transparent;
     border-bottom: 2px solid transparent;
     border-bottom: 2px solid #14B9D6; }
-    .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+    .tuiv2_nav-tabs li.active a:hover, .tuiv2_nav-tabs li.active a:focus {
       color: #14B9D6;
       border: none;
       background-color: transparent;
