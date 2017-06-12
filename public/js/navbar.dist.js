@@ -10099,10 +10099,14 @@ var Navbar = function (_React$PureComponent) {
                 _react2.default.createElement(
                     "div",
                     { className: "tuiv2_navbar__part" },
-                    _react2.default.createElement("img", {
-                        src: "public/img/logo.png",
-                        className: "tuiv2_navbar__logo"
-                    }),
+                    _react2.default.createElement(
+                        "a",
+                        { href: "/" },
+                        _react2.default.createElement("img", {
+                            src: "public/img/logo.png",
+                            className: "tuiv2_navbar__logo"
+                        })
+                    ),
                     _react2.default.createElement(
                         "p",
                         { className: "tuiv2_navbar__slogan" },

@@ -1,7 +1,9 @@
 /* STRUCT */
 
+$navbar-height: 54px;
+
 .#{$current}navbar {
-  height: 54px;
+  height: $navbar-height;
   margin-bottom: $default-margin;
   display: flex;
   justify-content: space-between;
@@ -15,7 +17,7 @@
 }
 
 .#{$current}navbar__logo {
-  max-height: 100%;
+  max-height: $navbar-height - 20px;
 }
 
 .#{$current}navbar__slogan {

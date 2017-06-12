@@ -17,10 +17,12 @@ export default class Navbar extends React.PureComponent {
         return (
             <nav className="tuiv2_navbar tuiv2_navbar--default-skin">
                 <div className="tuiv2_navbar__part">
-                    <img
-                        src="public/img/logo.png"
-                        className="tuiv2_navbar__logo"
-                    />
+                    <a href="/">
+                        <img
+                            src="public/img/logo.png"
+                            className="tuiv2_navbar__logo"
+                        />
+                    </a>
                     <p className="tuiv2_navbar__slogan">Cowork.io's Tandoori UI</p>
                     <div className="tuiv2_navbar__search">
                         <div className="form-group">
