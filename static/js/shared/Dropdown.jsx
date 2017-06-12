@@ -3,12 +3,8 @@ import T from "prop-types";
 
 export default class Dropdown extends React.PureComponent {
 
-    constructor(props) {
-        super(props);
-        this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
-    }
-
     componentWillMount() {
+        this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
         this.setState({
             open: false,
             animation: null

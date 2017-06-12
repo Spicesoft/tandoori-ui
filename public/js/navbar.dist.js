@@ -22337,18 +22337,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Dropdown = function (_React$PureComponent) {
     _inherits(Dropdown, _React$PureComponent);
 
-    function Dropdown(props) {
+    function Dropdown() {
         _classCallCheck(this, Dropdown);
 
-        var _this = _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this, props));
-
-        _this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
-        return _this;
+        return _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).apply(this, arguments));
     }
 
     _createClass(Dropdown, [{
         key: "componentWillMount",
         value: function componentWillMount() {
+            this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
             this.setState({
                 open: false,
                 animation: null
