@@ -3,6 +3,11 @@ import T from "prop-types";
 
 export default class Dropdown extends React.PureComponent {
 
+    constructor(props) {
+        super(props);
+        this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
+    }
+
     componentWillMount() {
         this.setState({
             open: false
@@ -36,12 +41,13 @@ export default class Dropdown extends React.PureComponent {
                     tuiv2_list--clickable"
                     style={this.getPosition()}
                 >
-                {this.props.items.map((item, index) => (
-                    <li
-                        className="tuiv2_list-item"
-                        key={index}
-                    >
-                        <a
+                    {this.renderCloseItem()}
+                    {this.props.items.map((item, index) => (
+                        <li
+                            className="tuiv2_list-item"
+                            key={index}
+                        >
+                            <a
                             className="tuiv2_list-item__link tuiv2_dropdown-menu__item"
                             onClick={item.action ? item.action : () => {
                                 window.location = item.target;
@@ -55,6 +61,16 @@ export default class Dropdown extends React.PureComponent {
             );
         }
         return "";
+    }
+
+    renderCloseItem() {
+        if (this.mobileDevice) {
+            return (
+                <div className="tuiv2_list-item">
+                    <span className="lnr-cross tuiv2_text--black" />
+                </div>
+            );
+        }
     }
 
     handleBlur() {

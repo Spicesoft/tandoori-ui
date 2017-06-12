@@ -1193,8 +1193,7 @@ select.form-control {
     outline: none; }
   .tuiv2_navbar__action:hover {
     color: #FFFFFF;
-    text-decoration: none;
-    animation: bump 0.3s; }
+    text-decoration: none; }
 
 /* STRUCT */
 .tuiv2_dropdown {
@@ -1209,6 +1208,12 @@ select.form-control {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transform-origin: 0 0;
   animation: dropFromTop 0.2s; }
+  @media (max-width: 768px) {
+    .tuiv2_dropdown-menu {
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      height: 100vh; } }
 
 .tuiv2_dropdown-menu__item {
   white-space: nowrap; }

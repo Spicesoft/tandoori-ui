@@ -5,7 +5,7 @@ export default class Navbar extends React.PureComponent {
 
     constructor(props) {
         super(props);
-        this.mobileDevice = window.matchMedia("(max-width: 470px)").matches;
+        this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
     }
 
     render() {

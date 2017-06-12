@@ -10079,7 +10079,7 @@ var Navbar = function (_React$PureComponent) {
 
         var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
 
-        _this.mobileDevice = window.matchMedia("(max-width: 470px)").matches;
+        _this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
         return _this;
     }
 
@@ -22337,10 +22337,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Dropdown = function (_React$PureComponent) {
     _inherits(Dropdown, _React$PureComponent);
 
-    function Dropdown() {
+    function Dropdown(props) {
         _classCallCheck(this, Dropdown);
 
-        return _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this, props));
+
+        _this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
+        return _this;
     }
 
     _createClass(Dropdown, [{
@@ -22386,6 +22389,7 @@ var Dropdown = function (_React$PureComponent) {
                         className: " tuiv2_dropdown-menu tuiv2_list tuiv2_list--clickable",
                         style: this.getPosition()
                     },
+                    this.renderCloseItem(),
                     this.props.items.map(function (item, index) {
                         return _react2.default.createElement(
                             "li",
@@ -22408,6 +22412,17 @@ var Dropdown = function (_React$PureComponent) {
                 );
             }
             return "";
+        }
+    }, {
+        key: "renderCloseItem",
+        value: function renderCloseItem() {
+            if (this.mobileDevice) {
+                return _react2.default.createElement(
+                    "div",
+                    { className: "tuiv2_list-item" },
+                    _react2.default.createElement("span", { className: "lnr-cross tuiv2_text--black" })
+                );
+            }
         }
     }, {
         key: "handleBlur",
