@@ -22350,7 +22350,8 @@ var Dropdown = function (_React$PureComponent) {
         key: "componentWillMount",
         value: function componentWillMount() {
             this.setState({
-                open: false
+                open: false,
+                animation: null
             });
         }
     }, {
@@ -22382,36 +22383,37 @@ var Dropdown = function (_React$PureComponent) {
     }, {
         key: "renderMenu",
         value: function renderMenu() {
-            if (this.state.open) {
-                return _react2.default.createElement(
-                    "ul",
-                    {
-                        className: " tuiv2_dropdown-menu tuiv2_list tuiv2_list--clickable",
-                        style: this.getPosition()
-                    },
-                    this.renderCloseItem(),
-                    this.props.items.map(function (item, index) {
-                        return _react2.default.createElement(
-                            "li",
-                            {
-                                className: "tuiv2_list-item",
-                                key: index
-                            },
-                            _react2.default.createElement(
-                                "a",
-                                {
-                                    className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
-                                    onClick: item.action ? item.action : function () {
-                                        window.location = item.target;
-                                    }
-                                },
-                                item.label
-                            )
-                        );
-                    })
-                );
+            var classNames = ["tuiv2_dropdown-menu", "tuiv2_list", "tuiv2_list--clickable"];
+            if (this.state.open !== null) {
+                classNames.push("tuiv2_dropdown-menu--" + this.state.animation);
             }
-            return "";
+            return _react2.default.createElement(
+                "ul",
+                {
+                    className: classNames.join(" "),
+                    style: this.getPosition()
+                },
+                this.renderCloseItem(),
+                this.props.items.map(function (item, index) {
+                    return _react2.default.createElement(
+                        "li",
+                        {
+                            className: "tuiv2_list-item",
+                            key: index
+                        },
+                        _react2.default.createElement(
+                            "a",
+                            {
+                                className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
+                                onClick: item.action ? item.action : function () {
+                                    window.location = item.target;
+                                }
+                            },
+                            item.label
+                        )
+                    );
+                })
+            );
         }
     }, {
         key: "renderCloseItem",
@@ -22435,7 +22437,8 @@ var Dropdown = function (_React$PureComponent) {
         key: "toggleOpen",
         value: function toggleOpen() {
             this.setState({
-                open: this.state.open ? false : true
+                open: this.state.open ? false : true,
+                animation: this.state.open ? "out" : "in"
             });
         }
     }, {

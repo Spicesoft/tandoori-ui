@@ -7,13 +7,13 @@
 
 
 .#{$current}dropdown-menu {
+  display: none;
   position: absolute;
   left: 0;
   top: 100%;
   min-width: 200px;
   box-shadow: $material-deep-shadow;
   transform-origin: 0 0;
-  animation: dropFromTop 0.2s;
   @media (max-width: $sm-breakpoint) {
     position: fixed;
     top: 0;
@@ -22,15 +22,35 @@
   }
 }
 
+.#{$current}dropdown-menu--in {
+  display: block;
+  animation: dropIn 0.2s forwards;
+}
+
+.#{$current}dropdown-menu--out {
+  display: block;
+  animation: dropOut 0.2s forwards;
+}
+
 .#{$current}dropdown-menu__item {
   white-space: nowrap;
 }
 
-@keyframes dropFromTop {
+@keyframes dropIn {
   from {
     transform: scaleY(0);
   }
   to {
     transform: scaleY(1);
+  }
+}
+
+@keyframes dropOut {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+    display: none;
   }
 }

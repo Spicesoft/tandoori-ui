@@ -1201,13 +1201,13 @@ select.form-control {
   position: relative; }
 
 .tuiv2_dropdown-menu {
+  display: none;
   position: absolute;
   left: 0;
   top: 100%;
   min-width: 200px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transform-origin: 0 0;
-  animation: dropFromTop 0.2s; }
+  transform-origin: 0 0; }
   @media (max-width: 768px) {
     .tuiv2_dropdown-menu {
       position: fixed;
@@ -1215,14 +1215,28 @@ select.form-control {
       width: 100vw;
       height: 100vh; } }
 
+.tuiv2_dropdown-menu--in {
+  display: block;
+  animation: dropIn 0.2s forwards; }
+
+.tuiv2_dropdown-menu--out {
+  display: block;
+  animation: dropOut 0.2s forwards; }
+
 .tuiv2_dropdown-menu__item {
   white-space: nowrap; }
 
-@keyframes dropFromTop {
+@keyframes dropIn {
   from {
     transform: scaleY(0); }
   to {
     transform: scaleY(1); } }
+@keyframes dropOut {
+  from {
+    transform: scaleY(1); }
+  to {
+    transform: scaleY(0);
+    display: none; } }
 /**
  * Some reusable animated loaders:
  *  <div class="tuiv2_loader">

@@ -10,7 +10,8 @@ export default class Dropdown extends React.PureComponent {
 
     componentWillMount() {
         this.setState({
-            open: false
+            open: false,
+            animation: null
         });
     }
 
@@ -32,35 +33,37 @@ export default class Dropdown extends React.PureComponent {
     }
 
     renderMenu() {
-        if (this.state.open) {
-            return (
-                <ul
-                    className="
-                    tuiv2_dropdown-menu
-                    tuiv2_list
-                    tuiv2_list--clickable"
-                    style={this.getPosition()}
-                >
-                    {this.renderCloseItem()}
-                    {this.props.items.map((item, index) => (
-                        <li
-                            className="tuiv2_list-item"
-                            key={index}
-                        >
-                            <a
-                            className="tuiv2_list-item__link tuiv2_dropdown-menu__item"
-                            onClick={item.action ? item.action : () => {
-                                window.location = item.target;
-                            }}
-                            >
-                                {item.label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            );
+        const classNames = [
+            "tuiv2_dropdown-menu",
+            "tuiv2_list",
+            "tuiv2_list--clickable"
+        ];
+        if (this.state.open !== null) {
+            classNames.push("tuiv2_dropdown-menu--" + this.state.animation);
         }
-        return "";
+        return (
+            <ul
+                className={classNames.join(" ")}
+                style={this.getPosition()}
+            >
+                {this.renderCloseItem()}
+                {this.props.items.map((item, index) => (
+                    <li
+                        className="tuiv2_list-item"
+                        key={index}
+                    >
+                        <a
+                        className="tuiv2_list-item__link tuiv2_dropdown-menu__item"
+                        onClick={item.action ? item.action : () => {
+                            window.location = item.target;
+                        }}
+                        >
+                            {item.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        );
     }
 
     renderCloseItem() {
@@ -81,7 +84,8 @@ export default class Dropdown extends React.PureComponent {
 
     toggleOpen() {
         this.setState({
-            open: this.state.open ? false : true
+            open: this.state.open ? false : true,
+            animation: this.state.open ? "out" : "in"
         });
     }
 
