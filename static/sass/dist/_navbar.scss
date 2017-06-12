@@ -14,10 +14,18 @@ $navbar-height: 54px;
   display: flex;
   align-items: center;
   max-width: 50%;
+  &:hover {
+    .#{$current}navbar__logo {
+      transform: bump 0.5s;
+    }
+  }
 }
 
 .#{$current}navbar__logo {
   max-height: $navbar-height - 20px;
+  &:hover {
+    animation: bump 0.3s;
+  }
 }
 
 .#{$current}navbar__slogan {

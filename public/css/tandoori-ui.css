@@ -1,4 +1,11 @@
 /* Globals */
+@keyframes bump {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
 .tuiv2_absolute-center {
   position: absolute;
   top: 50%;
@@ -1148,9 +1155,13 @@ select.form-control {
   display: flex;
   align-items: center;
   max-width: 50%; }
+  .tuiv2_navbar__part:hover .tuiv2_navbar__logo {
+    transform: bump 0.5s; }
 
 .tuiv2_navbar__logo {
   max-height: 34px; }
+  .tuiv2_navbar__logo:hover {
+    animation: bump 0.3s; }
 
 .tuiv2_navbar__slogan {
   margin: 0 15px; }
