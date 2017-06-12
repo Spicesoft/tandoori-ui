@@ -10074,10 +10074,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Navbar = function (_React$PureComponent) {
     _inherits(Navbar, _React$PureComponent);
 
-    function Navbar() {
+    function Navbar(props) {
         _classCallCheck(this, Navbar);
 
-        return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
+
+        _this.mobileDevice = window.matchMedia("(max-width: 470px)").matches;
+        return _this;
     }
 
     _createClass(Navbar, [{
@@ -10096,52 +10099,94 @@ var Navbar = function (_React$PureComponent) {
             return _react2.default.createElement(
                 "nav",
                 { className: "tuiv2_navbar tuiv2_navbar--default-skin" },
-                _react2.default.createElement(
-                    "div",
-                    { className: "tuiv2_navbar__part" },
-                    _react2.default.createElement(
-                        "a",
-                        { href: "/" },
-                        _react2.default.createElement("img", {
-                            src: "public/img/logo.png",
-                            className: "tuiv2_navbar__logo"
-                        })
-                    ),
-                    _react2.default.createElement(
-                        "p",
-                        { className: "tuiv2_navbar__slogan" },
-                        "Cowork.io's Tandoori UI"
-                    ),
-                    _react2.default.createElement(
+                this.renderMenuIcon(),
+                this.renderBrand(),
+                this.renderActions(items)
+            );
+        }
+    }, {
+        key: "renderBrand",
+        value: function renderBrand() {
+            var _this2 = this;
+
+            var brandName = function brandName() {
+                if (!_this2.mobileDevice) {
+                    return _react2.default.createElement(
                         "div",
-                        { className: "tuiv2_navbar__search" },
+                        { className: "tuiv2_navbar__brand-name" },
+                        _react2.default.createElement(
+                            "p",
+                            { className: "tuiv2_navbar__slogan" },
+                            "Cowork.io's Tandoori UI"
+                        ),
                         _react2.default.createElement(
                             "div",
-                            { className: "form-group" },
-                            _react2.default.createElement("input", {
-                                type: "text",
-                                placeholder: "Search...",
-                                className: "form-control"
-                            })
+                            { className: "tuiv2_navbar__search" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "form-group" },
+                                _react2.default.createElement("input", {
+                                    type: "text",
+                                    placeholder: "Search...",
+                                    className: "form-control"
+                                })
+                            )
                         )
-                    )
-                ),
+                    );
+                }
+            };
+            return _react2.default.createElement(
+                "div",
+                { className: "tuiv2_navbar__part" },
                 _react2.default.createElement(
+                    "a",
+                    { href: "/" },
+                    _react2.default.createElement("img", {
+                        src: "public/img/logo.png",
+                        className: "tuiv2_navbar__logo"
+                    })
+                ),
+                brandName()
+            );
+        }
+    }, {
+        key: "renderMenuIcon",
+        value: function renderMenuIcon() {
+            if (this.mobileDevice) {
+                return _react2.default.createElement(
                     "div",
                     { className: "tuiv2_navbar__part" },
-                    _react2.default.createElement(_Dropdown2.default, {
-                        items: items,
-                        spanClass: "lnr-user",
-                        containerClass: "tuiv2_navbar__action",
-                        align: "right"
-                    }),
-                    _react2.default.createElement(_Dropdown2.default, {
-                        items: items,
-                        text: "Toto",
-                        containerClass: "tuiv2_navbar__action",
-                        align: "right"
-                    })
-                )
+                    _react2.default.createElement(
+                        "div",
+                        { className: "tuiv2_navbar__action" },
+                        _react2.default.createElement("span", { className: "lnr-menu" })
+                    )
+                );
+            }
+        }
+    }, {
+        key: "renderActions",
+        value: function renderActions(items) {
+            var _this3 = this;
+
+            var profileDropdown = function profileDropdown() {
+                return !_this3.mobileDevice ? _react2.default.createElement(_Dropdown2.default, {
+                    items: items,
+                    text: "Toto",
+                    containerClass: "tuiv2_navbar__action",
+                    align: "right"
+                }) : null;
+            };
+            return _react2.default.createElement(
+                "div",
+                { className: "tuiv2_navbar__part" },
+                _react2.default.createElement(_Dropdown2.default, {
+                    items: items,
+                    spanClass: "lnr-user",
+                    containerClass: "tuiv2_navbar__action",
+                    align: "right"
+                }),
+                profileDropdown()
             );
         }
     }]);

@@ -28,11 +28,18 @@ $navbar-height: 54px;
   }
 }
 
+.#{$current}navbar__brand-name {
+  display: flex;
+  align-items: center;
+}
+
 .#{$current}navbar__slogan {
-  margin: 0 15px;
+  white-space: nowrap;
+  margin: 0 0 0 15px;
 }
 
 .#{$current}navbar__search {
+  margin-left: 15px;
   .form-group {
     margin: 0;
     .form-control {
@@ -49,6 +56,7 @@ $navbar-height: 54px;
 }
 
 .#{$current}navbar__action {
+  cursor: pointer;
   &:focus {
     outline: none;
   }
@@ -59,5 +67,6 @@ $navbar-height: 54px;
   &:hover {
     color: $white;
     text-decoration: none;
+    animation: bump 0.3s;
   }
 }
