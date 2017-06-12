@@ -6,7 +6,7 @@
   background-color: transparent;
   border-bottom: 2px solid transparent;
 }
-.nav-tabs {
+.#{$current}nav-tabs {
   margin: 0 10px 10px;
   border-bottom: none;
   display: flex;

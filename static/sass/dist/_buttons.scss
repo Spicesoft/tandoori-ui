@@ -5,6 +5,7 @@
   border: none;
   padding: 5px;
   border-radius: 2px;
+  transition: ease 0.1s;
 }
 
 .#{$current}btn:focus {
@@ -28,36 +29,22 @@
 
 /* SKINS */
 
+.#{$current}btn:active {
+  animation: bump 0.1s;
+}
+
 .#{$current}btn:hover {
   text-decoration: none;
 }
 
-.#{$current}btn--default:active {
-  background-color: $lightgrey;
-}
-
-.#{$current}btn--default:hover {
-  color: $primary;
-}
-
-.#{$current}btn--primary:active {
-  background-color: lighten($primary, 10%);
-}
-
-.#{$current}btn--primary:hover {
-  color: $white;
-}
-
-.#{$current}btn--warning:active {
-  background-color: lighten($warning, 10%);
-}
-
-.#{$current}btn--warning:hover {
-  color: $white;
-}
-
 .#{$current}btn--raised {
   box-shadow: $material-shadow;
+  &.#{$current}btn--active,
+  &:active,
+  &:focus,
+  &:hover {
+    box-shadow: $material-deep-shadow;
+  }
 }
 
 .#{$current}btn--lg {
@@ -72,14 +59,32 @@
 
 .#{$current}btn--default {
   color: $primary;
+  &.#{$current}btn--active,
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($primary, 50%);
+  }
 }
 
 .#{$current}btn--primary {
   background-color: $primary;
   color: $white;
+  &.#{$current}btn--active,
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($primary, 10%);
+  }
 }
 
 .#{$current}btn--warning {
   background-color: $warning;
   color: $white;
+  &.#{$current}btn--active,
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($warning, 10%);
+  }
 }
