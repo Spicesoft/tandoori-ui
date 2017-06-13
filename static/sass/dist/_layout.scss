@@ -88,3 +88,14 @@ $col-width: 100% / 12;
     }
   }
 }
+
+/* Main Struct */
+
+.#{$current}main-container {
+  margin-top: 69px;
+}
+
+.#{$current}app-container {
+  width: calc(100vw - 70px);
+  margin-left: 70px;
+}

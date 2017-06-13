@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 184);
+/******/ 	return __webpack_require__(__webpack_require__.s = 186);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -22033,160 +22033,7 @@ module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 181 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(50);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Dropdown = __webpack_require__(185);
-
-var _Dropdown2 = _interopRequireDefault(_Dropdown);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Navbar = function (_React$PureComponent) {
-    _inherits(Navbar, _React$PureComponent);
-
-    function Navbar(props) {
-        _classCallCheck(this, Navbar);
-
-        var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
-
-        _this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
-        return _this;
-    }
-
-    _createClass(Navbar, [{
-        key: "render",
-        value: function render() {
-            var items = [{
-                label: "Item 1",
-                target: "#",
-                action: function action() {
-                    console.log("Clicked item 1");
-                }
-            }, {
-                label: "Item 2",
-                target: "prout"
-            }];
-            return _react2.default.createElement(
-                "nav",
-                { className: "tuiv2_navbar tuiv2_navbar--default-skin" },
-                this.renderMenuIcon(),
-                this.renderBrand(),
-                this.renderActions(items)
-            );
-        }
-    }, {
-        key: "renderBrand",
-        value: function renderBrand() {
-            var _this2 = this;
-
-            var brandName = function brandName() {
-                if (!_this2.mobileDevice) {
-                    return _react2.default.createElement(
-                        "div",
-                        { className: "tuiv2_navbar__brand-name" },
-                        _react2.default.createElement(
-                            "p",
-                            { className: "tuiv2_navbar__slogan" },
-                            "Cowork.io's Tandoori UI"
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "tuiv2_navbar__search" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "form-group" },
-                                _react2.default.createElement("input", {
-                                    type: "text",
-                                    placeholder: "Search...",
-                                    className: "form-control"
-                                })
-                            )
-                        )
-                    );
-                }
-            };
-            return _react2.default.createElement(
-                "div",
-                { className: "tuiv2_navbar__part" },
-                _react2.default.createElement(
-                    "a",
-                    { href: "/" },
-                    _react2.default.createElement("img", {
-                        src: "public/img/logo.png",
-                        className: "tuiv2_navbar__logo"
-                    })
-                ),
-                brandName()
-            );
-        }
-    }, {
-        key: "renderMenuIcon",
-        value: function renderMenuIcon() {
-            if (this.mobileDevice) {
-                return _react2.default.createElement(
-                    "div",
-                    { className: "tuiv2_navbar__part" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "tuiv2_navbar__action" },
-                        _react2.default.createElement("span", { className: "lnr-menu" })
-                    )
-                );
-            }
-        }
-    }, {
-        key: "renderActions",
-        value: function renderActions(items) {
-            var _this3 = this;
-
-            var profileDropdown = function profileDropdown() {
-                return !_this3.mobileDevice ? _react2.default.createElement(_Dropdown2.default, {
-                    items: items,
-                    text: "Toto",
-                    containerClass: "tuiv2_navbar__action",
-                    align: "right"
-                }) : null;
-            };
-            return _react2.default.createElement(
-                "div",
-                { className: "tuiv2_navbar__part" },
-                _react2.default.createElement(_Dropdown2.default, {
-                    items: items,
-                    spanClass: "lnr-user",
-                    containerClass: "tuiv2_navbar__action",
-                    align: "right"
-                }),
-                profileDropdown()
-            );
-        }
-    }]);
-
-    return Navbar;
-}(_react2.default.PureComponent);
-
-exports.default = Navbar;
-
-/***/ }),
+/* 181 */,
 /* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22283,7 +22130,9 @@ if (process.env.NODE_ENV !== 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 184 */
+/* 184 */,
+/* 185 */,
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22297,16 +22146,97 @@ var _reactDom = __webpack_require__(81);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Navbar = __webpack_require__(181);
+var _Menu = __webpack_require__(187);
 
-var _Navbar2 = _interopRequireDefault(_Navbar);
+var _Menu2 = _interopRequireDefault(_Menu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_Navbar2.default, null), document.getElementById("navbar"));
+var menuItems = [{
+    id: "text",
+    iconClass: "lnr-text-format"
+}, {
+    id: "form",
+    iconClass: "lnr-checkmark-circle"
+}];
+
+_reactDom2.default.render(_react2.default.createElement(_Menu2.default, { items: menuItems }), document.getElementById("side-menu"));
 
 /***/ }),
-/* 185 */
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(50);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(183);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _MenuItem = __webpack_require__(188);
+
+var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Menu = function (_React$PureComponent) {
+    _inherits(Menu, _React$PureComponent);
+
+    function Menu() {
+        _classCallCheck(this, Menu);
+
+        return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
+    }
+
+    _createClass(Menu, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "tuiv2_side-menu tuiv2_side-menu--default-skin" },
+                this.renderItems()
+            );
+        }
+    }, {
+        key: "renderItems",
+        value: function renderItems() {
+            return this.props.items.map(function (item, i) {
+                return _react2.default.createElement(_MenuItem2.default, { key: i, item: item, active: i === 0 });
+            });
+        }
+    }]);
+
+    return Menu;
+}(_react2.default.PureComponent);
+
+exports.default = Menu;
+
+
+Menu.propTypes = {
+    items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        id: _propTypes2.default.string.isRequired,
+        iconClass: _propTypes2.default.string.isRequired
+    })).isRequired
+};
+
+/***/ }),
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22334,143 +22264,42 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Dropdown = function (_React$PureComponent) {
-    _inherits(Dropdown, _React$PureComponent);
+var MenuItem = function (_React$PureComponent) {
+    _inherits(MenuItem, _React$PureComponent);
 
-    function Dropdown() {
-        _classCallCheck(this, Dropdown);
+    function MenuItem() {
+        _classCallCheck(this, MenuItem);
 
-        return _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (MenuItem.__proto__ || Object.getPrototypeOf(MenuItem)).apply(this, arguments));
     }
 
-    _createClass(Dropdown, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
-            this.setState({
-                open: false,
-                animation: null
-            });
-        }
-    }, {
+    _createClass(MenuItem, [{
         key: "render",
         value: function render() {
-            var _props = this.props,
-                spanClass = _props.spanClass,
-                containerClass = _props.containerClass,
-                text = _props.text;
-
-            var classNames = "tuiv2_dropdown " + containerClass || "";
-            var spanClassNames = "tuiv2_dropdown__label " + spanClass || "";
+            var classNames = ["tuiv2_menu-item", "tuiv2_menu-item--default"];
+            if (this.props.active) {
+                classNames.push("tuiv2_menu-item--active");
+            }
             return _react2.default.createElement(
                 "div",
-                {
-                    className: classNames,
-                    tabIndex: 0,
-                    onClick: this.toggleOpen.bind(this),
-                    onBlur: this.handleBlur.bind(this)
-                },
-                _react2.default.createElement(
-                    "span",
-                    { className: spanClassNames },
-                    text
-                ),
-                this.renderMenu()
+                { className: classNames.join(" ") },
+                _react2.default.createElement("span", { className: this.props.item.iconClass })
             );
-        }
-    }, {
-        key: "renderMenu",
-        value: function renderMenu() {
-            var classNames = ["tuiv2_dropdown-menu", "tuiv2_list", "tuiv2_list--clickable"];
-            if (this.state.open !== null) {
-                classNames.push("tuiv2_dropdown-menu--" + this.state.animation);
-            }
-            return _react2.default.createElement(
-                "ul",
-                {
-                    className: classNames.join(" "),
-                    style: this.getPosition()
-                },
-                this.renderCloseItem(),
-                this.props.items.map(function (item, index) {
-                    return _react2.default.createElement(
-                        "li",
-                        {
-                            className: "tuiv2_list-item",
-                            key: index
-                        },
-                        _react2.default.createElement(
-                            "a",
-                            {
-                                className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
-                                onClick: item.action ? item.action : function () {
-                                    window.location = item.target;
-                                }
-                            },
-                            item.label
-                        )
-                    );
-                })
-            );
-        }
-    }, {
-        key: "renderCloseItem",
-        value: function renderCloseItem() {
-            if (this.mobileDevice) {
-                return _react2.default.createElement(
-                    "div",
-                    { className: "tuiv2_list-item" },
-                    _react2.default.createElement("span", { className: "lnr-cross tuiv2_text--black" })
-                );
-            }
-        }
-    }, {
-        key: "handleBlur",
-        value: function handleBlur() {
-            if (this.state.open) {
-                this.toggleOpen();
-            }
-        }
-    }, {
-        key: "toggleOpen",
-        value: function toggleOpen() {
-            this.setState({
-                open: this.state.open ? false : true,
-                animation: this.state.open ? "out" : "in"
-            });
-        }
-    }, {
-        key: "getPosition",
-        value: function getPosition() {
-            if (this.props.align === "right") {
-                return {
-                    left: "auto",
-                    right: 0
-                };
-            }
-            return {
-                right: "auto",
-                left: 0
-            };
         }
     }]);
 
-    return Dropdown;
+    return MenuItem;
 }(_react2.default.PureComponent);
 
-exports.default = Dropdown;
+exports.default = MenuItem;
 
 
-Dropdown.propTypes = {
-    spanClass: _propTypes2.default.string,
-    containerClass: _propTypes2.default.string,
-    text: _propTypes2.default.string,
-    align: _propTypes2.default.string,
-    items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-        label: _propTypes2.default.string.isRequired,
-        target: _propTypes2.default.string.isRequired,
-        action: _propTypes2.default.func
-    })).isRequired
+MenuItem.propTypes = {
+    item: _propTypes2.default.shape({
+        id: _propTypes2.default.string.isRequired,
+        iconClass: _propTypes2.default.string.isRequired
+    }).isRequired,
+    active: _propTypes2.default.bool.isRequired
 };
 
 /***/ })

@@ -12,814 +12,850 @@
   </head>
   <body>
 
-    <div id="navbar">
+    <nav id="side-menu" class=""></nav> <!-- Placement prevent menu to be display in front of absolute element. -->
+    <header id="navbar">
       <div class="tuiv2_loader">
         <span class="tuiv2_loader__dot"></span>
         <span class="tuiv2_loader__dot"></span>
         <span class="tuiv2_loader__dot"></span>
       </div>
-    </div>
+    </header>
+    <div class="tuiv2_main-container">
 
-    <div class="">
 
-      <div class="tuiv2_card tuiv2_card--default-skin">
-        <div class="tuiv2_card__block">
-          <h1 class="tuiv2_title">
-            This is <span class="tuiv2_text--primary">Tandoori UI</span>
-          </h1>
-        </div>
-        <div class="tuiv2_card__block">
-          <p>
-            Meet the Cowork.io's UI library !<br/>
-            You will find here all the UI elements you should use to build Cowork.io's views.<br/>
-            We aim to replace all the legacy SASS code with this library. <br/>
-            In the meantime, all of the Tandoori UI css classes will be prefixed with <strong>tuiv2_</strong> so you can easely identify new and old classes in the code.<br/>
-            Please feel free to get in touch with front team to discuss about any improvement and/or <a href="https://github.com/Spicesoft/tandoori-ui/issues">create an issue</a>.
-          </p>
-        </div>
-      </div>
+      <div class="tuiv2_app-container">
 
-      <div class="tuiv2_flex-row">
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title tuiv2_title--default-skin">
-                Colors
-              </h3>
-            </div>
-            <div class="tuiv2_card__block">
-              <ul>
-                <li>
-                  This is <span class="tuiv2_text--white">white</span>
-                </li>
-                <li>
-                  This is <span class="tuiv2_text--black">black</span>
-                </li>
-                <li>
-                  This is <span class="tuiv2_text--lightblack">lightblack</span>
-                </li>
-                <li>
-                  This is <span class="tuiv2_text--grey">grey</span>
-                </li>
-                <li>
-                  This is <span class="tuiv2_text--darkgrey">darkgrey</span>
-                </li>
-                <li>
-                  This is <span class="tuiv2_text--lightgrey">lightgrey</span>
-                </li>
-                <li>
-                  This is <span class="tuiv2_text--primary">primary</span>
-                </li>
-                <li>
-                  This is <span class="tuiv2_text--warning">warning</span>
-                </li>
-              </ul>
-            </div>
+        <div class="tuiv2_card tuiv2_card--default-skin">
+          <div class="tuiv2_card__block">
+            <h1 class="tuiv2_title">
+              This is <span class="tuiv2_text--primary">Tandoori UI</span>
+            </h1>
           </div>
-        </div>
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title tuiv2_title--default-skin">This is a title</h3>
-              <h4 class="tuiv2_subtitle tuiv2_subtitle--default-skin">This is a subtitle</h4>
-              <p>Text can be :</p>
-              <ul>
-                <li><strong>Strong</strong></li>
-                <li><b>Bold</b></li>
-                <li><i>Italic</i></li>
-                <li><em>Emphasized</em></li>
-                <li><mark>Marked</mark></li>
-                <li><small>Small</small></li>
-                <li><del>Deleted</del></li>
-                <li><ins>Inserted</ins></li>
-                <li><sub>Subscript</sub></li>
-                <li><sup>Superscript</sup></li>
-              </ul>
-            </div>
+          <div class="tuiv2_card__block">
+            <p>
+              Meet the Cowork.io's UI library !<br/>
+              You will find here all the UI elements you should use to build Cowork.io's views.<br/>
+              We aim to replace all the legacy SASS code with this library. <br/>
+              In the meantime, all of the Tandoori UI css classes will be prefixed with <strong>tuiv2_</strong> so you can easely identify new and old classes in the code.<br/>
+              Please feel free to get in touch with front team to discuss about any improvement and/or <a href="https://github.com/Spicesoft/tandoori-ui/issues">create an issue</a>.
+            </p>
           </div>
         </div>
 
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Lists
-              </h3>
-            </div>
-            <div class="tuiv2_card__block">
-              <h4 class="tuiv2_text--primary tuiv2_subtitle">Single line item list :</h4>
-            </div>
-            <ul class="tuiv2_list">
-              <li class="tuiv2_list-item">One item</li>
-              <li class="tuiv2_list-item tuiv2_list-item--divider">Two items</li>
-              <li class="tuiv2_list-item">Three items</li>
-              <li class="tuiv2_list-item">Four items</li>
-            </ul>
-            <div class="tuiv2_card__block">
-              <h4 class="tuiv2_text--primary tuiv2_subtitle">Stripped item list :</h4>
-            </div>
-            <ul class="tuiv2_list tuiv2_list--stripped">
-              <li class="tuiv2_list-item">One item</li>
-              <li class="tuiv2_list-item">Two items</li>
-              <li class="tuiv2_list-item">Three items</li>
-              <li class="tuiv2_list-item">Four items</li>
-            </ul>
-            <div class="tuiv2_card__block">
-              <h4 class="tuiv2_text--primary tuiv2_subtitle">Hover item list :</h4>
-            </div>
-            <ul class="tuiv2_list tuiv2_list--hover">
-              <li class="tuiv2_list-item">One item</li>
-              <li class="tuiv2_list-item">Two items</li>
-              <li class="tuiv2_list-item">Three items</li>
-              <li class="tuiv2_list-item">Four items</li>
-            </ul>
-            <div class="tuiv2_card__block">
-              <h4 class="tuiv2_text--primary tuiv2_subtitle">Clickable item list :</h4>
-            </div>
-            <ul class="tuiv2_list tuiv2_list--clickable">
-              <li class="tuiv2_list-item">
-                <a href="#" class="tuiv2_list-item__link">
-                  One item
-                </a>
-              </li>
-              <li class="tuiv2_list-item">
-                <a href="#" class="tuiv2_list-item__link">
-                  Two item
-                </a>
-              </li>
-              <li class="tuiv2_list-item">
-                <a href="#" class="tuiv2_list-item__link">
-                  Three item
-                </a>
-              </li>
-              <li class="tuiv2_list-item">
-                <a href="#" class="tuiv2_list-item__link">
-                  Four item
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Advanced Lists
-              </h3>
-            </div>
-            <div class="tuiv2_card__block">
-              <h4 class="tuiv2_text--primary tuiv2_subtitle">List with graphics :</h4>
-            </div>
-            <ul class="tuiv2_list">
-              <li class="tuiv2_list-item tuiv2_list-item--divider">
-                <img class="tuiv2_list-item__graphic" src="public/img/logo.png" alt="List item graphic part">
-                <p class="tuiv2_list-item__text">One item</p>
-              </li>
-              <li class="tuiv2_list-item tuiv2_list-item--divider">
-                <img class="tuiv2_list-item__graphic" src="public/img/beber.jpg" alt="List item graphic part">
-                <p class="tuiv2_list-item__text">Two items</p>
-              </li>
-              <li class="tuiv2_list-item tuiv2_list-item--divider">
-                <img class="tuiv2_list-item__graphic" src="public/img/climbing.jpg" alt="List item graphic part">
-                <p class="tuiv2_list-item__text">Three items</p>
-              </li>
-              <li class="tuiv2_list-item tuiv2_list-item--divider">
-                <img class="tuiv2_list-item__graphic" src="public/img/gas.jpg" alt="List item graphic part">
-                <p class="tuiv2_list-item__text">Four items</p>
-              </li>
-            </ul>
-            <div class="tuiv2_card__block">
-              <h4 class="tuiv2_text--primary tuiv2_subtitle">List with graphics & actions :</h4>
-            </div>
-            <ul class="tuiv2_list">
-              <li class="tuiv2_list-item">
-                <img class="tuiv2_list-item__graphic" src="public/img/logo.png" alt="List item graphic part">
-                <p class="tuiv2_list-item__text">One item</p>
-                <button class="tuiv2_btn tuiv2_btn--primary">Action</button>
-              </li>
-              <li class="tuiv2_list-item">
-                <img class="tuiv2_list-item__graphic" src="public/img/beber.jpg" alt="List item graphic part">
-                <p class="tuiv2_list-item__text">Two items</p>
-                <a href="#">Link</a>
-              </li>
-              <li class="tuiv2_list-item">
-                <img class="tuiv2_list-item__graphic" src="public/img/climbing.jpg" alt="List item graphic part">
-                <p class="tuiv2_list-item__text">Three items</p>
-                <a href="#"><span class="lnr-home"></span></a>
-              </li>
-              <li class="tuiv2_list-item">
-                <img class="tuiv2_list-item__graphic" src="public/img/gas.jpg" alt="List item graphic part">
-                <p class="tuiv2_list-item__text">Three items</p>
-                <div class="tuiv2_btn-group">
-                  <button class="tuiv2_btn tuiv2_btn--primary">Yes</button>
-                  <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
-                </div>
-              </li>
-            </ul>
-            <div class="tuiv2_card__block">
-              <h4 class="tuiv2_text--primary tuiv2_subtitle">List with secondary text :</h4>
-            </div>
-            <ul class="tuiv2_list">
-              <li class="tuiv2_list-item">
-                <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                  <span>One item</span>
-                  <span><small>Secondary text</small></span>
-                </p>
-                <p class="tuiv2_list-item__info"><small>June 15</small></p>
-              </li>
-              <li class="tuiv2_list-item">
-                <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                  <span>Two items</span>
-                  <span><small>Secondary text</small></span>
-                </p>
-                <p class="tuiv2_list-item__info"><small>Feb 20</small></p>
-              </li>
-              <li class="tuiv2_list-item">
-                <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                  <span>Three items</span>
-                  <span><small>Secondary text</small></span>
-                </p>
-                <p class="tuiv2_list-item__info"><small>Apr 30</small></p>
-              </li>
-              <li class="tuiv2_list-item">
-                <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                  <span>Four items</span>
-                  <span><small>Secondary text</small></span>
-                </p>
-                <p class="tuiv2_list-item__info"><small>Jul 15</small></p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">Buttons</h3>
-              <h4 class="tuiv2_subtitle">
-                Default :
-              </h4>
-              <div>
-                <button class="tuiv2_btn tuiv2_btn--default">Default</button>
-                <button class="tuiv2_btn tuiv2_btn--primary">Primary</button>
-                <button class="tuiv2_btn tuiv2_btn--warning">Warning</button>
-              </div>
-              <h4 class="tuiv2_subtitle">
-                Raised :
-              </h4>
-              <div>
-                <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--raised">Default</button>
-                <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--raised">Primary</button>
-                <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--raised">Warning</button>
-              </div>
-              <h4 class="tuiv2_subtitle">
-                Grouped :
-              </h4>
-              <div class="tuiv2_btn-group">
-                <button class="tuiv2_btn tuiv2_btn--default">Default</button>
-                <button class="tuiv2_btn tuiv2_btn--primary">Primary</button>
-                <button class="tuiv2_btn tuiv2_btn--warning">Warning</button>
-              </div>
-              <h4 class="tuiv2_subtitle">
-                Large :
-              </h4>
-              <div>
-                <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--lg">Default</button>
-                <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--lg">Primary</button>
-                <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--lg">Warning</button>
-              </div>
-              <h4 class="tuiv2_subtitle">
-                Small :
-              </h4>
-              <div>
-                <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--sm">Default</button>
-                <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--sm">Primary</button>
-                <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--sm">Warning</button>
-              </div>
-              <h4 class="tuiv2_subtitle">
-                Links :
-              </h4>
-              <div>
-                <a href="#" class="tuiv2_btn tuiv2_btn--default">Default</a>
-                <a href="#" class="tuiv2_btn tuiv2_btn--primary">Primary</a>
-                <a href="#" class="tuiv2_btn tuiv2_btn--warning">Warning</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Form
-              </h3>
-            </div>
-            <div class="tuiv2_card__block">
-              <p class="tuiv2_text--well">
-                Because we are overriding Bootstrap's forms, css classes here are not following BEM recommandations.
-              </p>
-            </div>
-            <div class="tuiv2_card__block">
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="form-group">
-                  <label for="textAreaExample">Textarea</label>
-                  <textarea class="form-control" rows="3" id="textAreaExample"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="disableExample">Disabled</label>
-                  <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
-                </div>
-                <div class="form-group">
-                  <label for="selectExample">Select</label>
-                  <div class="select-wrapper">
-                    <select class="form-control" id="selectExample">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                    <span class="glyphicon glyphicon-triangle-bottom"></span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="disabledSelect">Disabled select menu</label>
-                  <select id="disabledSelect" class="form-control" disabled>
-                    <option>Disabled select</option>
-                  </select>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
-                </div>
-                <button type="submit" class="tuiv2_btn tuiv2_btn--primary">Submit</button>
-              </form>
-            </div>
-          </div>
-        </div> -->
-
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Form validation
-              </h3>
-            </div>
-            <div class="tuiv2_card__block">
-              <div class="form-group has-success">
-                <label class="control-label" for="inputSuccess1">Input with success</label>
-                <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
-                <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-              </div>
-              <div class="form-group has-warning">
-                <label class="control-label" for="inputWarning1">Input with warning</label>
-                <input type="text" class="form-control" id="inputWarning1">
-              </div>
-              <div class="form-group has-error">
-                <label class="control-label" for="inputError1">Input with error</label>
-                <input type="text" class="form-control" id="inputError1">
-              </div>
-              <div class="has-success">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" id="checkboxSuccess" value="option1">
-                    Checkbox with success
-                  </label>
-                </div>
-              </div>
-              <div class="has-warning">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" id="checkboxWarning" value="option1">
-                    Checkbox with warning
-                  </label>
-                </div>
-              </div>
-              <div class="has-error">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" id="checkboxError" value="option1">
-                    Checkbox with error
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Form inline
-              </h3>
-            </div>
-            <div class="tuiv2_card__block">
-              <form class="form-horizontal">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Remember me
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="tuiv2_btn tuiv2_btn--default">Sign in</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Input with icons
-              </h3>
-            </div>
-            <div class="tuiv2_card__block">
-              <div class="form-group has-success has-feedback">
-                <label class="control-label" for="inputSuccess2">Input with success</label>
-                <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-                <span id="inputSuccess2Status" class="sr-only">(success)</span>
-              </div>
-              <div class="form-group has-warning has-feedback">
-                <label class="control-label" for="inputWarning2">Input with warning</label>
-                <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
-                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
-                <span id="inputWarning2Status" class="sr-only">(warning)</span>
-              </div>
-              <div class="form-group has-error has-feedback">
-                <label class="control-label" for="inputError2">Input with error</label>
-                <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
-                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                <span id="inputError2Status" class="sr-only">(error)</span>
-              </div>
-              <div class="form-group has-success has-feedback">
-                <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
-                <div class="input-group">
-                  <span class="input-group-addon">@</span>
-                  <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
-                </div>
-                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-                <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
-              </div>
-              <div class="form-group has-error has-feedback">
-                <label for="selectErrorExample">Select</label>
-                <select class="form-control" id="selectErrorExample">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-                <span class="glyphicon glyphicon-triangle-bottom form-control-feedback" aria-hidden="true"></span>
-                <span id="inputError2Status" class="sr-only">(error)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Select 2
-              </h3>
-            </div>
-            <div class="tuiv2_card__block">
-              <div class="form-group">
-                <label for="selectErrorExample">Select 2</label>
-                <select class="select2 form-control" id="selectErrorExample">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="selectErrorExample">Select 2 multiple</label>
-                <select class="select2 form-control" id="selectErrorExample" multiple="multiple">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Card
-              </h3>
-              <h4 class="tuiv2_subtitle">
-                With subtitle
-              </h4>
-            </div>
-            <div class="tuiv2_card__rich-media">
-              <img src="public/img/vhs.png" alt="Rich media example">
-            </div>
-            <div class="tuiv2_card__block">
-              This card has a rich-media class. The ratio of the card's rich media will always be 16:9.
-            </div>
-            <div class="tuiv2_card__actions">
-              <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
-              <button class="tuiv2_btn tuiv2_btn--primary">Yup</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_card__block">
-              <h3 class="tuiv2_title">
-                Card with secondary actions
-              </h3>
-            </div>
-            <div class="tuiv2_card__actions tuiv2_card__actions--secondary">
-              <div class="card__secondary-actions">
-                <a href="#"><span class="lnr-heart tuiv2_action-icon"></span></a>
-                <a href="#"><span class="lnr-cog tuiv2_action-icon"></span></a>
-              </div>
-              <div class="card__main-actions">
-                <button class="tuiv2_btn tuiv2_btn--warning">Hell no !</button>
-                <button class="tuiv2_btn tuiv2_btn--primary">Sure !</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_media-header">
-              <div class="tuiv2_media-header__text">
-                <h3 class="tuiv2_title">
-                  Card with a media header
+        <div class="tuiv2_flex-row">
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title tuiv2_title--default-skin">
+                  Colors
                 </h3>
-                <h4 class="subtitle">
-                  Ideal for profile boxes
-                </h4>
               </div>
-              <div class="tuiv2_media-header__img">
-                <img src="public/img/climbing.jpg" alt="" class="img-full-width">
-              </div>
-            </div>
-          </div>
-
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_media-header">
-              <div class="tuiv2_media-header__img">
-                <img src="public/img/mollet.jpg" alt="" class="img-full-width">
-              </div>
-              <div class="tuiv2_media-header__text">
-                <h3 class="tuiv2_title">
-                  Card with a media header
-                </h3>
-                <h4 class="subtitle">
-                  Ideal for profile boxes
-                </h4>
-              </div>
-            </div>
-            <div class="tuiv2_card__block">
-              <p>Works both way. How cool is that ??</p>
-            </div>
-          </div>
-        </div>
-
-      </div> <!-- End flex-row -->
-
-      <div class="tuiv2_card tuiv2_card--default-skin">
-        <div class="tuiv2_card__block">
-          <h2 class="tuiv2_title tuiv2_text--primary" id="grid">Grid :</h2>
-        </div>
-        <div class="tuiv2_card__block">
-          <p>Just like Twitter's Bootstrap, Tandoori UI has 12 columns. </p>
-          <p>
-            We use the new flex CSS3 property. Use a <strong>tuiv2_flex-col--{screen breakpoint}-{size}</strong>
-            inside a <strong>tuiv2_flex-row</strong>.<br/>
-            <strong>{screen breakpoint}</strong> refers to any of the 3
-            min-width we are using :
-          </p>
-          <ul>
-            <li>sm : 768px</li>
-            <li>md : 992px</li>
-            <li>lg : 1200px</li>
-          </ul>
-          <p>
-            <strong>{size}</strong> refers to the number of columns you want your element to use.<br/>
-            You may use sizes between 1 and 12.
-          </p>
-        </div>
-      </div>
-      <div class="tuiv2_flex-row">
-        <div class="tuiv2_flex-col--sm-2">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            SM 2
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--sm-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            SM 6
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--sm-6 tuiv2_flex-offset--sm-3">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            SM 6 with offset of 3
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--sm-12">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            SM 12
-          </div>
-        </div>
-      </div>
-
-      <div class="tuiv2_flex-row">
-        <div class="tuiv2_flex-col--md-2">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            MD 2
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--md-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            MD 6
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--md-6 tuiv2_flex-offset--md-3">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            MD 6 with offset of 3
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--md-12">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            MD 12
-          </div>
-        </div>
-      </div>
-
-      <div class="tuiv2_flex-row">
-        <div class="tuiv2_flex-col--lg-2">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            LG 2
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--lg-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            LG 6
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--lg-6 tuiv2_flex-offset--lg-3">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            LG 6 with offset of 3
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--lg-12">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            LG 12
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--lg-8 tuiv2_flex-col--md-6 tuiv2_flex-col--sm-4 tuiv2_flex-col--xs-2">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            LG 8 - MD 6 - SM 4 - XS 2
-          </div>
-        </div>
-        <div class="tuiv2_flex-col--lg-2 tuiv2_flex-col--md-4 tuiv2_flex-col--sm-6 tuiv2_flex-col--xs-8">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            LG 2 - MD 4 - SM 6 - XS 8
-          </div>
-        </div>
-      </div>
-
-      <div class="tuiv2_card">
-        <h2 class="tuiv2_title">Experimental widgets</h2>
-      </div>
-
-
-      <div class="tuiv2_flex-row">
-        <div class="tuiv2_flex-col--sm-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_flex-row">
-              <div class="tuiv2_flex-col--sm-4">
-                <ul class="tuiv2_list tuiv2_list--clickable" id="widget-list">
-                  <li class="tuiv2_list-item tuiv2_list-item--active" data-pane="pane-1">
-                    <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                      <span>Ticket ouvert</span>
-                      <span><small>Réservation</small></span>
-                    </p>
-                    <p class="tuiv2_list-item__info"><small>June 15</small></p>
+              <div class="tuiv2_card__block">
+                <ul>
+                  <li>
+                    This is <span class="tuiv2_text--white">white</span>
                   </li>
-                  <li class="tuiv2_list-item" data-pane="pane-2">
-                    <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                      <span>Rattachement</span>
-                      <span><small>Pépito pour la Ciudad del pancho</small></span>
-                    </p>
-                    <p class="tuiv2_list-item__info"><small>Feb 20</small></p>
+                  <li>
+                    This is <span class="tuiv2_text--black">black</span>
                   </li>
-                  <li class="tuiv2_list-item" data-pane="pane-3">
-                    <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                      <span>Ticket ouvert</span>
-                      <span><small>Sanitaires</small></span>
-                    </p>
-                    <p class="tuiv2_list-item__info"><small>Apr 30</small></p>
+                  <li>
+                    This is <span class="tuiv2_text--lightblack">lightblack</span>
                   </li>
-                  <li class="tuiv2_list-item" data-pane="pane-4">
-                    <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                      <span>Validation</span>
-                      <span><small>La fée Pajot</small></span>
-                    </p>
-                    <p class="tuiv2_list-item__info"><small>Jul 15</small></p>
+                  <li>
+                    This is <span class="tuiv2_text--grey">grey</span>
                   </li>
-                  <li class="tuiv2_list-item">
-                    <p class="tuiv2_list-item__text">
-                      <a href="#">See all</a>
-                    </p>
+                  <li>
+                    This is <span class="tuiv2_text--darkgrey">darkgrey</span>
+                  </li>
+                  <li>
+                    This is <span class="tuiv2_text--lightgrey">lightgrey</span>
+                  </li>
+                  <li>
+                    This is <span class="tuiv2_text--primary">primary</span>
+                  </li>
+                  <li>
+                    This is <span class="tuiv2_text--warning">warning</span>
                   </li>
                 </ul>
               </div>
-              <div class="tuiv2_flex-col--sm-8">
-                <div class="tuiv2_card">
-                  <div class="js-widget-content-panes">
-                    <div id="pane-1" class="js-pane">
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title tuiv2_title--default-skin">This is a title</h3>
+                <h4 class="tuiv2_subtitle tuiv2_subtitle--default-skin">This is a subtitle</h4>
+                <p>Text can be :</p>
+                <ul>
+                  <li><strong>Strong</strong></li>
+                  <li><b>Bold</b></li>
+                  <li><i>Italic</i></li>
+                  <li><em>Emphasized</em></li>
+                  <li><mark>Marked</mark></li>
+                  <li><small>Small</small></li>
+                  <li><del>Deleted</del></li>
+                  <li><ins>Inserted</ins></li>
+                  <li><sub>Subscript</sub></li>
+                  <li><sup>Superscript</sup></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Lists
+                </h3>
+              </div>
+              <div class="tuiv2_card__block">
+                <h4 class="tuiv2_text--primary tuiv2_subtitle">Single line item list :</h4>
+              </div>
+              <ul class="tuiv2_list">
+                <li class="tuiv2_list-item">One item</li>
+                <li class="tuiv2_list-item tuiv2_list-item--divider">Two items</li>
+                <li class="tuiv2_list-item">Three items</li>
+                <li class="tuiv2_list-item">Four items</li>
+              </ul>
+              <div class="tuiv2_card__block">
+                <h4 class="tuiv2_text--primary tuiv2_subtitle">Stripped item list :</h4>
+              </div>
+              <ul class="tuiv2_list tuiv2_list--stripped">
+                <li class="tuiv2_list-item">One item</li>
+                <li class="tuiv2_list-item">Two items</li>
+                <li class="tuiv2_list-item">Three items</li>
+                <li class="tuiv2_list-item">Four items</li>
+              </ul>
+              <div class="tuiv2_card__block">
+                <h4 class="tuiv2_text--primary tuiv2_subtitle">Hover item list :</h4>
+              </div>
+              <ul class="tuiv2_list tuiv2_list--hover">
+                <li class="tuiv2_list-item">One item</li>
+                <li class="tuiv2_list-item">Two items</li>
+                <li class="tuiv2_list-item">Three items</li>
+                <li class="tuiv2_list-item">Four items</li>
+              </ul>
+              <div class="tuiv2_card__block">
+                <h4 class="tuiv2_text--primary tuiv2_subtitle">Clickable item list :</h4>
+              </div>
+              <ul class="tuiv2_list tuiv2_list--clickable">
+                <li class="tuiv2_list-item">
+                  <a href="#" class="tuiv2_list-item__link">
+                    One item
+                  </a>
+                </li>
+                <li class="tuiv2_list-item">
+                  <a href="#" class="tuiv2_list-item__link">
+                    Two item
+                  </a>
+                </li>
+                <li class="tuiv2_list-item">
+                  <a href="#" class="tuiv2_list-item__link">
+                    Three item
+                  </a>
+                </li>
+                <li class="tuiv2_list-item">
+                  <a href="#" class="tuiv2_list-item__link">
+                    Four item
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Advanced Lists
+                </h3>
+              </div>
+              <div class="tuiv2_card__block">
+                <h4 class="tuiv2_text--primary tuiv2_subtitle">List with graphics :</h4>
+              </div>
+              <ul class="tuiv2_list">
+                <li class="tuiv2_list-item tuiv2_list-item--divider">
+                  <img class="tuiv2_list-item__graphic" src="public/img/logo.png" alt="List item graphic part">
+                  <p class="tuiv2_list-item__text">One item</p>
+                </li>
+                <li class="tuiv2_list-item tuiv2_list-item--divider">
+                  <img class="tuiv2_list-item__graphic" src="public/img/beber.jpg" alt="List item graphic part">
+                  <p class="tuiv2_list-item__text">Two items</p>
+                </li>
+                <li class="tuiv2_list-item tuiv2_list-item--divider">
+                  <img class="tuiv2_list-item__graphic" src="public/img/climbing.jpg" alt="List item graphic part">
+                  <p class="tuiv2_list-item__text">Three items</p>
+                </li>
+                <li class="tuiv2_list-item tuiv2_list-item--divider">
+                  <img class="tuiv2_list-item__graphic" src="public/img/gas.jpg" alt="List item graphic part">
+                  <p class="tuiv2_list-item__text">Four items</p>
+                </li>
+              </ul>
+              <div class="tuiv2_card__block">
+                <h4 class="tuiv2_text--primary tuiv2_subtitle">List with graphics & actions :</h4>
+              </div>
+              <ul class="tuiv2_list">
+                <li class="tuiv2_list-item">
+                  <img class="tuiv2_list-item__graphic" src="public/img/logo.png" alt="List item graphic part">
+                  <p class="tuiv2_list-item__text">One item</p>
+                  <button class="tuiv2_btn tuiv2_btn--primary">Action</button>
+                </li>
+                <li class="tuiv2_list-item">
+                  <img class="tuiv2_list-item__graphic" src="public/img/beber.jpg" alt="List item graphic part">
+                  <p class="tuiv2_list-item__text">Two items</p>
+                  <a href="#">Link</a>
+                </li>
+                <li class="tuiv2_list-item">
+                  <img class="tuiv2_list-item__graphic" src="public/img/climbing.jpg" alt="List item graphic part">
+                  <p class="tuiv2_list-item__text">Three items</p>
+                  <a href="#"><span class="lnr-home"></span></a>
+                </li>
+                <li class="tuiv2_list-item">
+                  <img class="tuiv2_list-item__graphic" src="public/img/gas.jpg" alt="List item graphic part">
+                  <p class="tuiv2_list-item__text">Three items</p>
+                  <div class="tuiv2_btn-group">
+                    <button class="tuiv2_btn tuiv2_btn--primary">Yes</button>
+                    <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
+                  </div>
+                </li>
+              </ul>
+              <div class="tuiv2_card__block">
+                <h4 class="tuiv2_text--primary tuiv2_subtitle">List with secondary text :</h4>
+              </div>
+              <ul class="tuiv2_list">
+                <li class="tuiv2_list-item">
+                  <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
+                    <span>One item</span>
+                    <span><small>Secondary text</small></span>
+                  </p>
+                  <p class="tuiv2_list-item__info"><small>June 15</small></p>
+                </li>
+                <li class="tuiv2_list-item">
+                  <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
+                    <span>Two items</span>
+                    <span><small>Secondary text</small></span>
+                  </p>
+                  <p class="tuiv2_list-item__info"><small>Feb 20</small></p>
+                </li>
+                <li class="tuiv2_list-item">
+                  <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
+                    <span>Three items</span>
+                    <span><small>Secondary text</small></span>
+                  </p>
+                  <p class="tuiv2_list-item__info"><small>Apr 30</small></p>
+                </li>
+                <li class="tuiv2_list-item">
+                  <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
+                    <span>Four items</span>
+                    <span><small>Secondary text</small></span>
+                  </p>
+                  <p class="tuiv2_list-item__info"><small>Jul 15</small></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">Buttons</h3>
+                <h4 class="tuiv2_subtitle">
+                  Default :
+                </h4>
+                <div>
+                  <button class="tuiv2_btn tuiv2_btn--default">Default</button>
+                  <button class="tuiv2_btn tuiv2_btn--primary">Primary</button>
+                  <button class="tuiv2_btn tuiv2_btn--warning">Warning</button>
+                </div>
+                <h4 class="tuiv2_subtitle">
+                  Raised :
+                </h4>
+                <div>
+                  <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--raised">Default</button>
+                  <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--raised">Primary</button>
+                  <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--raised">Warning</button>
+                </div>
+                <h4 class="tuiv2_subtitle">
+                  Grouped :
+                </h4>
+                <div class="tuiv2_btn-group">
+                  <button class="tuiv2_btn tuiv2_btn--default">Default</button>
+                  <button class="tuiv2_btn tuiv2_btn--primary">Primary</button>
+                  <button class="tuiv2_btn tuiv2_btn--warning">Warning</button>
+                </div>
+                <h4 class="tuiv2_subtitle">
+                  Large :
+                </h4>
+                <div>
+                  <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--lg">Default</button>
+                  <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--lg">Primary</button>
+                  <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--lg">Warning</button>
+                </div>
+                <h4 class="tuiv2_subtitle">
+                  Small :
+                </h4>
+                <div>
+                  <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--sm">Default</button>
+                  <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--sm">Primary</button>
+                  <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--sm">Warning</button>
+                </div>
+                <h4 class="tuiv2_subtitle">
+                  Links :
+                </h4>
+                <div>
+                  <a href="#" class="tuiv2_btn tuiv2_btn--default">Default</a>
+                  <a href="#" class="tuiv2_btn tuiv2_btn--primary">Primary</a>
+                  <a href="#" class="tuiv2_btn tuiv2_btn--warning">Warning</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Form
+                </h3>
+              </div>
+              <div class="tuiv2_card__block">
+                <p class="tuiv2_text--well">
+                  Because we are overriding Bootstrap's forms, css classes here are not following BEM recommandations.
+                </p>
+              </div>
+              <div class="tuiv2_card__block">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Example block-level help text here.</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="textAreaExample">Textarea</label>
+                    <textarea class="form-control" rows="3" id="textAreaExample"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="disableExample">Disabled</label>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="selectExample">Select</label>
+                    <div class="select-wrapper">
+                      <select class="form-control" id="selectExample">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                      <span class="glyphicon glyphicon-triangle-bottom"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="disabledSelect">Disabled select menu</label>
+                    <select id="disabledSelect" class="form-control" disabled>
+                      <option>Disabled select</option>
+                    </select>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Check me out
+                    </label>
+                  </div>
+                  <button type="submit" class="tuiv2_btn tuiv2_btn--primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Form validation
+                </h3>
+              </div>
+              <div class="tuiv2_card__block">
+                <div class="form-group has-success">
+                  <label class="control-label" for="inputSuccess1">Input with success</label>
+                  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
+                  <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                </div>
+                <div class="form-group has-warning">
+                  <label class="control-label" for="inputWarning1">Input with warning</label>
+                  <input type="text" class="form-control" id="inputWarning1">
+                </div>
+                <div class="form-group has-error">
+                  <label class="control-label" for="inputError1">Input with error</label>
+                  <input type="text" class="form-control" id="inputError1">
+                </div>
+                <div class="has-success">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="checkboxSuccess" value="option1">
+                      Checkbox with success
+                    </label>
+                  </div>
+                </div>
+                <div class="has-warning">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="checkboxWarning" value="option1">
+                      Checkbox with warning
+                    </label>
+                  </div>
+                </div>
+                <div class="has-error">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="checkboxError" value="option1">
+                      Checkbox with error
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Form inline
+                </h3>
+              </div>
+              <div class="tuiv2_card__block">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Remember me
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="tuiv2_btn tuiv2_btn--default">Sign in</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Input with icons
+                </h3>
+              </div>
+              <div class="tuiv2_card__block">
+                <div class="form-group has-success has-feedback">
+                  <label class="control-label" for="inputSuccess2">Input with success</label>
+                  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+                  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                </div>
+                <div class="form-group has-warning has-feedback">
+                  <label class="control-label" for="inputWarning2">Input with warning</label>
+                  <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+                  <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputWarning2Status" class="sr-only">(warning)</span>
+                </div>
+                <div class="form-group has-error has-feedback">
+                  <label class="control-label" for="inputError2">Input with error</label>
+                  <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+                  <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputError2Status" class="sr-only">(error)</span>
+                </div>
+                <div class="form-group has-success has-feedback">
+                  <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+                  <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+                  </div>
+                  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+                </div>
+                <div class="form-group has-error has-feedback">
+                  <label for="selectErrorExample">Select</label>
+                  <select class="form-control" id="selectErrorExample">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  <span class="glyphicon glyphicon-triangle-bottom form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputError2Status" class="sr-only">(error)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Select 2
+                </h3>
+              </div>
+              <div class="tuiv2_card__block">
+                <div class="form-group">
+                  <label for="selectErrorExample">Select 2</label>
+                  <select class="select2 form-control" id="selectErrorExample">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="selectErrorExample">Select 2 multiple</label>
+                  <select class="select2 form-control" id="selectErrorExample" multiple="multiple">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Card
+                </h3>
+                <h4 class="tuiv2_subtitle">
+                  With subtitle
+                </h4>
+              </div>
+              <div class="tuiv2_card__rich-media">
+                <img src="public/img/vhs.png" alt="Rich media example">
+              </div>
+              <div class="tuiv2_card__block">
+                This card has a rich-media class. The ratio of the card's rich media will always be 16:9.
+              </div>
+              <div class="tuiv2_card__actions">
+                <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
+                <button class="tuiv2_btn tuiv2_btn--primary">Yup</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_card__block">
+                <h3 class="tuiv2_title">
+                  Card with secondary actions
+                </h3>
+              </div>
+              <div class="tuiv2_card__actions tuiv2_card__actions--secondary">
+                <div class="card__secondary-actions">
+                  <a href="#"><span class="lnr-heart tuiv2_action-icon"></span></a>
+                  <a href="#"><span class="lnr-cog tuiv2_action-icon"></span></a>
+                </div>
+                <div class="card__main-actions">
+                  <button class="tuiv2_btn tuiv2_btn--warning">Hell no !</button>
+                  <button class="tuiv2_btn tuiv2_btn--primary">Sure !</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_media-header">
+                <div class="tuiv2_media-header__text">
+                  <h3 class="tuiv2_title">
+                    Card with a media header
+                  </h3>
+                  <h4 class="subtitle">
+                    Ideal for profile boxes
+                  </h4>
+                </div>
+                <div class="tuiv2_media-header__img">
+                  <img src="public/img/climbing.jpg" alt="" class="img-full-width">
+                </div>
+              </div>
+            </div>
+
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_media-header">
+                <div class="tuiv2_media-header__img">
+                  <img src="public/img/mollet.jpg" alt="" class="img-full-width">
+                </div>
+                <div class="tuiv2_media-header__text">
+                  <h3 class="tuiv2_title">
+                    Card with a media header
+                  </h3>
+                  <h4 class="subtitle">
+                    Ideal for profile boxes
+                  </h4>
+                </div>
+              </div>
+              <div class="tuiv2_card__block">
+                <p>Works both way. How cool is that ??</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- End flex-row -->
+
+        <div class="tuiv2_card tuiv2_card--default-skin">
+          <div class="tuiv2_card__block">
+            <h2 class="tuiv2_title tuiv2_text--primary" id="grid">Grid :</h2>
+          </div>
+          <div class="tuiv2_card__block">
+            <p>Just like Twitter's Bootstrap, Tandoori UI has 12 columns. </p>
+            <p>
+              We use the new flex CSS3 property. Use a <strong>tuiv2_flex-col--{screen breakpoint}-{size}</strong>
+              inside a <strong>tuiv2_flex-row</strong>.<br/>
+              <strong>{screen breakpoint}</strong> refers to any of the 3
+              min-width we are using :
+            </p>
+            <ul>
+              <li>sm : 768px</li>
+              <li>md : 992px</li>
+              <li>lg : 1200px</li>
+            </ul>
+            <p>
+              <strong>{size}</strong> refers to the number of columns you want your element to use.<br/>
+              You may use sizes between 1 and 12.
+            </p>
+          </div>
+        </div>
+        <div class="tuiv2_flex-row">
+          <div class="tuiv2_flex-col--sm-2">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              SM 2
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--sm-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              SM 6
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--sm-6 tuiv2_flex-offset--sm-3">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              SM 6 with offset of 3
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--sm-12">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              SM 12
+            </div>
+          </div>
+        </div>
+
+        <div class="tuiv2_flex-row">
+          <div class="tuiv2_flex-col--md-2">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              MD 2
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--md-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              MD 6
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--md-6 tuiv2_flex-offset--md-3">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              MD 6 with offset of 3
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--md-12">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              MD 12
+            </div>
+          </div>
+        </div>
+
+        <div class="tuiv2_flex-row">
+          <div class="tuiv2_flex-col--lg-2">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              LG 2
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--lg-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              LG 6
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--lg-6 tuiv2_flex-offset--lg-3">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              LG 6 with offset of 3
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--lg-12">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              LG 12
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--lg-8 tuiv2_flex-col--md-6 tuiv2_flex-col--sm-4 tuiv2_flex-col--xs-2">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              LG 8 - MD 6 - SM 4 - XS 2
+            </div>
+          </div>
+          <div class="tuiv2_flex-col--lg-2 tuiv2_flex-col--md-4 tuiv2_flex-col--sm-6 tuiv2_flex-col--xs-8">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              LG 2 - MD 4 - SM 6 - XS 8
+            </div>
+          </div>
+        </div>
+
+        <div class="tuiv2_card">
+          <h2 class="tuiv2_title">Experimental widgets</h2>
+        </div>
+
+
+        <div class="tuiv2_flex-row">
+          <div class="tuiv2_flex-col--sm-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_flex-row">
+                <div class="tuiv2_flex-col--sm-4">
+                  <ul class="tuiv2_list tuiv2_list--clickable" id="widget-list">
+                    <li class="tuiv2_list-item tuiv2_list-item--active" data-pane="pane-1">
+                      <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
+                        <span>Ticket ouvert</span>
+                        <span><small>Réservation</small></span>
+                      </p>
+                      <p class="tuiv2_list-item__info"><small>June 15</small></p>
+                    </li>
+                    <li class="tuiv2_list-item" data-pane="pane-2">
+                      <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
+                        <span>Rattachement</span>
+                        <span><small>Pépito pour la Ciudad del pancho</small></span>
+                      </p>
+                      <p class="tuiv2_list-item__info"><small>Feb 20</small></p>
+                    </li>
+                    <li class="tuiv2_list-item" data-pane="pane-3">
+                      <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
+                        <span>Ticket ouvert</span>
+                        <span><small>Sanitaires</small></span>
+                      </p>
+                      <p class="tuiv2_list-item__info"><small>Apr 30</small></p>
+                    </li>
+                    <li class="tuiv2_list-item" data-pane="pane-4">
+                      <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
+                        <span>Validation</span>
+                        <span><small>La fée Pajot</small></span>
+                      </p>
+                      <p class="tuiv2_list-item__info"><small>Jul 15</small></p>
+                    </li>
+                    <li class="tuiv2_list-item">
+                      <p class="tuiv2_list-item__text">
+                        <a href="#">See all</a>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tuiv2_flex-col--sm-8">
+                  <div class="tuiv2_card">
+                    <div class="js-widget-content-panes">
+                      <div id="pane-1" class="js-pane">
+                        <h4 class="tuiv2_subtitle">Ticket ouvert</h4>
+                        <div class="tuiv2_card__block">
+                          <p>Alors voilà c'est la mayrde toussaaaaaaaa.</p>
+                        </div>
+                        <div class="tuiv2_card__actions">
+                          <button class="tuiv2_btn tuiv2_btn--primary">Open</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="pane-2" class="js-pane">
+                      <h4 class="tuiv2_subtitle">Rattachement en attente</h4>
+                      <div class="tuiv2_card__block">
+                        Le coworker Pépito Armando Diego désire rejoindre la société
+                        <select name="" id="">
+                          <option value="1">Ciudad del pancho</option>
+                          <option value="2">Vitaline</option>
+                        </select>
+                      </div>
+                      <div class="tuiv2_card__actions">
+                        <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
+                        <button class="tuiv2_btn tuiv2_btn--primary">Validate</button>
+                      </div>
+                    </div>
+                    <div id="pane-3" class="js-pane">
                       <h4 class="tuiv2_subtitle">Ticket ouvert</h4>
                       <div class="tuiv2_card__block">
-                        <p>Alors voilà c'est la mayrde toussaaaaaaaa.</p>
+                        <p>J'en ai PAR-TOUT.</p>
                       </div>
                       <div class="tuiv2_card__actions">
                         <button class="tuiv2_btn tuiv2_btn--primary">Open</button>
                       </div>
                     </div>
-                  </div>
-                  <div id="pane-2" class="js-pane">
-                    <h4 class="tuiv2_subtitle">Rattachement en attente</h4>
-                    <div class="tuiv2_card__block">
-                      Le coworker Pépito Armando Diego désire rejoindre la société
-                      <select name="" id="">
-                        <option value="1">Ciudad del pancho</option>
-                        <option value="2">Vitaline</option>
-                      </select>
-                    </div>
-                    <div class="tuiv2_card__actions">
-                      <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
-                      <button class="tuiv2_btn tuiv2_btn--primary">Validate</button>
+                    <div id="pane-4" class="js-pane">
+                      <h4 class="tuiv2_subtitle">Validation en attente</h4>
+                      <div class="tuiv2_card__block">
+                        <p>Le compte de la fée Pajot est en attente de validation.</p>
+                        <a href="#">See account.</a>
+                      </div>
+                      <div class="tuiv2_card__actions">
+                        <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
+                        <button class="tuiv2_btn tuiv2_btn--primary">Validate</button>
+                      </div>
                     </div>
                   </div>
-                  <div id="pane-3" class="js-pane">
-                    <h4 class="tuiv2_subtitle">Ticket ouvert</h4>
-                    <div class="tuiv2_card__block">
-                      <p>J'en ai PAR-TOUT.</p>
-                    </div>
-                    <div class="tuiv2_card__actions">
-                      <button class="tuiv2_btn tuiv2_btn--primary">Open</button>
-                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tuiv2_card">
+          <h2 class="tuiv2_title">Gallery</h2>
+        </div>
+
+        <div class="tuiv2_flex-row">
+          <div class="tuiv2_flex-col--sm-6">
+            <div class="tuiv2_card tuiv2_card--default-skin">
+              <div class="tuiv2_gallery__container">
+                <img class="tuiv2_gallery__img" src="public/img/gas.jpg" alt="">
+              </div>
+              <div class="tuiv2_flex-row">
+                <div class="tuiv2_flex-col--sm-4">
+                  <div class="tuiv2_gallery__container">
+                    <img class="tuiv2_gallery__img" src="public/img/diablo.jpg" alt="">
                   </div>
-                  <div id="pane-4" class="js-pane">
-                    <h4 class="tuiv2_subtitle">Validation en attente</h4>
-                    <div class="tuiv2_card__block">
-                      <p>Le compte de la fée Pajot est en attente de validation.</p>
-                      <a href="#">See account.</a>
-                    </div>
-                    <div class="tuiv2_card__actions">
-                      <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
-                      <button class="tuiv2_btn tuiv2_btn--primary">Validate</button>
-                    </div>
+                </div>
+                <div class="tuiv2_flex-col--sm-4">
+                  <div class="tuiv2_gallery__container">
+                    <img class="tuiv2_gallery__img" src="public/img/coworkio_large.jpg" alt="">
+                  </div>
+                </div>
+                <div class="tuiv2_flex-col--sm-4">
+                  <div class="tuiv2_gallery__container">
+                    <img class="tuiv2_gallery__img" src="public/img/climbing.jpg" alt="">
                   </div>
                 </div>
               </div>
@@ -827,72 +863,39 @@
           </div>
         </div>
 
-      </div>
+        <div class="tuiv2_card">
+          <h2 class="tuiv2_title">Tabs</h2>
+        </div>
 
-      <div class="tuiv2_card">
-        <h2 class="tuiv2_title">Gallery</h2>
-      </div>
+        <div class="">
 
-      <div class="tuiv2_flex-row">
-        <div class="tuiv2_flex-col--sm-6">
-          <div class="tuiv2_card tuiv2_card--default-skin">
-            <div class="tuiv2_gallery__container">
-              <img class="tuiv2_gallery__img" src="public/img/gas.jpg" alt="">
-            </div>
-            <div class="tuiv2_flex-row">
-              <div class="tuiv2_flex-col--sm-4">
-                <div class="tuiv2_gallery__container">
-                  <img class="tuiv2_gallery__img" src="public/img/diablo.jpg" alt="">
-                </div>
-              </div>
-              <div class="tuiv2_flex-col--sm-4">
-                <div class="tuiv2_gallery__container">
-                  <img class="tuiv2_gallery__img" src="public/img/coworkio_large.jpg" alt="">
-                </div>
-              </div>
-              <div class="tuiv2_flex-col--sm-4">
-                <div class="tuiv2_gallery__container">
-                  <img class="tuiv2_gallery__img" src="public/img/climbing.jpg" alt="">
-                </div>
-              </div>
-            </div>
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+            <li role="presentation"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">Profile</a></li>
+            <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">Messages</a></li>
+            <li role="presentation"><a href="#settings2" aria-controls="settings2" role="tab" data-toggle="tab">Settings</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content tuiv2_card tuiv2_card--default-skin">
+            <div role="tabpanel" class="tab-pane active tuiv2_card__block" id="home">Home</div>
+            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="profile">Profile</div>
+            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="messages">Messages</div>
+            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="settings">Settings</div>
+            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="home2">Home</div>
+            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="profile2">Profile</div>
+            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="messages2">Messages</div>
+            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="settings2">Settings</div>
           </div>
-        </div>
-      </div>
 
-      <div class="tuiv2_card">
-        <h2 class="tuiv2_title">Tabs</h2>
-      </div>
-
-      <div class="">
-
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-          <li role="presentation"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">Home</a></li>
-          <li role="presentation"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">Profile</a></li>
-          <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">Messages</a></li>
-          <li role="presentation"><a href="#settings2" aria-controls="settings2" role="tab" data-toggle="tab">Settings</a></li>
-        </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content tuiv2_card tuiv2_card--default-skin">
-          <div role="tabpanel" class="tab-pane active tuiv2_card__block" id="home">Home</div>
-          <div role="tabpanel" class="tab-pane tuiv2_card__block" id="profile">Profile</div>
-          <div role="tabpanel" class="tab-pane tuiv2_card__block" id="messages">Messages</div>
-          <div role="tabpanel" class="tab-pane tuiv2_card__block" id="settings">Settings</div>
-          <div role="tabpanel" class="tab-pane tuiv2_card__block" id="home2">Home</div>
-          <div role="tabpanel" class="tab-pane tuiv2_card__block" id="profile2">Profile</div>
-          <div role="tabpanel" class="tab-pane tuiv2_card__block" id="messages2">Messages</div>
-          <div role="tabpanel" class="tab-pane tuiv2_card__block" id="settings2">Settings</div>
         </div>
 
       </div>
-
-
     </div> <!-- End container fluid -->
 
 
@@ -901,5 +904,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="./public/js/all.js"></script>
     <script src="./public/js/navbar.dist.js"></script>
+    <script src="./public/js/sideMenu.dist.js"></script>
   </body>
 </html>
