@@ -41,6 +41,14 @@
   box-shadow: $material-shadow;
 }
 
+.#{$current}side-menu-panel--out {
+  display: none;
+}
+
+.#{$current}side-menu-panel--in {
+  display: block;
+}
+
 .#{$current}menu-item--default {
   color: $grey;
 }

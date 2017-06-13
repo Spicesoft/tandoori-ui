@@ -1252,6 +1252,12 @@ select.form-control {
   background-color: #F5F5F5;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
 
+.tuiv2_side-menu-panel--out {
+  display: none; }
+
+.tuiv2_side-menu-panel--in {
+  display: block; }
+
 .tuiv2_menu-item--default {
   color: #979797; }
 
