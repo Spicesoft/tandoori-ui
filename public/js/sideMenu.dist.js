@@ -23247,8 +23247,8 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     return {
         onItemClicked: function onItemClicked(id) {
-            dispatch((0, _actions.toggleActive)(id));
             dispatch((0, _actions.toggleOpen)(id));
+            dispatch((0, _actions.toggleActive)(id));
         }
     };
 };

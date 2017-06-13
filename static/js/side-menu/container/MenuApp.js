@@ -14,8 +14,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onItemClicked: (id) => {
-            dispatch(toggleActive(id));
             dispatch(toggleOpen(id));
+            dispatch(toggleActive(id));
         }
     };
 };
