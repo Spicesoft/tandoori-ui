@@ -22154,10 +22154,41 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var menuItems = [{
     id: "text",
-    iconClass: "lnr-text-format"
+    iconClass: "lnr-text-format",
+    active: true,
+    subItems: [{
+        category: "Category 1",
+        items: [{
+            id: "Item 1",
+            url: "#"
+        }, {
+            id: "Item 2",
+            url: "prout"
+        }]
+    }, {
+        category: "Category 2",
+        items: [{
+            id: "Item 1",
+            url: "#"
+        }, {
+            id: "Item 2",
+            url: "prout"
+        }]
+    }]
 }, {
     id: "form",
-    iconClass: "lnr-checkmark-circle"
+    iconClass: "lnr-checkmark-circle",
+    active: false,
+    subItems: [{
+        category: "Category 1",
+        items: [{
+            id: "Item 1",
+            url: "#"
+        }, {
+            id: "Item 2",
+            url: "prout"
+        }]
+    }]
 }];
 
 _reactDom2.default.render(_react2.default.createElement(_Menu2.default, { items: menuItems }), document.getElementById("side-menu"));
@@ -22210,6 +22241,15 @@ var Menu = function (_React$PureComponent) {
             return _react2.default.createElement(
                 "div",
                 { className: "tuiv2_side-menu tuiv2_side-menu--default-skin" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "tuiv2_side-menu-panel tuiv2_side-menu-panel--default" },
+                    _react2.default.createElement(
+                        "ul",
+                        { className: "tuiv2_list tuiv2_list--clickable" },
+                        this.renderCategories()
+                    )
+                ),
                 this.renderItems()
             );
         }
@@ -22217,7 +22257,44 @@ var Menu = function (_React$PureComponent) {
         key: "renderItems",
         value: function renderItems() {
             return this.props.items.map(function (item, i) {
-                return _react2.default.createElement(_MenuItem2.default, { key: i, item: item, active: i === 0 });
+                return _react2.default.createElement(_MenuItem2.default, { key: i, item: item, onItemClicked: function onItemClicked(id) {
+                        console.log(id);
+                    } });
+            });
+        }
+    }, {
+        key: "renderCategories",
+        value: function renderCategories() {
+            var _this2 = this;
+
+            return this.props.items.find(function (item) {
+                return item.active;
+            }).subItems.map(function (subItem, i) {
+                return _react2.default.createElement(
+                    "ul",
+                    { key: i, className: "tuiv2_list tuiv2_list--clickable" },
+                    _react2.default.createElement(
+                        "li",
+                        { className: "tuiv2_list-item tuiv2_list-item--divider tuiv2_list-item--category" },
+                        subItem.category
+                    ),
+                    _this2.renderSubItems(subItem.items)
+                );
+            });
+        }
+    }, {
+        key: "renderSubItems",
+        value: function renderSubItems(subItems) {
+            return subItems.map(function (item, i) {
+                return _react2.default.createElement(
+                    "li",
+                    { key: i, className: "tuiv2_list-item" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: item.url, className: "tuiv2_list-item__link" },
+                        item.id
+                    )
+                );
             });
         }
     }]);
@@ -22231,8 +22308,15 @@ exports.default = Menu;
 Menu.propTypes = {
     items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
         id: _propTypes2.default.string.isRequired,
-        iconClass: _propTypes2.default.string.isRequired
-    })).isRequired
+        iconClass: _propTypes2.default.string.isRequired,
+        active: _propTypes2.default.bool.isRequired,
+        subItems: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+            category: _propTypes2.default.string.isRequired,
+            items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+                id: _propTypes2.default.string.isRequired,
+                url: _propTypes2.default.string.isRequired
+            }))
+        }).isRequired) })).isRequired
 };
 
 /***/ }),
@@ -22277,14 +22361,23 @@ var MenuItem = function (_React$PureComponent) {
         key: "render",
         value: function render() {
             var classNames = ["tuiv2_menu-item", "tuiv2_menu-item--default"];
-            if (this.props.active) {
+            if (this.props.item.active) {
                 classNames.push("tuiv2_menu-item--active");
             }
+            var iconClassNames = this.props.item.iconClass + " tuiv2_menu-item__icon";
             return _react2.default.createElement(
                 "div",
-                { className: classNames.join(" ") },
-                _react2.default.createElement("span", { className: this.props.item.iconClass })
+                {
+                    className: classNames.join(" "),
+                    onClick: this.itemClicked.bind(this)
+                },
+                _react2.default.createElement("span", { className: iconClassNames })
             );
+        }
+    }, {
+        key: "itemClicked",
+        value: function itemClicked() {
+            this.props.onItemClicked(this.props.item.id);
         }
     }]);
 
@@ -22295,11 +22388,12 @@ exports.default = MenuItem;
 
 
 MenuItem.propTypes = {
+    onItemClicked: _propTypes2.default.func.isRequired,
     item: _propTypes2.default.shape({
         id: _propTypes2.default.string.isRequired,
-        iconClass: _propTypes2.default.string.isRequired
-    }).isRequired,
-    active: _propTypes2.default.bool.isRequired
+        iconClass: _propTypes2.default.string.isRequired,
+        active: _propTypes2.default.bool.isRequired
+    }).isRequired
 };
 
 /***/ })

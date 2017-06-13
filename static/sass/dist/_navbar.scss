@@ -3,6 +3,7 @@
 $navbar-height: 54px;
 
 .#{$current}navbar {
+  z-index: 1000;
   height: $navbar-height;
   margin-bottom: $default-margin;
   display: flex;
