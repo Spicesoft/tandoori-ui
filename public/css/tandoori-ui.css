@@ -6,6 +6,28 @@
     transform: scale(1.1); }
   100% {
     transform: scale(1); } }
+@keyframes dropIn {
+  from {
+    transform: scaleY(0); }
+  to {
+    transform: scaleY(1); } }
+@keyframes dropOut {
+  from {
+    transform: scaleY(1); }
+  to {
+    transform: scaleY(0);
+    display: none; } }
+@keyframes slideIn {
+  from {
+    transform: scaleX(0); }
+  to {
+    transform: scaleX(1); } }
+@keyframes slideOut {
+  from {
+    transform: scaleX(1); }
+  to {
+    transform: scaleX(0);
+    display: none; } }
 .tuiv2_absolute-center {
   position: absolute;
   top: 50%;
@@ -581,6 +603,14 @@
   .tuiv2_flex-offset--lg-12 {
     margin-left: 100%; } }
 
+/* Main Struct */
+.tuiv2_main-container {
+  margin-top: 69px; }
+
+.tuiv2_app-container {
+  width: calc(100vw - $side-menu-width);
+  margin-left: 60px; }
+
 /* STRUCTURES */
 .tuiv2_title {
   font-size: 24px; }
@@ -736,6 +766,7 @@
   overflow: hidden; }
 
 .tuiv2_list-item__link {
+  cursor: pointer;
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -757,6 +788,12 @@
   .tuiv2_list--clickable .tuiv2_list-item:hover {
     transition: all 0.2s, ease;
     background-color: #E6E6E6; }
+  .tuiv2_list--clickable .tuiv2_list-item--category {
+    color: #323A45;
+    cursor: auto;
+    border-bottom: 1px solid #E6E6E6; }
+  .tuiv2_list--clickable .tuiv2_list-item--category:hover {
+    background-color: #FFFFFF; }
 
 .tuiv2_list-item--divider {
   border-bottom: 1px solid #E6E6E6; }
@@ -1036,6 +1073,7 @@ select.form-control {
   overflow: hidden; }
 
 .tuiv2_list-item__link {
+  cursor: pointer;
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -1057,6 +1095,12 @@ select.form-control {
   .tuiv2_list--clickable .tuiv2_list-item:hover {
     transition: all 0.2s, ease;
     background-color: #E6E6E6; }
+  .tuiv2_list--clickable .tuiv2_list-item--category {
+    color: #323A45;
+    cursor: auto;
+    border-bottom: 1px solid #E6E6E6; }
+  .tuiv2_list--clickable .tuiv2_list-item--category:hover {
+    background-color: #FFFFFF; }
 
 .tuiv2_list-item--divider {
   border-bottom: 1px solid #E6E6E6; }
@@ -1139,11 +1183,15 @@ select.form-control {
 /* stylelint-enable */
 /* STRUCT */
 .tuiv2_navbar {
+  z-index: 1000;
   height: 54px;
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
-  padding: 10px; }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
 
 .tuiv2_navbar__part {
   display: flex;
@@ -1187,7 +1235,75 @@ select.form-control {
 /* SKINS */
 .tuiv2_navbar--default-skin {
   background-color: #323A45;
-  color: #E6E6E6; }
+  color: #E6E6E6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+
+/* SRTUCT */
+.tuiv2_side-menu {
+  width: 60px;
+  position: fixed;
+  top: 54px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column; }
+
+.tuiv2_menu-item {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;
+  position: relative;
+  cursor: pointer; }
+
+.tuiv2_side-menu-panel {
+  width: calc(100vw - 60px);
+  position: fixed;
+  top: 54px;
+  left: 60px;
+  bottom: 0;
+  overflow-y: auto;
+  display: nones;
+  align-items: stretch; }
+
+.tuiv2_side-menu-panel__content {
+  width: 80%; }
+
+.tuiv2_side-menu-panel__outside-layer {
+  width: 20%; }
+
+/* SKIN */
+.tuiv2_side-menu--default-skin {
+  background-color: #E6E6E6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+
+.tuiv2_side-menu-panel__content--default {
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+
+.tuiv2_side-menu-panel--out {
+  display: flex;
+  transform-origin: left;
+  animation: slideOut 0.2s forwards; }
+
+.tuiv2_side-menu-panel--in {
+  display: flex;
+  transform-origin: left;
+  animation: slideIn 0.2s forwards; }
+
+.tuiv2_menu-item--default {
+  color: #979797; }
+
+.tuiv2_menu-item--active {
+  border-left: 5px solid #14B9D6;
+  color: #323A45; }
+  .tuiv2_menu-item--active .tuiv2_menu-item__icon {
+    margin-left: -5px; }
+
+.tuiv2_menu-item--default:hover {
+  animation: bump 0.2s;
+  color: #323A45; }
 
 /* STRUCT */
 .tuiv2_dropdown {
@@ -1220,17 +1336,6 @@ select.form-control {
 .tuiv2_dropdown-menu__item {
   white-space: nowrap; }
 
-@keyframes dropIn {
-  from {
-    transform: scaleY(0); }
-  to {
-    transform: scaleY(1); } }
-@keyframes dropOut {
-  from {
-    transform: scaleY(1); }
-  to {
-    transform: scaleY(0);
-    display: none; } }
 /**
  * Some reusable animated loaders:
  *  <div class="tuiv2_loader">

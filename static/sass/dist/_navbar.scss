@@ -3,11 +3,15 @@
 $navbar-height: 54px;
 
 .#{$current}navbar {
+  z-index: 1000;
   height: $navbar-height;
   margin-bottom: $default-margin;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .#{$current}navbar__part {
@@ -68,4 +72,5 @@ $navbar-height: 54px;
 .#{$current}navbar--default-skin {
   background-color: $black;
   color: $lightgrey;
+  box-shadow: $material-shadow;
 }

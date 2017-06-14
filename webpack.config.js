@@ -4,7 +4,8 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        navbar: "./static/js/navbar/App.jsx"
+        navbar: "./static/js/navbar/App.jsx",
+        sideMenu: "./static/js/side-menu/App.jsx"
     },
     output: {
         path: path.resolve(__dirname, "public/js"),
@@ -23,5 +24,6 @@ module.exports = {
                 }]
             }
         ]
-    }
+    },
+    devtool: "source-map"
 };

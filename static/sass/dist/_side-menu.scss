@@ -1,0 +1,81 @@
+/* SRTUCT */
+
+.#{$current}side-menu {
+  width: $side-menu-width;
+  position: fixed;
+  top: 54px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.#{$current}menu-item {
+  width: $side-menu-width;
+  height: $side-menu-width;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;
+  position: relative;
+  cursor: pointer;
+}
+
+.#{$current}side-menu-panel {
+  width: calc(100vw - #{$side-menu-width});
+  position: fixed;
+  top: $header-height;
+  left: $side-menu-width;
+  bottom: 0;
+  overflow-y: auto;
+  display: nones;
+  align-items: stretch;
+}
+
+.#{$current}side-menu-panel__content {
+  width: 80%;
+}
+
+.#{$current}side-menu-panel__outside-layer {
+  width: 20%;
+}
+
+/* SKIN */
+
+.#{$current}side-menu--default-skin {
+  background-color: $lightgrey;
+  box-shadow: $material-shadow;
+}
+
+.#{$current}side-menu-panel__content--default {
+  background-color: $white;
+  box-shadow: $material-shadow;
+}
+
+.#{$current}side-menu-panel--out {
+  display: flex;
+  transform-origin: left;
+  animation: slideOut 0.2s forwards;
+}
+
+.#{$current}side-menu-panel--in {
+  display: flex;
+  transform-origin: left;
+  animation: slideIn 0.2s forwards;
+}
+
+.#{$current}menu-item--default {
+  color: $grey;
+}
+
+.#{$current}menu-item--active {
+  border-left: 5px solid $primary;
+  color: $black;
+  .#{$current}menu-item__icon {
+    margin-left: -5px;
+  }
+}
+
+.#{$current}menu-item--default:hover {
+  animation: bump 0.2s;
+  color: $black;
+}
