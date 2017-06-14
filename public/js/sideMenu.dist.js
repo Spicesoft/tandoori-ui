@@ -23249,6 +23249,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         onItemClicked: function onItemClicked(id) {
             dispatch((0, _actions.toggleOpen)(id));
             dispatch((0, _actions.toggleActive)(id));
+        },
+        onOutsideLayerClicked: function onOutsideLayerClicked(id) {
+            dispatch((0, _actions.toggleOpen)(id));
         }
     };
 };
@@ -25037,10 +25040,18 @@ var Menu = function (_React$PureComponent) {
                         className: this.getPanelClassNames()
                     },
                     _react2.default.createElement(
-                        "ul",
-                        { className: "tuiv2_list tuiv2_list--clickable" },
-                        this.renderCategories()
-                    )
+                        "div",
+                        { className: "tuiv2_side-menu-panel__content tuiv2_side-menu-panel__content--default" },
+                        _react2.default.createElement(
+                            "ul",
+                            { className: "tuiv2_list tuiv2_list--clickable" },
+                            this.renderCategories()
+                        )
+                    ),
+                    _react2.default.createElement("div", {
+                        className: "tuiv2_side-menu-panel__outside-layer",
+                        onClick: this.outsideClicked.bind(this)
+                    })
                 ),
                 this.renderItems()
             );
@@ -25104,6 +25115,11 @@ var Menu = function (_React$PureComponent) {
             classes.push(this.props.open ? "tuiv2_side-menu-panel--in" : "tuiv2_side-menu-panel--out");
             return classes.join(" ");
         }
+    }, {
+        key: "outsideClicked",
+        value: function outsideClicked() {
+            this.props.onOutsideLayerClicked(this.props.activeItem);
+        }
     }]);
 
     return Menu;
@@ -25114,7 +25130,9 @@ exports.default = Menu;
 
 Menu.propTypes = {
     onItemClicked: _propTypes2.default.func.isRequired,
+    onOutsideLayerClicked: _propTypes2.default.func.isRequired,
     open: _propTypes2.default.bool.isRequired,
+    activeItem: _propTypes2.default.string.isRequired,
     menuItems: _propTypes2.default.arrayOf(_propTypes2.default.shape({
         id: _propTypes2.default.string.isRequired,
         iconClass: _propTypes2.default.string.isRequired,

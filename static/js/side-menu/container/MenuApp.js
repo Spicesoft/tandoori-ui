@@ -16,6 +16,9 @@ const mapDispatchToProps = (dispatch) => {
         onItemClicked: (id) => {
             dispatch(toggleOpen(id));
             dispatch(toggleActive(id));
+        },
+        onOutsideLayerClicked: (id) => {
+            dispatch(toggleOpen(id));
         }
     };
 };

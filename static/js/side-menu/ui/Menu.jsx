@@ -12,9 +12,15 @@ export default class Menu extends React.PureComponent {
                 <div
                     className={this.getPanelClassNames()}
                 >
-                    <ul className="tuiv2_list tuiv2_list--clickable">
-                        {this.renderCategories()}
-                    </ul>
+                    <div className="tuiv2_side-menu-panel__content tuiv2_side-menu-panel__content--default">
+                        <ul className="tuiv2_list tuiv2_list--clickable">
+                            {this.renderCategories()}
+                        </ul>
+                    </div>
+                    <div
+                        className="tuiv2_side-menu-panel__outside-layer"
+                        onClick={this.outsideClicked.bind(this)}
+                    />
                 </div>
                 {this.renderItems()}
             </div>
@@ -68,11 +74,17 @@ export default class Menu extends React.PureComponent {
         );
         return classes.join(" ");
     }
+
+    outsideClicked() {
+        this.props.onOutsideLayerClicked(this.props.activeItem);
+    }
 }
 
 Menu.propTypes = {
     onItemClicked: T.func.isRequired,
+    onOutsideLayerClicked: T.func.isRequired,
     open: T.bool.isRequired,
+    activeItem: T.string.isRequired,
     menuItems: T.arrayOf(T.shape({
         id: T.string.isRequired,
         iconClass: T.string.isRequired,
