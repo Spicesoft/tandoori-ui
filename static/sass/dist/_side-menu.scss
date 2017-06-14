@@ -27,7 +27,7 @@
   left: $side-menu-width;
   bottom: 0;
   overflow-y: auto;
-  display: flex;
+  display: nones;
   align-items: stretch;
 }
 
@@ -52,11 +52,15 @@
 }
 
 .#{$current}side-menu-panel--out {
-  display: none;
+  display: flex;
+  transform-origin: left;
+  animation: slideOut 0.2s forwards;
 }
 
 .#{$current}side-menu-panel--in {
   display: flex;
+  transform-origin: left;
+  animation: slideIn 0.2s forwards;
 }
 
 .#{$current}menu-item--default {

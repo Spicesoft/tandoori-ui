@@ -69,9 +69,11 @@ export default class Menu extends React.PureComponent {
             "tuiv2_side-menu-panel",
             "tuiv2_side-menu-panel--default"
         ];
-        classes.push(
-            this.props.open ? "tuiv2_side-menu-panel--in" : "tuiv2_side-menu-panel--out"
-        );
+        if (this.props. activeItem !== "") {
+            classes.push(
+                this.props.open ? "tuiv2_side-menu-panel--in" : "tuiv2_side-menu-panel--out"
+            );
+        }
         return classes.join(" ");
     }
 

@@ -35,22 +35,3 @@
 .#{$current}dropdown-menu__item {
   white-space: nowrap;
 }
-
-@keyframes dropIn {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes dropOut {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-    display: none;
-  }
-}

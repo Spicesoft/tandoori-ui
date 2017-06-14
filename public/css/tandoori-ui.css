@@ -6,6 +6,28 @@
     transform: scale(1.1); }
   100% {
     transform: scale(1); } }
+@keyframes dropIn {
+  from {
+    transform: scaleY(0); }
+  to {
+    transform: scaleY(1); } }
+@keyframes dropOut {
+  from {
+    transform: scaleY(1); }
+  to {
+    transform: scaleY(0);
+    display: none; } }
+@keyframes slideIn {
+  from {
+    transform: scaleX(0); }
+  to {
+    transform: scaleX(1); } }
+@keyframes slideOut {
+  from {
+    transform: scaleX(1); }
+  to {
+    transform: scaleX(0);
+    display: none; } }
 .tuiv2_absolute-center {
   position: absolute;
   top: 50%;
@@ -1242,7 +1264,7 @@ select.form-control {
   left: 60px;
   bottom: 0;
   overflow-y: auto;
-  display: flex;
+  display: nones;
   align-items: stretch; }
 
 .tuiv2_side-menu-panel__content {
@@ -1261,10 +1283,14 @@ select.form-control {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
 
 .tuiv2_side-menu-panel--out {
-  display: none; }
+  display: flex;
+  transform-origin: left;
+  animation: slideOut 0.2s forwards; }
 
 .tuiv2_side-menu-panel--in {
-  display: flex; }
+  display: flex;
+  transform-origin: left;
+  animation: slideIn 0.2s forwards; }
 
 .tuiv2_menu-item--default {
   color: #979797; }
@@ -1310,17 +1336,6 @@ select.form-control {
 .tuiv2_dropdown-menu__item {
   white-space: nowrap; }
 
-@keyframes dropIn {
-  from {
-    transform: scaleY(0); }
-  to {
-    transform: scaleY(1); } }
-@keyframes dropOut {
-  from {
-    transform: scaleY(1); }
-  to {
-    transform: scaleY(0);
-    display: none; } }
 /**
  * Some reusable animated loaders:
  *  <div class="tuiv2_loader">

@@ -3,75 +3,6 @@ import {
     TOGGLE_ACTIVE
 } from "./actionTypes";
 
-// const menuItems = {
-//     text: {
-//         id: "text",
-//         iconClass: "lnr-text-format",
-//         active: false,
-//         subItems: {
-//             category1: {
-//                 name: "Category 1",
-//                 items: [
-//                     {
-//                         id: "Item 1",
-//                         url: "#"
-//                     },
-//                     {
-//                         id: "Item 2",
-//                         url: "prout"
-//                     }
-//                 ]
-//             },
-//             category2: {
-//                 name: "Category 2",
-//                 items: [
-//                     {
-//                         id: "Item 1",
-//                         url: "#"
-//                     },
-//                     {
-//                         id: "Item 2",
-//                         url: "prout"
-//                     }
-//                 ]
-//             }
-//         }
-//     },
-//     form: {
-//         id: "form",
-//         iconClass: "lnr-text-format",
-//         active: false,
-//         subItems: {
-//             category1: {
-//                 name: "Form Category 1",
-//                 items: [
-//                     {
-//                         id: "Item 1",
-//                         url: "#"
-//                     },
-//                     {
-//                         id: "Item 2",
-//                         url: "prout"
-//                     }
-//                 ]
-//             },
-//             category2: {
-//                 name: "Form Category 2",
-//                 items: [
-//                     {
-//                         id: "Item 1",
-//                         url: "#"
-//                     },
-//                     {
-//                         id: "Item 2",
-//                         url: "prout"
-//                     }
-//                 ]
-//             }
-//         }
-//     }
-// };
-
 const menuItems = [{
     id: "text",
     iconClass: "lnr-text-format",
@@ -127,8 +58,6 @@ const setActiveItem = (items, id) => {
 };
 
 const toggleOpen = (previousID, nextId, open) => {
-    console.log(previousID);
-    console.log(nextId);
     if (open) {
         return previousID !== nextId ? true : false;
     }

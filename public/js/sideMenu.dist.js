@@ -23276,75 +23276,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _actionTypes = __webpack_require__(196);
 
-// const menuItems = {
-//     text: {
-//         id: "text",
-//         iconClass: "lnr-text-format",
-//         active: false,
-//         subItems: {
-//             category1: {
-//                 name: "Category 1",
-//                 items: [
-//                     {
-//                         id: "Item 1",
-//                         url: "#"
-//                     },
-//                     {
-//                         id: "Item 2",
-//                         url: "prout"
-//                     }
-//                 ]
-//             },
-//             category2: {
-//                 name: "Category 2",
-//                 items: [
-//                     {
-//                         id: "Item 1",
-//                         url: "#"
-//                     },
-//                     {
-//                         id: "Item 2",
-//                         url: "prout"
-//                     }
-//                 ]
-//             }
-//         }
-//     },
-//     form: {
-//         id: "form",
-//         iconClass: "lnr-text-format",
-//         active: false,
-//         subItems: {
-//             category1: {
-//                 name: "Form Category 1",
-//                 items: [
-//                     {
-//                         id: "Item 1",
-//                         url: "#"
-//                     },
-//                     {
-//                         id: "Item 2",
-//                         url: "prout"
-//                     }
-//                 ]
-//             },
-//             category2: {
-//                 name: "Form Category 2",
-//                 items: [
-//                     {
-//                         id: "Item 1",
-//                         url: "#"
-//                     },
-//                     {
-//                         id: "Item 2",
-//                         url: "prout"
-//                     }
-//                 ]
-//             }
-//         }
-//     }
-// };
-
 var menuItems = [{
     id: "text",
     iconClass: "lnr-text-format",
@@ -23393,8 +23324,6 @@ var setActiveItem = function setActiveItem(items, id) {
 };
 
 var toggleOpen = function toggleOpen(previousID, nextId, open) {
-    console.log(previousID);
-    console.log(nextId);
     if (open) {
         return previousID !== nextId ? true : false;
     }
@@ -25112,7 +25041,9 @@ var Menu = function (_React$PureComponent) {
         key: "getPanelClassNames",
         value: function getPanelClassNames() {
             var classes = ["tuiv2_side-menu-panel", "tuiv2_side-menu-panel--default"];
-            classes.push(this.props.open ? "tuiv2_side-menu-panel--in" : "tuiv2_side-menu-panel--out");
+            if (this.props.activeItem !== "") {
+                classes.push(this.props.open ? "tuiv2_side-menu-panel--in" : "tuiv2_side-menu-panel--out");
+            }
             return classes.join(" ");
         }
     }, {
