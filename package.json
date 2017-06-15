@@ -2,12 +2,13 @@
   "name": "tandoori-ui",
   "version": "1.0.0",
   "description": "Tandoori user interface's elements.",
-  "main": "public/js/index.dist.js",
+  "main": "static/js/index.js",
   "module": "static/js/index.js",
   "jsnext:main": "static/js/index.js",
   "files": [
       "public",
-      "static"
+      "static",
+      "static/js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
