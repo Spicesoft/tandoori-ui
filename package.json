@@ -4,6 +4,7 @@
   "description": "Tandoori user interface's elements.",
   "main": "public/js/index.dist.js",
   "module": "static/js/index.js",
+  "jsnext:main": "static/js/index.js",
   "files": [
       "public",
       "static"
