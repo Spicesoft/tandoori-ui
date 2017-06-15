@@ -6,7 +6,59 @@ import {menuApp} from "./reducer";
 
 import MenuApp from "./container/MenuApp";
 
-let store = createStore(menuApp);
+const menuItems = [{
+    id: "text",
+    iconClass: "lnr-text-format",
+    active: false,
+    subItems: [{
+        category: "Category 1",
+        items: [
+            {
+                id: "Item 1",
+                url: "#"
+            },
+            {
+                id: "Item 2",
+                url: "prout"
+            }
+        ]
+    }, {
+        category: "Category 2",
+        items: [
+            {
+                id: "Item 1",
+                url: "#"
+            },
+            {
+                id: "Item 2",
+                url: "prout"
+            }
+        ]
+    }]
+}, {
+    id: "form",
+    iconClass: "lnr-checkmark-circle",
+    active: false,
+    subItems: [{
+        category: "Category 1",
+        items: [{
+            id: "Item 1",
+            url: "#"
+        }, {
+            id: "Item 2",
+            url: "prout"
+        }]
+    }]
+}];
+
+const appData = {
+    menuItems: menuItems,
+    open: false,
+    activeItem: ""
+};
+
+
+let store = createStore(menuApp, appData);
 const logChange = () => {
     console.info(store.getState());
 };

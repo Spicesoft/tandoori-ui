@@ -1,4 +1,5 @@
 import React from "react";
+import T from "prop-types";
 import Dropdown from "../../shared/Dropdown.jsx";
 
 export default class Navbar extends React.PureComponent {
@@ -9,32 +10,22 @@ export default class Navbar extends React.PureComponent {
     }
 
     render() {
-        const items = [
-            {
-                label: "Item 1",
-                target: "#",
-                action: () => {console.log("Clicked item 1");}
-            },
-            {
-                label: "Item 2",
-                target: "prout"
-            }
-        ];
+        const {logoUrl, tenantTitle, userName, actionItems, profileItems} = this.props;
         return (
             <nav className="tuiv2_navbar tuiv2_navbar--default-skin">
                 {this.renderMenuIcon()}
-                {this.renderBrand()}
-                {this.renderActions(items)}
+                {this.renderBrand(logoUrl, tenantTitle)}
+                {this.renderActions(actionItems, profileItems, userName)}
             </nav>
         );
     }
 
-    renderBrand() {
+    renderBrand(logoUrl, tenantTitle) {
         const brandName = () => {
             if (!this.mobileDevice) {
                 return (
                     <div className="tuiv2_navbar__brand-name">
-                        <p className="tuiv2_navbar__slogan">Cowork.io's Tandoori UI</p>
+                        <p className="tuiv2_navbar__slogan">{tenantTitle}</p>
                         <div className="tuiv2_navbar__search">
                             <div className="form-group">
                                 <input
@@ -52,7 +43,8 @@ export default class Navbar extends React.PureComponent {
             <div className="tuiv2_navbar__part">
                 <a href="/">
                     <img
-                        src="public/img/logo.png"
+                        src={logoUrl}
+                        alt={tenantTitle}
                         className="tuiv2_navbar__logo"
                     />
                 </a>
@@ -73,18 +65,18 @@ export default class Navbar extends React.PureComponent {
         }
     }
 
-    renderActions(items) {
+    renderActions(actionItems, profileItems, userName) {
         const profileDropdown = () => (
             !this.mobileDevice ? (<Dropdown
-                items={items}
-                text="Toto"
+                items={profileItems}
+                text={userName}
                 containerClass="tuiv2_navbar__action"
                 align="right"
             />) : null
         );
         return (<div className="tuiv2_navbar__part">
             <Dropdown
-                items={items}
+                items={actionItems}
                 spanClass="lnr-user"
                 containerClass="tuiv2_navbar__action"
                 align="right"
@@ -93,3 +85,10 @@ export default class Navbar extends React.PureComponent {
         </div>);
     }
 }
+Navbar.propTypes = {
+    logoUrl: T.string.isRequired,
+    tenantTitle: T.string.isRequired,
+    userName: T.string.isRequired,
+    actionItems: T.array.isRequired,
+    profileItems: T.array.isRequired
+};

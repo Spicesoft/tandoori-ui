@@ -5,11 +5,7 @@ import {
 } from "../actions";
 import Menu from "../ui/Menu.jsx";
 
-const mapStateToProps = (state) => {
-    return {
-        ...state
-    };
-};
+const mapStateToProps = (state) => (state);
 
 const mapDispatchToProps = (dispatch) => {
     return {

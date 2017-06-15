@@ -22160,6 +22160,10 @@ var _react = __webpack_require__(25);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(52);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Dropdown = __webpack_require__(227);
 
 var _Dropdown2 = _interopRequireDefault(_Dropdown);
@@ -22187,27 +22191,24 @@ var Navbar = function (_React$PureComponent) {
     _createClass(Navbar, [{
         key: "render",
         value: function render() {
-            var items = [{
-                label: "Item 1",
-                target: "#",
-                action: function action() {
-                    console.log("Clicked item 1");
-                }
-            }, {
-                label: "Item 2",
-                target: "prout"
-            }];
+            var _props = this.props,
+                logoUrl = _props.logoUrl,
+                tenantTitle = _props.tenantTitle,
+                userName = _props.userName,
+                actionItems = _props.actionItems,
+                profileItems = _props.profileItems;
+
             return _react2.default.createElement(
                 "nav",
                 { className: "tuiv2_navbar tuiv2_navbar--default-skin" },
                 this.renderMenuIcon(),
-                this.renderBrand(),
-                this.renderActions(items)
+                this.renderBrand(logoUrl, tenantTitle),
+                this.renderActions(actionItems, profileItems, userName)
             );
         }
     }, {
         key: "renderBrand",
-        value: function renderBrand() {
+        value: function renderBrand(logoUrl, tenantTitle) {
             var _this2 = this;
 
             var brandName = function brandName() {
@@ -22218,7 +22219,7 @@ var Navbar = function (_React$PureComponent) {
                         _react2.default.createElement(
                             "p",
                             { className: "tuiv2_navbar__slogan" },
-                            "Cowork.io's Tandoori UI"
+                            tenantTitle
                         ),
                         _react2.default.createElement(
                             "div",
@@ -22243,7 +22244,8 @@ var Navbar = function (_React$PureComponent) {
                     "a",
                     { href: "/" },
                     _react2.default.createElement("img", {
-                        src: "public/img/logo.png",
+                        src: logoUrl,
+                        alt: tenantTitle,
                         className: "tuiv2_navbar__logo"
                     })
                 ),
@@ -22267,13 +22269,13 @@ var Navbar = function (_React$PureComponent) {
         }
     }, {
         key: "renderActions",
-        value: function renderActions(items) {
+        value: function renderActions(actionItems, profileItems, userName) {
             var _this3 = this;
 
             var profileDropdown = function profileDropdown() {
                 return !_this3.mobileDevice ? _react2.default.createElement(_Dropdown2.default, {
-                    items: items,
-                    text: "Toto",
+                    items: profileItems,
+                    text: userName,
                     containerClass: "tuiv2_navbar__action",
                     align: "right"
                 }) : null;
@@ -22282,7 +22284,7 @@ var Navbar = function (_React$PureComponent) {
                 "div",
                 { className: "tuiv2_navbar__part" },
                 _react2.default.createElement(_Dropdown2.default, {
-                    items: items,
+                    items: actionItems,
                     spanClass: "lnr-user",
                     containerClass: "tuiv2_navbar__action",
                     align: "right"
@@ -22296,6 +22298,14 @@ var Navbar = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 exports.default = Navbar;
+
+Navbar.propTypes = {
+    logoUrl: _propTypes2.default.string.isRequired,
+    tenantTitle: _propTypes2.default.string.isRequired,
+    userName: _propTypes2.default.string.isRequired,
+    actionItems: _propTypes2.default.array.isRequired,
+    profileItems: _propTypes2.default.array.isRequired
+};
 
 /***/ }),
 /* 198 */,
@@ -22346,7 +22356,33 @@ var _Navbar2 = _interopRequireDefault(_Navbar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_Navbar2.default, null), document.getElementById("navbar"));
+var navbarData = {
+    logoUrl: "public/img/logo.png",
+    tenantTitle: "Cowork's Tandoori UI",
+    userName: "Roland",
+    actionItems: [{
+        id: "coworkio",
+        label: "Go to coworkio",
+        url: "https://cowork.io/"
+    }, {
+        id: "lelab",
+        label: "Go to the lab",
+        url: "https://lelab.cowork.io"
+    }],
+    profileItems: [{
+        id: "logout",
+        label: "Logout",
+        url: ""
+    }]
+};
+
+_reactDom2.default.render(_react2.default.createElement(_Navbar2.default, {
+    logoUrl: navbarData.logoUrl,
+    tenantTitle: navbarData.tenantTitle,
+    userName: navbarData.userName,
+    actionItems: navbarData.actionItems,
+    profileItems: navbarData.profileItems
+}), document.getElementById("navbar"));
 
 /***/ }),
 /* 227 */
@@ -22447,7 +22483,7 @@ var Dropdown = function (_React$PureComponent) {
                             {
                                 className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
                                 onClick: item.action ? item.action : function () {
-                                    window.location = item.target;
+                                    window.location = item.url;
                                 }
                             },
                             item.label
@@ -22511,7 +22547,7 @@ Dropdown.propTypes = {
     align: _propTypes2.default.string,
     items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
         label: _propTypes2.default.string.isRequired,
-        target: _propTypes2.default.string.isRequired,
+        url: _propTypes2.default.string.isRequired,
         action: _propTypes2.default.func
     })).isRequired
 };

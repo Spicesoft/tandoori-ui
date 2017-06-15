@@ -3,50 +3,6 @@ import {
     TOGGLE_ACTIVE
 } from "./actionTypes";
 
-const menuItems = [{
-    id: "text",
-    iconClass: "lnr-text-format",
-    active: false,
-    subItems: [{
-        category: "Category 1",
-        items: [
-            {
-                id: "Item 1",
-                url: "#"
-            },
-            {
-                id: "Item 2",
-                url: "prout"
-            }
-        ]
-    }, {
-        category: "Category 2",
-        items: [
-            {
-                id: "Item 1",
-                url: "#"
-            },
-            {
-                id: "Item 2",
-                url: "prout"
-            }
-        ]
-    }]
-}, {
-    id: "form",
-    iconClass: "lnr-checkmark-circle",
-    active: false,
-    subItems: [{
-        category: "Category 1",
-        items: [{
-            id: "Item 1",
-            url: "#"
-        }, {
-            id: "Item 2",
-            url: "prout"
-        }]
-    }]
-}];
 
 const setActiveItem = (items, id) => {
     return items.map(item => {
@@ -64,13 +20,13 @@ const toggleOpen = (previousID, nextId, open) => {
     return true;
 };
 
-const initialState = {
-    open: false,
-    activeItem: "",
-    menuItems
-};
+// const initialState = {
+//     open: false,
+//     activeItem: "",
+//     menuItems: []
+// };
 
-export const menuApp = (state = initialState, action) => {
+export const menuApp = (state, action) => {
     switch (action.type) {
         case TOGGLE_OPEN:
             return {

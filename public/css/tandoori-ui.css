@@ -1185,7 +1185,6 @@ select.form-control {
 .tuiv2_navbar {
   z-index: 1000;
   height: 54px;
-  margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -1196,7 +1195,8 @@ select.form-control {
 .tuiv2_navbar__part {
   display: flex;
   align-items: center;
-  max-width: 50%; }
+  max-width: 50%;
+  padding: 10px; }
   .tuiv2_navbar__part:hover .tuiv2_navbar__logo {
     transform: bump 0.5s; }
 

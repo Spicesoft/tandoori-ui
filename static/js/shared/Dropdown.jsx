@@ -51,7 +51,7 @@ export default class Dropdown extends React.PureComponent {
                         <a
                         className="tuiv2_list-item__link tuiv2_dropdown-menu__item"
                         onClick={item.action ? item.action : () => {
-                            window.location = item.target;
+                            window.location = item.url;
                         }}
                         >
                             {item.label}
@@ -107,7 +107,7 @@ Dropdown.propTypes = {
     items: T.arrayOf(
         T.shape({
             label: T.string.isRequired,
-            target: T.string.isRequired,
+            url: T.string.isRequired,
             action: T.func
         })
     ).isRequired

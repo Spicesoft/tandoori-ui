@@ -23229,8 +23229,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _reactRedux = __webpack_require__(185);
 
 var _actions = __webpack_require__(229);
@@ -23242,7 +23240,7 @@ var _Menu2 = _interopRequireDefault(_Menu);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
-    return _extends({}, state);
+    return state;
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -23277,45 +23275,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _actionTypes = __webpack_require__(196);
 
-var menuItems = [{
-    id: "text",
-    iconClass: "lnr-text-format",
-    active: false,
-    subItems: [{
-        category: "Category 1",
-        items: [{
-            id: "Item 1",
-            url: "#"
-        }, {
-            id: "Item 2",
-            url: "prout"
-        }]
-    }, {
-        category: "Category 2",
-        items: [{
-            id: "Item 1",
-            url: "#"
-        }, {
-            id: "Item 2",
-            url: "prout"
-        }]
-    }]
-}, {
-    id: "form",
-    iconClass: "lnr-checkmark-circle",
-    active: false,
-    subItems: [{
-        category: "Category 1",
-        items: [{
-            id: "Item 1",
-            url: "#"
-        }, {
-            id: "Item 2",
-            url: "prout"
-        }]
-    }]
-}];
-
 var setActiveItem = function setActiveItem(items, id) {
     return items.map(function (item) {
         return _extends({}, item, {
@@ -23331,16 +23290,13 @@ var toggleOpen = function toggleOpen(previousID, nextId, open) {
     return true;
 };
 
-var initialState = {
-    open: false,
-    activeItem: "",
-    menuItems: menuItems
-};
+// const initialState = {
+//     open: false,
+//     activeItem: "",
+//     menuItems: []
+// };
 
-var menuApp = exports.menuApp = function menuApp() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-    var action = arguments[1];
-
+var menuApp = exports.menuApp = function menuApp(state, action) {
     switch (action.type) {
         case _actionTypes.TOGGLE_OPEN:
             return _extends({}, state, {
@@ -24876,7 +24832,52 @@ var _MenuApp2 = _interopRequireDefault(_MenuApp);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _redux.createStore)(_reducer.menuApp);
+var menuItems = [{
+    id: "text",
+    iconClass: "lnr-text-format",
+    active: false,
+    subItems: [{
+        category: "Category 1",
+        items: [{
+            id: "Item 1",
+            url: "#"
+        }, {
+            id: "Item 2",
+            url: "prout"
+        }]
+    }, {
+        category: "Category 2",
+        items: [{
+            id: "Item 1",
+            url: "#"
+        }, {
+            id: "Item 2",
+            url: "prout"
+        }]
+    }]
+}, {
+    id: "form",
+    iconClass: "lnr-checkmark-circle",
+    active: false,
+    subItems: [{
+        category: "Category 1",
+        items: [{
+            id: "Item 1",
+            url: "#"
+        }, {
+            id: "Item 2",
+            url: "prout"
+        }]
+    }]
+}];
+
+var appData = {
+    menuItems: menuItems,
+    open: false,
+    activeItem: ""
+};
+
+var store = (0, _redux.createStore)(_reducer.menuApp, appData);
 var logChange = function logChange() {
     console.info(store.getState());
 };
