@@ -2,8 +2,8 @@
   "name": "tandoori-ui",
   "version": "1.0.0",
   "description": "Tandoori user interface's elements.",
-  "main": "main.js",
-  "module": "public/js/",
+  "main": "public/js/index.dist.js",
+  "module": "public/js/index.dist.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
