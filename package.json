@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Tandoori user interface's elements.",
   "main": "public/js/index.dist.js",
-  "module": "static/js/index.dist.js",
+  "module": "static/js/index.js",
   "files": [
       "public",
       "static"
