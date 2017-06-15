@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Tandoori user interface's elements.",
   "main": "public/js/index.dist.js",
-  "module": "public/js/index.dist.js",
+  "module": "static/js/index.dist.js",
+  "files": [
+      "public",
+      "static"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
