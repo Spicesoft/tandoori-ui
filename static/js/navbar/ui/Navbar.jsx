@@ -11,8 +11,14 @@ export default class Navbar extends React.PureComponent {
 
     render() {
         const {logoUrl, tenantTitle, userName, actionItems, profileItems} = this.props;
+        const classNames = [
+            "tuiv2_navbar"
+        ];
+        classNames.push(
+            this.props.lightTheme ? "tuiv2_navbar--light" : "tuiv2_navbar--default-skin"
+        );
         return (
-            <nav className="tuiv2_navbar tuiv2_navbar--default-skin">
+            <nav className={classNames.join(" ")}>
                 {this.renderMenuIcon()}
                 {this.renderBrand(logoUrl, tenantTitle)}
                 {this.renderActions(actionItems, profileItems, userName)}
@@ -68,16 +74,17 @@ export default class Navbar extends React.PureComponent {
     renderActions(actionItems, profileItems, userName) {
         const profileDropdown = () => (
             !this.mobileDevice ? (<Dropdown
-                items={profileItems}
-                text={userName}
+                items={actionItems}
+                spanClass="lnr-bell"
                 containerClass="tuiv2_navbar__action"
                 align="right"
             />) : null
         );
         return (<div className="tuiv2_navbar__part">
             <Dropdown
-                items={actionItems}
-                spanClass="lnr-user"
+                items={profileItems}
+                text={this.props.isLoggedIn ? userName : ""}
+                spanClass={this.props.isLoggedIn ? "" : "lnr-user"}
                 containerClass="tuiv2_navbar__action"
                 align="right"
             />
@@ -86,9 +93,11 @@ export default class Navbar extends React.PureComponent {
     }
 }
 Navbar.propTypes = {
+    lightTheme: T.bool,
     logoUrl: T.string.isRequired,
     tenantTitle: T.string.isRequired,
     userName: T.string.isRequired,
     actionItems: T.array.isRequired,
-    profileItems: T.array.isRequired
+    profileItems: T.array.isRequired,
+    isLoggedIn: T.bool.isRequired
 };

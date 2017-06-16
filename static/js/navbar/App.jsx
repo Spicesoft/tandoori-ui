@@ -35,6 +35,8 @@ ReactDOM.render(
         userName={navbarData.userName}
         actionItems={navbarData.actionItems}
         profileItems={navbarData.profileItems}
+        lightTheme={true}
+        isLoggedIn={true}
     />,
     document.getElementById("navbar")
 );

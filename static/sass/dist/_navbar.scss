@@ -74,3 +74,20 @@ $navbar-height: 54px;
   color: $lightgrey;
   box-shadow: $material-shadow;
 }
+
+.#{$current}navbar--light {
+  background-color: $white;
+  color: $black;
+  box-shadow: $material-shadow;
+  .#{$current}navbar__search {
+    .form-control {
+      background-color: $white;
+    }
+  }
+  .#{$current}navbar__action {
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}

@@ -64,7 +64,7 @@ var tandooriUi =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 227);
+/******/ 	return __webpack_require__(__webpack_require__.s = 228);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -349,7 +349,7 @@ var _assign = __webpack_require__(4);
 var ReactCurrentOwner = __webpack_require__(9);
 
 var warning = __webpack_require__(2);
-var canDefineProperty = __webpack_require__(19);
+var canDefineProperty = __webpack_require__(20);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 var REACT_ELEMENT_TYPE = __webpack_require__(38);
@@ -783,7 +783,7 @@ var createFactory = ReactElement.createFactory;
 var cloneElement = ReactElement.cloneElement;
 
 if (process.env.NODE_ENV !== 'production') {
-  var canDefineProperty = __webpack_require__(19);
+  var canDefineProperty = __webpack_require__(20);
   var ReactElementValidator = __webpack_require__(39);
   var didWarnPropTypesDeprecated = false;
   createElement = ReactElementValidator.createElement;
@@ -859,7 +859,17 @@ module.exports = React;
 
 /***/ }),
 
-/***/ 186:
+/***/ 19:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(18);
+
+/***/ }),
+
+/***/ 199:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -871,13 +881,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(20);
+var _react = __webpack_require__(19);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(30);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -887,177 +893,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Dropdown = function (_React$PureComponent) {
-    _inherits(Dropdown, _React$PureComponent);
+var Loader = function (_React$PureComponent) {
+    _inherits(Loader, _React$PureComponent);
 
-    function Dropdown() {
-        _classCallCheck(this, Dropdown);
+    function Loader() {
+        _classCallCheck(this, Loader);
 
-        return _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Loader.__proto__ || Object.getPrototypeOf(Loader)).apply(this, arguments));
     }
 
-    _createClass(Dropdown, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
-            this.setState({
-                open: false,
-                animation: null
-            });
-        }
-    }, {
+    _createClass(Loader, [{
         key: "render",
         value: function render() {
-            var _props = this.props,
-                spanClass = _props.spanClass,
-                containerClass = _props.containerClass,
-                text = _props.text;
-
-            var classNames = "tuiv2_dropdown " + containerClass || "";
-            var spanClassNames = "tuiv2_dropdown__label " + spanClass || "";
             return _react2.default.createElement(
                 "div",
-                {
-                    className: classNames,
-                    tabIndex: 0,
-                    onClick: this.toggleOpen.bind(this),
-                    onBlur: this.handleBlur.bind(this)
-                },
-                _react2.default.createElement(
-                    "span",
-                    { className: spanClassNames },
-                    text
-                ),
-                this.renderMenu()
+                { className: "tuiv2_loader" },
+                _react2.default.createElement("span", { className: "tuiv2_loader__dot" }),
+                _react2.default.createElement("span", { className: "tuiv2_loader__dot" }),
+                _react2.default.createElement("span", { className: "tuiv2_loader__dot" })
             );
-        }
-    }, {
-        key: "renderMenu",
-        value: function renderMenu() {
-            var classNames = ["tuiv2_dropdown-menu", "tuiv2_list", "tuiv2_list--clickable"];
-            if (this.state.open !== null) {
-                classNames.push("tuiv2_dropdown-menu--" + this.state.animation);
-            }
-            return _react2.default.createElement(
-                "ul",
-                {
-                    className: classNames.join(" "),
-                    style: this.getPosition()
-                },
-                this.renderCloseItem(),
-                this.props.items.map(function (item, index) {
-                    return _react2.default.createElement(
-                        "li",
-                        {
-                            className: "tuiv2_list-item",
-                            key: index
-                        },
-                        _react2.default.createElement(
-                            "a",
-                            {
-                                className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
-                                onClick: item.action ? item.action : function () {
-                                    window.location = item.url;
-                                }
-                            },
-                            item.label
-                        )
-                    );
-                })
-            );
-        }
-    }, {
-        key: "renderCloseItem",
-        value: function renderCloseItem() {
-            if (this.mobileDevice) {
-                return _react2.default.createElement(
-                    "div",
-                    { className: "tuiv2_list-item" },
-                    _react2.default.createElement("span", { className: "lnr-cross tuiv2_text--black" })
-                );
-            }
-        }
-    }, {
-        key: "handleBlur",
-        value: function handleBlur() {
-            if (this.state.open) {
-                this.toggleOpen();
-            }
-        }
-    }, {
-        key: "toggleOpen",
-        value: function toggleOpen() {
-            this.setState({
-                open: this.state.open ? false : true,
-                animation: this.state.open ? "out" : "in"
-            });
-        }
-    }, {
-        key: "getPosition",
-        value: function getPosition() {
-            if (this.props.align === "right") {
-                return {
-                    left: "auto",
-                    right: 0
-                };
-            }
-            return {
-                right: "auto",
-                left: 0
-            };
         }
     }]);
 
-    return Dropdown;
+    return Loader;
 }(_react2.default.PureComponent);
 
-exports.default = Dropdown;
-
-
-Dropdown.propTypes = {
-    spanClass: _propTypes2.default.string,
-    containerClass: _propTypes2.default.string,
-    text: _propTypes2.default.string,
-    align: _propTypes2.default.string,
-    items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-        label: _propTypes2.default.string.isRequired,
-        url: _propTypes2.default.string.isRequired,
-        action: _propTypes2.default.func
-    })).isRequired
-};
-
-/***/ }),
-
-/***/ 19:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
-
-
-
-var canDefineProperty = false;
-if (process.env.NODE_ENV !== 'production') {
-  try {
-    // $FlowFixMe https://github.com/facebook/flow/issues/285
-    Object.defineProperty({}, 'x', { get: function get() {} });
-    canDefineProperty = true;
-  } catch (x) {
-    // IE will fail on defineProperty
-  }
-}
-
-module.exports = canDefineProperty;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+exports.default = Loader;
 
 /***/ }),
 
@@ -1139,13 +1000,36 @@ module.exports = warning;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */
 
 
-module.exports = __webpack_require__(18);
+
+var canDefineProperty = false;
+if (process.env.NODE_ENV !== 'production') {
+  try {
+    // $FlowFixMe https://github.com/facebook/flow/issues/285
+    Object.defineProperty({}, 'x', { get: function get() {} });
+    canDefineProperty = true;
+  } catch (x) {
+    // IE will fail on defineProperty
+  }
+}
+
+module.exports = canDefineProperty;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1154,15 +1038,25 @@ module.exports = __webpack_require__(18);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Navbar = undefined;
+exports.Loader = exports.Dropdown = exports.Navbar = undefined;
 
-var _Navbar = __webpack_require__(98);
+var _Navbar = __webpack_require__(99);
 
 var _Navbar2 = _interopRequireDefault(_Navbar);
+
+var _Dropdown = __webpack_require__(97);
+
+var _Dropdown2 = _interopRequireDefault(_Dropdown);
+
+var _Loader = __webpack_require__(199);
+
+var _Loader2 = _interopRequireDefault(_Loader);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Navbar = _Navbar2.default;
+exports.Dropdown = _Dropdown2.default;
+exports.Loader = _Loader2.default;
 
 /***/ }),
 
@@ -1209,7 +1103,7 @@ var _prodInvariant = __webpack_require__(12);
 
 var ReactNoopUpdateQueue = __webpack_require__(29);
 
-var canDefineProperty = __webpack_require__(19);
+var canDefineProperty = __webpack_require__(20);
 var emptyObject = __webpack_require__(16);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
@@ -2011,7 +1905,7 @@ var ReactElement = __webpack_require__(11);
 
 var checkReactTypeSpec = __webpack_require__(94);
 
-var canDefineProperty = __webpack_require__(19);
+var canDefineProperty = __webpack_require__(20);
 var getIteratorFn = __webpack_require__(41);
 var warning = __webpack_require__(2);
 
@@ -4734,7 +4628,7 @@ module.exports = traverseAllChildren;
 
 /***/ }),
 
-/***/ 98:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4746,7 +4640,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(20);
+var _react = __webpack_require__(19);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -4754,7 +4648,176 @@ var _propTypes = __webpack_require__(30);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Dropdown = __webpack_require__(186);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Dropdown = function (_React$PureComponent) {
+    _inherits(Dropdown, _React$PureComponent);
+
+    function Dropdown() {
+        _classCallCheck(this, Dropdown);
+
+        return _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).apply(this, arguments));
+    }
+
+    _createClass(Dropdown, [{
+        key: "componentWillMount",
+        value: function componentWillMount() {
+            this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
+            this.setState({
+                open: false,
+                animation: null
+            });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _props = this.props,
+                spanClass = _props.spanClass,
+                containerClass = _props.containerClass,
+                text = _props.text;
+
+            var classNames = "tuiv2_dropdown " + containerClass || "";
+            var spanClassNames = "tuiv2_dropdown__label " + spanClass || "";
+            return _react2.default.createElement(
+                "div",
+                {
+                    className: classNames,
+                    tabIndex: 0,
+                    onClick: this.toggleOpen.bind(this),
+                    onBlur: this.handleBlur.bind(this)
+                },
+                _react2.default.createElement(
+                    "span",
+                    { className: spanClassNames },
+                    text
+                ),
+                this.renderMenu()
+            );
+        }
+    }, {
+        key: "renderMenu",
+        value: function renderMenu() {
+            var classNames = ["tuiv2_dropdown-menu", "tuiv2_list", "tuiv2_list--clickable"];
+            if (this.state.open !== null) {
+                classNames.push("tuiv2_dropdown-menu--" + this.state.animation);
+            }
+            return _react2.default.createElement(
+                "ul",
+                {
+                    className: classNames.join(" "),
+                    style: this.getPosition()
+                },
+                this.renderCloseItem(),
+                this.props.items.map(function (item, index) {
+                    return _react2.default.createElement(
+                        "li",
+                        {
+                            className: "tuiv2_list-item",
+                            key: index
+                        },
+                        _react2.default.createElement(
+                            "a",
+                            {
+                                className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
+                                onClick: item.action ? item.action : function () {
+                                    window.location = item.url;
+                                }
+                            },
+                            item.label
+                        )
+                    );
+                })
+            );
+        }
+    }, {
+        key: "renderCloseItem",
+        value: function renderCloseItem() {
+            if (this.mobileDevice) {
+                return _react2.default.createElement(
+                    "div",
+                    { className: "tuiv2_list-item" },
+                    _react2.default.createElement("span", { className: "lnr-cross tuiv2_text--black" })
+                );
+            }
+        }
+    }, {
+        key: "handleBlur",
+        value: function handleBlur() {
+            if (this.state.open) {
+                this.toggleOpen();
+            }
+        }
+    }, {
+        key: "toggleOpen",
+        value: function toggleOpen() {
+            this.setState({
+                open: this.state.open ? false : true,
+                animation: this.state.open ? "out" : "in"
+            });
+        }
+    }, {
+        key: "getPosition",
+        value: function getPosition() {
+            if (this.props.align === "right") {
+                return {
+                    left: "auto",
+                    right: 0
+                };
+            }
+            return {
+                right: "auto",
+                left: 0
+            };
+        }
+    }]);
+
+    return Dropdown;
+}(_react2.default.PureComponent);
+
+exports.default = Dropdown;
+
+
+Dropdown.propTypes = {
+    spanClass: _propTypes2.default.string,
+    containerClass: _propTypes2.default.string,
+    text: _propTypes2.default.string,
+    align: _propTypes2.default.string,
+    items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        label: _propTypes2.default.string.isRequired,
+        url: _propTypes2.default.string.isRequired,
+        action: _propTypes2.default.func
+    })).isRequired
+};
+
+/***/ }),
+
+/***/ 99:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(19);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(30);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Dropdown = __webpack_require__(97);
 
 var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
@@ -4788,9 +4851,11 @@ var Navbar = function (_React$PureComponent) {
                 actionItems = _props.actionItems,
                 profileItems = _props.profileItems;
 
+            var classNames = ["tuiv2_navbar"];
+            classNames.push(this.props.lightTheme ? "tuiv2_navbar--light" : "tuiv2_navbar--default-skin");
             return _react2.default.createElement(
                 "nav",
-                { className: "tuiv2_navbar tuiv2_navbar--default-skin" },
+                { className: classNames.join(" ") },
                 this.renderMenuIcon(),
                 this.renderBrand(logoUrl, tenantTitle),
                 this.renderActions(actionItems, profileItems, userName)
@@ -4864,8 +4929,8 @@ var Navbar = function (_React$PureComponent) {
 
             var profileDropdown = function profileDropdown() {
                 return !_this3.mobileDevice ? _react2.default.createElement(_Dropdown2.default, {
-                    items: profileItems,
-                    text: userName,
+                    items: actionItems,
+                    spanClass: "lnr-bell",
                     containerClass: "tuiv2_navbar__action",
                     align: "right"
                 }) : null;
@@ -4874,8 +4939,9 @@ var Navbar = function (_React$PureComponent) {
                 "div",
                 { className: "tuiv2_navbar__part" },
                 _react2.default.createElement(_Dropdown2.default, {
-                    items: actionItems,
-                    spanClass: "lnr-user",
+                    items: profileItems,
+                    text: this.props.isLoggedIn ? userName : "",
+                    spanClass: this.props.isLoggedIn ? "" : "lnr-user",
                     containerClass: "tuiv2_navbar__action",
                     align: "right"
                 }),
@@ -4890,11 +4956,13 @@ var Navbar = function (_React$PureComponent) {
 exports.default = Navbar;
 
 Navbar.propTypes = {
+    lightTheme: _propTypes2.default.bool,
     logoUrl: _propTypes2.default.string.isRequired,
     tenantTitle: _propTypes2.default.string.isRequired,
     userName: _propTypes2.default.string.isRequired,
     actionItems: _propTypes2.default.array.isRequired,
-    profileItems: _propTypes2.default.array.isRequired
+    profileItems: _propTypes2.default.array.isRequired,
+    isLoggedIn: _propTypes2.default.bool.isRequired
 };
 
 /***/ })
