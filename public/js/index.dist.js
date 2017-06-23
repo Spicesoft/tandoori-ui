@@ -4882,11 +4882,7 @@ var Navbar = function (_React$PureComponent) {
                             _react2.default.createElement(
                                 "div",
                                 { className: "form-group" },
-                                _react2.default.createElement("input", {
-                                    type: "text",
-                                    placeholder: "Search...",
-                                    className: "form-control"
-                                })
+                                _this2.props.searchComponent
                             )
                         )
                     );
@@ -4964,7 +4960,8 @@ Navbar.propTypes = {
     actionItems: _propTypes2.default.array.isRequired,
     profileItems: _propTypes2.default.array.isRequired,
     isLoggedIn: _propTypes2.default.bool.isRequired,
-    children: _propTypes2.default.node
+    children: _propTypes2.default.node,
+    searchComponent: _propTypes2.default.node
 };
 
 /***/ })

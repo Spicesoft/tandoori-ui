@@ -34,11 +34,7 @@ export default class Navbar extends React.PureComponent {
                         <p className="tuiv2_navbar__slogan">{tenantTitle}</p>
                         <div className="tuiv2_navbar__search">
                             <div className="form-group">
-                                <input
-                                    type="text"
-                                    placeholder="Search..."
-                                    className="form-control"
-                                />
+                                {this.props.searchComponent}
                             </div>
                         </div>
                     </div>
@@ -101,5 +97,6 @@ Navbar.propTypes = {
     actionItems: T.array.isRequired,
     profileItems: T.array.isRequired,
     isLoggedIn: T.bool.isRequired,
-    children: T.node
+    children: T.node,
+    searchComponent: T.node
 };
