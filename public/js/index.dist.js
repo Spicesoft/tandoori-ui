@@ -4938,6 +4938,7 @@ var Navbar = function (_React$PureComponent) {
             return _react2.default.createElement(
                 "div",
                 { className: "tuiv2_navbar__part" },
+                this.props.children,
                 _react2.default.createElement(_Dropdown2.default, {
                     items: profileItems,
                     text: this.props.isLoggedIn ? userName : "",
@@ -4962,7 +4963,8 @@ Navbar.propTypes = {
     userName: _propTypes2.default.string.isRequired,
     actionItems: _propTypes2.default.array.isRequired,
     profileItems: _propTypes2.default.array.isRequired,
-    isLoggedIn: _propTypes2.default.bool.isRequired
+    isLoggedIn: _propTypes2.default.bool.isRequired,
+    children: _propTypes2.default.node
 };
 
 /***/ })

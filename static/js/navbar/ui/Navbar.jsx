@@ -81,6 +81,7 @@ export default class Navbar extends React.PureComponent {
             />) : null
         );
         return (<div className="tuiv2_navbar__part">
+            {this.props.children}
             <Dropdown
                 items={profileItems}
                 text={this.props.isLoggedIn ? userName : ""}
@@ -99,5 +100,6 @@ Navbar.propTypes = {
     userName: T.string.isRequired,
     actionItems: T.array.isRequired,
     profileItems: T.array.isRequired,
-    isLoggedIn: T.bool.isRequired
+    isLoggedIn: T.bool.isRequired,
+    children: T.node
 };
