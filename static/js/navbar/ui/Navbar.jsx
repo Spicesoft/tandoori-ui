@@ -80,8 +80,8 @@ export default class Navbar extends React.PureComponent {
             {this.props.children}
             <Dropdown
                 items={profileItems}
-                text={this.props.isLoggedIn ? userName : ""}
-                spanClass={this.props.isLoggedIn ? "" : "lnr-user"}
+                text={!this.mobileDevice ? userName : ""}
+                spanClass={this.mobileDevice ? "lnr-user" : ""}
                 containerClass="tuiv2_navbar__action"
                 align="right"
             />

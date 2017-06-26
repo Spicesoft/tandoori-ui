@@ -12236,8 +12236,8 @@ var Navbar = function (_React$PureComponent) {
                 this.props.children,
                 _react2.default.createElement(_Dropdown2.default, {
                     items: profileItems,
-                    text: this.props.isLoggedIn ? userName : "",
-                    spanClass: this.props.isLoggedIn ? "" : "lnr-user",
+                    text: !this.mobileDevice ? userName : "",
+                    spanClass: this.mobileDevice ? "lnr-user" : "",
                     containerClass: "tuiv2_navbar__action",
                     align: "right"
                 }),
