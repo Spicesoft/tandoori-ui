@@ -33,9 +33,7 @@ export default class Navbar extends React.PureComponent {
                     <div className="tuiv2_navbar__brand-name">
                         <p className="tuiv2_navbar__slogan">{tenantTitle}</p>
                         <div className="tuiv2_navbar__search">
-                            <div className="form-group">
-                                {this.props.searchComponent}
-                            </div>
+                            {this.props.searchComponent}
                         </div>
                     </div>
                 );
