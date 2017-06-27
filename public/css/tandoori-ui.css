@@ -1272,7 +1272,7 @@ select.form-control {
   left: 60px;
   bottom: 0;
   overflow-y: auto;
-  display: nones;
+  display: none;
   align-items: stretch; }
 
 .tuiv2_side-menu-panel__content {
