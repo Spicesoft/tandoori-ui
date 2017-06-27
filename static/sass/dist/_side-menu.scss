@@ -3,7 +3,7 @@
 .#{$current}side-menu {
   width: $side-menu-width;
   position: fixed;
-  top: 54px;
+  top: $header-height;
   bottom: 0;
   display: flex;
   flex-direction: column;
