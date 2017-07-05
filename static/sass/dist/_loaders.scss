@@ -21,6 +21,11 @@
   }
 }
 
+.#{$current}loader--absolute {
+  position: absolute;
+  top: 0;
+}
+
 .#{$current}loader__dot {
   width: 12px;
   height: 12px;

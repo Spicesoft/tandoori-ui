@@ -1181,7 +1181,7 @@ select.form-control {
 /* stylelint-enable */
 /* STRUCT */
 .tuiv2_navbar {
-  z-index: 1000;
+  z-index: 1;
   height: 54px;
   display: flex;
   justify-content: space-between;
@@ -1364,6 +1364,10 @@ select.form-control {
     animation: bounce 1s ease-in-out 0.66s infinite; }
   .tuiv2_loader .tuiv2_loader__dot:nth-child(3) {
     animation: bounce 1s ease-in-out 0.99s infinite; }
+
+.tuiv2_loader--absolute {
+  position: absolute;
+  top: 0; }
 
 .tuiv2_loader__dot {
   width: 12px;
