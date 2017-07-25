@@ -1,6 +1,6 @@
 
-$app-background: #F1F1F1;
-// $app-background: #FFFFFF;
+// $app-background: #F1F1F1;
+$app-background: #FFFFFF;
 
 // Left Panel
 
@@ -69,7 +69,7 @@ $danger: map-get($colors-map, "danger");
 
 // get colors from compiler
 $brand-primary: map-get($colors-map, "primary");
-$brand-primary2: map-get($colors-map, "primary2");
+$brand-secondary: map-get($colors-map, "primary2");
 $brand-info: map-get($colors-map, "info");
 $brand-success: map-get($colors-map, "success");
 $brand-warning: map-get($colors-map, "warning");
