@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Tandoori UI</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="public/css/tandoori-ui.css">
   </head>
@@ -23,35 +21,28 @@
 
       <nav id="side-menu" class=""></nav>
 
-      <div class="tuiv2_app-container">
+      <div class="tuiv2_app-container container-fluid">
 
-        <div class="tuiv2_card tuiv2_card--default-skin">
-          <div class="tuiv2_card__block">
-            <h1 class="tuiv2_title">
-              This is <span class="tuiv2_text--primary">Tandoori UI</span>
-            </h1>
-          </div>
-          <div class="tuiv2_card__block">
-            <p>
+        <h1>
+          This is <span class="tuiv2_text--primary">Tandoori UI</span>
+        </h1>
+        <div class="bs-component">
+          <div class="card text-xs-center">
+            <div class="card-block">
               Meet the Cowork.io's UI library !<br/>
               You will find here all the UI elements you should use to build Cowork.io's views.<br/>
               We aim to replace all the legacy SASS code with this library. <br/>
               In the meantime, all of the Tandoori UI css classes will be prefixed with <strong>tuiv2_</strong> so you can easely identify new and old classes in the code.<br/>
               Please feel free to get in touch with front team to discuss about any improvement and/or <a href="https://github.com/Spicesoft/tandoori-ui/issues">create an issue</a>.
-            </p>
+            </div>
           </div>
         </div>
 
-        <div class="tuiv2_flex-row">
-          <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title tuiv2_title--default-skin">
-                  Colors
-                </h3>
-              </div>
-              <div class="tuiv2_card__block">
-                <ul>
+        <div class="row bs-component">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-block">
+                <ul class="card-text">
                   <li>
                     This is <span class="tuiv2_text--white">white</span>
                   </li>
@@ -80,11 +71,14 @@
               </div>
             </div>
           </div>
-          <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title tuiv2_title--default-skin">This is a title</h3>
-                <h4 class="tuiv2_subtitle tuiv2_subtitle--default-skin">This is a subtitle</h4>
+          <div class="col-sm-6">
+            <div class="card">
+              <h3 class="card-header">This is a card header</h3>
+              <div class="card-block">
+                <h4 class="card-title">This is a card title</h4>
+                <h6 class="card-subtitle text-muted">This is a (muted) card subtitle</h6>
+              </div>
+              <div class="card-block">
                 <p>Text can be :</p>
                 <ul>
                   <li><strong>Strong</strong></li>
@@ -101,332 +95,200 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Lists
-                </h3>
-              </div>
-              <div class="tuiv2_card__block">
-                <h4 class="tuiv2_text--primary tuiv2_subtitle">Single line item list :</h4>
-              </div>
-              <ul class="tuiv2_list">
-                <li class="tuiv2_list-item">One item</li>
-                <li class="tuiv2_list-item tuiv2_list-item--divider">Two items</li>
-                <li class="tuiv2_list-item">Three items</li>
-                <li class="tuiv2_list-item">Four items</li>
-              </ul>
-              <div class="tuiv2_card__block">
-                <h4 class="tuiv2_text--primary tuiv2_subtitle">Stripped item list :</h4>
-              </div>
-              <ul class="tuiv2_list tuiv2_list--stripped">
-                <li class="tuiv2_list-item">One item</li>
-                <li class="tuiv2_list-item">Two items</li>
-                <li class="tuiv2_list-item">Three items</li>
-                <li class="tuiv2_list-item">Four items</li>
-              </ul>
-              <div class="tuiv2_card__block">
-                <h4 class="tuiv2_text--primary tuiv2_subtitle">Hover item list :</h4>
-              </div>
-              <ul class="tuiv2_list tuiv2_list--hover">
-                <li class="tuiv2_list-item">One item</li>
-                <li class="tuiv2_list-item">Two items</li>
-                <li class="tuiv2_list-item">Three items</li>
-                <li class="tuiv2_list-item">Four items</li>
-              </ul>
-              <div class="tuiv2_card__block">
-                <h4 class="tuiv2_text--primary tuiv2_subtitle">Clickable item list :</h4>
-              </div>
-              <ul class="tuiv2_list tuiv2_list--clickable">
-                <li class="tuiv2_list-item">
-                  <a href="#" class="tuiv2_list-item__link">
-                    One item
-                  </a>
-                </li>
-                <li class="tuiv2_list-item">
-                  <a href="#" class="tuiv2_list-item__link">
-                    Two item
-                  </a>
-                </li>
-                <li class="tuiv2_list-item">
-                  <a href="#" class="tuiv2_list-item__link">
-                    Three item
-                  </a>
-                </li>
-                <li class="tuiv2_list-item">
-                  <a href="#" class="tuiv2_list-item__link">
-                    Four item
-                  </a>
-                </li>
-              </ul>
-            </div>
+        <h2>List</h2>
+        <div class="row bs-component">
+          <div class="col-sm-6">
+            <ul class="list-group">
+              <li class="list-group-item">One item</li>
+              <li class="list-group-item">Two items</li>
+              <li class="list-group-item list-group-item-action active">Three items (active)</li>
+              <li class="list-group-item">Four items</li>
+            </ul>
           </div>
 
-          <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Advanced Lists
-                </h3>
-              </div>
-              <div class="tuiv2_card__block">
-                <h4 class="tuiv2_text--primary tuiv2_subtitle">List with graphics :</h4>
-              </div>
-              <ul class="tuiv2_list">
-                <li class="tuiv2_list-item tuiv2_list-item--divider">
-                  <img class="tuiv2_list-item__graphic" src="public/img/logo.png" alt="List item graphic part">
-                  <p class="tuiv2_list-item__text">One item</p>
-                </li>
-                <li class="tuiv2_list-item tuiv2_list-item--divider">
-                  <img class="tuiv2_list-item__graphic" src="public/img/beber.jpg" alt="List item graphic part">
-                  <p class="tuiv2_list-item__text">Two items</p>
-                </li>
-                <li class="tuiv2_list-item tuiv2_list-item--divider">
-                  <img class="tuiv2_list-item__graphic" src="public/img/climbing.jpg" alt="List item graphic part">
-                  <p class="tuiv2_list-item__text">Three items</p>
-                </li>
-                <li class="tuiv2_list-item tuiv2_list-item--divider">
-                  <img class="tuiv2_list-item__graphic" src="public/img/gas.jpg" alt="List item graphic part">
-                  <p class="tuiv2_list-item__text">Four items</p>
-                </li>
-              </ul>
-              <div class="tuiv2_card__block">
-                <h4 class="tuiv2_text--primary tuiv2_subtitle">List with graphics & actions :</h4>
-              </div>
-              <ul class="tuiv2_list">
-                <li class="tuiv2_list-item">
-                  <img class="tuiv2_list-item__graphic" src="public/img/logo.png" alt="List item graphic part">
-                  <p class="tuiv2_list-item__text">One item</p>
-                  <button class="tuiv2_btn tuiv2_btn--primary">Action</button>
-                </li>
-                <li class="tuiv2_list-item">
-                  <img class="tuiv2_list-item__graphic" src="public/img/beber.jpg" alt="List item graphic part">
-                  <p class="tuiv2_list-item__text">Two items</p>
-                  <a href="#">Link</a>
-                </li>
-                <li class="tuiv2_list-item">
-                  <img class="tuiv2_list-item__graphic" src="public/img/climbing.jpg" alt="List item graphic part">
-                  <p class="tuiv2_list-item__text">Three items</p>
-                  <a href="#"><span class="lnr-home"></span></a>
-                </li>
-                <li class="tuiv2_list-item">
-                  <img class="tuiv2_list-item__graphic" src="public/img/gas.jpg" alt="List item graphic part">
-                  <p class="tuiv2_list-item__text">Three items</p>
-                  <div class="tuiv2_btn-group">
-                    <button class="tuiv2_btn tuiv2_btn--primary">Yes</button>
-                    <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
-                  </div>
-                </li>
-              </ul>
-              <div class="tuiv2_card__block">
-                <h4 class="tuiv2_text--primary tuiv2_subtitle">List with secondary text :</h4>
-              </div>
-              <ul class="tuiv2_list">
-                <li class="tuiv2_list-item">
-                  <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                    <span>One item</span>
-                    <span><small>Secondary text</small></span>
-                  </p>
-                  <p class="tuiv2_list-item__info"><small>June 15</small></p>
-                </li>
-                <li class="tuiv2_list-item">
-                  <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                    <span>Two items</span>
-                    <span><small>Secondary text</small></span>
-                  </p>
-                  <p class="tuiv2_list-item__info"><small>Feb 20</small></p>
-                </li>
-                <li class="tuiv2_list-item">
-                  <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                    <span>Three items</span>
-                    <span><small>Secondary text</small></span>
-                  </p>
-                  <p class="tuiv2_list-item__info"><small>Apr 30</small></p>
-                </li>
-                <li class="tuiv2_list-item">
-                  <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                    <span>Four items</span>
-                    <span><small>Secondary text</small></span>
-                  </p>
-                  <p class="tuiv2_list-item__info"><small>Jul 15</small></p>
-                </li>
-              </ul>
+          <div class="col-sm-6">
+            <div class="list-group">
+              <a href="#" class="list-group-item active">
+                Cras justo odio
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+              <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+              <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+              <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
             </div>
           </div>
+        </div>
 
-          <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">Buttons</h3>
-                <h4 class="tuiv2_subtitle">
-                  Default :
-                </h4>
-                <div>
-                  <button class="tuiv2_btn tuiv2_btn--default">Default</button>
-                  <button class="tuiv2_btn tuiv2_btn--primary">Primary</button>
-                  <button class="tuiv2_btn tuiv2_btn--warning">Warning</button>
-                </div>
-                <h4 class="tuiv2_subtitle">
-                  Raised :
-                </h4>
-                <div>
-                  <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--raised">Default</button>
-                  <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--raised">Primary</button>
-                  <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--raised">Warning</button>
-                </div>
-                <h4 class="tuiv2_subtitle">
-                  Grouped :
-                </h4>
-                <div class="tuiv2_btn-group">
-                  <button class="tuiv2_btn tuiv2_btn--default">Default</button>
-                  <button class="tuiv2_btn tuiv2_btn--primary">Primary</button>
-                  <button class="tuiv2_btn tuiv2_btn--warning">Warning</button>
-                </div>
-                <h4 class="tuiv2_subtitle">
-                  Large :
-                </h4>
-                <div>
-                  <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--lg">Default</button>
-                  <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--lg">Primary</button>
-                  <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--lg">Warning</button>
-                </div>
-                <h4 class="tuiv2_subtitle">
-                  Small :
-                </h4>
-                <div>
-                  <button class="tuiv2_btn tuiv2_btn--default tuiv2_btn--sm">Default</button>
-                  <button class="tuiv2_btn tuiv2_btn--primary tuiv2_btn--sm">Primary</button>
-                  <button class="tuiv2_btn tuiv2_btn--warning tuiv2_btn--sm">Warning</button>
-                </div>
-                <h4 class="tuiv2_subtitle">
-                  Links :
-                </h4>
-                <div>
-                  <a href="#" class="tuiv2_btn tuiv2_btn--default">Default</a>
-                  <a href="#" class="tuiv2_btn tuiv2_btn--primary">Primary</a>
-                  <a href="#" class="tuiv2_btn tuiv2_btn--warning">Warning</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Form
-                </h3>
-              </div>
-              <div class="tuiv2_card__block">
-                <p class="tuiv2_text--well">
-                  Because we are overriding Bootstrap's forms, css classes here are not following BEM recommandations.
+        <h2>Buttons</h2>
+        <div class="row bs-component">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-block">
+                <p>
+                  <button type="button" class="btn btn-primary">Primary</button>
+                  <button type="button" class="btn btn-secondary">Secondary</button>
+                  <button type="button" class="btn btn-success">Success</button>
+                  <button type="button" class="btn btn-info">Info</button>
+                  <button type="button" class="btn btn-warning">Warning</button>
+                  <button type="button" class="btn btn-danger">Danger</button>
+                  <button type="button" class="btn btn-link">Link</button>
                 </p>
-              </div>
-              <div class="tuiv2_card__block">
-                <form>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" id="exampleInputFile">
-                    <p class="help-block">Example block-level help text here.</p>
-                  </div>
-                  <div class="form-group">
-                    <label for="textAreaExample">Textarea</label>
-                    <textarea class="form-control" rows="3" id="textAreaExample"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="disableExample">Disabled</label>
-                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
-                  </div>
-                  <div class="form-group">
-                    <label for="selectExample">Select</label>
-                    <div class="select-wrapper">
-                      <select class="form-control" id="selectExample">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                      <span class="glyphicon glyphicon-triangle-bottom"></span>
+                <p>
+                  <button type="button" class="btn btn-primary disabled">Primary</button>
+                  <button type="button" class="btn btn-secondary disabled">Secondary</button>
+                  <button type="button" class="btn btn-success disabled">Success</button>
+                  <button type="button" class="btn btn-info disabled">Info</button>
+                  <button type="button" class="btn btn-warning disabled">Warning</button>
+                  <button type="button" class="btn btn-danger disabled">Danger</button>
+                  <button type="button" class="btn btn-link disabled">Link</button>
+                </p>
+                <p>
+                  <button type="button" class="btn btn-outline-primary">Primary</button>
+                  <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                  <button type="button" class="btn btn-outline-success">Success</button>
+                  <button type="button" class="btn btn-outline-info">Info</button>
+                  <button type="button" class="btn btn-outline-warning">Warning</button>
+                  <button type="button" class="btn btn-outline-danger">Danger</button>
+                </p>
+                <p>
+                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" class="btn btn-primary">Primary</button>
+                    <div class="btn-group" role="group">
+                      <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" href="#">Dropdown link</a>
+                        <a class="dropdown-item" href="#">Dropdown link</a>
+                      </div>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="disabledSelect">Disabled select menu</label>
-                    <select id="disabledSelect" class="form-control" disabled>
-                      <option>Disabled select</option>
-                    </select>
+
+                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" class="btn btn-success">Success</button>
+                    <div class="btn-group" role="group">
+                      <button id="btnGroupDrop2" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                        <a class="dropdown-item" href="#">Dropdown link</a>
+                        <a class="dropdown-item" href="#">Dropdown link</a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Check me out
-                    </label>
+
+                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" class="btn btn-info">Info</button>
+                    <div class="btn-group" role="group">
+                      <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                        <a class="dropdown-item" href="#">Dropdown link</a>
+                        <a class="dropdown-item" href="#">Dropdown link</a>
+                      </div>
+                    </div>
                   </div>
-                  <button type="submit" class="tuiv2_btn tuiv2_btn--primary">Submit</button>
-                </form>
+
+                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" class="btn btn-danger">Danger</button>
+                    <div class="btn-group" role="group">
+                      <button id="btnGroupDrop4" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+                        <a class="dropdown-item" href="#">Dropdown link</a>
+                        <a class="dropdown-item" href="#">Dropdown link</a>
+                      </div>
+                    </div>
+                  </div>
+                </p>
+                <p>
+                  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                  <button type="button" class="btn btn-primary">Default button</button>
+                  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                </p>
               </div>
             </div>
-          </div> -->
-
-          <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Form validation
-                </h3>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-block">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
               </div>
-              <div class="tuiv2_card__block">
-                <div class="form-group has-success">
-                  <label class="control-label" for="inputSuccess1">Input with success</label>
-                  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
-                  <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+              <div class="card-block">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-primary active">
+                    <input type="checkbox" checked=""> Checkbox 1
+                  </label>
+                  <label class="btn btn-primary">
+                    <input type="checkbox"> Checkbox 2
+                  </label>
+                  <label class="btn btn-primary">
+                    <input type="checkbox"> Checkbox 3
+                  </label>
                 </div>
-                <div class="form-group has-warning">
-                  <label class="control-label" for="inputWarning1">Input with warning</label>
-                  <input type="text" class="form-control" id="inputWarning1">
+              </div>
+              <div class="card-block">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-primary active">
+                    <input type="radio" name="options" id="option1" checked=""> Radio 1
+                  </label>
+                  <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option2"> Radio 2
+                  </label>
+                  <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option3"> Radio 3
+                  </label>
                 </div>
-                <div class="form-group has-error">
-                  <label class="control-label" for="inputError1">Input with error</label>
-                  <input type="text" class="form-control" id="inputError1">
-                </div>
-                <div class="has-success">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" id="checkboxSuccess" value="option1">
-                      Checkbox with success
-                    </label>
+              </div>
+              <div class="card-block">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                  <div class="btn-group" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-secondary">1</button>
+                    <button type="button" class="btn btn-secondary">2</button>
+                    <button type="button" class="btn btn-secondary">3</button>
+                    <button type="button" class="btn btn-secondary">4</button>
                   </div>
-                </div>
-                <div class="has-warning">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" id="checkboxWarning" value="option1">
-                      Checkbox with warning
-                    </label>
+                  <div class="btn-group" role="group" aria-label="Second group">
+                    <button type="button" class="btn btn-secondary">5</button>
+                    <button type="button" class="btn btn-secondary">6</button>
+                    <button type="button" class="btn btn-secondary">7</button>
                   </div>
-                </div>
-                <div class="has-error">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" id="checkboxError" value="option1">
-                      Checkbox with error
-                    </label>
+                  <div class="btn-group" role="group" aria-label="Third group">
+                    <button type="button" class="btn btn-secondary">8</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="tuiv2_flex-col--md-6">
+
+          <div class="row">
+
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-block">
+                  <h3 class="tuiv2_title">
+                    Form validation
+                  </h3>
+                </div>
+                <div class="tuiv2_card__block">
+                  <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess1">Input with success</label>
+                    <input type="text" class="form-control form-control-success" id="inputSuccess1" aria-describedby="helpBlock2">
+                    <span id="helpBlock2" class="form-control-feedback">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                  </div>
+                  <div class="form-group has-warning">
+                    <label class="control-label" for="inputWarning1">Input with warning</label>
+                    <input type="text" class="form-control form-control-warning" id="inputWarning1">
+                  </div>
+                  <div class="form-group has-danger">
+                    <label class="control-label" for="inputError1">Input with error</label>
+                    <input type="text" class="form-control form-control-danger" id="inputError1">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-sm-6">
             <div class="tuiv2_card tuiv2_card--default-skin">
               <div class="tuiv2_card__block">
                 <h3 class="tuiv2_title">
@@ -466,58 +328,8 @@
             </div>
           </div>
 
-          <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Input with icons
-                </h3>
-              </div>
-              <div class="tuiv2_card__block">
-                <div class="form-group has-success has-feedback">
-                  <label class="control-label" for="inputSuccess2">Input with success</label>
-                  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-                  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-                  <span id="inputSuccess2Status" class="sr-only">(success)</span>
-                </div>
-                <div class="form-group has-warning has-feedback">
-                  <label class="control-label" for="inputWarning2">Input with warning</label>
-                  <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
-                  <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
-                  <span id="inputWarning2Status" class="sr-only">(warning)</span>
-                </div>
-                <div class="form-group has-error has-feedback">
-                  <label class="control-label" for="inputError2">Input with error</label>
-                  <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
-                  <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                  <span id="inputError2Status" class="sr-only">(error)</span>
-                </div>
-                <div class="form-group has-success has-feedback">
-                  <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
-                  <div class="input-group">
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
-                  </div>
-                  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-                  <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
-                </div>
-                <div class="form-group has-error has-feedback">
-                  <label for="selectErrorExample">Select</label>
-                  <select class="form-control" id="selectErrorExample">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                  <span class="glyphicon glyphicon-triangle-bottom form-control-feedback" aria-hidden="true"></span>
-                  <span id="inputError2Status" class="sr-only">(error)</span>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="tuiv2_flex-col--md-6">
+          <div class="col-sm-6">
             <div class="tuiv2_card tuiv2_card--default-skin">
               <div class="tuiv2_card__block">
                 <h3 class="tuiv2_title">
@@ -549,7 +361,7 @@
             </div>
           </div>
 
-          <div class="tuiv2_flex-col--md-6">
+          <div class="col-sm-6">
             <div class="tuiv2_card tuiv2_card--default-skin">
               <div class="tuiv2_card__block">
                 <h3 class="tuiv2_title">
@@ -572,7 +384,7 @@
             </div>
           </div>
 
-          <div class="tuiv2_flex-col--md-6">
+          <div class="col-sm-6">
             <div class="tuiv2_card tuiv2_card--default-skin">
               <div class="tuiv2_card__block">
                 <h3 class="tuiv2_title">

@@ -1,5 +1,6 @@
 
 $app-background: #F1F1F1;
+// $app-background: #FFFFFF;
 
 // Left Panel
 
@@ -65,6 +66,14 @@ $info: map-get($colors-map, "info");
 $success: map-get($colors-map, "success");
 $warning: map-get($colors-map, "warning");
 $danger: map-get($colors-map, "danger");
+
+// get colors from compiler
+$brand-primary: map-get($colors-map, "primary");
+$brand-primary2: map-get($colors-map, "primary2");
+$brand-info: map-get($colors-map, "info");
+$brand-success: map-get($colors-map, "success");
+$brand-warning: map-get($colors-map, "warning");
+$brand-danger: map-get($colors-map, "danger");
 
 // Bootstrap color type
 $primary: #14B9D6 !default;

@@ -1,6 +1,9 @@
 @import "dist/_globals.scss";
-@import "dist/_utils.scss";
 @import "dist/_colors.scss";
+@import "dist/bs4.scss";
+@import "dist/_flatly_variables.scss";
+@import "dist/_flatly_bootswatch.scss";
+@import "dist/_utils.scss";
 @import "dist/_animations.scss";
 @import "dist/_layout.scss";
 @import "dist/_text.scss";
@@ -22,15 +25,10 @@
 $zero: 0;
 
 body {
-  font-family: "Lato";
   background: $app-background;
   padding-bottom: 100px;
 }
 
-h2 {
-  color: $dark-blue;
-  font-weight: 900;
-}
 
 .code {
   background-color: $lightgrey;
@@ -48,4 +46,14 @@ h2 {
       }
     }
   }
+}
+
+.bs-component {
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+.container-fluid {
+  z-index: 1;
 }
