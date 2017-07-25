@@ -259,460 +259,159 @@
         </div>
 
 
-          <div class="row">
+        <h2>Forms</h2>
+        <div class="row bs-component">
 
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-block">
-                  <h3 class="tuiv2_title">
-                    Form validation
-                  </h3>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-block">
+                <div class="form-group">
+                  <fieldset disabled="">
+                    <label class="control-label" for="disabledInput">Disabled input</label>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                  </fieldset>
                 </div>
-                <div class="tuiv2_card__block">
-                  <div class="form-group has-success">
-                    <label class="control-label" for="inputSuccess1">Input with success</label>
-                    <input type="text" class="form-control form-control-success" id="inputSuccess1" aria-describedby="helpBlock2">
-                    <span id="helpBlock2" class="form-control-feedback">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                  </div>
-                  <div class="form-group has-warning">
-                    <label class="control-label" for="inputWarning1">Input with warning</label>
-                    <input type="text" class="form-control form-control-warning" id="inputWarning1">
-                  </div>
-                  <div class="form-group has-danger">
-                    <label class="control-label" for="inputError1">Input with error</label>
-                    <input type="text" class="form-control form-control-danger" id="inputError1">
+
+                <div class="form-group">
+                  <fieldset>
+                    <label class="control-label" for="readOnlyInput">Readonly input</label>
+                    <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly="">
+                  </fieldset>
+                </div>
+
+                <div class="form-group has-success">
+                  <label class="form-control-label" for="inputSuccess1">Input with success</label>
+                  <input type="text" class="form-control form-control-success" id="inputSuccess1">
+                  <div class="form-control-feedback">Success! You've done it.</div>
+                </div>
+
+                <div class="form-group has-warning">
+                  <label class="form-control-label" for="inputWarning1">Input with warning</label>
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1">
+                  <div class="form-control-feedback">Shucks, try again.</div>
+                </div>
+
+                <div class="form-group has-danger">
+                  <label class="form-control-label" for="inputDanger1">Input with danger</label>
+                  <input type="text" class="form-control form-control-danger" id="inputDanger1">
+                  <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
+                  <input class="form-control form-control-lg" type="text" id="inputLarge">
+                </div>
+
+                <div class="form-group">
+                  <label class="col-form-label" for="inputDefault">Default input</label>
+                  <input type="text" class="form-control" id="inputDefault">
+                </div>
+
+                <div class="form-group">
+                  <label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label>
+                  <input class="form-control form-control-sm" type="text" id="inputSmall">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Input addons</label>
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">$</div>
+                      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                      <div class="input-group-addon">.00</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
 
           <div class="col-sm-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Form inline
-                </h3>
-              </div>
-              <div class="tuiv2_card__block">
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <div class="card">
+              <div class="card-block">
+                <form>
+                  <fieldset>
+                    <legend>Legend</legend>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Remember me
+                    <div class="form-group">
+                      <label for="exampleSelect1">Example select</label>
+                      <select class="form-control" id="exampleSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleSelect2">Example multiple select</label>
+                      <select multiple="" class="form-control" id="exampleSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea">Example textarea</label>
+                      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">File input</label>
+                      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                      <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                    </div>
+                    <fieldset class="form-group">
+                      <legend>Radio buttons</legend>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                          Option one is this and that—be sure to include why it's great
                         </label>
                       </div>
+                      <div class="form-check">
+                      <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                          Option two can be something else and selecting it will deselect option one
+                        </label>
+                      </div>
+                      <div class="form-check disabled">
+                      <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+                          Option three is disabled
+                        </label>
+                      </div>
+                    </fieldset>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Check me out
+                      </label>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="tuiv2_btn tuiv2_btn--default">Sign in</button>
-                    </div>
-                  </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </fieldset>
                 </form>
               </div>
             </div>
           </div>
-
-
-          <div class="col-sm-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Select 2
-                </h3>
-              </div>
-              <div class="tuiv2_card__block">
-                <div class="form-group">
-                  <label for="selectErrorExample">Select 2</label>
-                  <select class="select2 form-control" id="selectErrorExample">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="selectErrorExample">Select 2 multiple</label>
-                  <select class="select2 form-control" id="selectErrorExample" multiple="multiple">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Card
-                </h3>
-                <h4 class="tuiv2_subtitle">
-                  With subtitle
-                </h4>
-              </div>
-              <div class="tuiv2_card__rich-media">
-                <img src="public/img/vhs.png" alt="Rich media example">
-              </div>
-              <div class="tuiv2_card__block">
-                This card has a rich-media class. The ratio of the card's rich media will always be 16:9.
-              </div>
-              <div class="tuiv2_card__actions">
-                <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
-                <button class="tuiv2_btn tuiv2_btn--primary">Yup</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_card__block">
-                <h3 class="tuiv2_title">
-                  Card with secondary actions
-                </h3>
-              </div>
-              <div class="tuiv2_card__actions tuiv2_card__actions--secondary">
-                <div class="card__secondary-actions">
-                  <a href="#"><span class="lnr-heart tuiv2_action-icon"></span></a>
-                  <a href="#"><span class="lnr-cog tuiv2_action-icon"></span></a>
-                </div>
-                <div class="card__main-actions">
-                  <button class="tuiv2_btn tuiv2_btn--warning">Hell no !</button>
-                  <button class="tuiv2_btn tuiv2_btn--primary">Sure !</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_media-header">
-                <div class="tuiv2_media-header__text">
-                  <h3 class="tuiv2_title">
-                    Card with a media header
-                  </h3>
-                  <h4 class="subtitle">
-                    Ideal for profile boxes
-                  </h4>
-                </div>
-                <div class="tuiv2_media-header__img">
-                  <img src="public/img/climbing.jpg" alt="" class="img-full-width">
-                </div>
-              </div>
-            </div>
-
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_media-header">
-                <div class="tuiv2_media-header__img">
-                  <img src="public/img/mollet.jpg" alt="" class="img-full-width">
-                </div>
-                <div class="tuiv2_media-header__text">
-                  <h3 class="tuiv2_title">
-                    Card with a media header
-                  </h3>
-                  <h4 class="subtitle">
-                    Ideal for profile boxes
-                  </h4>
-                </div>
-              </div>
-              <div class="tuiv2_card__block">
-                <p>Works both way. How cool is that ??</p>
-              </div>
-            </div>
-          </div>
-
-        </div> <!-- End flex-row -->
-
-        <div class="tuiv2_card tuiv2_card--default-skin">
-          <div class="tuiv2_card__block">
-            <h2 class="tuiv2_title tuiv2_text--primary" id="grid">Grid :</h2>
-          </div>
-          <div class="tuiv2_card__block">
-            <p>Just like Twitter's Bootstrap, Tandoori UI has 12 columns. </p>
-            <p>
-              We use the new flex CSS3 property. Use a <strong>tuiv2_flex-col--{screen breakpoint}-{size}</strong>
-              inside a <strong>tuiv2_flex-row</strong>.<br/>
-              <strong>{screen breakpoint}</strong> refers to any of the 3
-              min-width we are using :
-            </p>
-            <ul>
-              <li>sm : 768px</li>
-              <li>md : 992px</li>
-              <li>lg : 1200px</li>
-            </ul>
-            <p>
-              <strong>{size}</strong> refers to the number of columns you want your element to use.<br/>
-              You may use sizes between 1 and 12.
-            </p>
-          </div>
         </div>
-        <div class="tuiv2_flex-row">
-          <div class="tuiv2_flex-col--sm-2">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              SM 2
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--sm-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              SM 6
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--sm-6 tuiv2_flex-offset--sm-3">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              SM 6 with offset of 3
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--sm-12">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              SM 12
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-row">
-          <div class="tuiv2_flex-col--md-2">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              MD 2
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--md-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              MD 6
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--md-6 tuiv2_flex-offset--md-3">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              MD 6 with offset of 3
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--md-12">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              MD 12
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_flex-row">
-          <div class="tuiv2_flex-col--lg-2">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              LG 2
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--lg-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              LG 6
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--lg-6 tuiv2_flex-offset--lg-3">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              LG 6 with offset of 3
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--lg-12">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              LG 12
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--lg-8 tuiv2_flex-col--md-6 tuiv2_flex-col--sm-4 tuiv2_flex-col--xs-2">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              LG 8 - MD 6 - SM 4 - XS 2
-            </div>
-          </div>
-          <div class="tuiv2_flex-col--lg-2 tuiv2_flex-col--md-4 tuiv2_flex-col--sm-6 tuiv2_flex-col--xs-8">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              LG 2 - MD 4 - SM 6 - XS 8
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_card">
-          <h2 class="tuiv2_title">Experimental widgets</h2>
-        </div>
-
-
-        <div class="tuiv2_flex-row">
-          <div class="tuiv2_flex-col--sm-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_flex-row">
-                <div class="tuiv2_flex-col--sm-4">
-                  <ul class="tuiv2_list tuiv2_list--clickable" id="widget-list">
-                    <li class="tuiv2_list-item tuiv2_list-item--active" data-pane="pane-1">
-                      <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                        <span>Ticket ouvert</span>
-                        <span><small>Réservation</small></span>
-                      </p>
-                      <p class="tuiv2_list-item__info"><small>June 15</small></p>
-                    </li>
-                    <li class="tuiv2_list-item" data-pane="pane-2">
-                      <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                        <span>Rattachement</span>
-                        <span><small>Pépito pour la Ciudad del pancho</small></span>
-                      </p>
-                      <p class="tuiv2_list-item__info"><small>Feb 20</small></p>
-                    </li>
-                    <li class="tuiv2_list-item" data-pane="pane-3">
-                      <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                        <span>Ticket ouvert</span>
-                        <span><small>Sanitaires</small></span>
-                      </p>
-                      <p class="tuiv2_list-item__info"><small>Apr 30</small></p>
-                    </li>
-                    <li class="tuiv2_list-item" data-pane="pane-4">
-                      <p class="tuiv2_list-item__text tuiv2_list-item__text--multiline">
-                        <span>Validation</span>
-                        <span><small>La fée Pajot</small></span>
-                      </p>
-                      <p class="tuiv2_list-item__info"><small>Jul 15</small></p>
-                    </li>
-                    <li class="tuiv2_list-item">
-                      <p class="tuiv2_list-item__text">
-                        <a href="#">See all</a>
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-                <div class="tuiv2_flex-col--sm-8">
-                  <div class="tuiv2_card">
-                    <div class="js-widget-content-panes">
-                      <div id="pane-1" class="js-pane">
-                        <h4 class="tuiv2_subtitle">Ticket ouvert</h4>
-                        <div class="tuiv2_card__block">
-                          <p>Alors voilà c'est la mayrde toussaaaaaaaa.</p>
-                        </div>
-                        <div class="tuiv2_card__actions">
-                          <button class="tuiv2_btn tuiv2_btn--primary">Open</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="pane-2" class="js-pane">
-                      <h4 class="tuiv2_subtitle">Rattachement en attente</h4>
-                      <div class="tuiv2_card__block">
-                        Le coworker Pépito Armando Diego désire rejoindre la société
-                        <select name="" id="">
-                          <option value="1">Ciudad del pancho</option>
-                          <option value="2">Vitaline</option>
-                        </select>
-                      </div>
-                      <div class="tuiv2_card__actions">
-                        <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
-                        <button class="tuiv2_btn tuiv2_btn--primary">Validate</button>
-                      </div>
-                    </div>
-                    <div id="pane-3" class="js-pane">
-                      <h4 class="tuiv2_subtitle">Ticket ouvert</h4>
-                      <div class="tuiv2_card__block">
-                        <p>J'en ai PAR-TOUT.</p>
-                      </div>
-                      <div class="tuiv2_card__actions">
-                        <button class="tuiv2_btn tuiv2_btn--primary">Open</button>
-                      </div>
-                    </div>
-                    <div id="pane-4" class="js-pane">
-                      <h4 class="tuiv2_subtitle">Validation en attente</h4>
-                      <div class="tuiv2_card__block">
-                        <p>Le compte de la fée Pajot est en attente de validation.</p>
-                        <a href="#">See account.</a>
-                      </div>
-                      <div class="tuiv2_card__actions">
-                        <button class="tuiv2_btn tuiv2_btn--default">Nope</button>
-                        <button class="tuiv2_btn tuiv2_btn--primary">Validate</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="tuiv2_card">
-          <h2 class="tuiv2_title">Gallery</h2>
-        </div>
-
-        <div class="tuiv2_flex-row">
-          <div class="tuiv2_flex-col--sm-6">
-            <div class="tuiv2_card tuiv2_card--default-skin">
-              <div class="tuiv2_gallery__container">
-                <img class="tuiv2_gallery__img" src="public/img/gas.jpg" alt="">
-              </div>
-              <div class="tuiv2_flex-row">
-                <div class="tuiv2_flex-col--sm-4">
-                  <div class="tuiv2_gallery__container">
-                    <img class="tuiv2_gallery__img" src="public/img/diablo.jpg" alt="">
-                  </div>
-                </div>
-                <div class="tuiv2_flex-col--sm-4">
-                  <div class="tuiv2_gallery__container">
-                    <img class="tuiv2_gallery__img" src="public/img/coworkio_large.jpg" alt="">
-                  </div>
-                </div>
-                <div class="tuiv2_flex-col--sm-4">
-                  <div class="tuiv2_gallery__container">
-                    <img class="tuiv2_gallery__img" src="public/img/climbing.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tuiv2_card">
-          <h2 class="tuiv2_title">Tabs</h2>
-        </div>
-
-        <div class="">
-
-          <!-- Nav tabs -->
-          <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-            <li role="presentation"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">Home</a></li>
-            <li role="presentation"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">Profile</a></li>
-            <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">Messages</a></li>
-            <li role="presentation"><a href="#settings2" aria-controls="settings2" role="tab" data-toggle="tab">Settings</a></li>
-          </ul>
-
-          <!-- Tab panes -->
-          <div class="tab-content tuiv2_card tuiv2_card--default-skin">
-            <div role="tabpanel" class="tab-pane active tuiv2_card__block" id="home">Home</div>
-            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="profile">Profile</div>
-            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="messages">Messages</div>
-            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="settings">Settings</div>
-            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="home2">Home</div>
-            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="profile2">Profile</div>
-            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="messages2">Messages</div>
-            <div role="tabpanel" class="tab-pane tuiv2_card__block" id="settings2">Settings</div>
-          </div>
-
-        </div>
-
       </div>
     </div> <!-- End container fluid -->
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="./public/js/all.js"></script>
     <script src="./public/js/navbar.dist.js"></script>
