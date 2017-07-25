@@ -76,12 +76,12 @@ $brand-warning: map-get($colors-map, "warning");
 $brand-danger: map-get($colors-map, "danger");
 
 // Bootstrap color type
-$primary: #14B9D6 !default;
-$primary2: #B27DDB !default;
-$info: #0074A6 !default;
-$success: #1FBBA6 !default;
-$warning: #F27935 !default;
-$danger: #ED4530 !default;
+$primary: #14B9D6;
+$primary2: #B27DDB;
+$info: #0074A6;
+$success: #1FBBA6;
+$warning: #F27935;
+$danger: #ED4530;
 
 // Main colors
 $colors: (
