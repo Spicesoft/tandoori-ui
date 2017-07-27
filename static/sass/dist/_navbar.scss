@@ -16,7 +16,6 @@ $navbar-height: 54px;
 .#{$current}navbar__part {
   display: flex;
   align-items: center;
-  max-width: 50%;
   padding: 10px;
   &:hover {
     .#{$current}navbar__logo {

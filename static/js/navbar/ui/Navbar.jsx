@@ -92,7 +92,7 @@ export default class Navbar extends React.PureComponent {
     renderActionLinks(actionItems) {
         return actionItems.map(item => (
             <div className="tuiv2_navbar__part" key={item.id}>
-                <a className="tuiv2_navbar__action" href={item.url}>{item.label}</a>
+                <a className="btn" href={item.url}>{item.label}</a>
             </div>
         ));
     }

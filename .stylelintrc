@@ -98,7 +98,6 @@
     "selector-max-compound-selectors": 1000,
     "selector-max-specificity": "0,4,0",
     "selector-nested-pattern": "",
-    "selector-no-id": true,
     "selector-no-qualifying-type": true,
     "selector-no-universal": true,
     "selector-no-vendor-prefix": true,
