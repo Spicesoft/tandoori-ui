@@ -66,16 +66,19 @@ export default class Navbar extends React.PureComponent {
     }
 
     renderActions(actionItems, profileItems, userName) {
-        const profileDropdown = () => (
-            !this.mobileDevice ? (<Dropdown
-                items={actionItems}
-                spanClass="lnr-bell"
-                containerClass="tuiv2_navbar__action"
-                align="right"
-            />) : null
-        );
+        const actionsDropDown = () => {
+            if (actionItems.length > 0) {
+                return this.mobileDevice ? (<Dropdown
+                    items={actionItems}
+                    spanClass="lnr-rocket"
+                    containerClass="tuiv2_navbar__action"
+                    align="right"
+                />) : this.renderActionLinks(actionItems);
+            }
+        };
         return (<div className="tuiv2_navbar__part">
             {this.props.children}
+            {actionsDropDown()}
             <Dropdown
                 items={profileItems}
                 text={!this.mobileDevice ? userName : ""}
@@ -83,9 +86,18 @@ export default class Navbar extends React.PureComponent {
                 containerClass="tuiv2_navbar__action"
                 align="right"
             />
-            {profileDropdown()}
         </div>);
     }
+
+    renderActionLinks(actionItems) {
+        return actionItems.map(item => (
+            <div className="tuiv2_navbar__part" key={item.id}>
+                <a className="tuiv2_navbar__action" href={item.url}>{item.label}</a>
+            </div>
+        ));
+    }
+
+
 }
 Navbar.propTypes = {
     lightTheme: T.bool,
