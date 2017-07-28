@@ -24,11 +24,60 @@ test("Should render navbar", () => {
         />
     );
     let classNames = wrapper.prop("className").split(" ");
-    let exist = false;
+    let exists = false;
     classNames.forEach(item => {
         if (item === "tuiv2_navbar--default-skin") {
+            exists = true;
+        }
+    });
+    expect(exists).toBe(true);
+});
+
+test("Should render navbar with light theme", () => {
+    const wrapper = shallow(
+        <Navbar
+            logoUrl=""
+            tenantTitle=""
+            userName=""
+            actionItems={[]}
+            profileItems={[]}
+            isLoggedIn={false}
+            lightTheme
+        />
+    );
+    let classNames = wrapper.prop("className").split(" ");
+    let exist = false;
+    classNames.forEach(item => {
+        if (item === "tuiv2_navbar--light") {
             exist = true;
         }
     });
     expect(exist).toBe(true);
+});
+
+test("Should render with action links", () => {
+    const wrapper = shallow(
+        <Navbar
+            logoUrl=""
+            tenantTitle=""
+            userName=""
+            actionItems={[
+                {
+                    id: "login",
+                    label: "Login",
+                    url: "/login"
+                },
+                {
+                    id: "logout",
+                    label: "Logout",
+                    url: "/logout"
+                }
+            ]}
+            profileItems={[]}
+            isLoggedIn={false}
+            lightTheme
+        />
+    );
+    expect(wrapper.find({href: "/logout"}).length).toBe(1);
+    expect(wrapper.find({href: "/login"}).length).toBe(1);
 });
