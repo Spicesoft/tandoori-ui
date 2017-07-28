@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for navbar/ui/Navbar.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">navbar/ui</a> Navbar.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.78% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.95% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import T from "prop-types";
+import Dropdown from "../../shared/Dropdown.jsx";
+&nbsp;
+export default class Navbar extends React.PureComponent {
+&nbsp;
+    constructor(props) {
+        super(props);
+        this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
+    }
+&nbsp;
+    render() {
+        const {logoUrl, tenantTitle, userName, actionItems, profileItems} = this.props;
+        const classNames = [
+            "tuiv2_navbar"
+        ];
+        classNames.push(
+            this.props.lightTheme ? <span class="branch-0 cbranch-no" title="branch not covered" >"tuiv2_navbar--light" </span>: "tuiv2_navbar--default-skin"
+        );
+        return (
+            &lt;nav className={classNames.join(" ")}&gt;
+                {this.renderMenuIcon()}
+                {this.renderBrand(logoUrl, tenantTitle)}
+                {this.renderActions(actionItems, profileItems, userName)}
+            &lt;/nav&gt;
+        );
+    }
+&nbsp;
+    renderBrand(logoUrl, tenantTitle) {
+        const brandName = () =&gt; {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.mobileDevice) {
+                return (
+                    &lt;div className="tuiv2_navbar__brand-name"&gt;
+                        &lt;p className="tuiv2_navbar__slogan"&gt;{tenantTitle}&lt;/p&gt;
+                        &lt;div className="tuiv2_navbar__search"&gt;
+                            {this.props.searchComponent}
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                );
+            }
+        };
+        return (
+            &lt;div className="tuiv2_navbar__part"&gt;
+                &lt;a href="/"&gt;
+                    &lt;img
+                        src={logoUrl}
+                        alt={tenantTitle}
+                        className="tuiv2_navbar__logo"
+                    /&gt;
+                &lt;/a&gt;
+                {brandName()}
+            &lt;/div&gt;
+        );
+    }
+&nbsp;
+    renderMenuIcon() {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.mobileDevice) {
+<span class="cstat-no" title="statement not covered" >            return (</span>
+                &lt;div className="tuiv2_navbar__part"&gt;
+                    &lt;div className="tuiv2_navbar__action"&gt;
+                        &lt;span className="lnr-menu" /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            );
+        }
+    }
+&nbsp;
+    renderActions(actionItems, profileItems, userName) {
+        const actionsDropDown = () =&gt; {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (actionItems.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >                return this.mobileDevice ? (&lt;Dropdown</span>
+                    items={actionItems}
+                    spanClass="lnr-rocket"
+                    containerClass="tuiv2_navbar__action"
+                    align="right"
+                /&gt;) : this.renderActionLinks(actionItems);
+            }
+        };
+        return (&lt;div className="tuiv2_navbar__part"&gt;
+            {this.props.children}
+            {actionsDropDown()}
+            &lt;Dropdown
+                items={profileItems}
+                text={!this.mobileDevice ? userName : <span class="branch-1 cbranch-no" title="branch not covered" >""}</span>
+                spanClass={this.mobileDevice ? <span class="branch-0 cbranch-no" title="branch not covered" >"lnr-user" </span>: ""}
+                containerClass="tuiv2_navbar__action"
+                align="right"
+            /&gt;
+        &lt;/div&gt;);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    re</span>nderActionLinks(actionItems) {
+<span class="cstat-no" title="statement not covered" >        return actionItems.map(<span class="fstat-no" title="function not covered" >it</span>em =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className="tuiv2_navbar__part" key={item.id}&gt;</span>
+                &lt;a className="btn" href={item.url}&gt;{item.label}&lt;/a&gt;
+            &lt;/div&gt;
+        ));
+    }
+&nbsp;
+&nbsp;
+}
+Navbar.propTypes = {
+    lightTheme: T.bool,
+    logoUrl: T.string.isRequired,
+    tenantTitle: T.string.isRequired,
+    userName: T.string.isRequired,
+    actionItems: T.array.isRequired,
+    profileItems: T.array.isRequired,
+    isLoggedIn: T.bool.isRequired,
+    children: T.node,
+    searchComponent: T.node
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 28 2017 15:56:25 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
