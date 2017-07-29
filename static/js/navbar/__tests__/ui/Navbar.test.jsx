@@ -81,3 +81,39 @@ test("Should render with action links", () => {
     expect(wrapper.find({href: "/logout"}).length).toBe(1);
     expect(wrapper.find({href: "/login"}).length).toBe(1);
 });
+
+test("Should render mobile items", () => {
+    /* global jest */
+    Object.defineProperty(window, "matchMedia", {
+        value: jest.fn(() => {
+            return {
+                matches: true
+            };
+        })
+    });
+    const wrapper = shallow(
+        <Navbar
+            logoUrl=""
+            tenantTitle=""
+            userName=""
+            actionItems={[
+                {
+                    id: "login",
+                    label: "Login",
+                    url: "/login"
+                },
+                {
+                    id: "logout",
+                    label: "Logout",
+                    url: "/logout"
+                }
+            ]}
+            profileItems={[]}
+            isLoggedIn={false}
+            lightTheme
+        />
+    );
+    expect(wrapper.find(".tuiv2_navbar__search").exists()).toBe(false);
+    expect(wrapper.find(".lnr-menu").exists()).toBe(true);
+    expect(wrapper.find(".lnr-rocket").exists()).toBe(true);
+});
