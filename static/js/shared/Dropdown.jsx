@@ -13,16 +13,22 @@ export default class Dropdown extends React.PureComponent {
 
     render() {
         const {spanClass, containerClass, text} = this.props;
-        const classNames = "tuiv2_dropdown " + containerClass || "";
-        const spanClassNames = "tuiv2_dropdown__label " + spanClass || "";
+        const classNames = ["tuiv2_dropdown"];
+        if (containerClass) {
+            classNames.push(containerClass);
+        }
+        const spanClassNames = ["tuiv2_dropdown__label"];
+        if (spanClass) {
+            spanClassNames.push(spanClass);
+        }
         return (
             <div
-                className={classNames}
+                className={classNames.join(" ")}
                 tabIndex={0}
                 onClick={this.toggleOpen.bind(this)}
                 onBlur={this.handleBlur.bind(this)}
             >
-                <span className={spanClassNames}>{text}</span>
+                <span className={spanClassNames.join(" ")}>{text}</span>
                 {this.renderMenu()}
             </div>
         );

@@ -115,5 +115,4 @@ test("Should render mobile items", () => {
     );
     expect(wrapper.find(".tuiv2_navbar__search").exists()).toBe(false);
     expect(wrapper.find(".lnr-menu").exists()).toBe(true);
-    expect(wrapper.find(".lnr-rocket").exists()).toBe(true);
 });
