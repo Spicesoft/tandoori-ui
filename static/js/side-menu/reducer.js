@@ -20,11 +20,6 @@ const toggleOpen = (previousID, nextId, open) => {
     return true;
 };
 
-// const initialState = {
-//     open: false,
-//     activeItem: "",
-//     menuItems: []
-// };
 
 export const menuApp = (state, action) => {
     switch (action.type) {
