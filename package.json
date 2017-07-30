@@ -53,17 +53,20 @@
     "webpack": "^2.6.0"
   },
   "jest": {
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "static/js/navbar/**/*.{js,jsx}",
-      "static/js/side-menu/**/*.{js,jsx}",
-      "static/js/shared/**/*.{js,jsx}"
-    ],
-    "coverageDirectory": "static/js/coverage/",
-    "coverageReporters": [
-      "html",
-      "json",
-      "lcov"
-    ]
-  }
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+            "static/js/navbar/**/*.{js,jsx}",
+            "static/js/side-menu/**/*.{js,jsx}",
+            "static/js/shared/**/*.{js,jsx}"
+        ],
+        "coverageDirectory": "static/js/coverage/",
+        "coverageReporters": [
+            "html",
+            "json",
+            "lcov"
+        ],
+        "coveragePathIgnorePatterns": [
+            "App.jsx"
+        ]
+    }
 }
