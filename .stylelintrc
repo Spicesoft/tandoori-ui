@@ -99,7 +99,6 @@
     "selector-max-specificity": "0,4,0",
     "selector-nested-pattern": "",
     "selector-no-qualifying-type": true,
-    "selector-no-universal": true,
     "selector-no-vendor-prefix": true,
     "selector-pseudo-class-case": "lower",
     "selector-pseudo-class-no-unknown": true,

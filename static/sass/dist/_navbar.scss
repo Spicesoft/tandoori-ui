@@ -3,7 +3,7 @@
 $navbar-height: 54px;
 
 .#{$current}navbar {
-  z-index: 1;
+  z-index: 4;
   height: $navbar-height;
   display: flex;
   justify-content: space-between;

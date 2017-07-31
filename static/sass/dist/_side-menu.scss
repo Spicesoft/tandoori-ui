@@ -1,6 +1,7 @@
 /* SRTUCT */
 
 .#{$current}side-menu {
+  z-index: 3;
   width: $side-menu-width;
   position: fixed;
   top: $header-height;

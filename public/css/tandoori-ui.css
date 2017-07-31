@@ -1051,7 +1051,7 @@
 /* stylelint-enable */
 /* STRUCT */
 .tuiv2_navbar {
-  z-index: 1;
+  z-index: 4;
   height: 54px;
   display: flex;
   justify-content: space-between;
@@ -1063,7 +1063,6 @@
 .tuiv2_navbar__part {
   display: flex;
   align-items: center;
-  max-width: 50%;
   padding: 10px; }
   .tuiv2_navbar__part:hover .tuiv2_navbar__logo {
     transform: bump 0.5s; }
@@ -1118,6 +1117,7 @@
 
 /* SRTUCT */
 .tuiv2_side-menu {
+  z-index: 3;
   width: 60px;
   position: fixed;
   top: 54px;
