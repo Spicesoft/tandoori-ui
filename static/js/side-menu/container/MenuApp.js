@@ -5,9 +5,9 @@ import {
 } from "../actions";
 import Menu from "../ui/Menu.jsx";
 
-const mapStateToProps = (state) => (state);
+export const mapStateToProps = (state) => (state);
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
     return {
         onItemClicked: (id) => {
             dispatch(toggleOpen(id));
