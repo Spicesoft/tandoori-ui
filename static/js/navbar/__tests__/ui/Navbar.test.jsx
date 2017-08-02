@@ -2,7 +2,7 @@
 import React from "react";
 import {shallow} from "enzyme";
 
-import Navbar from "../../ui/Navbar.jsx";
+import Navbar from "../../../../../dist/js/navbar/ui/Navbar.jsx";
 
 window.matchMedia = window.matchMedia || function () {
     return {

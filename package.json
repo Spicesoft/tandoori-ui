@@ -6,15 +6,17 @@
   "module": "static/js/index.js",
   "jsnext:main": "static/js/index.js",
   "files": [
-    "public",
-    "static",
-    "static/js"
+    "dist"
   ],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch --verbose",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "buil:js": "webpack",
+    "build-dev:js": "webpack --watch",
+    "build:sass": "sass static/sass/main.scss:public/css/tandoori-ui.css",
+    "build-dev:sass": "sass --watch static/sass/main.scss:public/css/tandoori-ui.css"
   },
   "repository": {
     "type": "git",

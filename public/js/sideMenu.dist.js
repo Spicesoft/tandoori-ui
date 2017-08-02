@@ -24982,12 +24982,6 @@ var toggleOpen = function toggleOpen(previousID, nextId, open) {
     return true;
 };
 
-// const initialState = {
-//     open: false,
-//     activeItem: "",
-//     menuItems: []
-// };
-
 var menuApp = exports.menuApp = function menuApp(state, action) {
     switch (action.type) {
         case _actionTypes.TOGGLE_OPEN:
@@ -25014,6 +25008,7 @@ var menuApp = exports.menuApp = function menuApp(state, action) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.mapDispatchToProps = exports.mapStateToProps = undefined;
 
 var _reactRedux = __webpack_require__(188);
 
@@ -25025,11 +25020,11 @@ var _Menu2 = _interopRequireDefault(_Menu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = exports.mapStateToProps = function mapStateToProps(state) {
     return state;
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+var mapDispatchToProps = exports.mapDispatchToProps = function mapDispatchToProps(dispatch) {
     return {
         onItemClicked: function onItemClicked(id) {
             dispatch((0, _actions.toggleOpen)(id));
