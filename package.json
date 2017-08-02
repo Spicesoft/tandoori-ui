@@ -58,9 +58,9 @@
   "jest": {
         "collectCoverage": true,
         "collectCoverageFrom": [
-            "static/js/navbar/**/*.{js,jsx}",
+            "dist/js/navbar/**/*.{js,jsx}",
             "static/js/side-menu/**/*.{js,jsx}",
-            "static/js/shared/**/*.{js,jsx}"
+            "dist/js/shared/**/*.{js,jsx}"
         ],
         "coverageDirectory": "static/js/coverage/",
         "coverageReporters": [
