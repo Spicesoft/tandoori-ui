@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/Spicesoft/tandoori-ui/issues"
   },
-  "homepage": "https://github.com/Spicesoft/tandoori-ui#readme",
+  "homepage": "https://spicesoft.github.io/tandoori-ui/",
   "sasslintConfig": "./.sass-lint.yml",
   "devDependencies": {
     "@storybook/react": "^3.1.3",
