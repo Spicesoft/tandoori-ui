@@ -7469,7 +7469,9 @@ body {
 .navbar .navbar-header .navbar-brand img {
   height: 100%; }
 
-.bs-component .card {
+.bs-component .card,
+.bs-component .btn,
+.bs-component .progress {
   margin-bottom: 1rem; }
 
 .container-fluid {

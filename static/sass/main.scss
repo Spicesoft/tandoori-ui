@@ -117,7 +117,9 @@ body {
 }
 
 .bs-component {
-  .card {
+  .card,
+  .btn,
+  .progress {
     margin-bottom: 1rem;
   }
 }
