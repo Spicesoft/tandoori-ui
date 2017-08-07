@@ -1,3 +1,5 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
 @import "../../dist/sass/_globals.scss";
 @import "../../dist/sass/_utils.scss";
 @import "../../dist/sass/_colors.scss";
@@ -17,7 +19,7 @@
 @import "../../dist/sass/_side-menu.scss";
 @import "../../dist/sass/_dropdown.scss";
 @import "../../dist/sass/_loaders.scss";
-@import "_linearicons.scss";
+@import "./_linearicons.scss";
 
 $zero: 0;
 

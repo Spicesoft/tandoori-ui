@@ -1,5 +1,6 @@
 /* eslint-env node */
 const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 function getExternals(env) {
     if (env === "prod") {
@@ -11,9 +12,8 @@ function getExternals(env) {
     return;
 }
 
-
 module.exports = function (env) {
-    return {
+    return [{
         entry: {
             navbar: "./static/js/navbar/App.jsx",
             sideMenu: "./static/js/side-menu/App.jsx",
@@ -38,7 +38,41 @@ module.exports = function (env) {
                 }
             ]
         },
+        resolve: {
+            alias: {
+                root: path.resolve(__dirname, "")
+            }
+        },
         devtool: "source-map",
         externals: getExternals(env)
-    };
+    },
+    {  // Style part
+        entry: {
+            tui: "./static/sass/main.scss"
+        },
+        output: {
+            path: path.resolve(__dirname, "public/css"),
+            filename: "tui.css"
+        },
+        module: {
+            rules: [{
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader", "sass-loader"]
+                })
+            }]
+        },
+        resolve: {
+            alias: {
+                fonts: path.resolve(__dirname, "public/font")
+            }
+        },
+        devtool: "source-map",
+        plugins: [
+            new ExtractTextPlugin({
+                filename: "tui.css"
+            })
+        ]
+    }];
 };
