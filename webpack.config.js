@@ -55,13 +55,22 @@ module.exports = function (env) {
             filename: "tui.css"
         },
         module: {
-            rules: [{
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: ["css-loader", "sass-loader"]
-                })
-            }]
+            rules: [
+                {
+                    test: /\.scss$/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: "style-loader",
+                        use: ["css-loader", "sass-loader"]
+                    })
+                },
+                {
+                    test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                    loader: "url-loader",
+                    options: {
+                        includePaths: [path.resolve(__dirname, "public/font")]
+                    }
+                }
+            ]
         },
         resolve: {
             alias: {
