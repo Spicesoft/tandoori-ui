@@ -39,3 +39,11 @@ $card__block-padding: 10px;
 .#{$current}card__title--default-skin {
   color: $darkgrey;
 }
+
+/* BS overrides */
+
+.card {
+  border: none;
+  border-radius: 0.1rem;
+  box-shadow: $material-shadow;
+}

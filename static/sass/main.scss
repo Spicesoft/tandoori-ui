@@ -1,36 +1,102 @@
-@import "../../dist/sass/_globals.scss";
-@import "../../dist/sass/_utils.scss";
-@import "../../dist/sass/_colors.scss";
-@import "../../dist/sass/_animations.scss";
-@import "../../dist/sass/_layout.scss";
-@import "../../dist/sass/_text.scss";
-@import "../../dist/sass/_images.scss";
-@import "../../dist/sass/_headers.scss";
-@import "../../dist/sass/_list.scss";
+/*****************************
+ -- Core stuff --
+****************************/
+
+@import "dist/sass/_custom";
+
+
+/******************************
+  -- Bootstrap imports --
+*******************************/
+
+/*!
+ * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "dist/sass/_flatly_variables";
+@import "~bootstrap/scss/mixins";
+// @import "~bootstrap/scss/custom";
+
+// Reset and dependencies
+@import "~bootstrap/scss/normalize";
+@import "~bootstrap/scss/print";
+
+// Core CSS
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+
+// Components
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+// @import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/responsive-embed";
+@import "~bootstrap/scss/close";
+
+// Components w/ JavaScript
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+
+// Utility classes
+@import "~bootstrap/scss/utilities";
+
+
+/***********************
+        -- --
+***********************/
+@import "dist/sass/_bootswatch.scss";
+@import "dist/sass/_colors.scss";
+@import "dist/sass/_globals.scss";
+@import "dist/sass/_utils.scss";
+@import "dist/sass/_animations.scss";
+@import "dist/sass/_layout.scss";
+@import "dist/sass/_text.scss";
+@import "dist/sass/_images.scss";
+@import "dist/sass/_headers.scss";
+@import "dist/sass/_list.scss";
 // @import "dist/_forms.scss";
-@import "../../dist/sass/_buttons.scss";
-@import "../../dist/sass/_cards.scss";
-@import "../../dist/sass/_list.scss";
-@import "../../dist/sass/_gallery.scss";
-@import "../../dist/sass/_tabs.scss";
-@import "../../dist/sass/_navbar.scss";
-@import "../../dist/sass/_side-menu.scss";
-@import "../../dist/sass/_dropdown.scss";
-@import "../../dist/sass/_loaders.scss";
+@import "dist/sass/_buttons.scss";
+@import "dist/sass/_cards.scss";
+@import "dist/sass/_list.scss";
+@import "dist/sass/_gallery.scss";
+@import "dist/sass/_tabs.scss";
+@import "dist/sass/_navbar.scss";
+@import "dist/sass/_side-menu.scss";
+@import "dist/sass/_dropdown.scss";
+@import "dist/sass/_loaders.scss";
 @import "_linearicons.scss";
 
 $zero: 0;
 
 body {
-  font-family: "Lato";
   background: $app-background;
   padding-bottom: 100px;
 }
 
-h2 {
-  color: $dark-blue;
-  font-weight: 900;
-}
 
 .code {
   background-color: $lightgrey;
@@ -48,4 +114,16 @@ h2 {
       }
     }
   }
+}
+
+.bs-component {
+  .card,
+  .btn,
+  .progress {
+    margin-bottom: 1rem;
+  }
+}
+
+.container-fluid {
+  z-index: 1;
 }
