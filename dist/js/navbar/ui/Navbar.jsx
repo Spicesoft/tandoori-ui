@@ -10,7 +10,7 @@ export default class Navbar extends React.PureComponent {
     }
 
     render() {
-        const {logoUrl, tenantTitle, userName, actionItems, profileItems} = this.props;
+        const {logoUrl, tenantTitle, userName, profileItems, links, dropdowns} = this.props;
         const classNames = [
             "tuiv2_navbar"
         ];
@@ -21,7 +21,7 @@ export default class Navbar extends React.PureComponent {
             <nav className={classNames.join(" ")}>
                 {this.renderMenuIcon()}
                 {this.renderBrand(logoUrl, tenantTitle)}
-                {this.renderActions(actionItems, profileItems, userName)}
+                {this.renderActions(profileItems, links, dropdowns, userName)}
             </nav>
         );
     }
@@ -54,7 +54,7 @@ export default class Navbar extends React.PureComponent {
     }
 
     renderMenuIcon() {
-        if (this.mobileDevice) {
+        if (this.mobileDevice && this.props.links.length > 0) {
             return (
                 <div className="tuiv2_navbar__part">
                     <Dropdown
@@ -67,19 +67,25 @@ export default class Navbar extends React.PureComponent {
         }
     }
 
-    renderActions(actionItems, profileItems, userName) {
+    renderActions(profileItems, links, dropdowns, userName) {
         return (<div className="tuiv2_navbar__part">
             {this.props.children}
-            {!this.mobileDevice ? this.renderLinks(this.props.links) : ""}
+            {!this.mobileDevice ? this.renderLinks(this.props.links) : null}
             {this.renderDropdowns(this.props.dropdowns)}
+            {profileItems.length > 0 ? this.renderProfileItems(profileItems, userName) : null}
+        </div>);
+    }
+
+    renderProfileItems(items, userName) {
+        return (
             <Dropdown
-                items={profileItems}
+                items={items}
                 text={!this.mobileDevice ? userName : ""}
                 spanClass={this.mobileDevice ? "lnr-user" : ""}
                 containerClass="tuiv2_navbar__action"
                 align="right"
             />
-        </div>);
+        );
     }
 
     renderDropdowns(actions) {

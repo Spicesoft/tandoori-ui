@@ -941,8 +941,9 @@ var Navbar = function (_React$PureComponent) {
                 logoUrl = _props.logoUrl,
                 tenantTitle = _props.tenantTitle,
                 userName = _props.userName,
-                actionItems = _props.actionItems,
-                profileItems = _props.profileItems;
+                profileItems = _props.profileItems,
+                links = _props.links,
+                dropdowns = _props.dropdowns;
 
             var classNames = ["tuiv2_navbar"];
             classNames.push(this.props.lightTheme ? "tuiv2_navbar--light" : "tuiv2_navbar--default-skin");
@@ -951,7 +952,7 @@ var Navbar = function (_React$PureComponent) {
                 { className: classNames.join(" ") },
                 this.renderMenuIcon(),
                 this.renderBrand(logoUrl, tenantTitle),
-                this.renderActions(actionItems, profileItems, userName)
+                this.renderActions(profileItems, links, dropdowns, userName)
             );
         }
     }, {
@@ -995,7 +996,7 @@ var Navbar = function (_React$PureComponent) {
     }, {
         key: "renderMenuIcon",
         value: function renderMenuIcon() {
-            if (this.mobileDevice) {
+            if (this.mobileDevice && this.props.links.length > 0) {
                 return _react2.default.createElement(
                     "div",
                     { className: "tuiv2_navbar__part" },
@@ -1009,21 +1010,26 @@ var Navbar = function (_React$PureComponent) {
         }
     }, {
         key: "renderActions",
-        value: function renderActions(actionItems, profileItems, userName) {
+        value: function renderActions(profileItems, links, dropdowns, userName) {
             return _react2.default.createElement(
                 "div",
                 { className: "tuiv2_navbar__part" },
                 this.props.children,
-                !this.mobileDevice ? this.renderLinks(this.props.links) : "",
+                !this.mobileDevice ? this.renderLinks(this.props.links) : null,
                 this.renderDropdowns(this.props.dropdowns),
-                _react2.default.createElement(_Dropdown2.default, {
-                    items: profileItems,
-                    text: !this.mobileDevice ? userName : "",
-                    spanClass: this.mobileDevice ? "lnr-user" : "",
-                    containerClass: "tuiv2_navbar__action",
-                    align: "right"
-                })
+                profileItems.length > 0 ? this.renderProfileItems(profileItems, userName) : null
             );
+        }
+    }, {
+        key: "renderProfileItems",
+        value: function renderProfileItems(items, userName) {
+            return _react2.default.createElement(_Dropdown2.default, {
+                items: items,
+                text: !this.mobileDevice ? userName : "",
+                spanClass: this.mobileDevice ? "lnr-user" : "",
+                containerClass: "tuiv2_navbar__action",
+                align: "right"
+            });
         }
     }, {
         key: "renderDropdowns",
