@@ -57,28 +57,21 @@ export default class Navbar extends React.PureComponent {
         if (this.mobileDevice) {
             return (
                 <div className="tuiv2_navbar__part">
-                    <div className="tuiv2_navbar__action">
-                        <span className="lnr-menu" />
-                    </div>
+                    <Dropdown
+                        items={this.props.links}
+                        spanClass="lnr-menu"
+                        containerClass="tuiv2_navbar__action"
+                    />
                 </div>
             );
         }
     }
 
     renderActions(actionItems, profileItems, userName) {
-        const actionsDropDown = () => {
-            if (actionItems.length > 0) {
-                return this.mobileDevice ? (<Dropdown
-                    items={actionItems}
-                    spanClass="lnr-rocket"
-                    containerClass="tuiv2_navbar__action"
-                    align="right"
-                />) : this.renderActionLinks(actionItems);
-            }
-        };
         return (<div className="tuiv2_navbar__part">
             {this.props.children}
-            {actionsDropDown()}
+            {!this.mobileDevice ? this.renderLinks(this.props.links) : ""}
+            {this.renderDropdowns(this.props.dropdowns)}
             <Dropdown
                 items={profileItems}
                 text={!this.mobileDevice ? userName : ""}
@@ -89,12 +82,23 @@ export default class Navbar extends React.PureComponent {
         </div>);
     }
 
-    renderActionLinks(actionItems) {
-        return actionItems.map(item => (
-            <div className="tuiv2_navbar__part" key={item.id}>
-                <a className="btn" href={item.url}>{item.label}</a>
-            </div>
-        ));
+    renderDropdowns(actions) {
+        return actions.map(action => {
+            return (<Dropdown
+                items={action.items}
+                spanClass={this.mobileDevice ? action.spanClass : ""}
+                text={!this.mobileDevice ? action.label : ""}
+                containerClass="tuiv2_navbar__action"
+                align="right"
+                key={action.id}
+            />);
+        });
+    }
+
+    renderLinks(links) {
+        return links.map(link => {
+            return <a key={link.id} className="tuiv2_btn" href={link.url}>{link.label}</a>;
+        });
     }
 
 
@@ -104,8 +108,9 @@ Navbar.propTypes = {
     logoUrl: T.string.isRequired,
     tenantTitle: T.string.isRequired,
     userName: T.string.isRequired,
-    actionItems: T.array.isRequired,
+    links: T.array.isRequired,
     profileItems: T.array.isRequired,
+    dropdowns: T.array.isRequired,
     isLoggedIn: T.bool.isRequired,
     children: T.node,
     searchComponent: T.node

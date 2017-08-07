@@ -23,6 +23,7 @@
 }
 
 .#{$current}dropdown-menu--in {
+  z-index: 1;
   display: block;
   animation: dropIn 0.2s forwards;
 }

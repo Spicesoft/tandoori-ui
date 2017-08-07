@@ -6858,6 +6858,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
       height: 100vh; } }
 
 .tuiv2_dropdown-menu--in {
+  z-index: 1;
   display: block;
   animation: dropIn 0.2s forwards; }
 

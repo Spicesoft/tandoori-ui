@@ -999,34 +999,23 @@ var Navbar = function (_React$PureComponent) {
                 return _react2.default.createElement(
                     "div",
                     { className: "tuiv2_navbar__part" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "tuiv2_navbar__action" },
-                        _react2.default.createElement("span", { className: "lnr-menu" })
-                    )
+                    _react2.default.createElement(_Dropdown2.default, {
+                        items: this.props.links,
+                        spanClass: "lnr-menu",
+                        containerClass: "tuiv2_navbar__action"
+                    })
                 );
             }
         }
     }, {
         key: "renderActions",
         value: function renderActions(actionItems, profileItems, userName) {
-            var _this3 = this;
-
-            var actionsDropDown = function actionsDropDown() {
-                if (actionItems.length > 0) {
-                    return _this3.mobileDevice ? _react2.default.createElement(_Dropdown2.default, {
-                        items: actionItems,
-                        spanClass: "lnr-rocket",
-                        containerClass: "tuiv2_navbar__action",
-                        align: "right"
-                    }) : _this3.renderActionLinks(actionItems);
-                }
-            };
             return _react2.default.createElement(
                 "div",
                 { className: "tuiv2_navbar__part" },
                 this.props.children,
-                actionsDropDown(),
+                !this.mobileDevice ? this.renderLinks(this.props.links) : "",
+                this.renderDropdowns(this.props.dropdowns),
                 _react2.default.createElement(_Dropdown2.default, {
                     items: profileItems,
                     text: !this.mobileDevice ? userName : "",
@@ -1037,17 +1026,29 @@ var Navbar = function (_React$PureComponent) {
             );
         }
     }, {
-        key: "renderActionLinks",
-        value: function renderActionLinks(actionItems) {
-            return actionItems.map(function (item) {
+        key: "renderDropdowns",
+        value: function renderDropdowns(actions) {
+            var _this3 = this;
+
+            return actions.map(function (action) {
+                return _react2.default.createElement(_Dropdown2.default, {
+                    items: action.items,
+                    spanClass: _this3.mobileDevice ? action.spanClass : "",
+                    text: !_this3.mobileDevice ? action.label : "",
+                    containerClass: "tuiv2_navbar__action",
+                    align: "right",
+                    key: action.id
+                });
+            });
+        }
+    }, {
+        key: "renderLinks",
+        value: function renderLinks(links) {
+            return links.map(function (link) {
                 return _react2.default.createElement(
-                    "div",
-                    { className: "tuiv2_navbar__part", key: item.id },
-                    _react2.default.createElement(
-                        "a",
-                        { className: "btn", href: item.url },
-                        item.label
-                    )
+                    "a",
+                    { key: link.id, className: "tuiv2_btn", href: link.url },
+                    link.label
                 );
             });
         }
@@ -1063,8 +1064,9 @@ Navbar.propTypes = {
     logoUrl: _propTypes2.default.string.isRequired,
     tenantTitle: _propTypes2.default.string.isRequired,
     userName: _propTypes2.default.string.isRequired,
-    actionItems: _propTypes2.default.array.isRequired,
+    links: _propTypes2.default.array.isRequired,
     profileItems: _propTypes2.default.array.isRequired,
+    dropdowns: _propTypes2.default.array.isRequired,
     isLoggedIn: _propTypes2.default.bool.isRequired,
     children: _propTypes2.default.node,
     searchComponent: _propTypes2.default.node
