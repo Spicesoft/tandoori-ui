@@ -2,9 +2,9 @@
   "name": "tandoori-ui",
   "version": "1.0.0",
   "description": "Tandoori user interface's elements.",
-  "main": "static/js/index.js",
-  "module": "static/js/index.js",
-  "jsnext:main": "static/js/index.js",
+  "main": "dist/js/index.js",
+  "module": "dist/js/index.js",
+  "jsnext:main": "dist/js/index.js",
   "files": [
     "dist"
   ],
