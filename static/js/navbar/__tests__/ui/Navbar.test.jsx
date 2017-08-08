@@ -1,6 +1,9 @@
-/* global test, expect */
+/* global test, expect, jest */
 import React from "react";
-import {shallow} from "enzyme";
+import {
+    shallow,
+    mount
+} from "enzyme";
 
 import Navbar from "../../../../../dist/js/navbar/ui/Navbar.jsx";
 
@@ -18,8 +21,9 @@ test("Should render navbar", () => {
             logoUrl=""
             tenantTitle=""
             userName=""
-            actionItems={[]}
+            dropdowns={[]}
             profileItems={[]}
+            links={[]}
             isLoggedIn={false}
         />
     );
@@ -39,7 +43,8 @@ test("Should render navbar with light theme", () => {
             logoUrl=""
             tenantTitle=""
             userName=""
-            actionItems={[]}
+            dropdowns={[]}
+            links={[]}
             profileItems={[]}
             isLoggedIn={false}
             lightTheme
@@ -61,7 +66,7 @@ test("Should render with action links", () => {
             logoUrl=""
             tenantTitle=""
             userName=""
-            actionItems={[
+            links={[
                 {
                     id: "login",
                     label: "Login",
@@ -73,6 +78,7 @@ test("Should render with action links", () => {
                     url: "/logout"
                 }
             ]}
+            dropdowns={[]}
             profileItems={[]}
             isLoggedIn={false}
             lightTheme
@@ -82,8 +88,31 @@ test("Should render with action links", () => {
     expect(wrapper.find({href: "/login"}).length).toBe(1);
 });
 
+test("Should render with profile items", () => {
+    const wrapper = mount(
+        <Navbar
+            logoUrl=""
+            tenantTitle=""
+            userName="Toto"
+            links={[]}
+            dropdowns={[]}
+            profileItems={[
+                {
+                    id: "logout",
+                    label: "Logout",
+                    url: "/logout"
+                }
+            ]}
+            isLoggedIn={false}
+            lightTheme
+        />
+    );
+    const dropdownLabel = wrapper.find(".tuiv2_dropdown__label");
+    expect(dropdownLabel.length).toBe(1);
+    expect(dropdownLabel.text()).toBe("Toto");
+});
+
 test("Should render mobile items", () => {
-    /* global jest */
     Object.defineProperty(window, "matchMedia", {
         value: jest.fn(() => {
             return {
@@ -91,12 +120,41 @@ test("Should render mobile items", () => {
             };
         })
     });
-    const wrapper = shallow(
+    const wrapper = mount(
         <Navbar
             logoUrl=""
             tenantTitle=""
             userName=""
-            actionItems={[
+            links={[]}
+            dropdowns={[]}
+            profileItems={[
+                {
+                    id: "logout",
+                    label: "Logout",
+                    url: "/logout"
+                }
+            ]}
+            isLoggedIn={false}
+            lightTheme
+        />
+    );
+    expect(wrapper.find(".lnr-user").exists()).toBe(true);
+});
+
+test("Should render mobile profile items", () => {
+    Object.defineProperty(window, "matchMedia", {
+        value: jest.fn(() => {
+            return {
+                matches: true
+            };
+        })
+    });
+    const wrapper = mount(
+        <Navbar
+            logoUrl=""
+            tenantTitle=""
+            userName=""
+            links={[
                 {
                     id: "login",
                     label: "Login",
@@ -108,6 +166,7 @@ test("Should render mobile items", () => {
                     url: "/logout"
                 }
             ]}
+            dropdowns={[]}
             profileItems={[]}
             isLoggedIn={false}
             lightTheme
@@ -115,4 +174,91 @@ test("Should render mobile items", () => {
     );
     expect(wrapper.find(".tuiv2_navbar__search").exists()).toBe(false);
     expect(wrapper.find(".lnr-menu").exists()).toBe(true);
+});
+
+test("Should render with dropdowns", () => {
+    Object.defineProperty(window, "matchMedia", {
+        value: jest.fn(() => {
+            return {
+                matches: false
+            };
+        })
+    });
+    const wrapper = mount(
+        <Navbar
+            logoUrl=""
+            tenantTitle=""
+            userName="Toto"
+            links={[]}
+            dropdowns={[
+                {
+                    type: "dropdown",
+                    id: "dropdownEx",
+                    label: "Dropdown",
+                    spanClass: "lnr-rocket",
+                    items: [
+                        {
+                            id: "item1",
+                            label: "Item 1",
+                            url: "#"
+                        },
+                        {
+                            id: "item2",
+                            label: "Item 2",
+                            url: "#"
+                        }
+                    ]
+                }
+            ]}
+            profileItems={[]}
+            isLoggedIn={false}
+            lightTheme
+        />
+    );
+    const dropdownLabel = wrapper.find(".tuiv2_dropdown__label");
+    expect(dropdownLabel.length).toBe(1);
+    expect(dropdownLabel.text()).toBe("Dropdown");
+});
+
+test("Should render with mobile dropdowns", () => {
+    Object.defineProperty(window, "matchMedia", {
+        value: jest.fn(() => {
+            return {
+                matches: true
+            };
+        })
+    });
+    const wrapper = mount(
+        <Navbar
+            logoUrl=""
+            tenantTitle=""
+            userName="Toto"
+            links={[]}
+            dropdowns={[
+                {
+                    type: "dropdown",
+                    id: "dropdownEx",
+                    label: "Dropdown",
+                    spanClass: "lnr-rocket",
+                    items: [
+                        {
+                            id: "item1",
+                            label: "Item 1",
+                            url: "#"
+                        },
+                        {
+                            id: "item2",
+                            label: "Item 2",
+                            url: "#"
+                        }
+                    ]
+                }
+            ]}
+            profileItems={[]}
+            isLoggedIn={false}
+            lightTheme
+        />
+    );
+    expect(wrapper.find(".tuiv2_dropdown__label").length).toBe(1);
+    expect(wrapper.find(".lnr-rocket").exists()).toBe(true);
 });

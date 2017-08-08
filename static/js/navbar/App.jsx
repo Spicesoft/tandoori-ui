@@ -45,7 +45,7 @@ const navbarData = {
         {
             id: "logout",
             label: "Logout",
-            url: ""
+            url: "#logout"
         }
     ]
 };

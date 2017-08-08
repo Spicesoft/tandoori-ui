@@ -22716,7 +22716,7 @@ var navbarData = {
     profileItems: [{
         id: "logout",
         label: "Logout",
-        url: ""
+        url: "#logout"
     }]
 };
 
