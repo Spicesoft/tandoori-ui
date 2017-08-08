@@ -162,7 +162,7 @@ describe("Test desktop devices", () => {
         );
         const dropdownLabel = wrapper.find(".tuiv2_dropdown__label");
         expect(dropdownLabel.length).toBe(1);
-        expect(dropdownLabel.text()).toBe("Dropdown");
+        expect(dropdownLabel.text()).toMatch("Dropdown");
     });
 });
 
