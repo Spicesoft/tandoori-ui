@@ -16,8 +16,7 @@ module.exports = function (env) {
     return [{
         entry: {
             navbar: "./static/js/navbar/App.jsx",
-            sideMenu: "./static/js/side-menu/App.jsx",
-            index: "./static/js/index.js"
+            sideMenu: "./static/js/side-menu/App.jsx"
         },
         output: {
             path: path.resolve(__dirname, "public/js"),
