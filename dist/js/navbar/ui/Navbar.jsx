@@ -19,7 +19,7 @@ export default class Navbar extends React.PureComponent {
         );
         return (
             <nav className={classNames.join(" ")}>
-                {this.renderMenuIcon()}
+                {this.renderMobileMenu()}
                 {this.renderBrand(logoUrl, tenantTitle)}
                 {this.renderActions(profileItems, links, dropdowns, userName)}
             </nav>
@@ -53,7 +53,7 @@ export default class Navbar extends React.PureComponent {
         );
     }
 
-    renderMenuIcon() {
+    renderMobileMenu() {
         if (this.mobileDevice && this.props.links.length > 0) {
             return (
                 <div className="tuiv2_navbar__part">
@@ -70,7 +70,7 @@ export default class Navbar extends React.PureComponent {
     renderActions(profileItems, links, dropdowns, userName) {
         return (<div className="tuiv2_navbar__part">
             {this.props.children}
-            {!this.mobileDevice ? this.renderLinks(this.props.links) : null}
+            {this.mobileDevice ? null : this.renderLinks(this.props.links)}
             {this.renderDropdowns(this.props.dropdowns)}
             {profileItems.length > 0 ? this.renderProfileItems(profileItems, userName) : null}
         </div>);
@@ -89,16 +89,16 @@ export default class Navbar extends React.PureComponent {
     }
 
     renderDropdowns(actions) {
-        return actions.map(action => {
-            return (<Dropdown
+        return actions.map(action => (
+            <Dropdown
                 items={action.items}
                 spanClass={this.mobileDevice ? action.spanClass : ""}
-                text={!this.mobileDevice ? action.label : ""}
+                text={this.mobileDevice ? "" : action.label}
                 containerClass="tuiv2_navbar__action"
                 align="right"
                 key={action.id}
-            />);
-        });
+            />
+        ));
     }
 
     renderLinks(links) {

@@ -50,13 +50,7 @@ describe("Test desktop devices", () => {
             />
         );
         let classNames = wrapper.prop("className").split(" ");
-        let exists = false;
-        classNames.forEach(item => {
-            if (item === "tuiv2_navbar--default-skin") {
-                exists = true;
-            }
-        });
-        expect(exists).toBe(true);
+        expect(classNames.includes("tuiv2_navbar--default-skin")).toBe(true);
     });
 
     test("Should render navbar with light theme", () => {
