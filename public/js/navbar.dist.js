@@ -22511,8 +22511,9 @@ var Navbar = function (_React$PureComponent) {
                 logoUrl = _props.logoUrl,
                 tenantTitle = _props.tenantTitle,
                 userName = _props.userName,
-                actionItems = _props.actionItems,
-                profileItems = _props.profileItems;
+                profileItems = _props.profileItems,
+                links = _props.links,
+                dropdowns = _props.dropdowns;
 
             var classNames = ["tuiv2_navbar"];
             classNames.push(this.props.lightTheme ? "tuiv2_navbar--light" : "tuiv2_navbar--default-skin");
@@ -22521,7 +22522,7 @@ var Navbar = function (_React$PureComponent) {
                 { className: classNames.join(" ") },
                 this.renderMenuIcon(),
                 this.renderBrand(logoUrl, tenantTitle),
-                this.renderActions(actionItems, profileItems, userName)
+                this.renderActions(profileItems, links, dropdowns, userName)
             );
         }
     }, {
@@ -22565,59 +22566,65 @@ var Navbar = function (_React$PureComponent) {
     }, {
         key: "renderMenuIcon",
         value: function renderMenuIcon() {
-            if (this.mobileDevice) {
+            if (this.mobileDevice && this.props.links.length > 0) {
                 return _react2.default.createElement(
                     "div",
                     { className: "tuiv2_navbar__part" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "tuiv2_navbar__action" },
-                        _react2.default.createElement("span", { className: "lnr-menu" })
-                    )
+                    _react2.default.createElement(_Dropdown2.default, {
+                        items: this.props.links,
+                        spanClass: "lnr-menu",
+                        containerClass: "tuiv2_navbar__action"
+                    })
                 );
             }
         }
     }, {
         key: "renderActions",
-        value: function renderActions(actionItems, profileItems, userName) {
-            var _this3 = this;
-
-            var actionsDropDown = function actionsDropDown() {
-                if (actionItems.length > 0) {
-                    return _this3.mobileDevice ? _react2.default.createElement(_Dropdown2.default, {
-                        items: actionItems,
-                        spanClass: "lnr-rocket",
-                        containerClass: "tuiv2_navbar__action",
-                        align: "right"
-                    }) : _this3.renderActionLinks(actionItems);
-                }
-            };
+        value: function renderActions(profileItems, links, dropdowns, userName) {
             return _react2.default.createElement(
                 "div",
                 { className: "tuiv2_navbar__part" },
                 this.props.children,
-                actionsDropDown(),
-                _react2.default.createElement(_Dropdown2.default, {
-                    items: profileItems,
-                    text: !this.mobileDevice ? userName : "",
-                    spanClass: this.mobileDevice ? "lnr-user" : "",
-                    containerClass: "tuiv2_navbar__action",
-                    align: "right"
-                })
+                !this.mobileDevice ? this.renderLinks(this.props.links) : null,
+                this.renderDropdowns(this.props.dropdowns),
+                profileItems.length > 0 ? this.renderProfileItems(profileItems, userName) : null
             );
         }
     }, {
-        key: "renderActionLinks",
-        value: function renderActionLinks(actionItems) {
-            return actionItems.map(function (item) {
+        key: "renderProfileItems",
+        value: function renderProfileItems(items, userName) {
+            return _react2.default.createElement(_Dropdown2.default, {
+                items: items,
+                text: !this.mobileDevice ? userName : "",
+                spanClass: this.mobileDevice ? "lnr-user" : "",
+                containerClass: "tuiv2_navbar__action",
+                align: "right"
+            });
+        }
+    }, {
+        key: "renderDropdowns",
+        value: function renderDropdowns(actions) {
+            var _this3 = this;
+
+            return actions.map(function (action) {
+                return _react2.default.createElement(_Dropdown2.default, {
+                    items: action.items,
+                    spanClass: _this3.mobileDevice ? action.spanClass : "",
+                    text: !_this3.mobileDevice ? action.label : "",
+                    containerClass: "tuiv2_navbar__action",
+                    align: "right",
+                    key: action.id
+                });
+            });
+        }
+    }, {
+        key: "renderLinks",
+        value: function renderLinks(links) {
+            return links.map(function (link) {
                 return _react2.default.createElement(
-                    "div",
-                    { className: "tuiv2_navbar__part", key: item.id },
-                    _react2.default.createElement(
-                        "a",
-                        { className: "btn", href: item.url },
-                        item.label
-                    )
+                    "a",
+                    { key: link.id, className: "tuiv2_btn", href: link.url },
+                    link.label
                 );
             });
         }
@@ -22633,8 +22640,9 @@ Navbar.propTypes = {
     logoUrl: _propTypes2.default.string.isRequired,
     tenantTitle: _propTypes2.default.string.isRequired,
     userName: _propTypes2.default.string.isRequired,
-    actionItems: _propTypes2.default.array.isRequired,
+    links: _propTypes2.default.array.isRequired,
     profileItems: _propTypes2.default.array.isRequired,
+    dropdowns: _propTypes2.default.array.isRequired,
     isLoggedIn: _propTypes2.default.bool.isRequired,
     children: _propTypes2.default.node,
     searchComponent: _propTypes2.default.node
@@ -22679,19 +22687,36 @@ var navbarData = {
     logoUrl: "public/img/logo.png",
     tenantTitle: "Cowork's Tandoori UI",
     userName: "Roland",
-    actionItems: [{
+    links: [{
+        type: "link",
         id: "coworkio",
         label: "Go to coworkio",
         url: "https://cowork.io/"
     }, {
+        type: "link",
         id: "lelab",
         label: "Go to the lab",
         url: "https://lelab.cowork.io"
     }],
+    dropdowns: [{
+        type: "dropdown",
+        id: "dropdownEx",
+        label: "Dropdown",
+        spanClass: "lnr-rocket",
+        items: [{
+            id: "item1",
+            label: "Item 1",
+            url: "#"
+        }, {
+            id: "item2",
+            label: "Item 2",
+            url: "#"
+        }]
+    }],
     profileItems: [{
         id: "logout",
         label: "Logout",
-        url: ""
+        url: "#logout"
     }]
 };
 
@@ -22699,7 +22724,8 @@ _reactDom2.default.render(_react2.default.createElement(_Navbar2.default, {
     logoUrl: navbarData.logoUrl,
     tenantTitle: navbarData.tenantTitle,
     userName: navbarData.userName,
-    actionItems: navbarData.actionItems,
+    dropdowns: navbarData.dropdowns,
+    links: navbarData.links,
     profileItems: navbarData.profileItems,
     lightTheme: true,
     isLoggedIn: true

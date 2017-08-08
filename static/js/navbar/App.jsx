@@ -7,23 +7,45 @@ const navbarData = {
     logoUrl: "public/img/logo.png",
     tenantTitle: "Cowork's Tandoori UI",
     userName: "Roland",
-    actionItems: [
+    links: [
         {
+            type: "link",
             id: "coworkio",
             label: "Go to coworkio",
             url: "https://cowork.io/"
         },
         {
+            type: "link",
             id: "lelab",
             label: "Go to the lab",
             url: "https://lelab.cowork.io"
+        }
+    ],
+    dropdowns: [
+        {
+            type: "dropdown",
+            id: "dropdownEx",
+            label: "Dropdown",
+            spanClass: "lnr-rocket",
+            items: [
+                {
+                    id: "item1",
+                    label: "Item 1",
+                    url: "#"
+                },
+                {
+                    id: "item2",
+                    label: "Item 2",
+                    url: "#"
+                }
+            ]
         }
     ],
     profileItems: [
         {
             id: "logout",
             label: "Logout",
-            url: ""
+            url: "#logout"
         }
     ]
 };
@@ -33,7 +55,8 @@ ReactDOM.render(
         logoUrl={navbarData.logoUrl}
         tenantTitle={navbarData.tenantTitle}
         userName={navbarData.userName}
-        actionItems={navbarData.actionItems}
+        dropdowns={navbarData.dropdowns}
+        links={navbarData.links}
         profileItems={navbarData.profileItems}
         lightTheme={true}
         isLoggedIn={true}
