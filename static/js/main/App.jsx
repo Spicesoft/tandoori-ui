@@ -2,69 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {
     BrowserRouter as Router,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 import {Provider} from "react-redux";
 import {createStore} from "redux";
+
 import {menuApp} from "./side-menu/reducer";
 import MenuApp from "./side-menu/container/MenuApp";
+
 import Navbar from "root/dist/js/navbar/ui/Navbar.jsx";
 
-const Home = () => (
-    <div>
-        <h2>
-            Home
-        </h2>
-    </div>
-);
+import About from "./component-examples/About.jsx";
+import Typography from "./component-examples/Typography.jsx";
 
-const About = () => (
-    <div>
-        <h2>
-            About
-        </h2>
-    </div>
-);
-
-const Topic = ({match}) => (
-    <div>
-        <h3>{match.params.topId}</h3>
-    </div>
-);
-
-const Topics = ({match}) => (
-    <div>
-        <h2>
-            Topics
-        </h2>
-        <ul>
-            <li>
-                <Link to={`${match.url}/rendering`}>
-                    Rendering with React
-                </Link>
-            </li>
-            <li>
-                <Link to={`${match.url}/components`}>
-                    Components
-                </Link>
-            </li>
-            <li>
-                <Link to={`${match.url}/props-v-state`}>
-                    Props v. States
-                </Link>
-            </li>
-        </ul>
-
-        <Route path={`${match.url}/:topicId`} component={Topic}/>
-        <Route exact path={match.url} render={() => (
-            <h3>Please select a topic</h3>
-        )} />
-    </div>
-);
 
 const menuItems = [{
-    id: "text",
+    id: "home",
     iconClass: "fa fa-home",
     active: false,
     subItems: [{
@@ -208,13 +161,15 @@ const BasicExample = () => (
                 lightTheme={true}
                 isLoggedIn={true}
             />
+
             <Provider store={store} >
                 <MenuApp />
             </Provider>
 
-            <Route exact path="/" compnent={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/topics" component={Topics} />
+            <div className="container-fluid">
+                <Route exact path="/" component={About} />
+                <Route path="/typography" component={Typography} />
+            </div>
         </div>
     </Router>
 );

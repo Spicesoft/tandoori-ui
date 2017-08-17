@@ -14,6 +14,9 @@ const setActiveItem = (items, id) => {
 };
 
 const toggleOpen = (previousID, nextId, open) => {
+    if (open && !nextId) {
+        return false;
+    }
     if (open) {
         return previousID !== nextId ? true : false;
     }

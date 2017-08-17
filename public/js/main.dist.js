@@ -23392,99 +23392,18 @@ var _Navbar = __webpack_require__(200);
 
 var _Navbar2 = _interopRequireDefault(_Navbar);
 
+var _About = __webpack_require__(276);
+
+var _About2 = _interopRequireDefault(_About);
+
+var _Typography = __webpack_require__(277);
+
+var _Typography2 = _interopRequireDefault(_Typography);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Home = function Home() {
-    return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-            "h2",
-            null,
-            "Home"
-        )
-    );
-};
-
-var About = function About() {
-    return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-            "h2",
-            null,
-            "About"
-        )
-    );
-};
-
-var Topic = function Topic(_ref) {
-    var match = _ref.match;
-    return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-            "h3",
-            null,
-            match.params.topId
-        )
-    );
-};
-
-var Topics = function Topics(_ref2) {
-    var match = _ref2.match;
-    return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-            "h2",
-            null,
-            "Topics"
-        ),
-        _react2.default.createElement(
-            "ul",
-            null,
-            _react2.default.createElement(
-                "li",
-                null,
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: match.url + "/rendering" },
-                    "Rendering with React"
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                null,
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: match.url + "/components" },
-                    "Components"
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                null,
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: match.url + "/props-v-state" },
-                    "Props v. States"
-                )
-            )
-        ),
-        _react2.default.createElement(_reactRouterDom.Route, { path: match.url + "/:topicId", component: Topic }),
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: match.url, render: function render() {
-                return _react2.default.createElement(
-                    "h3",
-                    null,
-                    "Please select a topic"
-                );
-            } })
-    );
-};
-
 var menuItems = [{
-    id: "text",
+    id: "home",
     iconClass: "fa fa-home",
     active: false,
     subItems: [{
@@ -23614,9 +23533,12 @@ var BasicExample = function BasicExample() {
                 { store: store },
                 _react2.default.createElement(_MenuApp2.default, null)
             ),
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", compnent: Home }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: "/about", component: About }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: "/topics", component: Topics })
+            _react2.default.createElement(
+                "div",
+                { className: "container-fluid" },
+                _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", component: _About2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: "/typography", component: _Typography2.default })
+            )
         )
     );
 };
@@ -29153,6 +29075,9 @@ var setActiveItem = function setActiveItem(items, id) {
 };
 
 var toggleOpen = function toggleOpen(previousID, nextId, open) {
+    if (open && !nextId) {
+        return false;
+    }
     if (open) {
         return previousID !== nextId ? true : false;
     }
@@ -29206,6 +29131,9 @@ var mapDispatchToProps = exports.mapDispatchToProps = function mapDispatchToProp
         onItemClicked: function onItemClicked(id) {
             dispatch((0, _actions.toggleOpen)(id));
             dispatch((0, _actions.toggleActive)(id));
+        },
+        onSubItemClicked: function onSubItemClicked() {
+            dispatch((0, _actions.toggleOpen)());
         },
         onOutsideLayerClicked: function onOutsideLayerClicked(id) {
             dispatch((0, _actions.toggleOpen)(id));
@@ -29356,14 +29284,16 @@ var Menu = function (_React$PureComponent) {
         }
     }, {
         key: "renderSubItems",
-        value: function renderSubItems(subItems) {
+        value: function renderSubItems(subItems, id) {
+            var _this4 = this;
+
             return subItems.map(function (item, i) {
                 return _react2.default.createElement(
                     "li",
                     { key: i, className: "tuiv2_list-item" },
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: item.url, className: "tuiv2_list-item__link" },
+                        { onClick: _this4.props.onSubItemClicked, to: item.url, className: "tuiv2_list-item__link" },
                         item.id
                     )
                 );
@@ -29393,6 +29323,7 @@ exports.default = Menu;
 
 Menu.propTypes = {
     onItemClicked: _propTypes2.default.func.isRequired,
+    onSubItemClicked: _propTypes2.default.func.isRequired,
     onOutsideLayerClicked: _propTypes2.default.func.isRequired,
     open: _propTypes2.default.bool.isRequired,
     activeItem: _propTypes2.default.string.isRequired,
@@ -29485,6 +29416,577 @@ MenuItem.propTypes = {
         active: _propTypes2.default.bool.isRequired
     }).isRequired
 };
+
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(32);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var About = function About() {
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+            "h1",
+            null,
+            "This is ",
+            _react2.default.createElement(
+                "span",
+                { className: "tuiv2_text--primary" },
+                "Tandoori UI"
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "bs-component" },
+            _react2.default.createElement(
+                "div",
+                { className: "panel panel-default" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel-body" },
+                    "Meet the Cowork.io's UI library !",
+                    _react2.default.createElement("br", null),
+                    "You will find here all the UI elements you should use to build Cowork.io's views.",
+                    _react2.default.createElement("br", null),
+                    "We aim to replace all the legacy SASS code with this library. ",
+                    _react2.default.createElement("br", null),
+                    "In the meantime, all of the Tandoori UI css classNamees will be prefixed with ",
+                    _react2.default.createElement(
+                        "strong",
+                        null,
+                        "tuiv2_"
+                    ),
+                    " so you can easely identify new and old classNamees in the code.",
+                    _react2.default.createElement("br", null),
+                    "Please feel free to get in touch with front team to discuss about any improvement and/or ",
+                    _react2.default.createElement(
+                        "a",
+                        { href: "https://github.com/Spicesoft/tandoori-ui/issues" },
+                        "create an issue"
+                    ),
+                    "."
+                )
+            )
+        )
+    );
+};
+
+exports.default = About;
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(32);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Typography = function Typography() {
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+            "div",
+            { className: "row bs-component" },
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-6" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel panel-default" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "ul",
+                            null,
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                "This is ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tuiv2_text--white" },
+                                    "white"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                "This is ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tuiv2_text--black" },
+                                    "black"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                "This is ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tuiv2_text--lightblack" },
+                                    "lightblack"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                "This is ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tuiv2_text--grey" },
+                                    "grey"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                "This is ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tuiv2_text--darkgrey" },
+                                    "darkgrey"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                "This is ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tuiv2_text--lightgrey" },
+                                    "lightgrey"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                "This is ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tuiv2_text--primary" },
+                                    "primary"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                "This is ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tuiv2_text--warning" },
+                                    "warning"
+                                )
+                            )
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-6" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel panel-default" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-heading" },
+                        _react2.default.createElement(
+                            "h3",
+                            null,
+                            "This is a panel header"
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "h4",
+                            null,
+                            "This is a panel title"
+                        ),
+                        _react2.default.createElement(
+                            "h6",
+                            { className: "text-muted" },
+                            "This is a (muted) panel subtitle"
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "Text can be :"
+                        ),
+                        _react2.default.createElement(
+                            "ul",
+                            null,
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "strong",
+                                    null,
+                                    "Strong"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "b",
+                                    null,
+                                    "Bold"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "i",
+                                    null,
+                                    "Italic"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "em",
+                                    null,
+                                    "Emphasized"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "mark",
+                                    null,
+                                    "Marked"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "small",
+                                    null,
+                                    "Small"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "del",
+                                    null,
+                                    "Deleted"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "ins",
+                                    null,
+                                    "Inserted"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "sub",
+                                    null,
+                                    "Subscript"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "sup",
+                                    null,
+                                    "Superscript"
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "h1",
+            null,
+            "Typography"
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "row bs-component" },
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-4" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel panel-default" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "h1",
+                            null,
+                            "Heading 1"
+                        ),
+                        _react2.default.createElement(
+                            "h2",
+                            null,
+                            "Heading 2"
+                        ),
+                        _react2.default.createElement(
+                            "h3",
+                            null,
+                            "Heading 3"
+                        ),
+                        _react2.default.createElement(
+                            "h4",
+                            null,
+                            "Heading 4"
+                        ),
+                        _react2.default.createElement(
+                            "h5",
+                            null,
+                            "Heading 5"
+                        ),
+                        _react2.default.createElement(
+                            "h6",
+                            null,
+                            "Heading 6"
+                        ),
+                        _react2.default.createElement(
+                            "h3",
+                            null,
+                            "Heading",
+                            _react2.default.createElement(
+                                "small",
+                                { className: "text-muted" },
+                                "with muted text"
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "lead" },
+                            "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-4" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel panel-default" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "h2",
+                            null,
+                            "Example body text"
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "Nullam quis risus eget ",
+                            _react2.default.createElement(
+                                "a",
+                                { href: "#" },
+                                "urna mollis ornare"
+                            ),
+                            " vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula."
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            _react2.default.createElement(
+                                "small",
+                                null,
+                                "This line of text is meant to be treated as fine print."
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "The following is ",
+                            _react2.default.createElement(
+                                "strong",
+                                null,
+                                "rendered as bold text"
+                            ),
+                            "."
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "The following is ",
+                            _react2.default.createElement(
+                                "em",
+                                null,
+                                "rendered as italicized text"
+                            ),
+                            "."
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "An abbreviation of the word attribute is ",
+                            _react2.default.createElement(
+                                "abbr",
+                                { title: "attribute" },
+                                "attr"
+                            ),
+                            "."
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-4" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel panel-default" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "h2",
+                            null,
+                            "Emphasis classNamees"
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "text-muted" },
+                            "Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh."
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "text-primary" },
+                            "Nullam id dolor id nibh ultricies vehicula ut id elit."
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "text-warning" },
+                            "Etiam porta sem malesuada magna mollis euismod."
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "text-danger" },
+                            "Donec ullamcorper nulla non metus auctor fringilla."
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "text-success" },
+                            "Duis mollis, est non commodo luctus, nisi erat porttitor ligula."
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "text-info" },
+                            "Maecenas sed diam eget risus varius blandit sit amet non magna."
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement("div", { className: "clearfix" }),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-6" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel panel-default" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "blockquote",
+                            { className: "blockquote" },
+                            _react2.default.createElement(
+                                "p",
+                                null,
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+                            ),
+                            _react2.default.createElement(
+                                "footer",
+                                { className: "blockquote-footer" },
+                                "Someone famous in ",
+                                _react2.default.createElement(
+                                    "cite",
+                                    { title: "Source Title" },
+                                    "Source Title"
+                                )
+                            )
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-6" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel panel-default" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "blockquote",
+                            { className: "blockquote blockquote-reverse" },
+                            _react2.default.createElement(
+                                "p",
+                                null,
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+                            ),
+                            _react2.default.createElement(
+                                "footer",
+                                { className: "blockquote-footer" },
+                                "Someone famous in ",
+                                _react2.default.createElement(
+                                    "cite",
+                                    { title: "Source Title" },
+                                    "Source Title"
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    );
+};
+
+exports.default = Typography;
 
 /***/ })
 /******/ ]);
