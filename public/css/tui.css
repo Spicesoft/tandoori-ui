@@ -7901,7 +7901,7 @@ body {
 .navbar .navbar-header .navbar-brand img {
   height: 100%; }
 
-.bs-component .card,
+.bs-component .panel,
 .bs-component .btn,
 .bs-component .progress {
   margin-bottom: 0.5rem; }
