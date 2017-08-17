@@ -8,30 +8,58 @@ import MenuApp from "./container/MenuApp";
 
 const menuItems = [{
     id: "text",
-    iconClass: "lnr-text-format",
+    iconClass: "fa fa-home",
     active: false,
     subItems: [{
-        category: "Category 1",
+        category: "Home",
         items: [
             {
-                id: "Item 1",
-                url: "#"
-            },
-            {
-                id: "Item 2",
-                url: "prout"
+                id: "About",
+                url: "/"
             }
         ]
     }, {
-        category: "Category 2",
+        category: "Components",
         items: [
             {
-                id: "Item 1",
-                url: "#"
+                id: "Typography",
+                url: "/typography"
             },
             {
-                id: "Item 2",
-                url: "prout"
+                id: "Lists",
+                url: "/lists"
+            },
+            {
+                id: "List groups",
+                url: "/list-groups"
+            },
+            {
+                id: "Buttons",
+                url: "/buttons"
+            },
+            {
+                id: "Forms",
+                url: "/forms"
+            },
+            {
+                id: "Navs",
+                url: "/navs"
+            },
+            {
+                id: "Indicators",
+                url: "/indicators"
+            },
+            {
+                id: "Progress",
+                url: "/progress"
+            },
+            {
+                id: "Containers",
+                url: "/containers"
+            },
+            {
+                id: "Panels",
+                url: "/panels"
             }
         ]
     }]

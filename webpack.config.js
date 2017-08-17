@@ -15,6 +15,7 @@ function getExternals(env) {
 module.exports = function (env) {
     return [{
         entry: {
+            main: "./static/js/main/App.jsx",
             navbar: "./static/js/navbar/App.jsx",
             sideMenu: "./static/js/side-menu/App.jsx"
         },

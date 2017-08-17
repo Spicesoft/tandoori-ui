@@ -61,7 +61,7 @@ var tandooriUi =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 202);
+/******/ 	return __webpack_require__(__webpack_require__.s = 198);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -23361,24 +23361,8 @@ function verifyPlainObject(value, displayName, methodName) {
 }
 
 /***/ }),
-/* 197 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var TOGGLE_OPEN = exports.TOGGLE_OPEN = "TOGGLE_OPEN";
-var TOGGLE_ACTIVE = exports.TOGGLE_ACTIVE = "TOGGLE_ACTIVE";
-
-/***/ }),
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */
+/* 197 */,
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23392,17 +23376,112 @@ var _reactDom = __webpack_require__(97);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _reactRouterDom = __webpack_require__(244);
+
 var _reactRedux = __webpack_require__(186);
 
 var _redux = __webpack_require__(189);
 
-var _reducer = __webpack_require__(229);
+var _reducer = __webpack_require__(271);
 
-var _MenuApp = __webpack_require__(230);
+var _MenuApp = __webpack_require__(272);
 
 var _MenuApp2 = _interopRequireDefault(_MenuApp);
 
+var _Navbar = __webpack_require__(200);
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Home = function Home() {
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+            "h2",
+            null,
+            "Home"
+        )
+    );
+};
+
+var About = function About() {
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+            "h2",
+            null,
+            "About"
+        )
+    );
+};
+
+var Topic = function Topic(_ref) {
+    var match = _ref.match;
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+            "h3",
+            null,
+            match.params.topId
+        )
+    );
+};
+
+var Topics = function Topics(_ref2) {
+    var match = _ref2.match;
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+            "h2",
+            null,
+            "Topics"
+        ),
+        _react2.default.createElement(
+            "ul",
+            null,
+            _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: match.url + "/rendering" },
+                    "Rendering with React"
+                )
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: match.url + "/components" },
+                    "Components"
+                )
+            ),
+            _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: match.url + "/props-v-state" },
+                    "Props v. States"
+                )
+            )
+        ),
+        _react2.default.createElement(_reactRouterDom.Route, { path: match.url + "/:topicId", component: Topic }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: match.url, render: function render() {
+                return _react2.default.createElement(
+                    "h3",
+                    null,
+                    "Please select a topic"
+                );
+            } })
+    );
+};
 
 var menuItems = [{
     id: "text",
@@ -23476,13 +23555,440 @@ var logChange = function logChange() {
 };
 store.subscribe(logChange);
 
-_reactDom2.default.render(_react2.default.createElement(
-    _reactRedux.Provider,
-    { store: store },
-    _react2.default.createElement(_MenuApp2.default, null)
-), document.getElementById("side-menu"));
+var navbarData = {
+    logoUrl: "public/img/logo.png",
+    tenantTitle: "Cowork's Tandoori UI",
+    userName: "Roland",
+    links: [{
+        type: "link",
+        id: "coworkio",
+        label: "Go to coworkio",
+        url: "https://cowork.io/"
+    }, {
+        type: "link",
+        id: "lelab",
+        label: "Go to the lab",
+        url: "https://lelab.cowork.io"
+    }],
+    dropdowns: [{
+        type: "dropdown",
+        id: "dropdownEx",
+        label: "Dropdown",
+        spanClass: "lnr-rocket",
+        items: [{
+            id: "item1",
+            label: "Item 1",
+            url: "#"
+        }, {
+            id: "item2",
+            label: "Item 2",
+            url: "#"
+        }]
+    }],
+    profileItems: [{
+        id: "logout",
+        label: "Logout",
+        url: "#logout"
+    }]
+};
+
+var BasicExample = function BasicExample() {
+    return _react2.default.createElement(
+        _reactRouterDom.BrowserRouter,
+        null,
+        _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement(_Navbar2.default, {
+                logoUrl: navbarData.logoUrl,
+                tenantTitle: navbarData.tenantTitle,
+                userName: navbarData.userName,
+                dropdowns: navbarData.dropdowns,
+                links: navbarData.links,
+                profileItems: navbarData.profileItems,
+                lightTheme: true,
+                isLoggedIn: true
+            }),
+            _react2.default.createElement(
+                _reactRedux.Provider,
+                { store: store },
+                _react2.default.createElement(_MenuApp2.default, null)
+            ),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", compnent: Home }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: "/about", component: About }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: "/topics", component: Topics })
+        )
+    );
+};
+
+_reactDom2.default.render(_react2.default.createElement(BasicExample, null), document.getElementById("tuiApp"));
 
 /***/ }),
+/* 199 */,
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(32);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(82);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Dropdown = __webpack_require__(201);
+
+var _Dropdown2 = _interopRequireDefault(_Dropdown);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Navbar = function (_React$PureComponent) {
+    _inherits(Navbar, _React$PureComponent);
+
+    function Navbar(props) {
+        _classCallCheck(this, Navbar);
+
+        var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
+
+        _this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
+        return _this;
+    }
+
+    _createClass(Navbar, [{
+        key: "render",
+        value: function render() {
+            var _props = this.props,
+                logoUrl = _props.logoUrl,
+                tenantTitle = _props.tenantTitle,
+                userName = _props.userName,
+                profileItems = _props.profileItems,
+                links = _props.links,
+                dropdowns = _props.dropdowns;
+
+            var classNames = ["tuiv2_navbar"];
+            classNames.push(this.props.lightTheme ? "tuiv2_navbar--light" : "tuiv2_navbar--default-skin");
+            return _react2.default.createElement(
+                "nav",
+                { className: classNames.join(" ") },
+                this.renderMobileMenu(),
+                this.renderBrand(logoUrl, tenantTitle),
+                this.renderActions(profileItems, links, dropdowns, userName)
+            );
+        }
+    }, {
+        key: "renderBrand",
+        value: function renderBrand(logoUrl, tenantTitle) {
+            var _this2 = this;
+
+            var brandName = function brandName() {
+                if (!_this2.mobileDevice) {
+                    return _react2.default.createElement(
+                        "div",
+                        { className: "tuiv2_navbar__brand-name" },
+                        _react2.default.createElement(
+                            "p",
+                            { className: "tuiv2_navbar__slogan" },
+                            tenantTitle
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "tuiv2_navbar__search" },
+                            _this2.props.searchComponent
+                        )
+                    );
+                }
+            };
+            return _react2.default.createElement(
+                "div",
+                { className: "tuiv2_navbar__part" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "/" },
+                    _react2.default.createElement("img", {
+                        src: logoUrl,
+                        alt: tenantTitle,
+                        className: "tuiv2_navbar__logo"
+                    })
+                ),
+                brandName()
+            );
+        }
+    }, {
+        key: "renderMobileMenu",
+        value: function renderMobileMenu() {
+            if (this.mobileDevice && this.props.links.length > 0) {
+                return _react2.default.createElement(
+                    "div",
+                    { className: "tuiv2_navbar__part" },
+                    _react2.default.createElement(_Dropdown2.default, {
+                        items: this.props.links,
+                        spanClass: "lnr-menu",
+                        containerClass: "tuiv2_navbar__action"
+                    })
+                );
+            }
+        }
+    }, {
+        key: "renderActions",
+        value: function renderActions(profileItems, links, dropdowns, userName) {
+            return _react2.default.createElement(
+                "div",
+                { className: "tuiv2_navbar__part" },
+                this.props.children,
+                this.mobileDevice ? null : this.renderLinks(this.props.links),
+                this.renderDropdowns(this.props.dropdowns),
+                profileItems.length > 0 ? this.renderProfileItems(profileItems, userName) : null
+            );
+        }
+    }, {
+        key: "renderProfileItems",
+        value: function renderProfileItems(items, userName) {
+            return _react2.default.createElement(_Dropdown2.default, {
+                items: items,
+                text: this.mobileDevice ? "" : userName,
+                spanClass: this.mobileDevice ? "lnr-user" : "",
+                containerClass: "tuiv2_navbar__action",
+                align: "right"
+            });
+        }
+    }, {
+        key: "renderDropdowns",
+        value: function renderDropdowns(actions) {
+            var _this3 = this;
+
+            return actions.map(function (action) {
+                return _react2.default.createElement(_Dropdown2.default, {
+                    items: action.items,
+                    spanClass: _this3.mobileDevice ? action.spanClass : "",
+                    text: _this3.mobileDevice ? "" : action.label,
+                    containerClass: "tuiv2_navbar__action",
+                    align: "right",
+                    key: action.id
+                });
+            });
+        }
+    }, {
+        key: "renderLinks",
+        value: function renderLinks(links) {
+            return links.map(function (link) {
+                return _react2.default.createElement(
+                    "a",
+                    { key: link.id, className: "tuiv2_btn tuiv2_btn--lg", href: link.url },
+                    link.label
+                );
+            });
+        }
+    }]);
+
+    return Navbar;
+}(_react2.default.PureComponent);
+
+exports.default = Navbar;
+
+Navbar.propTypes = {
+    lightTheme: _propTypes2.default.bool,
+    logoUrl: _propTypes2.default.string.isRequired,
+    tenantTitle: _propTypes2.default.string.isRequired,
+    userName: _propTypes2.default.string.isRequired,
+    links: _propTypes2.default.array.isRequired,
+    profileItems: _propTypes2.default.array.isRequired,
+    dropdowns: _propTypes2.default.array.isRequired,
+    isLoggedIn: _propTypes2.default.bool.isRequired,
+    children: _propTypes2.default.node,
+    searchComponent: _propTypes2.default.node
+};
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(32);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(82);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Dropdown = function (_React$PureComponent) {
+    _inherits(Dropdown, _React$PureComponent);
+
+    function Dropdown() {
+        _classCallCheck(this, Dropdown);
+
+        return _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).apply(this, arguments));
+    }
+
+    _createClass(Dropdown, [{
+        key: "componentWillMount",
+        value: function componentWillMount() {
+            this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
+            this.setState({
+                open: false,
+                animation: null
+            });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _props = this.props,
+                spanClass = _props.spanClass,
+                containerClass = _props.containerClass,
+                text = _props.text;
+
+            var classNames = ["tuiv2_dropdown"];
+            if (containerClass) {
+                classNames.push(containerClass);
+            }
+            var spanClassNames = ["tuiv2_dropdown__label"];
+            if (spanClass) {
+                spanClassNames.push(spanClass);
+            }
+            return _react2.default.createElement(
+                "div",
+                {
+                    className: classNames.join(" "),
+                    tabIndex: 0,
+                    onClick: this.toggleOpen.bind(this),
+                    onBlur: this.handleBlur.bind(this)
+                },
+                _react2.default.createElement(
+                    "span",
+                    { className: spanClassNames.join(" ") },
+                    text
+                ),
+                this.renderMenu()
+            );
+        }
+    }, {
+        key: "renderMenu",
+        value: function renderMenu() {
+            var classNames = ["tuiv2_dropdown-menu", "tuiv2_list", "tuiv2_list--clickable"];
+            if (this.state.open !== null) {
+                classNames.push("tuiv2_dropdown-menu--" + this.state.animation);
+            }
+            return _react2.default.createElement(
+                "ul",
+                {
+                    className: classNames.join(" "),
+                    style: this.getPosition()
+                },
+                this.renderCloseItem(),
+                this.props.items.map(function (item, index) {
+                    return _react2.default.createElement(
+                        "li",
+                        {
+                            className: "tuiv2_list-item",
+                            key: index
+                        },
+                        _react2.default.createElement(
+                            "a",
+                            {
+                                className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
+                                onClick: item.action ? item.action : function () {
+                                    window.location = item.url;
+                                }
+                            },
+                            item.label
+                        )
+                    );
+                })
+            );
+        }
+    }, {
+        key: "renderCloseItem",
+        value: function renderCloseItem() {
+            if (this.mobileDevice) {
+                return _react2.default.createElement(
+                    "div",
+                    { className: "tuiv2_list-item" },
+                    _react2.default.createElement("span", { className: "lnr-cross tuiv2_text--black" })
+                );
+            }
+        }
+    }, {
+        key: "handleBlur",
+        value: function handleBlur() {
+            if (this.state.open) {
+                this.toggleOpen();
+            }
+        }
+    }, {
+        key: "toggleOpen",
+        value: function toggleOpen() {
+            this.setState({
+                open: this.state.open ? false : true,
+                animation: this.state.open ? "out" : "in"
+            });
+        }
+    }, {
+        key: "getPosition",
+        value: function getPosition() {
+            if (this.props.align === "right") {
+                return {
+                    left: "auto",
+                    right: 0
+                };
+            }
+            return {
+                right: "auto",
+                left: 0
+            };
+        }
+    }]);
+
+    return Dropdown;
+}(_react2.default.PureComponent);
+
+exports.default = Dropdown;
+
+
+Dropdown.propTypes = {
+    spanClass: _propTypes2.default.string,
+    containerClass: _propTypes2.default.string,
+    text: _propTypes2.default.string,
+    align: _propTypes2.default.string,
+    items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        label: _propTypes2.default.string.isRequired,
+        url: _propTypes2.default.string.isRequired,
+        action: _propTypes2.default.func
+    })).isRequired
+};
+
+/***/ }),
+/* 202 */,
 /* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24974,364 +25480,11 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 }
 
 /***/ }),
-/* 229 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.menuApp = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _actionTypes = __webpack_require__(197);
-
-var setActiveItem = function setActiveItem(items, id) {
-    return items.map(function (item) {
-        return _extends({}, item, {
-            active: item.id === id ? true : false
-        });
-    });
-};
-
-var toggleOpen = function toggleOpen(previousID, nextId, open) {
-    if (open) {
-        return previousID !== nextId ? true : false;
-    }
-    return true;
-};
-
-var menuApp = exports.menuApp = function menuApp(state, action) {
-    switch (action.type) {
-        case _actionTypes.TOGGLE_OPEN:
-            return _extends({}, state, {
-                open: toggleOpen(state.activeItem, action.id, state.open)
-            });
-        case _actionTypes.TOGGLE_ACTIVE:
-            return _extends({}, state, {
-                menuItems: setActiveItem(state.menuItems, action.id),
-                activeItem: action.id
-            });
-        default:
-            return state;
-    }
-};
-
-/***/ }),
-/* 230 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.mapDispatchToProps = exports.mapStateToProps = undefined;
-
-var _reactRedux = __webpack_require__(186);
-
-var _actions = __webpack_require__(231);
-
-var _Menu = __webpack_require__(232);
-
-var _Menu2 = _interopRequireDefault(_Menu);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mapStateToProps = exports.mapStateToProps = function mapStateToProps(state) {
-    return state;
-};
-
-var mapDispatchToProps = exports.mapDispatchToProps = function mapDispatchToProps(dispatch) {
-    return {
-        onItemClicked: function onItemClicked(id) {
-            dispatch((0, _actions.toggleOpen)(id));
-            dispatch((0, _actions.toggleActive)(id));
-        },
-        onOutsideLayerClicked: function onOutsideLayerClicked(id) {
-            dispatch((0, _actions.toggleOpen)(id));
-        }
-    };
-};
-
-var MenuApp = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Menu2.default);
-
-exports.default = MenuApp;
-
-/***/ }),
-/* 231 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.toggleActive = exports.toggleOpen = undefined;
-
-var _actionTypes = __webpack_require__(197);
-
-var toggleOpen = exports.toggleOpen = function toggleOpen(id) {
-    return {
-        type: _actionTypes.TOGGLE_OPEN,
-        id: id
-    };
-};
-
-var toggleActive = exports.toggleActive = function toggleActive(id) {
-    return {
-        type: _actionTypes.TOGGLE_ACTIVE,
-        id: id
-    };
-};
-
-/***/ }),
-/* 232 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(32);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(82);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRouterDom = __webpack_require__(244);
-
-var _MenuItem = __webpack_require__(233);
-
-var _MenuItem2 = _interopRequireDefault(_MenuItem);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Menu = function (_React$PureComponent) {
-    _inherits(Menu, _React$PureComponent);
-
-    function Menu() {
-        _classCallCheck(this, Menu);
-
-        return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
-    }
-
-    _createClass(Menu, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "tuiv2_side-menu tuiv2_side-menu--default-skin" },
-                _react2.default.createElement(
-                    "div",
-                    {
-                        className: this.getPanelClassNames()
-                    },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "tuiv2_side-menu-panel__content tuiv2_side-menu-panel__content--default" },
-                        _react2.default.createElement(
-                            "ul",
-                            { className: "tuiv2_list tuiv2_list--clickable" },
-                            this.renderCategories()
-                        )
-                    ),
-                    _react2.default.createElement("div", {
-                        className: "tuiv2_side-menu-panel__outside-layer",
-                        onClick: this.outsideClicked.bind(this)
-                    })
-                ),
-                this.renderItems()
-            );
-        }
-    }, {
-        key: "renderItems",
-        value: function renderItems() {
-            var _this2 = this;
-
-            return this.props.menuItems.map(function (item, i) {
-                return _react2.default.createElement(_MenuItem2.default, {
-                    key: i,
-                    item: item,
-                    onItemClicked: _this2.props.onItemClicked
-                });
-            });
-        }
-    }, {
-        key: "renderCategories",
-        value: function renderCategories() {
-            var _this3 = this;
-
-            var categories = this.props.menuItems.find(function (item) {
-                return item.active;
-            });
-            if (categories) {
-                return categories.subItems.map(function (subItem, i) {
-                    return _react2.default.createElement(
-                        "ul",
-                        { key: i, className: "tuiv2_list tuiv2_list--clickable" },
-                        _react2.default.createElement(
-                            "li",
-                            { className: "tuiv2_list-item tuiv2_list-item--divider tuiv2_list-item--category" },
-                            subItem.category
-                        ),
-                        _this3.renderSubItems(subItem.items)
-                    );
-                });
-            }
-            return;
-        }
-    }, {
-        key: "renderSubItems",
-        value: function renderSubItems(subItems) {
-            return subItems.map(function (item, i) {
-                return _react2.default.createElement(
-                    "li",
-                    { key: i, className: "tuiv2_list-item" },
-                    _react2.default.createElement(
-                        _reactRouterDom.Link,
-                        { to: item.url, className: "tuiv2_list-item__link" },
-                        item.id
-                    )
-                );
-            });
-        }
-    }, {
-        key: "getPanelClassNames",
-        value: function getPanelClassNames() {
-            var classes = ["tuiv2_side-menu-panel", "tuiv2_side-menu-panel--default"];
-            if (this.props.activeItem !== "") {
-                classes.push(this.props.open ? "tuiv2_side-menu-panel--in" : "tuiv2_side-menu-panel--out");
-            }
-            return classes.join(" ");
-        }
-    }, {
-        key: "outsideClicked",
-        value: function outsideClicked() {
-            this.props.onOutsideLayerClicked(this.props.activeItem);
-        }
-    }]);
-
-    return Menu;
-}(_react2.default.PureComponent);
-
-exports.default = Menu;
-
-
-Menu.propTypes = {
-    onItemClicked: _propTypes2.default.func.isRequired,
-    onOutsideLayerClicked: _propTypes2.default.func.isRequired,
-    open: _propTypes2.default.bool.isRequired,
-    activeItem: _propTypes2.default.string.isRequired,
-    menuItems: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-        id: _propTypes2.default.string.isRequired,
-        iconClass: _propTypes2.default.string.isRequired,
-        active: _propTypes2.default.bool.isRequired,
-        subItems: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-            category: _propTypes2.default.string.isRequired,
-            items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-                id: _propTypes2.default.string.isRequired,
-                url: _propTypes2.default.string.isRequired
-            }))
-        }).isRequired) })).isRequired
-};
-
-/***/ }),
-/* 233 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(32);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(82);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MenuItem = function (_React$PureComponent) {
-    _inherits(MenuItem, _React$PureComponent);
-
-    function MenuItem() {
-        _classCallCheck(this, MenuItem);
-
-        return _possibleConstructorReturn(this, (MenuItem.__proto__ || Object.getPrototypeOf(MenuItem)).apply(this, arguments));
-    }
-
-    _createClass(MenuItem, [{
-        key: "render",
-        value: function render() {
-            var classNames = ["tuiv2_menu-item", "tuiv2_menu-item--default"];
-            if (this.props.item.active) {
-                classNames.push("tuiv2_menu-item--active");
-            }
-            var iconClassNames = this.props.item.iconClass + " tuiv2_menu-item__icon";
-            return _react2.default.createElement(
-                "div",
-                {
-                    className: classNames.join(" "),
-                    onClick: this.itemClicked.bind(this)
-                },
-                _react2.default.createElement("span", { className: iconClassNames })
-            );
-        }
-    }, {
-        key: "itemClicked",
-        value: function itemClicked() {
-            this.props.onItemClicked(this.props.item.id);
-        }
-    }]);
-
-    return MenuItem;
-}(_react2.default.PureComponent);
-
-exports.default = MenuItem;
-
-
-MenuItem.propTypes = {
-    onItemClicked: _propTypes2.default.func.isRequired,
-    item: _propTypes2.default.shape({
-        id: _propTypes2.default.string.isRequired,
-        iconClass: _propTypes2.default.string.isRequired,
-        active: _propTypes2.default.bool.isRequired
-    }).isRequired
-};
-
-/***/ }),
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
 /* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28962,6 +29115,377 @@ Object.defineProperty(exports, 'default', {
   }
 });
 
+/***/ }),
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var TOGGLE_OPEN = exports.TOGGLE_OPEN = "TOGGLE_OPEN";
+var TOGGLE_ACTIVE = exports.TOGGLE_ACTIVE = "TOGGLE_ACTIVE";
+
+/***/ }),
+/* 271 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.menuApp = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _actionTypes = __webpack_require__(270);
+
+var setActiveItem = function setActiveItem(items, id) {
+    return items.map(function (item) {
+        return _extends({}, item, {
+            active: item.id === id ? true : false
+        });
+    });
+};
+
+var toggleOpen = function toggleOpen(previousID, nextId, open) {
+    if (open) {
+        return previousID !== nextId ? true : false;
+    }
+    return true;
+};
+
+var menuApp = exports.menuApp = function menuApp(state, action) {
+    switch (action.type) {
+        case _actionTypes.TOGGLE_OPEN:
+            return _extends({}, state, {
+                open: toggleOpen(state.activeItem, action.id, state.open)
+            });
+        case _actionTypes.TOGGLE_ACTIVE:
+            return _extends({}, state, {
+                menuItems: setActiveItem(state.menuItems, action.id),
+                activeItem: action.id
+            });
+        default:
+            return state;
+    }
+};
+
+/***/ }),
+/* 272 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.mapDispatchToProps = exports.mapStateToProps = undefined;
+
+var _reactRedux = __webpack_require__(186);
+
+var _actions = __webpack_require__(273);
+
+var _Menu = __webpack_require__(274);
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = exports.mapStateToProps = function mapStateToProps(state) {
+    return state;
+};
+
+var mapDispatchToProps = exports.mapDispatchToProps = function mapDispatchToProps(dispatch) {
+    return {
+        onItemClicked: function onItemClicked(id) {
+            dispatch((0, _actions.toggleOpen)(id));
+            dispatch((0, _actions.toggleActive)(id));
+        },
+        onOutsideLayerClicked: function onOutsideLayerClicked(id) {
+            dispatch((0, _actions.toggleOpen)(id));
+        }
+    };
+};
+
+var MenuApp = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Menu2.default);
+
+exports.default = MenuApp;
+
+/***/ }),
+/* 273 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.toggleActive = exports.toggleOpen = undefined;
+
+var _actionTypes = __webpack_require__(270);
+
+var toggleOpen = exports.toggleOpen = function toggleOpen(id) {
+    return {
+        type: _actionTypes.TOGGLE_OPEN,
+        id: id
+    };
+};
+
+var toggleActive = exports.toggleActive = function toggleActive(id) {
+    return {
+        type: _actionTypes.TOGGLE_ACTIVE,
+        id: id
+    };
+};
+
+/***/ }),
+/* 274 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(32);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(82);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(244);
+
+var _MenuItem = __webpack_require__(275);
+
+var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Menu = function (_React$PureComponent) {
+    _inherits(Menu, _React$PureComponent);
+
+    function Menu() {
+        _classCallCheck(this, Menu);
+
+        return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
+    }
+
+    _createClass(Menu, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "tuiv2_side-menu tuiv2_side-menu--default-skin" },
+                _react2.default.createElement(
+                    "div",
+                    {
+                        className: this.getPanelClassNames()
+                    },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "tuiv2_side-menu-panel__content tuiv2_side-menu-panel__content--default" },
+                        _react2.default.createElement(
+                            "ul",
+                            { className: "tuiv2_list tuiv2_list--clickable" },
+                            this.renderCategories()
+                        )
+                    ),
+                    _react2.default.createElement("div", {
+                        className: "tuiv2_side-menu-panel__outside-layer",
+                        onClick: this.outsideClicked.bind(this)
+                    })
+                ),
+                this.renderItems()
+            );
+        }
+    }, {
+        key: "renderItems",
+        value: function renderItems() {
+            var _this2 = this;
+
+            return this.props.menuItems.map(function (item, i) {
+                return _react2.default.createElement(_MenuItem2.default, {
+                    key: i,
+                    item: item,
+                    onItemClicked: _this2.props.onItemClicked
+                });
+            });
+        }
+    }, {
+        key: "renderCategories",
+        value: function renderCategories() {
+            var _this3 = this;
+
+            var categories = this.props.menuItems.find(function (item) {
+                return item.active;
+            });
+            if (categories) {
+                return categories.subItems.map(function (subItem, i) {
+                    return _react2.default.createElement(
+                        "ul",
+                        { key: i, className: "tuiv2_list tuiv2_list--clickable" },
+                        _react2.default.createElement(
+                            "li",
+                            { className: "tuiv2_list-item tuiv2_list-item--divider tuiv2_list-item--category" },
+                            subItem.category
+                        ),
+                        _this3.renderSubItems(subItem.items)
+                    );
+                });
+            }
+            return;
+        }
+    }, {
+        key: "renderSubItems",
+        value: function renderSubItems(subItems) {
+            return subItems.map(function (item, i) {
+                return _react2.default.createElement(
+                    "li",
+                    { key: i, className: "tuiv2_list-item" },
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: item.url, className: "tuiv2_list-item__link" },
+                        item.id
+                    )
+                );
+            });
+        }
+    }, {
+        key: "getPanelClassNames",
+        value: function getPanelClassNames() {
+            var classes = ["tuiv2_side-menu-panel", "tuiv2_side-menu-panel--default"];
+            if (this.props.activeItem !== "") {
+                classes.push(this.props.open ? "tuiv2_side-menu-panel--in" : "tuiv2_side-menu-panel--out");
+            }
+            return classes.join(" ");
+        }
+    }, {
+        key: "outsideClicked",
+        value: function outsideClicked() {
+            this.props.onOutsideLayerClicked(this.props.activeItem);
+        }
+    }]);
+
+    return Menu;
+}(_react2.default.PureComponent);
+
+exports.default = Menu;
+
+
+Menu.propTypes = {
+    onItemClicked: _propTypes2.default.func.isRequired,
+    onOutsideLayerClicked: _propTypes2.default.func.isRequired,
+    open: _propTypes2.default.bool.isRequired,
+    activeItem: _propTypes2.default.string.isRequired,
+    menuItems: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        id: _propTypes2.default.string.isRequired,
+        iconClass: _propTypes2.default.string.isRequired,
+        active: _propTypes2.default.bool.isRequired,
+        subItems: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+            category: _propTypes2.default.string.isRequired,
+            items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+                id: _propTypes2.default.string.isRequired,
+                url: _propTypes2.default.string.isRequired
+            }))
+        }).isRequired) })).isRequired
+};
+
+/***/ }),
+/* 275 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(32);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(82);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MenuItem = function (_React$PureComponent) {
+    _inherits(MenuItem, _React$PureComponent);
+
+    function MenuItem() {
+        _classCallCheck(this, MenuItem);
+
+        return _possibleConstructorReturn(this, (MenuItem.__proto__ || Object.getPrototypeOf(MenuItem)).apply(this, arguments));
+    }
+
+    _createClass(MenuItem, [{
+        key: "render",
+        value: function render() {
+            var classNames = ["tuiv2_menu-item", "tuiv2_menu-item--default"];
+            if (this.props.item.active) {
+                classNames.push("tuiv2_menu-item--active");
+            }
+            var iconClassNames = this.props.item.iconClass + " tuiv2_menu-item__icon";
+            return _react2.default.createElement(
+                "div",
+                {
+                    className: classNames.join(" "),
+                    onClick: this.itemClicked.bind(this)
+                },
+                _react2.default.createElement("span", { className: iconClassNames })
+            );
+        }
+    }, {
+        key: "itemClicked",
+        value: function itemClicked() {
+            this.props.onItemClicked(this.props.item.id);
+        }
+    }]);
+
+    return MenuItem;
+}(_react2.default.PureComponent);
+
+exports.default = MenuItem;
+
+
+MenuItem.propTypes = {
+    onItemClicked: _propTypes2.default.func.isRequired,
+    item: _propTypes2.default.shape({
+        id: _propTypes2.default.string.isRequired,
+        iconClass: _propTypes2.default.string.isRequired,
+        active: _propTypes2.default.bool.isRequired
+    }).isRequired
+};
+
 /***/ })
 /******/ ]);
-//# sourceMappingURL=sideMenu.dist.js.map
+//# sourceMappingURL=main.dist.js.map

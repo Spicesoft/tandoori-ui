@@ -1,5 +1,6 @@
 import React from "react";
 import T from "prop-types";
+import {Link} from "react-router-dom";
 
 import MenuItem from "./MenuItem.jsx";
 
@@ -58,7 +59,7 @@ export default class Menu extends React.PureComponent {
         return subItems.map((item, i) => {
             return (
                 <li key={i} className="tuiv2_list-item">
-                    <a href={item.url} className="tuiv2_list-item__link">{item.id}</a>
+                    <Link to={item.url} className="tuiv2_list-item__link">{item.id}</Link>
                 </li>
             );
         });
