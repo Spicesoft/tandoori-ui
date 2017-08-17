@@ -15,11 +15,98 @@ $gray:                   #95a5a6 !default; // #555
 $gray-light:             #b4bcc2 !default;   // #999
 $gray-lighter:           #ecf0f1 !default; // #eee
 
-$brand-primary:         #2C3E50 !default;
-$brand-success:         #18BC9C !default;
-$brand-info:            #3498DB !default;
-$brand-warning:         #F39C12 !default;
-$brand-danger:          #E74C3C !default;
+// service category
+$parking: #449D44;
+
+@if function-exists(colors) {
+  $colors-map: colors() !global;
+}
+@else {
+  $colors-map: () !global;
+}
+
+// get colors from compiler
+$primary: map-get($colors-map, "primary");
+$primary2: map-get($colors-map, "primary2");
+$info: map-get($colors-map, "info");
+$success: map-get($colors-map, "success");
+$warning: map-get($colors-map, "warning");
+$danger: map-get($colors-map, "danger");
+
+// Bootstrap color type
+$primary: #14B9D6 !default;
+$primary2: #B27DDB !default;
+$info: #0074A6 !default;
+$success: #1FBBA6 !default;
+$warning: #F27935 !default;
+$danger: #ED4530 !default;
+
+
+// Main colors
+$colors: (
+  "primary": $primary,
+  "primary2": $primary2,
+  "info": $info,
+  "success": $success,
+  "warning": $warning,
+  "danger": $danger
+  // "default": $white
+);
+
+$brand-primary:         $primary !default;
+$brand-success:         $success !default;
+$brand-info:            $info !default;
+$brand-warning:         $warning !default;
+$brand-danger:          $danger !default;
+
+// == Misc
+// Left Panel
+
+$left-panel-bg: #E5E5E5;
+$left-panel-bg-active: #F5F5F5;
+$left-panel-active-border: #F05732;
+$left-panel-active: #000000;
+$left-panel-color-hover: #000000;
+$left-panel-color: #98A2AD;
+$left-panel-color-active: #343D47;
+$left-panel-border-color: #C2C2C2;
+$sub-menu-bg: #2EBFD6;
+// Tiles
+$tile-purple: #9269D6;
+$tile-green: #71D398;
+$tile-blue: #4AA3DE;
+$magenta: #E65097;
+
+//Fonts
+
+$white: #FFFFFF;
+$black: #323A45;
+$lightgrey: #E6E6E6;
+$grey: #979797;
+$darkgrey: #7F7F7F;
+$lightblack: #696969;
+$whitesmoke: #F5F5F5;
+
+// Misc
+$dark-blue: #0074A6;
+$shadow: #EAEAEA;
+
+// backgrounds
+
+$grey-bg: #CCCCCC;
+
+// Navbar
+
+$navbar-background: #FFFFFF;
+$navbar-color: #000000;
+$navbar-color-hover: #FFFFFF;
+
+// Navbar
+
+$navbar-admin-background: #3F3F3F;
+$navbar-admin-color: #FFFFFF;
+$navbar-admin-color-hover: #000000;
+
 
 
 //== Scaffolding
@@ -27,14 +114,14 @@ $brand-danger:          #E74C3C !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #fff !default;
+$body-bg:               #F1F1F1 !default;
 //** Global text color on `<body>`.
-$text-color:            $brand-primary !default;
+$text-color:            $black !default;
 
 //** Global textual link color.
-$link-color:            $brand-success !default;
+$link-color:            $dark-blue !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      $link-color !default;
+$link-hover-color:      $dark-blue !default;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 
