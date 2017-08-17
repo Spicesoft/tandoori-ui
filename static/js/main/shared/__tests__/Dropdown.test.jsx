@@ -2,7 +2,7 @@
 import React from "react";
 import {shallow} from "enzyme";
 
-import Dropdown from "../../../../dist/js/shared/Dropdown.jsx";
+import Dropdown from "../../../../../dist/js/shared/Dropdown.jsx";
 
 let wrapper;
 

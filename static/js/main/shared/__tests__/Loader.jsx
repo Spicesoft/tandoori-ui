@@ -2,7 +2,7 @@
 import React from "react";
 import {shallow} from "enzyme";
 
-import Loader from "../../../../dist/js/shared/Loader.jsx";
+import Loader from "../../../../../dist/js/shared/Loader.jsx";
 
 test("Should render loader", () => {
     const wrapper = shallow(<Loader />);
