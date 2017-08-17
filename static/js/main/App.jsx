@@ -14,6 +14,12 @@ import Navbar from "root/dist/js/navbar/ui/Navbar.jsx";
 
 import About from "./component-examples/About.jsx";
 import Typography from "./component-examples/Typography.jsx";
+import Lists from "./component-examples/Lists.jsx";
+import Buttons from "./component-examples/Buttons.jsx";
+import Forms from "./component-examples/Forms.jsx";
+import Navs from "./component-examples/Navs.jsx";
+import Indicators from "./component-examples/Indicators.jsx";
+import Panels from "./component-examples/Panels.jsx";
 
 
 const menuItems = [{
@@ -40,10 +46,6 @@ const menuItems = [{
                 url: "/lists"
             },
             {
-                id: "List groups",
-                url: "/list-groups"
-            },
-            {
                 id: "Buttons",
                 url: "/buttons"
             },
@@ -60,15 +62,7 @@ const menuItems = [{
                 url: "/indicators"
             },
             {
-                id: "Progress",
-                url: "/progress"
-            },
-            {
-                id: "Containers",
-                url: "/containers"
-            },
-            {
-                id: "Panels",
+                id: "Panel & Containers",
                 url: "/panels"
             }
         ]
@@ -169,6 +163,12 @@ const BasicExample = () => (
             <div className="container-fluid">
                 <Route exact path="/" component={About} />
                 <Route path="/typography" component={Typography} />
+                <Route path="/lists" component={Lists} />
+                <Route path="/buttons" component={Buttons} />
+                <Route path="/forms" component={Forms} />
+                <Route path="/navs" component={Navs} />
+                <Route path="/indicators" component={Indicators} />
+                <Route path="/panels" component={Panels} />
             </div>
         </div>
     </Router>
