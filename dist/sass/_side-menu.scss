@@ -33,11 +33,29 @@
 }
 
 .#{$current}side-menu-panel__content {
-  width: 80%;
+  width: 100%;
+  @media (min-width: $sm-breakpoint) {
+    width: 80%;
+  }
+  @media (min-width: $md-breakpoint) {
+    width: 30%;
+  }
+  @media (min-width: $lg-breakpoint) {
+    width: 20%;
+  }
 }
 
 .#{$current}side-menu-panel__outside-layer {
-  width: 20%;
+  width: 0;
+  @media (min-width: $sm-breakpoint) {
+    width: 20%;
+  }
+  @media (min-width: $md-breakpoint) {
+    width: 70%;
+  }
+  @media (min-width: $lg-breakpoint) {
+    width: 80%;
+  }
 }
 
 /* SKIN */
