@@ -4,7 +4,7 @@ const Forms = () => (
     <div>
 
         <h1>Forms</h1>
-        <div className="row bs-component">
+        <div className="row">
 
             <div className="col-sm-6">
                 <div className="panel panel-default">
@@ -32,7 +32,7 @@ const Forms = () => (
                                 <div className="form-group">
                                     <label htmlFor="textArea" className="col-lg-2 control-label">Textarea</label>
                                     <div className="col-lg-10">
-                                        <textarea className="form-control" rows="3" id="textArea"></textarea>
+                                        <textarea className="form-control" rows="3" id="textArea" />
                                         <span className="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
                                     </div>
                                 </div>

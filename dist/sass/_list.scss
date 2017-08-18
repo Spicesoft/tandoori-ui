@@ -94,3 +94,9 @@
 .#{$current}list-item__info {
   color: $grey;
 }
+
+/* BS overrides */
+
+.list-group {
+  box-shadow: $material-shadow;
+}

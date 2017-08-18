@@ -88,3 +88,11 @@
     background-color: darken($warning, 10%);
   }
 }
+
+/* BS overrides */
+
+.btn {
+  &.raised {
+    box-shadow: $material-shadow;
+  }
+}
