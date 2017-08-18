@@ -79,48 +79,6 @@ const Panels = () => (
             <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <p><a className="btn btn-primary btn-lg" href="#">Learn more</a></p>
         </div>
-        <h1>List groups</h1>
-        <div className="row">
-            <div className="col-sm-4">
-                <ul className="list-group">
-                    <li className="list-group-item">
-                        <span className="badge">14</span>
-                        Cras justo odio
-                    </li>
-                    <li className="list-group-item">
-                        <span className="badge">2</span>
-                        Dapibus ac facilisis in
-                    </li>
-                    <li className="list-group-item">
-                        <span className="badge">1</span>
-                        Morbi leo risus
-                    </li>
-                </ul>
-            </div>
-            <div className="col-sm-4">
-                <div className="list-group">
-                    <a href="#" className="list-group-item active">
-                        Cras justo odio
-                    </a>
-                    <a href="#" className="list-group-item">Dapibus ac facilisis in
-                    </a>
-                    <a href="#" className="list-group-item">Morbi leo risus
-                    </a>
-                </div>
-            </div>
-            <div className="col-sm-4">
-                <div className="list-group">
-                    <a href="#" className="list-group-item active">
-                        <h4 className="list-group-item-heading">List group item heading</h4>
-                        <p className="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    </a>
-                    <a href="#" className="list-group-item">
-                        <h4 className="list-group-item-heading">List group item heading</h4>
-                        <p className="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 );
 

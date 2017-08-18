@@ -30178,6 +30178,112 @@ var Lists = function Lists() {
                     )
                 )
             )
+        ),
+        _react2.default.createElement(
+            "h1",
+            null,
+            "List groups"
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "row" },
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-4" },
+                _react2.default.createElement(
+                    "ul",
+                    { className: "list-group" },
+                    _react2.default.createElement(
+                        "li",
+                        { className: "list-group-item" },
+                        _react2.default.createElement(
+                            "span",
+                            { className: "badge" },
+                            "14"
+                        ),
+                        "Cras justo odio"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        { className: "list-group-item" },
+                        _react2.default.createElement(
+                            "span",
+                            { className: "badge" },
+                            "2"
+                        ),
+                        "Dapibus ac facilisis in"
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        { className: "list-group-item" },
+                        _react2.default.createElement(
+                            "span",
+                            { className: "badge" },
+                            "1"
+                        ),
+                        "Morbi leo risus"
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-4" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "list-group" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: "#", className: "list-group-item active" },
+                        "Cras justo odio"
+                    ),
+                    _react2.default.createElement(
+                        "a",
+                        { href: "#", className: "list-group-item" },
+                        "Dapibus ac facilisis in"
+                    ),
+                    _react2.default.createElement(
+                        "a",
+                        { href: "#", className: "list-group-item" },
+                        "Morbi leo risus"
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-4" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "list-group" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: "#", className: "list-group-item active" },
+                        _react2.default.createElement(
+                            "h4",
+                            { className: "list-group-item-heading" },
+                            "List group item heading"
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "list-group-item-text" },
+                            "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit."
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "a",
+                        { href: "#", className: "list-group-item" },
+                        _react2.default.createElement(
+                            "h4",
+                            { className: "list-group-item-heading" },
+                            "List group item heading"
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "list-group-item-text" },
+                            "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit."
+                        )
+                    )
+                )
+            )
         )
     );
 };
@@ -31933,112 +32039,6 @@ var Panels = function Panels() {
                     "a",
                     { className: "btn btn-primary btn-lg", href: "#" },
                     "Learn more"
-                )
-            )
-        ),
-        _react2.default.createElement(
-            "h1",
-            null,
-            "List groups"
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "row" },
-            _react2.default.createElement(
-                "div",
-                { className: "col-sm-4" },
-                _react2.default.createElement(
-                    "ul",
-                    { className: "list-group" },
-                    _react2.default.createElement(
-                        "li",
-                        { className: "list-group-item" },
-                        _react2.default.createElement(
-                            "span",
-                            { className: "badge" },
-                            "14"
-                        ),
-                        "Cras justo odio"
-                    ),
-                    _react2.default.createElement(
-                        "li",
-                        { className: "list-group-item" },
-                        _react2.default.createElement(
-                            "span",
-                            { className: "badge" },
-                            "2"
-                        ),
-                        "Dapibus ac facilisis in"
-                    ),
-                    _react2.default.createElement(
-                        "li",
-                        { className: "list-group-item" },
-                        _react2.default.createElement(
-                            "span",
-                            { className: "badge" },
-                            "1"
-                        ),
-                        "Morbi leo risus"
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "div",
-                { className: "col-sm-4" },
-                _react2.default.createElement(
-                    "div",
-                    { className: "list-group" },
-                    _react2.default.createElement(
-                        "a",
-                        { href: "#", className: "list-group-item active" },
-                        "Cras justo odio"
-                    ),
-                    _react2.default.createElement(
-                        "a",
-                        { href: "#", className: "list-group-item" },
-                        "Dapibus ac facilisis in"
-                    ),
-                    _react2.default.createElement(
-                        "a",
-                        { href: "#", className: "list-group-item" },
-                        "Morbi leo risus"
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "div",
-                { className: "col-sm-4" },
-                _react2.default.createElement(
-                    "div",
-                    { className: "list-group" },
-                    _react2.default.createElement(
-                        "a",
-                        { href: "#", className: "list-group-item active" },
-                        _react2.default.createElement(
-                            "h4",
-                            { className: "list-group-item-heading" },
-                            "List group item heading"
-                        ),
-                        _react2.default.createElement(
-                            "p",
-                            { className: "list-group-item-text" },
-                            "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit."
-                        )
-                    ),
-                    _react2.default.createElement(
-                        "a",
-                        { href: "#", className: "list-group-item" },
-                        _react2.default.createElement(
-                            "h4",
-                            { className: "list-group-item-heading" },
-                            "List group item heading"
-                        ),
-                        _react2.default.createElement(
-                            "p",
-                            { className: "list-group-item-text" },
-                            "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit."
-                        )
-                    )
                 )
             )
         )
