@@ -29230,9 +29230,13 @@ var Navbar = function (_React$PureComponent) {
         value: function renderLinks(links) {
             return links.map(function (link) {
                 return _react2.default.createElement(
-                    "a",
-                    { key: link.id, className: "tuiv2_btn tuiv2_btn--lg", href: link.url },
-                    link.label
+                    "div",
+                    { className: "tuiv2_navbar__action" },
+                    _react2.default.createElement(
+                        "a",
+                        { key: link.id, href: link.url },
+                        link.label
+                    )
                 );
             });
         }
@@ -31087,6 +31091,7 @@ var Forms = function Forms() {
                                             { type: "reset", className: "btn btn-default" },
                                             "Cancel"
                                         ),
+                                        "\xA0",
                                         _react2.default.createElement(
                                             "button",
                                             { type: "submit", className: "btn btn-primary" },
@@ -31361,7 +31366,7 @@ var Navs = function Navs() {
             ),
             _react2.default.createElement(
                 "div",
-                { className: "col-sm-6" },
+                { className: "col-sm-6 nav-showcase" },
                 _react2.default.createElement(
                     "h3",
                     null,

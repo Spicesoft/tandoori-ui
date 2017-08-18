@@ -36,7 +36,7 @@ const Navs = () => (
                     </div>
                 </div>
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-6 nav-showcase">
                 <h3>Pills</h3>
                 <ul className="nav nav-pills">
                     <li className="active"><a href="#">Home</a></li>
