@@ -1,11 +1,11 @@
 import React from "react";
 
 const Buttons = () => (
-    <div>
+    <div className="btn-showcase">
         <h1>Buttons</h1>
         <div className="row">
             <div className="col-sm-6">
-                <p>
+                <div>
                     <button type="button" className="btn btn-primary">Primary</button>
                     <button type="button" className="btn btn-secondary">Secondary</button>
                     <button type="button" className="btn btn-success">Success</button>
@@ -13,8 +13,8 @@ const Buttons = () => (
                     <button type="button" className="btn btn-warning">Warning</button>
                     <button type="button" className="btn btn-danger">Danger</button>
                     <button type="button" className="btn btn-link">Link</button>
-                </p>
-                <p>
+                </div>
+                <div>
                     <button type="button" className="btn raised btn-primary">Primary</button>
                     <button type="button" className="btn raised btn-secondary">Secondary</button>
                     <button type="button" className="btn raised btn-success">Success</button>
@@ -22,8 +22,8 @@ const Buttons = () => (
                     <button type="button" className="btn raised btn-warning">Warning</button>
                     <button type="button" className="btn raised btn-danger">Danger</button>
                     <button type="button" className="btn raised btn-link">Link</button>
-                </p>
-                <p>
+                </div>
+                <div>
                     <button type="button" className="btn btn-primary disabled">Primary</button>
                     <button type="button" className="btn btn-secondary disabled">Secondary</button>
                     <button type="button" className="btn btn-success disabled">Success</button>
@@ -31,8 +31,8 @@ const Buttons = () => (
                     <button type="button" className="btn btn-warning disabled">Warning</button>
                     <button type="button" className="btn btn-danger disabled">Danger</button>
                     <button type="button" className="btn btn-link disabled">Link</button>
-                </p>
-                <p>
+                </div>
+                <div>
                     <div className="btn-group">
                         <a href="#" className="btn btn-default">Default</a>
                         <a href="#" className="btn btn-default dropdown-toggle" data-toggle="dropdown"><span className="caret"/></a>
@@ -92,7 +92,7 @@ const Buttons = () => (
                             <li><a href="#">Separated link</a></li>
                         </ul>
                     </div>
-                </p>
+                </div>
                 <p>
                     <button type="button" className="btn btn-primary btn-lg">Large button</button>
                     <button type="button" className="btn btn-primary">Default button</button>
@@ -100,6 +100,7 @@ const Buttons = () => (
                 </p>
             </div>
             <div className="col-sm-6">
+
                 <a href="#" className="btn btn-default btn-lg btn-block">Block level button</a>
                 <div className="btn-group btn-group-justified">
                     <a href="#" className="btn btn-default">Left</a>
@@ -118,21 +119,19 @@ const Buttons = () => (
                         <a href="#" className="btn btn-default">5</a>
                         <a href="#" className="btn btn-default">6</a>
                         <a href="#" className="btn btn-default">7</a>
+                        <a href="#" className="btn btn-default">8</a>
                     </div>
 
                     <div className="btn-group">
-                        <a href="#" className="btn btn-default">8</a>
-                        <div className="btn-group">
-                            <a href="#" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                                <span className="caret"/>
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><a href="#">Dropdown link</a></li>
-                                <li><a href="#">Dropdown link</a></li>
-                                <li><a href="#">Dropdown link</a></li>
-                            </ul>
-                        </div>
+                        <a href="#" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                            <span className="caret"/>
+                        </a>
+                        <ul className="dropdown-menu">
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

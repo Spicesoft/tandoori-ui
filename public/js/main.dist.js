@@ -30204,7 +30204,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Buttons = function Buttons() {
     return _react2.default.createElement(
         "div",
-        null,
+        { className: "btn-showcase" },
         _react2.default.createElement(
             "h1",
             null,
@@ -30217,7 +30217,7 @@ var Buttons = function Buttons() {
                 "div",
                 { className: "col-sm-6" },
                 _react2.default.createElement(
-                    "p",
+                    "div",
                     null,
                     _react2.default.createElement(
                         "button",
@@ -30256,7 +30256,7 @@ var Buttons = function Buttons() {
                     )
                 ),
                 _react2.default.createElement(
-                    "p",
+                    "div",
                     null,
                     _react2.default.createElement(
                         "button",
@@ -30295,7 +30295,7 @@ var Buttons = function Buttons() {
                     )
                 ),
                 _react2.default.createElement(
-                    "p",
+                    "div",
                     null,
                     _react2.default.createElement(
                         "button",
@@ -30334,7 +30334,7 @@ var Buttons = function Buttons() {
                     )
                 ),
                 _react2.default.createElement(
-                    "p",
+                    "div",
                     null,
                     _react2.default.createElement(
                         "div",
@@ -30703,6 +30703,11 @@ var Buttons = function Buttons() {
                             "a",
                             { href: "#", className: "btn btn-default" },
                             "7"
+                        ),
+                        _react2.default.createElement(
+                            "a",
+                            { href: "#", className: "btn btn-default" },
+                            "8"
                         )
                     ),
                     _react2.default.createElement(
@@ -30710,47 +30715,38 @@ var Buttons = function Buttons() {
                         { className: "btn-group" },
                         _react2.default.createElement(
                             "a",
-                            { href: "#", className: "btn btn-default" },
-                            "8"
+                            { href: "#", className: "btn btn-default dropdown-toggle", "data-toggle": "dropdown", "aria-expanded": "false" },
+                            "Dropdown",
+                            _react2.default.createElement("span", { className: "caret" })
                         ),
                         _react2.default.createElement(
-                            "div",
-                            { className: "btn-group" },
+                            "ul",
+                            { className: "dropdown-menu" },
                             _react2.default.createElement(
-                                "a",
-                                { href: "#", className: "btn btn-default dropdown-toggle", "data-toggle": "dropdown", "aria-expanded": "false" },
-                                "Dropdown",
-                                _react2.default.createElement("span", { className: "caret" })
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "a",
+                                    { href: "#" },
+                                    "Dropdown link"
+                                )
                             ),
                             _react2.default.createElement(
-                                "ul",
-                                { className: "dropdown-menu" },
+                                "li",
+                                null,
                                 _react2.default.createElement(
-                                    "li",
-                                    null,
-                                    _react2.default.createElement(
-                                        "a",
-                                        { href: "#" },
-                                        "Dropdown link"
-                                    )
-                                ),
+                                    "a",
+                                    { href: "#" },
+                                    "Dropdown link"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
                                 _react2.default.createElement(
-                                    "li",
-                                    null,
-                                    _react2.default.createElement(
-                                        "a",
-                                        { href: "#" },
-                                        "Dropdown link"
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "li",
-                                    null,
-                                    _react2.default.createElement(
-                                        "a",
-                                        { href: "#" },
-                                        "Dropdown link"
-                                    )
+                                    "a",
+                                    { href: "#" },
+                                    "Dropdown link"
                                 )
                             )
                         )
