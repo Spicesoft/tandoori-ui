@@ -47,6 +47,7 @@ beforeEach(() => {
         <Menu
             onItemClicked={() => "toto"}
             onOutsideLayerClicked={() => "clicked outside"}
+            onSubItemClicked={() => "clicked sub item"}
             open={false}
             activeItem=""
             menuItems={menuItems}
@@ -65,6 +66,7 @@ test("Should render categories", () => {
         <Menu
             onItemClicked={() => "toto"}
             onOutsideLayerClicked={() => "clicked outside"}
+            onSubItemClicked={() => "clicked sub item"}
             open={false}
             activeItem=""
             menuItems={menuItems}
@@ -79,6 +81,7 @@ test("Should render with --out css class", () => {
         <Menu
             onItemClicked={() => "toto"}
             onOutsideLayerClicked={() => "clicked outside"}
+            onSubItemClicked={() => "clicked sub item"}
             open={false}
             activeItem="toto"
             menuItems={menuItems}
@@ -93,6 +96,7 @@ test("Should render with --in css class", () => {
         <Menu
             onItemClicked={() => "toto"}
             onOutsideLayerClicked={() => "clicked outside"}
+            onSubItemClicked={() => "clicked sub item"}
             open={true}
             activeItem="toto"
             menuItems={menuItems}
@@ -107,6 +111,7 @@ test("Should trigger onOutsideLayerClicked", () => {
         <Menu
             onItemClicked={() => "toto"}
             onOutsideLayerClicked={outSideClicked}
+            onSubItemClicked={() => "clicked sub item"}
             open={true}
             activeItem="toto"
             menuItems={menuItems}

@@ -1,5 +1,6 @@
 import React from "react";
 import T from "prop-types";
+import {Link} from "react-router-dom";
 
 import MenuItem from "./MenuItem.jsx";
 
@@ -54,11 +55,11 @@ export default class Menu extends React.PureComponent {
         return;
     }
 
-    renderSubItems(subItems) {
+    renderSubItems(subItems, id) {
         return subItems.map((item, i) => {
             return (
                 <li key={i} className="tuiv2_list-item">
-                    <a href={item.url} className="tuiv2_list-item__link">{item.id}</a>
+                    <Link onClick={this.props.onSubItemClicked} to={item.url} className="tuiv2_list-item__link">{item.id}</Link>
                 </li>
             );
         });
@@ -84,6 +85,7 @@ export default class Menu extends React.PureComponent {
 
 Menu.propTypes = {
     onItemClicked: T.func.isRequired,
+    onSubItemClicked: T.func.isRequired,
     onOutsideLayerClicked: T.func.isRequired,
     open: T.bool.isRequired,
     activeItem: T.string.isRequired,

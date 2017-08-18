@@ -5,7 +5,7 @@ import {
     mount
 } from "enzyme";
 
-import Navbar from "../../../../../dist/js/navbar/ui/Navbar.jsx";
+import Navbar from "../../../../../../dist/js/navbar/ui/Navbar.jsx";
 
 
 const matchDesktop = () => {

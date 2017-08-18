@@ -24,6 +24,8 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "dist/sass/_dropdown.scss";
 @import "dist/sass/_loaders.scss";
 @import "_linearicons.scss";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
 
 $zero: 0;
 
@@ -60,5 +62,6 @@ body {
 }
 
 .container-fluid {
+  margin: 69px 0 0 60px;
   z-index: 1;
 }
