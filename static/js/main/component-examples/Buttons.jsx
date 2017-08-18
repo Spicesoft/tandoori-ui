@@ -3,7 +3,7 @@ import React from "react";
 const Buttons = () => (
     <div>
         <h1>Buttons</h1>
-        <div className="row bs-component">
+        <div className="row">
             <div className="col-sm-6">
                 <p>
                     <button type="button" className="btn btn-primary">Primary</button>
@@ -13,6 +13,15 @@ const Buttons = () => (
                     <button type="button" className="btn btn-warning">Warning</button>
                     <button type="button" className="btn btn-danger">Danger</button>
                     <button type="button" className="btn btn-link">Link</button>
+                </p>
+                <p>
+                    <button type="button" className="btn raised btn-primary">Primary</button>
+                    <button type="button" className="btn raised btn-secondary">Secondary</button>
+                    <button type="button" className="btn raised btn-success">Success</button>
+                    <button type="button" className="btn raised btn-info">Info</button>
+                    <button type="button" className="btn raised btn-warning">Warning</button>
+                    <button type="button" className="btn raised btn-danger">Danger</button>
+                    <button type="button" className="btn raised btn-link">Link</button>
                 </p>
                 <p>
                     <button type="button" className="btn btn-primary disabled">Primary</button>
@@ -90,7 +99,7 @@ const Buttons = () => (
                     <button type="button" className="btn btn-primary btn-sm">Small button</button>
                 </p>
             </div>
-            <div className="col-sm-6 bs-component">
+            <div className="col-sm-6">
                 <a href="#" className="btn btn-default btn-lg btn-block">Block level button</a>
                 <div className="btn-group btn-group-justified">
                     <a href="#" className="btn btn-default">Left</a>

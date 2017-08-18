@@ -12628,7 +12628,7 @@ var navbarData = {
 
 var BasicExample = function BasicExample() {
     return _react2.default.createElement(
-        _reactRouterDom.BrowserRouter,
+        _reactRouterDom.HashRouter,
         null,
         _react2.default.createElement(
             "div",
@@ -30125,7 +30125,7 @@ var Buttons = function Buttons() {
         ),
         _react2.default.createElement(
             "div",
-            { className: "row bs-component" },
+            { className: "row" },
             _react2.default.createElement(
                 "div",
                 { className: "col-sm-6" },
@@ -30165,6 +30165,45 @@ var Buttons = function Buttons() {
                     _react2.default.createElement(
                         "button",
                         { type: "button", className: "btn btn-link" },
+                        "Link"
+                    )
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    _react2.default.createElement(
+                        "button",
+                        { type: "button", className: "btn raised btn-primary" },
+                        "Primary"
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { type: "button", className: "btn raised btn-secondary" },
+                        "Secondary"
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { type: "button", className: "btn raised btn-success" },
+                        "Success"
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { type: "button", className: "btn raised btn-info" },
+                        "Info"
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { type: "button", className: "btn raised btn-warning" },
+                        "Warning"
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { type: "button", className: "btn raised btn-danger" },
+                        "Danger"
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { type: "button", className: "btn raised btn-link" },
                         "Link"
                     )
                 ),
@@ -30508,7 +30547,7 @@ var Buttons = function Buttons() {
             ),
             _react2.default.createElement(
                 "div",
-                { className: "col-sm-6 bs-component" },
+                { className: "col-sm-6" },
                 _react2.default.createElement(
                     "a",
                     { href: "#", className: "btn btn-default btn-lg btn-block" },
@@ -30665,7 +30704,7 @@ var Forms = function Forms() {
         ),
         _react2.default.createElement(
             "div",
-            { className: "row bs-component" },
+            { className: "row" },
             _react2.default.createElement(
                 "div",
                 { className: "col-sm-6" },
