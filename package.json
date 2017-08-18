@@ -15,6 +15,7 @@
     "build-storybook": "build-storybook",
     "buil:js": "webpack",
     "build-dev:js": "webpack --watch",
+    "build-dev:webpack-dashboard": "webpack-dashboard -- webpack --watch",
     "build:sass": "sass static/sass/main.scss:public/css/tandoori-ui.css",
     "build-dev:sass": "sass --watch static/sass/main.scss:public/css/tandoori-ui.css"
   },

@@ -5952,7 +5952,7 @@ input {
 
 .has-warning .form-control,
 .has-warning .form-control:focus {
-  border: 2px solid #F27935; }
+  border: 0.1rem solid #F27935; }
 
 .has-warning .input-group-addon {
   border-color: #F27935; }
@@ -5972,7 +5972,7 @@ input {
 
 .has-error .form-control,
 .has-error .form-control:focus {
-  border: 2px solid #ED4530; }
+  border: 0.1rem solid #ED4530; }
 
 .has-error .input-group-addon {
   border-color: #ED4530; }
@@ -5992,7 +5992,7 @@ input {
 
 .has-success .form-control,
 .has-success .form-control:focus {
-  border: 2px solid #1FBBA6; }
+  border: 0.1rem solid #1FBBA6; }
 
 .has-success .input-group-addon {
   border-color: #1FBBA6; }
@@ -6876,6 +6876,10 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 /* BS overrides */
 .list-group {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+
+.form-control,
+input {
+  border-width: 0.1rem; }
 
 /* STRUCTURE */
 .tuiv2_btn {
