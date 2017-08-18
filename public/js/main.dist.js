@@ -29445,6 +29445,8 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(93);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var About = function About() {
@@ -29452,45 +29454,130 @@ var About = function About() {
         "div",
         null,
         _react2.default.createElement(
-            "h1",
-            null,
-            "This is ",
+            "div",
+            { className: "row" },
             _react2.default.createElement(
-                "span",
-                { className: "tuiv2_text--primary" },
-                "Tandoori UI"
+                "div",
+                { className: "col-md-8 col-md-offset-2" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "jumbotron" },
+                    _react2.default.createElement(
+                        "h1",
+                        null,
+                        "This is ",
+                        _react2.default.createElement(
+                            "span",
+                            { className: "text-primary" },
+                            "Tandoori UI"
+                        )
+                    )
+                )
             )
         ),
         _react2.default.createElement(
             "div",
-            { className: "bs-component" },
+            { className: "row" },
             _react2.default.createElement(
                 "div",
-                { className: "panel panel-default" },
+                { className: "col-md-4 col-md-offset-2 col-sm-6" },
                 _react2.default.createElement(
                     "div",
-                    { className: "panel-body" },
-                    "Meet the Cowork.io's UI library !",
-                    _react2.default.createElement("br", null),
-                    "You will find here all the UI elements you should use to build Cowork.io's views.",
-                    _react2.default.createElement("br", null),
-                    "We aim to replace all the legacy SASS code with this library. ",
-                    _react2.default.createElement("br", null),
-                    "In the meantime, all of the Tandoori UI css classNamees will be prefixed with ",
+                    { className: "bs-component" },
                     _react2.default.createElement(
-                        "strong",
-                        null,
-                        "tuiv2_"
-                    ),
-                    " so you can easely identify new and old classNamees in the code.",
-                    _react2.default.createElement("br", null),
-                    "Please feel free to get in touch with front team to discuss about any improvement and/or ",
+                        "div",
+                        { className: "panel panel-default" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "panel-body" },
+                            _react2.default.createElement(
+                                "h3",
+                                null,
+                                "Meet the ",
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "text-primary" },
+                                    " Cowork.io's UI"
+                                ),
+                                " library !"
+                            ),
+                            _react2.default.createElement("br", null),
+                            "You will find here all the UI elements you should use to build Cowork.io's views.",
+                            _react2.default.createElement("br", null),
+                            "Tandoori-ui is a theme for ",
+                            _react2.default.createElement(
+                                "a",
+                                { href: "https://getbootstrap.com/docs/3.3/" },
+                                "Bootstrap"
+                            ),
+                            " based on Bootswatch's ",
+                            _react2.default.createElement(
+                                "a",
+                                { href: "https://bootswatch.com/flatly/" },
+                                "Flatly"
+                            ),
+                            ". ",
+                            _react2.default.createElement("br", null),
+                            "If you don't find what you need here, please have a look at the official ",
+                            _react2.default.createElement(
+                                "a",
+                                { href: "https://getbootstrap.com/docs/3.3/" },
+                                "Bootstrap documentation"
+                            ),
+                            ". ",
+                            _react2.default.createElement("br", null),
+                            "Please feel free to get in touch with front team to discuss about any improvement and/or ",
+                            _react2.default.createElement(
+                                "a",
+                                { href: "https://github.com/Spicesoft/tandoori-ui/issues" },
+                                "create an issue"
+                            ),
+                            "."
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-md-4 col-sm-6" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "list-group" },
                     _react2.default.createElement(
-                        "a",
-                        { href: "https://github.com/Spicesoft/tandoori-ui/issues" },
-                        "create an issue"
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/typography" },
+                        "Typography"
                     ),
-                    "."
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/lists" },
+                        "Lists"
+                    ),
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/buttons" },
+                        "Buttons"
+                    ),
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/forms" },
+                        "Forms"
+                    ),
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/navs" },
+                        "Navs"
+                    ),
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/indicators" },
+                        "Indicators"
+                    ),
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/panels" },
+                        "Containers"
+                    )
                 )
             )
         )
