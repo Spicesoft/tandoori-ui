@@ -29234,7 +29234,7 @@ var Navbar = function (_React$PureComponent) {
                     { className: "tuiv2_navbar__action" },
                     _react2.default.createElement(
                         "a",
-                        { key: link.id, href: link.url },
+                        { key: link.id, className: "btn btn-link", href: link.url },
                         link.label
                     )
                 );
