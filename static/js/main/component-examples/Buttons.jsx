@@ -7,7 +7,7 @@ const Buttons = () => (
             <div className="col-sm-6">
                 <div>
                     <button type="button" className="btn btn-primary">Primary</button>
-                    <button type="button" className="btn btn-secondary">Secondary</button>
+                    <button type="button" className="btn btn-default">default</button>
                     <button type="button" className="btn btn-success">Success</button>
                     <button type="button" className="btn btn-info">Info</button>
                     <button type="button" className="btn btn-warning">Warning</button>
@@ -16,7 +16,7 @@ const Buttons = () => (
                 </div>
                 <div>
                     <button type="button" className="btn raised btn-primary">Primary</button>
-                    <button type="button" className="btn raised btn-secondary">Secondary</button>
+                    <button type="button" className="btn raised btn-default">default</button>
                     <button type="button" className="btn raised btn-success">Success</button>
                     <button type="button" className="btn raised btn-info">Info</button>
                     <button type="button" className="btn raised btn-warning">Warning</button>
@@ -25,7 +25,7 @@ const Buttons = () => (
                 </div>
                 <div>
                     <button type="button" className="btn btn-primary disabled">Primary</button>
-                    <button type="button" className="btn btn-secondary disabled">Secondary</button>
+                    <button type="button" className="btn btn-default disabled">default</button>
                     <button type="button" className="btn btn-success disabled">Success</button>
                     <button type="button" className="btn btn-info disabled">Info</button>
                     <button type="button" className="btn btn-warning disabled">Warning</button>
