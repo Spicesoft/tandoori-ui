@@ -18,7 +18,7 @@ export default class Navbar extends React.PureComponent {
             this.props.lightTheme ? "tuiv2_navbar--light" : "tuiv2_navbar--default-skin"
         );
         return (
-            <nav className={classNames.join(" ")}>
+            <nav className={classNames.join(" ")} style={this.props.navStyles}>
                 {this.renderMobileMenu()}
                 {this.renderBrand(logoUrl, tenantTitle)}
                 {this.renderActions(profileItems, links, dropdowns, userName)}
@@ -121,5 +121,6 @@ Navbar.propTypes = {
     dropdowns: T.array.isRequired,
     isLoggedIn: T.bool.isRequired,
     children: T.node,
-    searchComponent: T.node
+    searchComponent: T.node,
+    navStyles: T.object
 };

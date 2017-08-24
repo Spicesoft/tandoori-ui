@@ -10287,6 +10287,9 @@ body {
 .bs-component .progress {
   margin-bottom: 0.5rem; }
 
+.component-example {
+  margin-bottom: 1rem; }
+
 .btn-showcase .btn {
   margin: 0.5rem; }
 

@@ -21,6 +21,8 @@ import Navs from "./component-examples/Navs.jsx";
 import Indicators from "./component-examples/Indicators.jsx";
 import Panels from "./component-examples/Panels.jsx";
 
+import Navbars from "./component-examples/Navbars.jsx";
+
 
 const menuItems = [{
     id: "home",
@@ -34,53 +36,53 @@ const menuItems = [{
                 url: "/"
             }
         ]
-    }, {
-        category: "Components",
-        items: [
-            {
-                id: "Typography",
-                url: "/typography"
-            },
-            {
-                id: "Lists",
-                url: "/lists"
-            },
-            {
-                id: "Buttons",
-                url: "/buttons"
-            },
-            {
-                id: "Forms",
-                url: "/forms"
-            },
-            {
-                id: "Navs",
-                url: "/navs"
-            },
-            {
-                id: "Indicators",
-                url: "/indicators"
-            },
-            {
-                id: "Panel & Containers",
-                url: "/panels"
-            }
-        ]
     }]
 }, {
-    id: "form",
-    iconClass: "lnr-checkmark-circle",
+    id: "components",
+    iconClass: "fa fa-css3",
     active: false,
-    subItems: [{
-        category: "Category 1",
-        items: [{
-            id: "Item 1",
-            url: "#"
-        }, {
-            id: "Item 2",
-            url: "prout"
-        }]
-    }]
+    subItems: [
+        {
+            category: "React Components",
+            items: [{
+                id: "Navbar",
+                url: "/navbars"
+            }]
+        },
+        {
+            category: "CSS Components",
+            items: [
+                {
+                    id: "Typography",
+                    url: "/typography"
+                },
+                {
+                    id: "Lists",
+                    url: "/lists"
+                },
+                {
+                    id: "Buttons",
+                    url: "/buttons"
+                },
+                {
+                    id: "Forms",
+                    url: "/forms"
+                },
+                {
+                    id: "Navs",
+                    url: "/navs"
+                },
+                {
+                    id: "Indicators",
+                    url: "/indicators"
+                },
+                {
+                    id: "Panel & Containers",
+                    url: "/panels"
+                }
+            ]
+        }
+    ]
 }];
 
 const appData = {
@@ -99,20 +101,7 @@ const navbarData = {
     logoUrl: "public/img/logo.png",
     tenantTitle: "Cowork's Tandoori UI",
     userName: "Roland",
-    links: [
-        {
-            type: "link",
-            id: "coworkio",
-            label: "Go to coworkio",
-            url: "https://cowork.io/"
-        },
-        {
-            type: "link",
-            id: "lelab",
-            label: "Go to the lab",
-            url: "https://lelab.cowork.io"
-        }
-    ],
+    links: [],
     dropdowns: [
         {
             type: "dropdown",
@@ -169,6 +158,7 @@ const BasicExample = () => (
                 <Route path="/navs" component={Navs} />
                 <Route path="/indicators" component={Indicators} />
                 <Route path="/panels" component={Panels} />
+                <Route path="/navbars" component={Navbars} />
             </div>
         </div>
     </Router>

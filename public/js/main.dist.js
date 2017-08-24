@@ -12524,6 +12524,10 @@ var _Panels = __webpack_require__(275);
 
 var _Panels2 = _interopRequireDefault(_Panels);
 
+var _Navbars = __webpack_require__(276);
+
+var _Navbars2 = _interopRequireDefault(_Navbars);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var menuItems = [{
@@ -12536,8 +12540,19 @@ var menuItems = [{
             id: "About",
             url: "/"
         }]
+    }]
+}, {
+    id: "components",
+    iconClass: "fa fa-css3",
+    active: false,
+    subItems: [{
+        category: "React Components",
+        items: [{
+            id: "Navbar",
+            url: "/navbars"
+        }]
     }, {
-        category: "Components",
+        category: "CSS Components",
         items: [{
             id: "Typography",
             url: "/typography"
@@ -12561,20 +12576,6 @@ var menuItems = [{
             url: "/panels"
         }]
     }]
-}, {
-    id: "form",
-    iconClass: "lnr-checkmark-circle",
-    active: false,
-    subItems: [{
-        category: "Category 1",
-        items: [{
-            id: "Item 1",
-            url: "#"
-        }, {
-            id: "Item 2",
-            url: "prout"
-        }]
-    }]
 }];
 
 var appData = {
@@ -12593,17 +12594,7 @@ var navbarData = {
     logoUrl: "public/img/logo.png",
     tenantTitle: "Cowork's Tandoori UI",
     userName: "Roland",
-    links: [{
-        type: "link",
-        id: "coworkio",
-        label: "Go to coworkio",
-        url: "https://cowork.io/"
-    }, {
-        type: "link",
-        id: "lelab",
-        label: "Go to the lab",
-        url: "https://lelab.cowork.io"
-    }],
+    links: [],
     dropdowns: [{
         type: "dropdown",
         id: "dropdownEx",
@@ -12658,7 +12649,8 @@ var BasicExample = function BasicExample() {
                 _react2.default.createElement(_reactRouterDom.Route, { path: "/forms", component: _Forms2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: "/navs", component: _Navs2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: "/indicators", component: _Indicators2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: "/panels", component: _Panels2.default })
+                _react2.default.createElement(_reactRouterDom.Route, { path: "/panels", component: _Panels2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: "/navbars", component: _Navbars2.default })
             )
         )
     );
@@ -29127,7 +29119,7 @@ var Navbar = function (_React$PureComponent) {
             classNames.push(this.props.lightTheme ? "tuiv2_navbar--light" : "tuiv2_navbar--default-skin");
             return _react2.default.createElement(
                 "nav",
-                { className: classNames.join(" ") },
+                { className: classNames.join(" "), style: this.props.navStyles },
                 this.renderMobileMenu(),
                 this.renderBrand(logoUrl, tenantTitle),
                 this.renderActions(profileItems, links, dropdowns, userName)
@@ -29257,7 +29249,8 @@ Navbar.propTypes = {
     dropdowns: _propTypes2.default.array.isRequired,
     isLoggedIn: _propTypes2.default.bool.isRequired,
     children: _propTypes2.default.node,
-    searchComponent: _propTypes2.default.node
+    searchComponent: _propTypes2.default.node,
+    navStyles: _propTypes2.default.object
 };
 
 /***/ }),
@@ -32051,6 +32044,207 @@ var Panels = function Panels() {
 };
 
 exports.default = Panels;
+
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Navbar = __webpack_require__(266);
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var navbarStyles = {
+    position: "relative",
+    zIndex: 1
+};
+
+var Navbars = function Navbars() {
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+            "div",
+            { className: "component-example" },
+            _react2.default.createElement(_Navbar2.default, {
+                navStyles: navbarStyles,
+                logoUrl: "public/img/logo.png",
+                tenantTitle: "Navbar",
+                userName: "",
+                dropdowns: [],
+                links: [],
+                profileItems: [],
+                lightTheme: true,
+                isLoggedIn: true
+            }),
+            _react2.default.createElement(
+                "pre",
+                null,
+                _react2.default.createElement(
+                    "code",
+                    null,
+                    "<Navbar\n    logoUrl={\"public/img/logo.png\"}\n    tenantTitle={\"Navbar\"}\n    userName={\"\"}\n    dropdowns={[]}\n    links={[]}\n    profileItems={[]}\n    lightTheme={true}\n    isLoggedIn={true}\n/>"
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "component-example" },
+            _react2.default.createElement(_Navbar2.default, {
+                navStyles: navbarStyles,
+                logoUrl: "public/img/logo.png",
+                tenantTitle: "Navbar with links",
+                userName: "",
+                dropdowns: [],
+                links: [{
+                    type: "link",
+                    id: "coworkio",
+                    label: "Go to coworkio",
+                    url: "https://cowork.io/"
+                }, {
+                    type: "link",
+                    id: "lelab",
+                    label: "Go to the lab",
+                    url: "https://lelab.cowork.io"
+                }],
+                profileItems: [],
+                lightTheme: true,
+                isLoggedIn: true
+            }),
+            _react2.default.createElement(
+                "pre",
+                null,
+                _react2.default.createElement(
+                    "code",
+                    null,
+                    "<Navbar\n    logoUrl={\"public/img/logo.png\"}\n    tenantTitle={\"Navbar\"}\n    userName={\"\"}\n    dropdowns={[]}\n    links={[\n        {\n            type: \"link\",\n            id: \"coworkio\",\n            label: \"Go to coworkio\",\n            url: \"https://cowork.io/\"\n        },\n        {\n            type: \"link\",\n            id: \"lelab\",\n            label: \"Go to the lab\",\n            url: \"https://lelab.cowork.io\"\n        }\n    ]}\n    profileItems={[]}\n    lightTheme={true}\n    isLoggedIn={true}\n/>"
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "component-example" },
+            _react2.default.createElement(_Navbar2.default, {
+                navStyles: navbarStyles,
+                logoUrl: "public/img/logo.png",
+                tenantTitle: "Navbar with dropdown & profile item",
+                userName: "Claudy Faucan",
+                dropdowns: [{
+                    type: "dropdown",
+                    id: "dropdownEx",
+                    label: "Dropdown",
+                    spanClass: "lnr-rocket",
+                    items: [{
+                        id: "item1",
+                        label: "Item 1",
+                        url: "#"
+                    }, {
+                        id: "item2",
+                        label: "Item 2",
+                        url: "#"
+                    }]
+                }],
+                links: [],
+                profileItems: [{
+                    id: "logout",
+                    label: "Logout",
+                    url: "#logout"
+                }],
+                lightTheme: true,
+                isLoggedIn: true
+            }),
+            _react2.default.createElement(
+                "pre",
+                null,
+                _react2.default.createElement(
+                    "code",
+                    null,
+                    "<Navbar\n    logoUrl={\"public/img/logo.png\"}\n    tenantTitle={\"Navbar\"}\n    userName={\"Claudy Faucan\"}\n    dropdowns={[\n        {\n            type: \"dropdown\",\n            id: \"dropdownEx\",\n            label: \"Dropdown\",\n            spanClass: \"lnr-rocket\",\n            items: [\n                {\n                    id: \"item1\",\n                    label: \"Item 1\",\n                    url: \"#\"\n                },\n                {\n                    id: \"item2\",\n                    label: \"Item 2\",\n                    url: \"#\"\n                }\n            ]\n        }\n    ]}\n    links={[]}\n    profileItems={[\n        {\n            id: \"logout\",\n            label: \"Logout\",\n            url: \"#logout\"\n        }\n    ]}\n    lightTheme={true}\n    isLoggedIn={true}\n/>"
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "component-example" },
+            _react2.default.createElement(_Navbar2.default, {
+                navStyles: navbarStyles,
+                logoUrl: "public/img/logo.png",
+                tenantTitle: "Dark theme",
+                userName: "Baghera",
+                dropdowns: [],
+                links: [],
+                profileItems: [{
+                    id: "logout",
+                    label: "Logout",
+                    url: "#logout"
+                }],
+                lightTheme: false,
+                isLoggedIn: true
+            }),
+            _react2.default.createElement(
+                "pre",
+                null,
+                _react2.default.createElement(
+                    "code",
+                    null,
+                    "<Navbar\n    logoUrl={\"public/img/logo.png\"}\n    tenantTitle={\"Navbar\"}\n    userName={\"Baghera\"}\n    dropdowns={[]}\n    links={[]}\n    profileItems={[\n        {\n            id: \"logout\",\n            label: \"Logout\",\n            url: \"#logout\"\n        }\n    ]}\n    lightTheme={false}\n    isLoggedIn={true}\n/>"
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "component-example" },
+            _react2.default.createElement(
+                _Navbar2.default,
+                {
+                    navStyles: navbarStyles,
+                    logoUrl: "public/img/logo.png",
+                    tenantTitle: "Custom elements",
+                    userName: "Baghera",
+                    dropdowns: [],
+                    links: [],
+                    profileItems: [{
+                        id: "logout",
+                        label: "Logout",
+                        url: "#logout"
+                    }],
+                    lightTheme: false,
+                    isLoggedIn: true
+                },
+                _react2.default.createElement("span", { className: "fa fa-linux" }),
+                _react2.default.createElement(
+                    "div",
+                    { style: { margin: "1rem" } },
+                    "I am A custom element"
+                ),
+                _react2.default.createElement("span", { className: "fa fa-rebel" })
+            ),
+            _react2.default.createElement(
+                "pre",
+                null,
+                _react2.default.createElement(
+                    "code",
+                    null,
+                    "<Navbar\n    navStyles={navbarStyles}\n    logoUrl={\"public/img/logo.png\"}\n    tenantTitle={\"Custom elements\"}\n    userName={\"Baghera\"}\n    dropdowns={[]}\n    links={[]}\n    profileItems={[\n        {\n            id: \"logout\",\n            label: \"Logout\",\n            url: \"#logout\"\n        }\n    ]}\n    lightTheme={false}\n    isLoggedIn={true}\n>\n    <span className=\"fa fa-linux\" />\n    <div style={{margin: \"1rem\"}}>I am A custom element</div>\n    <span className=\"fa fa-rebel\" />\n</Navbar>"
+                )
+            )
+        )
+    );
+};
+
+exports.default = Navbars;
 
 /***/ })
 /******/ ]);
