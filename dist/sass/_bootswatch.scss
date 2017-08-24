@@ -121,7 +121,6 @@ table,
 
 .form-control,
 input {
-  border-width: 2px;
   @include box-shadow(none);
 
   &:focus {
