@@ -6843,6 +6843,8 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   height: 100%;
   margin: -10px 0;
   padding: 10px 0; }
+  .tuiv2_list-item__link:hover {
+    text-decoration: none; }
 
 /* SKINS */
 .tuiv2_list--stripped .tuiv2_list-item:nth-child(odd) {
@@ -7037,6 +7039,8 @@ input {
   height: 100%;
   margin: -10px 0;
   padding: 10px 0; }
+  .tuiv2_list-item__link:hover {
+    text-decoration: none; }
 
 /* SKINS */
 .tuiv2_list--stripped .tuiv2_list-item:nth-child(odd) {

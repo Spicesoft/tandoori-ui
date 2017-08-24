@@ -50,6 +50,9 @@
   height: 100%;
   margin: -10px 0;
   padding: 10px 0;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 /* SKINS */
