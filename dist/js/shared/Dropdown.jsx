@@ -29,9 +29,17 @@ export default class Dropdown extends React.PureComponent {
                 onBlur={this.handleBlur.bind(this)}
             >
                 <span className={spanClassNames.join(" ")}>{text}</span>
+                {this.renderCaret()}
                 {this.renderMenu()}
             </div>
         );
+    }
+
+    renderCaret() {
+        return this.props.caret ?
+            <span className="fa fa-caret-down tuiv2_dropdown__caret" />
+            :
+            null;
     }
 
     renderMenu() {
@@ -116,5 +124,6 @@ Dropdown.propTypes = {
             url: T.string.isRequired,
             action: T.func
         })
-    ).isRequired
+    ).isRequired,
+    caret: T.bool
 };

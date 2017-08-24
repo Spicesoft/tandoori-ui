@@ -61,6 +61,7 @@ export default class Navbar extends React.PureComponent {
                         items={this.props.links}
                         spanClass="lnr-menu"
                         containerClass="tuiv2_navbar__action"
+                        caret={false}
                     />
                 </div>
             );
@@ -84,6 +85,7 @@ export default class Navbar extends React.PureComponent {
                 spanClass={this.mobileDevice ? "lnr-user" : ""}
                 containerClass="tuiv2_navbar__action"
                 align="right"
+                caret
             />
         );
     }
@@ -97,14 +99,15 @@ export default class Navbar extends React.PureComponent {
                 containerClass="tuiv2_navbar__action"
                 align="right"
                 key={action.id}
+                caret
             />
         ));
     }
 
     renderLinks(links) {
         return links.map(link => (
-            <div className="tuiv2_navbar__action">
-                <a key={link.id} className="btn btn-link" href={link.url}>{link.label}</a>
+            <div className="tuiv2_navbar__action" key={link.id}>
+                <a className="btn btn-link" href={link.url}>{link.label}</a>
             </div>
         ));
     }

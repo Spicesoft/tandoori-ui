@@ -7327,6 +7327,9 @@ input {
 .tuiv2_dropdown-menu__item {
   white-space: nowrap; }
 
+.tuiv2_dropdown__caret {
+  margin-left: 0.25rem; }
+
 /**
  * Some reusable animated loaders:
  *  <div class="tuiv2_loader">

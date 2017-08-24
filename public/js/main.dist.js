@@ -29173,7 +29173,8 @@ var Navbar = function (_React$PureComponent) {
                     _react2.default.createElement(_Dropdown2.default, {
                         items: this.props.links,
                         spanClass: "lnr-menu",
-                        containerClass: "tuiv2_navbar__action"
+                        containerClass: "tuiv2_navbar__action",
+                        caret: false
                     })
                 );
             }
@@ -29198,7 +29199,8 @@ var Navbar = function (_React$PureComponent) {
                 text: this.mobileDevice ? "" : userName,
                 spanClass: this.mobileDevice ? "lnr-user" : "",
                 containerClass: "tuiv2_navbar__action",
-                align: "right"
+                align: "right",
+                caret: true
             });
         }
     }, {
@@ -29213,7 +29215,8 @@ var Navbar = function (_React$PureComponent) {
                     text: _this3.mobileDevice ? "" : action.label,
                     containerClass: "tuiv2_navbar__action",
                     align: "right",
-                    key: action.id
+                    key: action.id,
+                    caret: true
                 });
             });
         }
@@ -29223,10 +29226,10 @@ var Navbar = function (_React$PureComponent) {
             return links.map(function (link) {
                 return _react2.default.createElement(
                     "div",
-                    { className: "tuiv2_navbar__action" },
+                    { className: "tuiv2_navbar__action", key: link.id },
                     _react2.default.createElement(
                         "a",
-                        { key: link.id, className: "btn btn-link", href: link.url },
+                        { className: "btn btn-link", href: link.url },
                         link.label
                     )
                 );
@@ -29329,8 +29332,14 @@ var Dropdown = function (_React$PureComponent) {
                     { className: spanClassNames.join(" ") },
                     text
                 ),
+                this.renderCaret(),
                 this.renderMenu()
             );
+        }
+    }, {
+        key: "renderCaret",
+        value: function renderCaret() {
+            return this.props.caret ? _react2.default.createElement("span", { className: "fa fa-caret-down tuiv2_dropdown__caret" }) : null;
         }
     }, {
         key: "renderMenu",
@@ -29424,7 +29433,8 @@ Dropdown.propTypes = {
         label: _propTypes2.default.string.isRequired,
         url: _propTypes2.default.string.isRequired,
         action: _propTypes2.default.func
-    })).isRequired
+    })).isRequired,
+    caret: _propTypes2.default.bool
 };
 
 /***/ }),
