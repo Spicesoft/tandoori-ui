@@ -40,7 +40,7 @@ export default class Navbar extends React.PureComponent {
             }
         };
         const logo = () => (
-            this.props.logoUrl ?
+            logoUrl ?
             <a href="/">
                 <img
                     src={logoUrl}
@@ -121,6 +121,7 @@ export default class Navbar extends React.PureComponent {
 
 }
 Navbar.propTypes = {
+    logoUrl: T.string,
     lightTheme: T.bool,
     tenantTitle: T.string.isRequired,
     userName: T.string.isRequired,

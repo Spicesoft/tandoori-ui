@@ -12551,7 +12551,7 @@ var Navbar = function (_React$PureComponent) {
                 }
             };
             var logo = function logo() {
-                return _this2.props.logoUrl ? _react2.default.createElement(
+                return logoUrl ? _react2.default.createElement(
                     "a",
                     { href: "/" },
                     _react2.default.createElement("img", {
@@ -12648,6 +12648,7 @@ var Navbar = function (_React$PureComponent) {
 exports.default = Navbar;
 
 Navbar.propTypes = {
+    logoUrl: _propTypes2.default.string,
     lightTheme: _propTypes2.default.bool,
     tenantTitle: _propTypes2.default.string.isRequired,
     userName: _propTypes2.default.string.isRequired,
