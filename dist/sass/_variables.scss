@@ -10,13 +10,13 @@ $bootstrap-sass-asset-helper: false !default;
 
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:              #7b8a8b !default;   // #333
-$gray:                   #95a5a6 !default; // #555
-$gray-light:             #b4bcc2 !default;   // #999
-$gray-lighter:           #ecf0f1 !default; // #eee
+$gray-dark:              #313944 !default;   // #333
+$gray:                   #6F6F6E !default; // #555
+$gray-light:             #B4BCC2 !default;   // #999
+$gray-lighter:           #ECF0F1 !default; // #eee
 
 // service category
-$parking: #449D44;
+$parking: #EE7836;
 
 @if function-exists(colors) {
   $colors-map: colors() !global;
@@ -34,12 +34,12 @@ $warning: map-get($colors-map, "warning");
 $danger: map-get($colors-map, "danger");
 
 // Bootstrap color type
-$primary: #14B9D6 !default;
+$primary: #3DB0E5 !default;
 $primary2: #B27DDB !default;
-$info: #0074A6 !default;
-$success: #1FBBA6 !default;
-$warning: #F27935 !default;
-$danger: #ED4530 !default;
+$info: #5FC6F2 !default;
+$success: #32B3A1 !default;
+$warning: #EE7836 !default;
+$danger: #951E81 !default;
 
 
 // Main colors
