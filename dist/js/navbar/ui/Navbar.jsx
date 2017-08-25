@@ -39,15 +39,21 @@ export default class Navbar extends React.PureComponent {
                 );
             }
         };
+        const logo = () => (
+            this.props.logoUrl ?
+            <a href="/">
+                <img
+                    src={logoUrl}
+                    alt={tenantTitle}
+                    className="tuiv2_navbar__logo"
+                />
+            </a>
+            :
+            null
+        );
         return (
             <div className="tuiv2_navbar__part">
-                <a href="/">
-                    <img
-                        src={logoUrl}
-                        alt={tenantTitle}
-                        className="tuiv2_navbar__logo"
-                    />
-                </a>
+                {logo()}
                 {brandName()}
             </div>
         );
@@ -116,7 +122,6 @@ export default class Navbar extends React.PureComponent {
 }
 Navbar.propTypes = {
     lightTheme: T.bool,
-    logoUrl: T.string.isRequired,
     tenantTitle: T.string.isRequired,
     userName: T.string.isRequired,
     links: T.array.isRequired,

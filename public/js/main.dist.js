@@ -12550,10 +12550,8 @@ var Navbar = function (_React$PureComponent) {
                     );
                 }
             };
-            return _react2.default.createElement(
-                "div",
-                { className: "tuiv2_navbar__part" },
-                _react2.default.createElement(
+            var logo = function logo() {
+                return _this2.props.logoUrl ? _react2.default.createElement(
                     "a",
                     { href: "/" },
                     _react2.default.createElement("img", {
@@ -12561,7 +12559,12 @@ var Navbar = function (_React$PureComponent) {
                         alt: tenantTitle,
                         className: "tuiv2_navbar__logo"
                     })
-                ),
+                ) : null;
+            };
+            return _react2.default.createElement(
+                "div",
+                { className: "tuiv2_navbar__part" },
+                logo(),
                 brandName()
             );
         }
@@ -12646,7 +12649,6 @@ exports.default = Navbar;
 
 Navbar.propTypes = {
     lightTheme: _propTypes2.default.bool,
-    logoUrl: _propTypes2.default.string.isRequired,
     tenantTitle: _propTypes2.default.string.isRequired,
     userName: _propTypes2.default.string.isRequired,
     links: _propTypes2.default.array.isRequired,
@@ -32090,7 +32092,6 @@ var Navbars = function Navbars() {
             { className: "component-example" },
             _react2.default.createElement(_Navbar2.default, {
                 navStyles: navbarStyles,
-                logoUrl: "public/img/logo.png",
                 tenantTitle: "Navbar",
                 userName: "",
                 dropdowns: [],
@@ -32105,7 +32106,7 @@ var Navbars = function Navbars() {
                 _react2.default.createElement(
                     "code",
                     null,
-                    "<Navbar\n    logoUrl={\"public/img/logo.png\"}\n    tenantTitle={\"Navbar\"}\n    userName={\"\"}\n    dropdowns={[]}\n    links={[]}\n    profileItems={[]}\n    lightTheme={true}\n    isLoggedIn={true}\n/>"
+                    "<Navbar\n    tenantTitle={\"Navbar\"}\n    userName={\"\"}\n    dropdowns={[]}\n    links={[]}\n    profileItems={[]}\n    lightTheme={true}\n    isLoggedIn={true}\n/>"
                 )
             )
         ),

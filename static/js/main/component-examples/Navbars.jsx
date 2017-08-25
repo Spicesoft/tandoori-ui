@@ -11,7 +11,6 @@ const Navbars = () => (
         <div className="component-example">
             <Navbar
                 navStyles={navbarStyles}
-                logoUrl={"public/img/logo.png"}
                 tenantTitle={"Navbar"}
                 userName={""}
                 dropdowns={[]}
@@ -23,7 +22,6 @@ const Navbars = () => (
             <pre>
                 <code>
 {`<Navbar
-    logoUrl={"public/img/logo.png"}
     tenantTitle={"Navbar"}
     userName={""}
     dropdowns={[]}
