@@ -80,7 +80,7 @@ export default class Dropdown extends React.PureComponent {
         if (this.mobileDevice) {
             return (
                 <div className="tuiv2_list-item">
-                    <span className="lnr-cross tuiv2_text--black" />
+                    <span className="fa fa-remove tuiv2_text--black" />
                 </div>
             );
         }

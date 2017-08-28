@@ -97,7 +97,7 @@ const Navbars = () => (
                         type: "dropdown",
                         id: "dropdownEx",
                         label: "Dropdown",
-                        spanClass: "lnr-rocket",
+                        spanClass: "fa fa-rocket",
                         items: [
                             {
                                 id: "item1",
@@ -134,7 +134,7 @@ const Navbars = () => (
             type: "dropdown",
             id: "dropdownEx",
             label: "Dropdown",
-            spanClass: "lnr-rocket",
+            spanClass: "fa fa-rocket",
             items: [
                 {
                     id: "item1",

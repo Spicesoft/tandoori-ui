@@ -12577,7 +12577,7 @@ var Navbar = function (_React$PureComponent) {
                     { className: "tuiv2_navbar__part" },
                     _react2.default.createElement(_Dropdown2.default, {
                         items: this.props.links,
-                        spanClass: "lnr-menu",
+                        spanClass: "fa fa-bars",
                         containerClass: "tuiv2_navbar__action",
                         caret: false
                     })
@@ -12602,7 +12602,7 @@ var Navbar = function (_React$PureComponent) {
             return _react2.default.createElement(_Dropdown2.default, {
                 items: items,
                 text: this.mobileDevice ? "" : userName,
-                spanClass: this.mobileDevice ? "lnr-user" : "",
+                spanClass: this.mobileDevice ? "fa fa-user" : "",
                 containerClass: "tuiv2_navbar__action",
                 align: "right",
                 caret: true
@@ -12799,7 +12799,7 @@ var navbarData = {
         type: "dropdown",
         id: "dropdownEx",
         label: "Dropdown",
-        spanClass: "lnr-rocket",
+        spanClass: "fa fa-rocket",
         items: [{
             id: "item1",
             label: "Item 1",
@@ -29386,7 +29386,7 @@ var Dropdown = function (_React$PureComponent) {
                 return _react2.default.createElement(
                     "div",
                     { className: "tuiv2_list-item" },
-                    _react2.default.createElement("span", { className: "lnr-cross tuiv2_text--black" })
+                    _react2.default.createElement("span", { className: "fa fa-remove tuiv2_text--black" })
                 );
             }
         }
@@ -32157,7 +32157,7 @@ var Navbars = function Navbars() {
                     type: "dropdown",
                     id: "dropdownEx",
                     label: "Dropdown",
-                    spanClass: "lnr-rocket",
+                    spanClass: "fa fa-rocket",
                     items: [{
                         id: "item1",
                         label: "Item 1",
@@ -32183,7 +32183,7 @@ var Navbars = function Navbars() {
                 _react2.default.createElement(
                     "code",
                     null,
-                    "<Navbar\n    logoUrl={\"public/img/logo.png\"}\n    tenantTitle={\"Navbar\"}\n    userName={\"Claudy Faucan\"}\n    dropdowns={[\n        {\n            type: \"dropdown\",\n            id: \"dropdownEx\",\n            label: \"Dropdown\",\n            spanClass: \"lnr-rocket\",\n            items: [\n                {\n                    id: \"item1\",\n                    label: \"Item 1\",\n                    url: \"#\"\n                },\n                {\n                    id: \"item2\",\n                    label: \"Item 2\",\n                    url: \"#\"\n                }\n            ]\n        }\n    ]}\n    links={[]}\n    profileItems={[\n        {\n            id: \"logout\",\n            label: \"Logout\",\n            url: \"#logout\"\n        }\n    ]}\n    lightTheme={true}\n    isLoggedIn={true}\n/>"
+                    "<Navbar\n    logoUrl={\"public/img/logo.png\"}\n    tenantTitle={\"Navbar\"}\n    userName={\"Claudy Faucan\"}\n    dropdowns={[\n        {\n            type: \"dropdown\",\n            id: \"dropdownEx\",\n            label: \"Dropdown\",\n            spanClass: \"fa fa-rocket\",\n            items: [\n                {\n                    id: \"item1\",\n                    label: \"Item 1\",\n                    url: \"#\"\n                },\n                {\n                    id: \"item2\",\n                    label: \"Item 2\",\n                    url: \"#\"\n                }\n            ]\n        }\n    ]}\n    links={[]}\n    profileItems={[\n        {\n            id: \"logout\",\n            label: \"Logout\",\n            url: \"#logout\"\n        }\n    ]}\n    lightTheme={true}\n    isLoggedIn={true}\n/>"
                 )
             )
         ),

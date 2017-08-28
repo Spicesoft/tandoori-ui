@@ -100,7 +100,7 @@ describe("Desktop devices tests", () => {
 
     test("Should not render close item", () => {
         wrapper.first().simulate("click");
-        expect(wrapper.find(".lnr-cross").exists()).toBe(false);
+        expect(wrapper.find(".fa-remove").exists()).toBe(false);
     });
 
     test("Should be right aligned", () => {
@@ -144,7 +144,7 @@ describe("Mobile devices test", () => {
             />
         );
         wrapper.first().simulate("click");
-        expect(wrapper.find(".lnr-cross").exists()).toBe(true);
+        expect(wrapper.find(".fa-remove").exists()).toBe(true);
     });
 
     test("Should toggle open", () => {

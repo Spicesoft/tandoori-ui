@@ -65,7 +65,7 @@ const menuItems = [{
     }]
 }, {
     id: "form",
-    iconClass: "lnr-checkmark-circle",
+    iconClass: "fa fa-linux",
     active: false,
     subItems: [{
         category: "Category 1",

@@ -65,7 +65,7 @@ export default class Navbar extends React.PureComponent {
                 <div className="tuiv2_navbar__part">
                     <Dropdown
                         items={this.props.links}
-                        spanClass="lnr-menu"
+                        spanClass="fa fa-bars"
                         containerClass="tuiv2_navbar__action"
                         caret={false}
                     />
@@ -88,7 +88,7 @@ export default class Navbar extends React.PureComponent {
             <Dropdown
                 items={items}
                 text={this.mobileDevice ? "" : userName}
-                spanClass={this.mobileDevice ? "lnr-user" : ""}
+                spanClass={this.mobileDevice ? "fa fa-user" : ""}
                 containerClass="tuiv2_navbar__action"
                 align="right"
                 caret

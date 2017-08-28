@@ -26,7 +26,7 @@ const navbarData = {
             type: "dropdown",
             id: "dropdownEx",
             label: "Dropdown",
-            spanClass: "lnr-rocket",
+            spanClass: "fa fa-rocket",
             items: [
                 {
                     id: "item1",
