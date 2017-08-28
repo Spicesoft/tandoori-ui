@@ -191,7 +191,7 @@ describe("Test mobile devices", () => {
                 lightTheme
             />
         );
-        expect(wrapper.find(".fa fa-user").exists()).toBe(true);
+        expect(wrapper.find(".fa-user").exists()).toBe(true);
     });
 
     test("Should render mobile profile items", () => {
@@ -220,7 +220,7 @@ describe("Test mobile devices", () => {
             />
         );
         expect(wrapper.find(".tuiv2_navbar__search").exists()).toBe(false);
-        expect(wrapper.find(".fa fa-bars").exists()).toBe(true);
+        expect(wrapper.find(".fa-bars").exists()).toBe(true);
     });
 
 
