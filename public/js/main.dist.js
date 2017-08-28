@@ -12599,14 +12599,16 @@ var Navbar = function (_React$PureComponent) {
     }, {
         key: "renderProfileItems",
         value: function renderProfileItems(items, userName) {
-            return _react2.default.createElement(_Dropdown2.default, {
-                items: items,
-                text: this.mobileDevice ? "" : userName,
-                spanClass: this.mobileDevice ? "fa fa-user" : "",
-                containerClass: "tuiv2_navbar__action",
-                align: "right",
-                caret: true
-            });
+            if (this.props.isLoggedIn) {
+                return _react2.default.createElement(_Dropdown2.default, {
+                    items: items,
+                    text: this.mobileDevice ? "" : userName,
+                    spanClass: this.mobileDevice ? "fa fa-user" : "",
+                    containerClass: "tuiv2_navbar__action",
+                    align: "right",
+                    caret: true
+                });
+            }
         }
     }, {
         key: "renderDropdowns",
@@ -12832,7 +12834,7 @@ var BasicExample = function BasicExample() {
                 links: navbarData.links,
                 profileItems: navbarData.profileItems,
                 lightTheme: true,
-                isLoggedIn: true
+                isLoggedIn: false
             }),
             _react2.default.createElement(
                 _reactRedux.Provider,

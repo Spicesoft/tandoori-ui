@@ -84,16 +84,18 @@ export default class Navbar extends React.PureComponent {
     }
 
     renderProfileItems(items, userName) {
-        return (
-            <Dropdown
-                items={items}
-                text={this.mobileDevice ? "" : userName}
-                spanClass={this.mobileDevice ? "fa fa-user" : ""}
-                containerClass="tuiv2_navbar__action"
-                align="right"
-                caret
-            />
-        );
+        if (this.props.isLoggedIn) {
+            return (
+                <Dropdown
+                    items={items}
+                    text={this.mobileDevice ? "" : userName}
+                    spanClass={this.mobileDevice ? "fa fa-user" : ""}
+                    containerClass="tuiv2_navbar__action"
+                    align="right"
+                    caret
+                />
+            );
+        }
     }
 
     renderDropdowns(actions) {

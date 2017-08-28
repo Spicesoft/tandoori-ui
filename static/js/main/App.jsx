@@ -142,7 +142,7 @@ const BasicExample = () => (
                 links={navbarData.links}
                 profileItems={navbarData.profileItems}
                 lightTheme={true}
-                isLoggedIn={true}
+                isLoggedIn={false}
             />
 
             <Provider store={store} >
