@@ -260,4 +260,31 @@ describe("Test mobile devices", () => {
         expect(wrapper.find(".tuiv2_dropdown__label").length).toBe(1);
         expect(wrapper.find(".fa-rocket").exists()).toBe(true);
     });
+
+    test("Should render mobile menu icon", () => {
+        matchMobile();
+        const wrapper = mount(
+            <Navbar
+                logoUrl=""
+                tenantTitle=""
+                userName=""
+                dropdowns={[]}
+                profileItems={[]}
+                links={[
+                    {
+                        id: "login",
+                        label: "Login",
+                        url: "/login"
+                    },
+                    {
+                        id: "logout",
+                        label: "Logout",
+                        url: "/logout"
+                    }
+                ]}
+                isLoggedIn={false}
+            />
+        );
+        expect(wrapper.find(".fa-bars").exists()).toBe(true);
+    });
 });
