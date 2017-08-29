@@ -119,7 +119,7 @@ describe("Test desktop devices", () => {
                         url: "/logout"
                     }
                 ]}
-                isLoggedIn={false}
+                isLoggedIn={true}
                 lightTheme
             />
         );
@@ -187,7 +187,7 @@ describe("Test mobile devices", () => {
                         url: "/logout"
                     }
                 ]}
-                isLoggedIn={false}
+                isLoggedIn={true}
                 lightTheme
             />
         );
