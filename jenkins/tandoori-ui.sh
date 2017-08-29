@@ -1,6 +1,9 @@
 ## JS ENV
 npm install
 
+## Build js
+npm run build
+
 ## tests and coverage
 npm run test
 
