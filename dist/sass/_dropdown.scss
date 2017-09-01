@@ -3,6 +3,10 @@
 .#{$current}dropdown {
   cursor: pointer;
   position: relative;
+  &:focus, {
+    // For some reason !mportant blocks the outline "blink" effect
+    outline: none !important;
+  }
 }
 
 

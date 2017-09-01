@@ -7303,6 +7303,8 @@ input {
 .tuiv2_dropdown {
   cursor: pointer;
   position: relative; }
+  .tuiv2_dropdown:focus {
+    outline: none !important; }
 
 .tuiv2_dropdown-menu {
   display: none;

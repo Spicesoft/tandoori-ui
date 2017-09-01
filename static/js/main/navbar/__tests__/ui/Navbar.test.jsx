@@ -2,7 +2,8 @@
 import React from "react";
 import {
     shallow,
-    mount
+    mount,
+    render
 } from "enzyme";
 
 import Navbar from "../../../../../../dist/js/navbar/ui/Navbar.jsx";
@@ -123,9 +124,8 @@ describe("Test desktop devices", () => {
                 lightTheme
             />
         );
-        const dropdownLabel = wrapper.find(".tuiv2_dropdown__label");
+        const dropdownLabel = wrapper.find(".tuiv2_dropdown");
         expect(dropdownLabel.length).toBe(1);
-        expect(dropdownLabel.text()).toBe("Toto");
     });
 
     test("Should render with dropdowns", () => {
@@ -133,7 +133,7 @@ describe("Test desktop devices", () => {
             <Navbar
                 logoUrl=""
                 tenantTitle=""
-                userName="Toto"
+                userName={"Claudy Faucan"}
                 links={[]}
                 dropdowns={[
                     {
@@ -160,7 +160,7 @@ describe("Test desktop devices", () => {
                 lightTheme
             />
         );
-        const dropdownLabel = wrapper.find(".tuiv2_dropdown__label");
+        const dropdownLabel = wrapper.find(".tuiv2_dropdown");
         expect(dropdownLabel.length).toBe(1);
         expect(dropdownLabel.text()).toMatch("Dropdown");
     });
@@ -257,7 +257,7 @@ describe("Test mobile devices", () => {
                 lightTheme
             />
         );
-        expect(wrapper.find(".tuiv2_dropdown__label").length).toBe(1);
+        expect(wrapper.find(".tuiv2_dropdown").length).toBe(1);
         expect(wrapper.find(".fa-rocket").exists()).toBe(true);
     });
 

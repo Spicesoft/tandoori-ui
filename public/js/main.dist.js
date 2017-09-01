@@ -12726,6 +12726,10 @@ var _Panels = __webpack_require__(275);
 
 var _Panels2 = _interopRequireDefault(_Panels);
 
+var _Dropdowns = __webpack_require__(277);
+
+var _Dropdowns2 = _interopRequireDefault(_Dropdowns);
+
 var _Navbars = __webpack_require__(276);
 
 var _Navbars2 = _interopRequireDefault(_Navbars);
@@ -12752,6 +12756,9 @@ var menuItems = [{
         items: [{
             id: "Navbar",
             url: "/navbars"
+        }, {
+            id: "Dropdown",
+            url: "/dropdowns"
         }]
     }, {
         category: "CSS Components",
@@ -12852,7 +12859,8 @@ var BasicExample = function BasicExample() {
                 _react2.default.createElement(_reactRouterDom.Route, { path: "/navs", component: _Navs2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: "/indicators", component: _Indicators2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: "/panels", component: _Panels2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: "/navbars", component: _Navbars2.default })
+                _react2.default.createElement(_reactRouterDom.Route, { path: "/navbars", component: _Navbars2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: "/dropdowns", component: _Dropdowns2.default })
             )
         )
     );
@@ -29320,10 +29328,6 @@ var Dropdown = function (_React$PureComponent) {
             if (containerClass) {
                 classNames.push(containerClass);
             }
-            var spanClassNames = ["tuiv2_dropdown__label"];
-            if (spanClass) {
-                spanClassNames.push(spanClass);
-            }
             return _react2.default.createElement(
                 "div",
                 {
@@ -29332,14 +29336,27 @@ var Dropdown = function (_React$PureComponent) {
                     onClick: this.toggleOpen.bind(this),
                     onBlur: this.handleBlur.bind(this)
                 },
+                _react2.default.createElement("span", { className: spanClass }),
+                this.renderEmptySpace(),
                 _react2.default.createElement(
                     "span",
-                    { className: spanClassNames.join(" ") },
+                    null,
                     text
                 ),
                 this.renderCaret(),
                 this.renderMenu()
             );
+        }
+    }, {
+        key: "renderEmptySpace",
+        value: function renderEmptySpace() {
+            if (this.props.spanClass && this.props.text) {
+                return _react2.default.createElement(
+                    "span",
+                    null,
+                    "\xA0"
+                );
+            }
         }
     }, {
         key: "renderCaret",
@@ -32259,6 +32276,181 @@ var Navbars = function Navbars() {
 };
 
 exports.default = Navbars;
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Dropdown = __webpack_require__(267);
+
+var _Dropdown2 = _interopRequireDefault(_Dropdown);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var exampleItem = {
+    type: "dropdown",
+    id: "dropdownEx",
+    label: "Dropdown",
+    spanClass: "fa fa-rocket",
+    items: [{
+        id: "item1",
+        label: "Item 1",
+        url: "#"
+    }, {
+        id: "item2",
+        label: "Item 2",
+        url: "#"
+    }]
+};
+
+var colors = ["primary", "default", "link", "success", "info", "warning", "danger"];
+
+var allDropdowns = function allDropdowns(props) {
+    var spanClass = props.spanClass,
+        hasSpan = props.hasSpan,
+        hasText = props.hasText,
+        containerClass = props.containerClass,
+        align = props.align,
+        items = props.items,
+        caret = props.caret;
+
+    return colors.map(function (color) {
+        var allContainerClasses = containerClass + " btn btn-" + color;
+        return _react2.default.createElement(_Dropdown2.default, {
+            key: color,
+            spanClass: hasSpan ? spanClass : "",
+            containerClass: allContainerClasses || "",
+            text: hasText ? color : "",
+            align: align || "",
+            items: items || [],
+            caret: caret || false
+        });
+    });
+};
+
+var Dropdowns = function Dropdowns() {
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+            "h1",
+            null,
+            "Dropdowns"
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "row" },
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-6" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body btn-showcase" },
+                        _react2.default.createElement(
+                            "h3",
+                            null,
+                            "Basic Dropdown"
+                        ),
+                        allDropdowns(_extends({}, exampleItem, { hasText: true }))
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "pre",
+                            null,
+                            _react2.default.createElement(
+                                "code",
+                                null,
+                                "<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item 2\",\n            url: \"#\"\n        }\n    ]}\n/>"
+                            )
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-6" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body btn-showcase" },
+                        _react2.default.createElement(
+                            "h3",
+                            null,
+                            "With caret and icons"
+                        ),
+                        allDropdowns(_extends({}, exampleItem, { hasSpan: true, caret: true }))
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "pre",
+                            null,
+                            _react2.default.createElement(
+                                "code",
+                                null,
+                                "<Dropdown\n    containerClass=\"btn btn-primary\"\n    spanClass=\"fa fa-rocket\"\n    caret\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item 2\",\n            url: \"#\"\n        }\n    ]}\n/>"
+                            )
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "col-sm-6" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "panel" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body btn-showcase" },
+                        _react2.default.createElement(
+                            "h3",
+                            null,
+                            "With text and icon"
+                        ),
+                        allDropdowns(_extends({}, exampleItem, { hasSpan: true, hasText: true }))
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "pre",
+                            null,
+                            _react2.default.createElement(
+                                "code",
+                                null,
+                                "<Dropdown\n    containerClass=\"btn btn-primary\"\n    spanClass=\"fa fa-rocket\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item 2\",\n            url: \"#\"\n        }\n    ]}\n/>"
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    );
+};
+
+exports.default = Dropdowns;
 
 /***/ })
 /******/ ]);

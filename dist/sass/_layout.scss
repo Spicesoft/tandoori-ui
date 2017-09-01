@@ -92,7 +92,7 @@ $col-width: 100% / 12;
 /* Main Struct */
 
 .#{$current}main-container {
-  margin-top: calc(#{$header-height} + 15px);
+  margin-top: calc(#{$navbar-height} + 15px);
 }
 
 .#{$current}app-container {

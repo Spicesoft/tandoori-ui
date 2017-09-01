@@ -20,6 +20,7 @@ import Forms from "./component-examples/Forms.jsx";
 import Navs from "./component-examples/Navs.jsx";
 import Indicators from "./component-examples/Indicators.jsx";
 import Panels from "./component-examples/Panels.jsx";
+import Dropdowns from "./component-examples/Dropdowns.jsx";
 
 import Navbars from "./component-examples/Navbars.jsx";
 
@@ -44,10 +45,16 @@ const menuItems = [{
     subItems: [
         {
             category: "React Components",
-            items: [{
-                id: "Navbar",
-                url: "/navbars"
-            }]
+            items: [
+                {
+                    id: "Navbar",
+                    url: "/navbars"
+                },
+                {
+                    id: "Dropdown",
+                    url: "/dropdowns"
+                }
+            ]
         },
         {
             category: "CSS Components",
@@ -159,6 +166,7 @@ const BasicExample = () => (
                 <Route path="/indicators" component={Indicators} />
                 <Route path="/panels" component={Panels} />
                 <Route path="/navbars" component={Navbars} />
+                <Route path="/dropdowns" component={Dropdowns} />
             </div>
         </div>
     </Router>
