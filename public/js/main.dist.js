@@ -29328,10 +29328,6 @@ var Dropdown = function (_React$PureComponent) {
             if (containerClass) {
                 classNames.push(containerClass);
             }
-            var spanClassNames = ["tuiv2_dropdown__label"];
-            if (spanClass) {
-                spanClassNames.push(spanClass);
-            }
             return _react2.default.createElement(
                 "div",
                 {
@@ -29340,7 +29336,7 @@ var Dropdown = function (_React$PureComponent) {
                     onClick: this.toggleOpen.bind(this),
                     onBlur: this.handleBlur.bind(this)
                 },
-                _react2.default.createElement("span", { className: spanClassNames.join(" ") }),
+                _react2.default.createElement("span", { className: spanClass }),
                 this.renderEmptySpace(),
                 _react2.default.createElement(
                     "span",
