@@ -32434,6 +32434,19 @@ var Dropdowns = function Dropdowns() {
                             "With text and icon"
                         ),
                         allDropdowns(_extends({}, exampleItem, { hasSpan: true, hasText: true }))
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "panel-body" },
+                        _react2.default.createElement(
+                            "pre",
+                            null,
+                            _react2.default.createElement(
+                                "code",
+                                null,
+                                "<Dropdown\n    containerClass=\"btn btn-primary\"\n    spanClass=\"fa fa-rocket\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item 2\",\n            url: \"#\"\n        }\n    ]}\n/>"
+                            )
+                        )
                     )
                 )
             )

@@ -126,6 +126,29 @@ const Dropdowns = () => (
                         <h3>With text and icon</h3>
                         {allDropdowns({...exampleItem, hasSpan: true, hasText: true})}
                     </div>
+                    <div className="panel-body">
+                        <pre>
+                            <code>
+{`<Dropdown
+    containerClass="btn btn-primary"
+    spanClass="fa fa-rocket"
+    text="primary"
+    items={[
+        {
+            id: "item1",
+            label: "Item 1",
+            url: "#"
+        },
+        {
+            id: "item2",
+            label: "Item 2",
+            url: "#"
+        }
+    ]}
+/>`}
+                            </code>
+                        </pre>
+                    </div>
                 </div>
             </div>
         </div>
