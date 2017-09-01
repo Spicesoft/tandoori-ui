@@ -32413,7 +32413,7 @@ var Dropdowns = function Dropdowns() {
                             _react2.default.createElement(
                                 "code",
                                 null,
-                                "<Dropdown\n    containerClass=\"btn btn-primary\"\n    spanClass=\"fa fa-rocket\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item 2\",\n            url: \"#\"\n        }\n    ]}\n/>"
+                                "<Dropdown\n    containerClass=\"btn btn-primary\"\n    spanClass=\"fa fa-rocket\"\n    caret\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item 2\",\n            url: \"#\"\n        }\n    ]}\n/>"
                             )
                         )
                     )

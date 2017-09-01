@@ -102,6 +102,7 @@ const Dropdowns = () => (
 {`<Dropdown
     containerClass="btn btn-primary"
     spanClass="fa fa-rocket"
+    caret
     items={[
         {
             id: "item1",
