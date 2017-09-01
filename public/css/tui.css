@@ -7332,7 +7332,8 @@ input {
   animation: dropOut 0.2s forwards; }
 
 .tuiv2_dropdown-menu__item {
-  white-space: nowrap; }
+  white-space: nowrap;
+  line-height: 1.42857; }
 
 .tuiv2_dropdown__caret {
   margin-left: 0.25rem; }

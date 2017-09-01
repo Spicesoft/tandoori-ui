@@ -39,6 +39,7 @@
 
 .#{$current}dropdown-menu__item {
   white-space: nowrap;
+  line-height: $line-height-base;
 }
 
 .#{$current}dropdown__caret {
