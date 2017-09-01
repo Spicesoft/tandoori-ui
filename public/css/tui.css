@@ -7187,9 +7187,10 @@ input {
 
 .tuiv2_navbar__action {
   cursor: pointer;
-  font-size: 15px;
+  line-height: 34px;
+  font-size: 16px;
   text-decoration: none;
-  padding: 0 5px;
+  padding: 0 6px;
   transition: all 0.3s ease; }
   .tuiv2_navbar__action:focus {
     outline: none; }
