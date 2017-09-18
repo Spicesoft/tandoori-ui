@@ -15,8 +15,7 @@ const items = [
     {
         id: "logout",
         label: "Logout",
-        action: () => "toto",
-        url: ""
+        action: () => "toto"
     }
 ];
 
@@ -101,6 +100,8 @@ describe("Desktop devices tests", () => {
     });
 
     test("Should activate action", () => {
+        const mockFunc = jest.fn();
+        items[1].action  = mockFunc;
         wrapper = shallow(
             <Dropdown
                 items={items}
@@ -108,7 +109,8 @@ describe("Desktop devices tests", () => {
             />
         );
         wrapper.first().simulate("click");
-        expect(wrapper.find("a").at(1).prop("onClick")()).toBe("toto");
+        wrapper.find("a").at(1).prop("onClick")();
+        expect(mockFunc.mock.calls.length).toBe(1);
     });
 
     test("Should not render close item", () => {
