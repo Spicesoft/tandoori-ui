@@ -1,13 +1,18 @@
 import React from "react";
 import T from "prop-types";
 
+import {
+    Modal
+} from "react-bootstrap";
+
 export default class Dropdown extends React.PureComponent {
 
     componentWillMount() {
         this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
         this.setState({
             open: false,
-            animation: null
+            animation: null,
+            showModal: false
         });
     }
 
@@ -29,7 +34,25 @@ export default class Dropdown extends React.PureComponent {
                 <span>{text}</span>
                 {this.renderCaret()}
                 {this.renderMenu()}
+                {this.renderModal()}
             </div>
+        );
+    }
+
+    renderModal() {
+        return (
+            <Modal
+                show={this.state.showModal}
+                onHide={() => {
+                    this.setState({
+                        showModal: false
+                    });
+                }}
+            >
+                <Modal.Body>
+                    Toto
+                </Modal.Body>
+            </Modal>
         );
     }
 
@@ -68,9 +91,7 @@ export default class Dropdown extends React.PureComponent {
                     >
                         <a
                         className="tuiv2_list-item__link tuiv2_dropdown-menu__item"
-                        onClick={item.action ? item.action : () => {
-                            window.location = item.url;
-                        }}
+                        onClick={this.getItemAction.bind(this, item)}
                         >
                             {item.label}
                         </a>
@@ -78,6 +99,20 @@ export default class Dropdown extends React.PureComponent {
                 ))}
             </ul>
         );
+    }
+
+    getItemAction(item) {
+        if (item.action) {
+            item.action();
+        }
+        else if (item.openModal) {
+            this.setState({
+                showModal: true
+            });
+        }
+        else {
+            window.location = item.url;
+        }
     }
 
     renderCloseItem() {
@@ -125,8 +160,10 @@ Dropdown.propTypes = {
     items: T.arrayOf(
         T.shape({
             label: T.string.isRequired,
-            url: T.string.isRequired,
-            action: T.func
+            url: T.string,
+            action: T.func,
+            openModal: T.bool,
+            modalContent: T.element
         })
     ).isRequired,
     caret: T.bool

@@ -2,6 +2,16 @@ import React from "react";
 
 import Dropdown from "root/dist/js/shared/Dropdown.jsx";
 
+const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const sayHello = () => {
+    console.log("Hello !");
+};
+
 const exampleItem = {
     type: "dropdown",
     id: "dropdownEx",
@@ -15,8 +25,14 @@ const exampleItem = {
         },
         {
             id: "item2",
-            label: "Item 2",
-            url: "#"
+            label: "Item that says hello",
+            action: sayHello
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal",
+            openModal: true,
+            ModalContent: modalContent
         }
     ]
 };
@@ -69,7 +85,17 @@ const Dropdowns = () => (
                     <div className="panel-body">
                         <pre>
                             <code>
-{`<Dropdown
+{`const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const sayHello = () => {
+    console.log("Hello !");
+};
+
+<Dropdown
     containerClass="btn btn-primary"
     text="primary"
     items={[
@@ -80,8 +106,14 @@ const Dropdowns = () => (
         },
         {
             id: "item2",
-            label: "Item 2",
-            url: "#"
+            label: "Item that says hello",
+            action: sayHello
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal",
+            openModal: true,
+            ModalContent: modalContent
         }
     ]}
 />`}
@@ -99,7 +131,17 @@ const Dropdowns = () => (
                     <div className="panel-body">
                         <pre>
                             <code>
-{`<Dropdown
+{`const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const sayHello = () => {
+    console.log("Hello !");
+};
+
+<Dropdown
     containerClass="btn btn-primary"
     spanClass="fa fa-rocket"
     caret
@@ -111,8 +153,14 @@ const Dropdowns = () => (
         },
         {
             id: "item2",
-            label: "Item 2",
-            url: "#"
+            label: "Item that says hello",
+            action: sayHello
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal",
+            openModal: true,
+            ModalContent: modalContent
         }
     ]}
 />`}
@@ -130,7 +178,17 @@ const Dropdowns = () => (
                     <div className="panel-body">
                         <pre>
                             <code>
-{`<Dropdown
+{`const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const sayHello = () => {
+    console.log("Hello !");
+};
+
+<Dropdown
     containerClass="btn btn-primary"
     spanClass="fa fa-rocket"
     text="primary"
@@ -142,8 +200,14 @@ const Dropdowns = () => (
         },
         {
             id: "item2",
-            label: "Item 2",
-            url: "#"
+            label: "Item that says hello",
+            action: sayHello
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal",
+            openModal: true,
+            ModalContent: modalContent
         }
     ]}
 />`}

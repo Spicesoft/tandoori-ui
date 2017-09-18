@@ -104,6 +104,17 @@ const logChange = () => {
 };
 store.subscribe(logChange);
 
+
+const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const sayHello = () => {
+    console.log("Hello !");
+}
+
 const navbarData = {
     logoUrl: "public/img/logo.png",
     tenantTitle: "Cowork's Tandoori UI",
@@ -123,8 +134,14 @@ const navbarData = {
                 },
                 {
                     id: "item2",
-                    label: "Item 2",
-                    url: "#"
+                    label: "Item that says hello",
+                    action: sayHello
+                },
+                {
+                    id: "modalItem",
+                    label: "Item that triggers a modal",
+                    openModal: true,
+                    ModalContent: modalContent
                 }
             ]
         }
