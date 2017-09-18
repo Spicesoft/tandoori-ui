@@ -16,6 +16,12 @@ const items = [
         id: "logout",
         label: "Logout",
         action: () => "toto"
+    },
+    {
+        id: "modal",
+        label: "Open modal",
+        openModal: true,
+        modalContent: <p>Toto</p>
     }
 ];
 
@@ -68,10 +74,6 @@ describe("Desktop devices tests", () => {
         );
         expect(wrapper.find(".toto").exists()).toBe(true);
     });
-
-    // test("Should render with proper icon css class", () => {
-    //     expect(wrapper.find(".tuiv2_dropdown__label").exists()).toBe(true);
-    // });
 
     test("Should render with additional icon css classes", () => {
         wrapper = shallow(
@@ -141,6 +143,32 @@ describe("Desktop devices tests", () => {
             />
         );
         expect(wrapper.instance().renderEmptySpace()).toEqual(<span>&nbsp;</span>);
+    });
+
+    test("Should open modal", () => {
+        wrapper = shallow(
+            <Dropdown
+                text="Toto"
+                spanClass="Icon"
+                items={items}
+            />
+        );
+        wrapper.find("a").at(2).prop("onClick")();
+        expect(wrapper.state("showModal")).toBe(true);
+    });
+
+    test("Should close modal", () => {
+        wrapper = shallow(
+            <Dropdown
+                text="Toto"
+                spanClass="Icon"
+                items={items}
+            />
+        );
+        wrapper.find("a").at(2).prop("onClick")();
+        expect(wrapper.state("showModal")).toBe(true);
+        wrapper.instance().closeModal();
+        expect(wrapper.state("showModal")).toBe(false);
     });
 
 });

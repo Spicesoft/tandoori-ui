@@ -43,17 +43,19 @@ export default class Dropdown extends React.PureComponent {
         return (
             <Modal
                 show={this.state.showModal}
-                onHide={() => {
-                    this.setState({
-                        showModal: false
-                    });
-                }}
+                onHide={this.closeModal.bind(this)}
             >
                 <Modal.Body>
                     Toto
                 </Modal.Body>
             </Modal>
         );
+    }
+
+    closeModal () {
+        this.setState({
+            showModal: false
+        });
     }
 
     renderEmptySpace() {
