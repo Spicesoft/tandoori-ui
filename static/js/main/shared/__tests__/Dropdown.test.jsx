@@ -26,7 +26,8 @@ const items = [
         label: "Open modal",
         openModal: true,
         modalContent: toto(),
-        modalHeader: <h1>Header</h1>
+        modalHeader: <h1>Header</h1>,
+        modalFooter: <span>Prout</span>
     },
     {
         id: "modal2",

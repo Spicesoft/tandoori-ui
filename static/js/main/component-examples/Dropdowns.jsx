@@ -1,11 +1,18 @@
 import React from "react";
 
 import Dropdown from "root/dist/js/shared/Dropdown.jsx";
+import {
+    Button
+} from "react-bootstrap";
 
 const modalContent = () => (
     <p>
         Toto
     </p>
+);
+
+const modalFooter = () => (
+    <Button bsStyle="primary">Button</Button>
 );
 
 const sayHello = () => {
@@ -33,7 +40,8 @@ const exampleItem = {
             label: "Item that triggers a modal",
             openModal: true,
             modalContent: modalContent(),
-            modalHeader: <h1>Header</h1>
+            modalHeader: <h1>Header</h1>,
+            modalFooter: modalFooter()
         }
     ]
 };
@@ -110,7 +118,8 @@ const Dropdowns = () => (
             openModal: true,
             openModal: true,
             modalContent: <p>Toto</p>,
-            modalHeader: <h1>Header</h1>
+            modalHeader: <h1>Header</h1>,
+            modalFooter: <Button bsStyle="primary">Button</Button>
         }
     ]}
 />`}
@@ -152,7 +161,8 @@ const Dropdowns = () => (
             openModal: true,
             openModal: true,
             modalContent: <p>Toto</p>,
-            modalHeader: <h1>Header</h1>
+            modalHeader: <h1>Header</h1>,
+            modalFooter: <Button bsStyle="primary">Button</Button>
         }
     ]}
 />`}
@@ -194,7 +204,8 @@ const Dropdowns = () => (
             openModal: true,
             openModal: true,
             modalContent: <p>Toto</p>,
-            modalHeader: <h1>Header</h1>
+            modalHeader: <h1>Header</h1>,
+            modalFooter: <Button bsStyle="primary">Button</Button>
         }
     ]}
 />`}

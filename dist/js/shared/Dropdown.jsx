@@ -13,8 +13,9 @@ export default class Dropdown extends React.PureComponent {
             open: false,
             animation: null,
             showModal: false,
-            ModalHeader: null,
-            ModalContent: null
+            modalHeader: null,
+            modalContent: null,
+            modalFooter: null
         });
     }
 
@@ -53,6 +54,9 @@ export default class Dropdown extends React.PureComponent {
                 <Modal.Body>
                     {this.state.modalContent}
                 </Modal.Body>
+                <Modal.Footer>
+                    {this.state.modalFooter}
+                </Modal.Footer>
             </Modal>
         );
     }
@@ -115,9 +119,8 @@ export default class Dropdown extends React.PureComponent {
         else if (item.openModal) {
             this.setState({
                 modalContent: item.modalContent ? item.modalContent : null,
-                modalHeader: item.modalHeader ? item.modalHeader : null
-            });
-            this.setState({
+                modalHeader: item.modalHeader ? item.modalHeader : null,
+                modalFooter: item.modalFooter ? item.modalFooter : null,
                 showModal: true
             });
         }
@@ -175,7 +178,8 @@ Dropdown.propTypes = {
             action: T.func,
             openModal: T.bool,
             modalContent: T.element,
-            modalHeader: T.element
+            modalHeader: T.element,
+            modalFooter: T.element
         })
     ).isRequired,
     caret: T.bool

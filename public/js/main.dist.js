@@ -16997,8 +16997,9 @@ var Dropdown = function (_React$PureComponent) {
                 open: false,
                 animation: null,
                 showModal: false,
-                ModalHeader: null,
-                ModalContent: null
+                modalHeader: null,
+                modalContent: null,
+                modalFooter: null
             });
         }
     }, {
@@ -17051,6 +17052,11 @@ var Dropdown = function (_React$PureComponent) {
                     _reactBootstrap.Modal.Body,
                     null,
                     this.state.modalContent
+                ),
+                _react2.default.createElement(
+                    _reactBootstrap.Modal.Footer,
+                    null,
+                    this.state.modalFooter
                 )
             );
         }
@@ -17120,9 +17126,8 @@ var Dropdown = function (_React$PureComponent) {
             } else if (item.openModal) {
                 this.setState({
                     modalContent: item.modalContent ? item.modalContent : null,
-                    modalHeader: item.modalHeader ? item.modalHeader : null
-                });
-                this.setState({
+                    modalHeader: item.modalHeader ? item.modalHeader : null,
+                    modalFooter: item.modalFooter ? item.modalFooter : null,
                     showModal: true
                 });
             } else {
@@ -17188,7 +17193,8 @@ Dropdown.propTypes = {
         action: _propTypes2.default.func,
         openModal: _propTypes2.default.bool,
         modalContent: _propTypes2.default.element,
-        modalHeader: _propTypes2.default.element
+        modalHeader: _propTypes2.default.element,
+        modalFooter: _propTypes2.default.element
     })).isRequired,
     caret: _propTypes2.default.bool
 };
@@ -54281,6 +54287,8 @@ var _Dropdown = __webpack_require__(191);
 
 var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
+var _reactBootstrap = __webpack_require__(406);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var modalContent = function modalContent() {
@@ -54288,6 +54296,14 @@ var modalContent = function modalContent() {
         "p",
         null,
         "Toto"
+    );
+};
+
+var modalFooter = function modalFooter() {
+    return _react2.default.createElement(
+        _reactBootstrap.Button,
+        { bsStyle: "primary" },
+        "Button"
     );
 };
 
@@ -54317,7 +54333,8 @@ var exampleItem = {
             "h1",
             null,
             "Header"
-        )
+        ),
+        modalFooter: modalFooter()
     }]
 };
 
@@ -54383,7 +54400,7 @@ var Dropdowns = function Dropdowns() {
                             _react2.default.createElement(
                                 "code",
                                 null,
-                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>\n        }\n    ]}\n/>"
+                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>,\n            modalFooter: <Button bsStyle=\"primary\">Button</Button>\n        }\n    ]}\n/>"
                             )
                         )
                     )
@@ -54414,7 +54431,7 @@ var Dropdowns = function Dropdowns() {
                             _react2.default.createElement(
                                 "code",
                                 null,
-                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>\n        }\n    ]}\n/>"
+                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>,\n            modalFooter: <Button bsStyle=\"primary\">Button</Button>\n        }\n    ]}\n/>"
                             )
                         )
                     )
@@ -54445,7 +54462,7 @@ var Dropdowns = function Dropdowns() {
                             _react2.default.createElement(
                                 "code",
                                 null,
-                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>\n        }\n    ]}\n/>"
+                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>,\n            modalFooter: <Button bsStyle=\"primary\">Button</Button>\n        }\n    ]}\n/>"
                             )
                         )
                     )
