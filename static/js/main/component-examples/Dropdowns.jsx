@@ -1,6 +1,23 @@
 import React from "react";
 
 import Dropdown from "root/dist/js/shared/Dropdown.jsx";
+import {
+    Button
+} from "react-bootstrap";
+
+const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const modalFooter = () => (
+    <Button bsStyle="primary">Button</Button>
+);
+
+const sayHello = () => {
+    console.log("Hello !");
+};
 
 const exampleItem = {
     type: "dropdown",
@@ -15,8 +32,16 @@ const exampleItem = {
         },
         {
             id: "item2",
-            label: "Item 2",
-            url: "#"
+            label: "Item that says hello",
+            action: sayHello
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal",
+            openModal: true,
+            modalContent: modalContent(),
+            modalHeader: <h1>Header</h1>,
+            modalFooter: modalFooter()
         }
     ]
 };
@@ -69,7 +94,11 @@ const Dropdowns = () => (
                     <div className="panel-body">
                         <pre>
                             <code>
-{`<Dropdown
+{`const sayHello = () => {
+    console.log("Hello !");
+};
+
+<Dropdown
     containerClass="btn btn-primary"
     text="primary"
     items={[
@@ -80,8 +109,17 @@ const Dropdowns = () => (
         },
         {
             id: "item2",
-            label: "Item 2",
-            url: "#"
+            label: "Item that says hello",
+            action: sayHello
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal",
+            openModal: true,
+            openModal: true,
+            modalContent: <p>Toto</p>,
+            modalHeader: <h1>Header</h1>,
+            modalFooter: <Button bsStyle="primary">Button</Button>
         }
     ]}
 />`}
@@ -99,10 +137,13 @@ const Dropdowns = () => (
                     <div className="panel-body">
                         <pre>
                             <code>
-{`<Dropdown
+{`const sayHello = () => {
+    console.log("Hello !");
+};
+
+<Dropdown
     containerClass="btn btn-primary"
-    spanClass="fa fa-rocket"
-    caret
+    text="primary"
     items={[
         {
             id: "item1",
@@ -111,8 +152,17 @@ const Dropdowns = () => (
         },
         {
             id: "item2",
-            label: "Item 2",
-            url: "#"
+            label: "Item that says hello",
+            action: sayHello
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal",
+            openModal: true,
+            openModal: true,
+            modalContent: <p>Toto</p>,
+            modalHeader: <h1>Header</h1>,
+            modalFooter: <Button bsStyle="primary">Button</Button>
         }
     ]}
 />`}
@@ -130,9 +180,12 @@ const Dropdowns = () => (
                     <div className="panel-body">
                         <pre>
                             <code>
-{`<Dropdown
+{`const sayHello = () => {
+    console.log("Hello !");
+};
+
+<Dropdown
     containerClass="btn btn-primary"
-    spanClass="fa fa-rocket"
     text="primary"
     items={[
         {
@@ -142,8 +195,17 @@ const Dropdowns = () => (
         },
         {
             id: "item2",
-            label: "Item 2",
-            url: "#"
+            label: "Item that says hello",
+            action: sayHello
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal",
+            openModal: true,
+            openModal: true,
+            modalContent: <p>Toto</p>,
+            modalHeader: <h1>Header</h1>,
+            modalFooter: <Button bsStyle="primary">Button</Button>
         }
     ]}
 />`}

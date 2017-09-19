@@ -1,10 +1,14 @@
-/* global jest, test, expect, beforeEach, afterEach, describe */
+/* global jest, test, expect, beforeEach, describe */
 import React from "react";
 import {shallow} from "enzyme";
 
 import Dropdown from "../../../../../dist/js/shared/Dropdown.jsx";
 
 let wrapper;
+
+const toto = () => (
+    <p>Toto</p>
+);
 
 const items = [
     {
@@ -15,8 +19,20 @@ const items = [
     {
         id: "logout",
         label: "Logout",
-        action: () => "toto",
-        url: ""
+        action: () => "toto"
+    },
+    {
+        id: "modal",
+        label: "Open modal",
+        openModal: true,
+        modalContent: toto(),
+        modalHeader: <h1>Header</h1>,
+        modalFooter: <span>Prout</span>
+    },
+    {
+        id: "modal2",
+        label: "Second modal",
+        openModal: true
     }
 ];
 
@@ -70,10 +86,6 @@ describe("Desktop devices tests", () => {
         expect(wrapper.find(".toto").exists()).toBe(true);
     });
 
-    // test("Should render with proper icon css class", () => {
-    //     expect(wrapper.find(".tuiv2_dropdown__label").exists()).toBe(true);
-    // });
-
     test("Should render with additional icon css classes", () => {
         wrapper = shallow(
             <Dropdown
@@ -101,6 +113,8 @@ describe("Desktop devices tests", () => {
     });
 
     test("Should activate action", () => {
+        const mockFunc = jest.fn();
+        items[1].action  = mockFunc;
         wrapper = shallow(
             <Dropdown
                 items={items}
@@ -108,7 +122,8 @@ describe("Desktop devices tests", () => {
             />
         );
         wrapper.first().simulate("click");
-        expect(wrapper.find("a").at(1).prop("onClick")()).toBe("toto");
+        wrapper.find("a").at(1).prop("onClick")();
+        expect(mockFunc.mock.calls.length).toBe(1);
     });
 
     test("Should not render close item", () => {
@@ -139,6 +154,48 @@ describe("Desktop devices tests", () => {
             />
         );
         expect(wrapper.instance().renderEmptySpace()).toEqual(<span>&nbsp;</span>);
+    });
+
+    test("Should open modal", () => {
+        wrapper = shallow(
+            <Dropdown
+                text="Toto"
+                spanClass="Icon"
+                items={items}
+            />
+        );
+        wrapper.find("a").at(2).prop("onClick")();
+        expect(wrapper.state("showModal")).toBe(true);
+    });
+
+    test("Should close modal", () => {
+        wrapper = shallow(
+            <Dropdown
+                text="Toto"
+                spanClass="Icon"
+                items={items}
+            />
+        );
+        wrapper.find("a").at(2).prop("onClick")();
+        expect(wrapper.state("showModal")).toBe(true);
+        expect(wrapper.state("modalContent")).toEqual(<p>Toto</p>);
+        expect(wrapper.state("modalHeader")).toEqual(<h1>Header</h1>);
+        wrapper.instance().closeModal();
+        expect(wrapper.state("showModal")).toBe(false);
+    });
+
+    test("Should open modal with no text", () => {
+        wrapper = shallow(
+            <Dropdown
+                text="Toto"
+                spanClass="Icon"
+                items={items}
+            />
+        );
+        wrapper.find("a").at(3).prop("onClick")();
+        expect(wrapper.state("showModal")).toBe(true);
+        expect(wrapper.state("modalContent")).toBe(null);
+        expect(wrapper.state("modalHeader")).toBe(null);
     });
 
 });

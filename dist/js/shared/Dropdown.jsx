@@ -1,13 +1,21 @@
 import React from "react";
 import T from "prop-types";
 
+import {
+    Modal
+} from "react-bootstrap";
+
 export default class Dropdown extends React.PureComponent {
 
     componentWillMount() {
         this.mobileDevice = window.matchMedia("(max-width: 768px)").matches;
         this.setState({
             open: false,
-            animation: null
+            animation: null,
+            showModal: false,
+            modalHeader: null,
+            modalContent: null,
+            modalFooter: null
         });
     }
 
@@ -29,8 +37,34 @@ export default class Dropdown extends React.PureComponent {
                 <span>{text}</span>
                 {this.renderCaret()}
                 {this.renderMenu()}
+                {this.renderModal()}
             </div>
         );
+    }
+
+    renderModal() {
+        return (
+            <Modal
+                show={this.state.showModal}
+                onHide={this.closeModal.bind(this)}
+            >
+                <Modal.Header>
+                    {this.state.modalHeader}
+                </Modal.Header>
+                <Modal.Body>
+                    {this.state.modalContent}
+                </Modal.Body>
+                <Modal.Footer>
+                    {this.state.modalFooter}
+                </Modal.Footer>
+            </Modal>
+        );
+    }
+
+    closeModal() {
+        this.setState({
+            showModal: false
+        });
     }
 
     renderEmptySpace() {
@@ -68,9 +102,7 @@ export default class Dropdown extends React.PureComponent {
                     >
                         <a
                         className="tuiv2_list-item__link tuiv2_dropdown-menu__item"
-                        onClick={item.action ? item.action : () => {
-                            window.location = item.url;
-                        }}
+                        onClick={this.getItemAction.bind(this, item)}
                         >
                             {item.label}
                         </a>
@@ -78,6 +110,23 @@ export default class Dropdown extends React.PureComponent {
                 ))}
             </ul>
         );
+    }
+
+    getItemAction(item) {
+        if (item.action) {
+            item.action();
+        }
+        else if (item.openModal) {
+            this.setState({
+                modalContent: item.modalContent ? item.modalContent : null,
+                modalHeader: item.modalHeader ? item.modalHeader : null,
+                modalFooter: item.modalFooter ? item.modalFooter : null,
+                showModal: true
+            });
+        }
+        else {
+            window.location = item.url;
+        }
     }
 
     renderCloseItem() {
@@ -125,8 +174,12 @@ Dropdown.propTypes = {
     items: T.arrayOf(
         T.shape({
             label: T.string.isRequired,
-            url: T.string.isRequired,
-            action: T.func
+            url: T.string,
+            action: T.func,
+            openModal: T.bool,
+            modalContent: T.element,
+            modalHeader: T.element,
+            modalFooter: T.element
         })
     ).isRequired,
     caret: T.bool

@@ -37,6 +37,8 @@ const About = () => (
                     <Link className="list-group-item" to="/navs">Navs</Link>
                     <Link className="list-group-item" to="/indicators">Indicators</Link>
                     <Link className="list-group-item" to="/panels">Containers</Link>
+                    <Link className="list-group-item" to="/navbars">Navbars</Link>
+                    <Link className="list-group-item" to="/dropdowns">Dropdowns</Link>
                 </div>
             </div>
         </div>
