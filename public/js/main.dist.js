@@ -16996,7 +16996,9 @@ var Dropdown = function (_React$PureComponent) {
             this.setState({
                 open: false,
                 animation: null,
-                showModal: false
+                showModal: false,
+                ModalHeader: null,
+                ModalContent: null
             });
         }
     }, {
@@ -17034,24 +17036,30 @@ var Dropdown = function (_React$PureComponent) {
     }, {
         key: "renderModal",
         value: function renderModal() {
-            var _this2 = this;
-
             return _react2.default.createElement(
                 _reactBootstrap.Modal,
                 {
                     show: this.state.showModal,
-                    onHide: function onHide() {
-                        _this2.setState({
-                            showModal: false
-                        });
-                    }
+                    onHide: this.closeModal.bind(this)
                 },
+                _react2.default.createElement(
+                    _reactBootstrap.Modal.Header,
+                    null,
+                    this.state.modalHeader
+                ),
                 _react2.default.createElement(
                     _reactBootstrap.Modal.Body,
                     null,
-                    "Toto"
+                    this.state.modalContent
                 )
             );
+        }
+    }, {
+        key: "closeModal",
+        value: function closeModal() {
+            this.setState({
+                showModal: false
+            });
         }
     }, {
         key: "renderEmptySpace",
@@ -17072,7 +17080,7 @@ var Dropdown = function (_React$PureComponent) {
     }, {
         key: "renderMenu",
         value: function renderMenu() {
-            var _this3 = this;
+            var _this2 = this;
 
             var classNames = ["tuiv2_dropdown-menu", "tuiv2_list", "tuiv2_list--clickable"];
             if (this.state.open !== null) {
@@ -17096,7 +17104,7 @@ var Dropdown = function (_React$PureComponent) {
                             "a",
                             {
                                 className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
-                                onClick: _this3.getItemAction.bind(_this3, item)
+                                onClick: _this2.getItemAction.bind(_this2, item)
                             },
                             item.label
                         )
@@ -17110,6 +17118,10 @@ var Dropdown = function (_React$PureComponent) {
             if (item.action) {
                 item.action();
             } else if (item.openModal) {
+                this.setState({
+                    modalContent: item.modalContent ? item.modalContent : null,
+                    modalHeader: item.modalHeader ? item.modalHeader : null
+                });
                 this.setState({
                     showModal: true
                 });
@@ -17175,7 +17187,8 @@ Dropdown.propTypes = {
         url: _propTypes2.default.string,
         action: _propTypes2.default.func,
         openModal: _propTypes2.default.bool,
-        modalContent: _propTypes2.default.element
+        modalContent: _propTypes2.default.element,
+        modalHeader: _propTypes2.default.element
     })).isRequired,
     caret: _propTypes2.default.bool
 };
@@ -51766,6 +51779,16 @@ var About = function About() {
                         _reactRouterDom.Link,
                         { className: "list-group-item", to: "/panels" },
                         "Containers"
+                    ),
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/navbars" },
+                        "Navbars"
+                    ),
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { className: "list-group-item", to: "/dropdowns" },
+                        "Dropdowns"
                     )
                 )
             )
@@ -54289,7 +54312,12 @@ var exampleItem = {
         id: "modalItem",
         label: "Item that triggers a modal",
         openModal: true,
-        ModalContent: modalContent
+        modalContent: modalContent(),
+        modalHeader: _react2.default.createElement(
+            "h1",
+            null,
+            "Header"
+        )
     }]
 };
 
@@ -54355,7 +54383,7 @@ var Dropdowns = function Dropdowns() {
                             _react2.default.createElement(
                                 "code",
                                 null,
-                                "const modalContent = () => (\n    <p>\n        Toto\n    </p>\n);\n\nconst sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            ModalContent: modalContent\n        }\n    ]}\n/>"
+                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>\n        }\n    ]}\n/>"
                             )
                         )
                     )
@@ -54386,7 +54414,7 @@ var Dropdowns = function Dropdowns() {
                             _react2.default.createElement(
                                 "code",
                                 null,
-                                "const modalContent = () => (\n    <p>\n        Toto\n    </p>\n);\n\nconst sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    spanClass=\"fa fa-rocket\"\n    caret\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            ModalContent: modalContent\n        }\n    ]}\n/>"
+                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>\n        }\n    ]}\n/>"
                             )
                         )
                     )
@@ -54417,7 +54445,7 @@ var Dropdowns = function Dropdowns() {
                             _react2.default.createElement(
                                 "code",
                                 null,
-                                "const modalContent = () => (\n    <p>\n        Toto\n    </p>\n);\n\nconst sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    spanClass=\"fa fa-rocket\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            ModalContent: modalContent\n        }\n    ]}\n/>"
+                                "const sayHello = () => {\n    console.log(\"Hello !\");\n};\n\n<Dropdown\n    containerClass=\"btn btn-primary\"\n    text=\"primary\"\n    items={[\n        {\n            id: \"item1\",\n            label: \"Item 1\",\n            url: \"#\"\n        },\n        {\n            id: \"item2\",\n            label: \"Item that says hello\",\n            action: sayHello\n        },\n        {\n            id: \"modalItem\",\n            label: \"Item that triggers a modal\",\n            openModal: true,\n            openModal: true,\n            modalContent: <p>Toto</p>,\n            modalHeader: <h1>Header</h1>\n        }\n    ]}\n/>"
                             )
                         )
                     )

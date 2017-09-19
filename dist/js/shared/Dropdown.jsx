@@ -12,7 +12,9 @@ export default class Dropdown extends React.PureComponent {
         this.setState({
             open: false,
             animation: null,
-            showModal: false
+            showModal: false,
+            ModalHeader: null,
+            ModalContent: null
         });
     }
 
@@ -45,14 +47,17 @@ export default class Dropdown extends React.PureComponent {
                 show={this.state.showModal}
                 onHide={this.closeModal.bind(this)}
             >
+                <Modal.Header>
+                    {this.state.modalHeader}
+                </Modal.Header>
                 <Modal.Body>
-                    Toto
+                    {this.state.modalContent}
                 </Modal.Body>
             </Modal>
         );
     }
 
-    closeModal () {
+    closeModal() {
         this.setState({
             showModal: false
         });
@@ -108,6 +113,10 @@ export default class Dropdown extends React.PureComponent {
             item.action();
         }
         else if (item.openModal) {
+            this.setState({
+                modalContent: item.modalContent ? item.modalContent : null,
+                modalHeader: item.modalHeader ? item.modalHeader : null
+            });
             this.setState({
                 showModal: true
             });
@@ -165,7 +174,8 @@ Dropdown.propTypes = {
             url: T.string,
             action: T.func,
             openModal: T.bool,
-            modalContent: T.element
+            modalContent: T.element,
+            modalHeader: T.element
         })
     ).isRequired,
     caret: T.bool

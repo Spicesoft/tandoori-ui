@@ -14,7 +14,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "webpack",
-    "build-dev": "webpack --watch",
+    "build:dev": "webpack --watch",
     "build-dev:webpack-dashboard": "webpack-dashboard -- webpack --watch"
   },
   "repository": {

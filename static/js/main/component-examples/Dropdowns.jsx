@@ -32,7 +32,8 @@ const exampleItem = {
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
-            ModalContent: modalContent
+            modalContent: modalContent(),
+            modalHeader: <h1>Header</h1>
         }
     ]
 };
@@ -85,13 +86,7 @@ const Dropdowns = () => (
                     <div className="panel-body">
                         <pre>
                             <code>
-{`const modalContent = () => (
-    <p>
-        Toto
-    </p>
-);
-
-const sayHello = () => {
+{`const sayHello = () => {
     console.log("Hello !");
 };
 
@@ -113,7 +108,9 @@ const sayHello = () => {
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
-            ModalContent: modalContent
+            openModal: true,
+            modalContent: <p>Toto</p>,
+            modalHeader: <h1>Header</h1>
         }
     ]}
 />`}
@@ -131,20 +128,13 @@ const sayHello = () => {
                     <div className="panel-body">
                         <pre>
                             <code>
-{`const modalContent = () => (
-    <p>
-        Toto
-    </p>
-);
-
-const sayHello = () => {
+{`const sayHello = () => {
     console.log("Hello !");
 };
 
 <Dropdown
     containerClass="btn btn-primary"
-    spanClass="fa fa-rocket"
-    caret
+    text="primary"
     items={[
         {
             id: "item1",
@@ -160,7 +150,9 @@ const sayHello = () => {
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
-            ModalContent: modalContent
+            openModal: true,
+            modalContent: <p>Toto</p>,
+            modalHeader: <h1>Header</h1>
         }
     ]}
 />`}
@@ -178,19 +170,12 @@ const sayHello = () => {
                     <div className="panel-body">
                         <pre>
                             <code>
-{`const modalContent = () => (
-    <p>
-        Toto
-    </p>
-);
-
-const sayHello = () => {
+{`const sayHello = () => {
     console.log("Hello !");
 };
 
 <Dropdown
     containerClass="btn btn-primary"
-    spanClass="fa fa-rocket"
     text="primary"
     items={[
         {
@@ -207,7 +192,9 @@ const sayHello = () => {
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
-            ModalContent: modalContent
+            openModal: true,
+            modalContent: <p>Toto</p>,
+            modalHeader: <h1>Header</h1>
         }
     ]}
 />`}

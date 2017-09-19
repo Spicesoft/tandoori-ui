@@ -1,10 +1,14 @@
-/* global jest, test, expect, beforeEach, afterEach, describe */
+/* global jest, test, expect, beforeEach, describe */
 import React from "react";
 import {shallow} from "enzyme";
 
 import Dropdown from "../../../../../dist/js/shared/Dropdown.jsx";
 
 let wrapper;
+
+const toto = () => (
+    <p>Toto</p>
+);
 
 const items = [
     {
@@ -21,7 +25,13 @@ const items = [
         id: "modal",
         label: "Open modal",
         openModal: true,
-        modalContent: <p>Toto</p>
+        modalContent: toto(),
+        modalHeader: <h1>Header</h1>
+    },
+    {
+        id: "modal2",
+        label: "Second modal",
+        openModal: true
     }
 ];
 
@@ -167,8 +177,24 @@ describe("Desktop devices tests", () => {
         );
         wrapper.find("a").at(2).prop("onClick")();
         expect(wrapper.state("showModal")).toBe(true);
+        expect(wrapper.state("modalContent")).toEqual(<p>Toto</p>);
+        expect(wrapper.state("modalHeader")).toEqual(<h1>Header</h1>);
         wrapper.instance().closeModal();
         expect(wrapper.state("showModal")).toBe(false);
+    });
+
+    test("Should open modal with no text", () => {
+        wrapper = shallow(
+            <Dropdown
+                text="Toto"
+                spanClass="Icon"
+                items={items}
+            />
+        );
+        wrapper.find("a").at(3).prop("onClick")();
+        expect(wrapper.state("showModal")).toBe(true);
+        expect(wrapper.state("modalContent")).toBe(null);
+        expect(wrapper.state("modalHeader")).toBe(null);
     });
 
 });
