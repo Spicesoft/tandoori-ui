@@ -48,17 +48,33 @@ export default class Dropdown extends React.PureComponent {
                 show={this.state.showModal}
                 onHide={this.closeModal.bind(this)}
             >
-                <Modal.Header>
-                    {this.state.modalHeader}
-                </Modal.Header>
+                {this.renderModalHeader()}
                 <Modal.Body>
                     {this.state.modalContent}
                 </Modal.Body>
+                {this.renderModalFooter()}
+            </Modal>
+        );
+    }
+
+    renderModalHeader() {
+        if(this.state.modalHeader !== null) {
+            return (
+                <Modal.Header>
+                    {this.state.modalHeader}
+                </Modal.Header>
+            );
+        }
+    }
+
+    renderModalFooter() {
+        if(this.state.modalFooter !== null) {
+            return (
                 <Modal.Footer>
                     {this.state.modalFooter}
                 </Modal.Footer>
-            </Modal>
-        );
+            );
+        }
     }
 
     closeModal() {
