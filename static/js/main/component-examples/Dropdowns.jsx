@@ -39,6 +39,12 @@ const exampleItem = {
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
+            modalContent: modalContent()
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal w/ header and footer",
+            openModal: true,
             modalContent: modalContent(),
             modalHeader: <h1>Header</h1>,
             modalFooter: modalFooter()
@@ -117,6 +123,13 @@ const Dropdowns = () => (
             label: "Item that triggers a modal",
             openModal: true,
             openModal: true,
+            modalContent: <p>Toto</p>
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal w/ header & footer",
+            openModal: true,
+            openModal: true,
             modalContent: <p>Toto</p>,
             modalHeader: <h1>Header</h1>,
             modalFooter: <Button bsStyle="primary">Button</Button>
@@ -160,6 +173,13 @@ const Dropdowns = () => (
             label: "Item that triggers a modal",
             openModal: true,
             openModal: true,
+            modalContent: <p>Toto</p>
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal w/ header & footer",
+            openModal: true,
+            openModal: true,
             modalContent: <p>Toto</p>,
             modalHeader: <h1>Header</h1>,
             modalFooter: <Button bsStyle="primary">Button</Button>
@@ -201,6 +221,13 @@ const Dropdowns = () => (
         {
             id: "modalItem",
             label: "Item that triggers a modal",
+            openModal: true,
+            openModal: true,
+            modalContent: <p>Toto</p>
+        },
+        {
+            id: "modalItem",
+            label: "Item that triggers a modal w/ header & footer",
             openModal: true,
             openModal: true,
             modalContent: <p>Toto</p>,
