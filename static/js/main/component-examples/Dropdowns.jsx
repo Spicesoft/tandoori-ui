@@ -15,6 +15,10 @@ const modalFooter = () => (
     <Button bsStyle="primary">Button</Button>
 );
 
+const modalHeader = () => (
+    <h1>Header</h1>
+);
+
 const sayHello = () => {
     console.log("Hello !");
 };
@@ -39,15 +43,15 @@ const exampleItem = {
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
-            modalContent: modalContent()
+            renderModalContentComponent: modalContent
         },
         {
             id: "modalItem",
             label: "Item that triggers a modal w/ header and footer",
             openModal: true,
-            modalContent: modalContent(),
-            modalHeader: <h1>Header</h1>,
-            modalFooter: modalFooter()
+            renderModalContentComponent: modalContent,
+            renderModalHeaderComponent: modalHeader,
+            renderModalFooterComponent: modalFooter
         }
     ]
 };
@@ -104,10 +108,24 @@ const Dropdowns = () => (
     console.log("Hello !");
 };
 
+const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const modalFooter = () => (
+    <Button bsStyle="primary">Button</Button>
+);
+
+const modalHeader = () => (
+    <h1>Header</h1>
+);
+
 <Dropdown
     containerClass="btn btn-primary"
     text="primary"
-    items={[
+    items: [
         {
             id: "item1",
             label: "Item 1",
@@ -122,19 +140,17 @@ const Dropdowns = () => (
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
-            openModal: true,
-            modalContent: <p>Toto</p>
+            renderModalContentComponent: modalContent
         },
         {
             id: "modalItem",
-            label: "Item that triggers a modal w/ header & footer",
+            label: "Item that triggers a modal w/ header and footer",
             openModal: true,
-            openModal: true,
-            modalContent: <p>Toto</p>,
-            modalHeader: <h1>Header</h1>,
-            modalFooter: <Button bsStyle="primary">Button</Button>
+            renderModalContentComponent: modalContent,
+            renderModalHeaderComponent: modalHeader,
+            renderModalFooterComponent: modalFooter
         }
-    ]}
+    ]
 />`}
                             </code>
                         </pre>
@@ -154,10 +170,25 @@ const Dropdowns = () => (
     console.log("Hello !");
 };
 
+const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const modalFooter = () => (
+    <Button bsStyle="primary">Button</Button>
+);
+
+const modalHeader = () => (
+    <h1>Header</h1>
+);
+
 <Dropdown
     containerClass="btn btn-primary"
     text="primary"
-    items={[
+    caret
+    items: [
         {
             id: "item1",
             label: "Item 1",
@@ -172,19 +203,17 @@ const Dropdowns = () => (
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
-            openModal: true,
-            modalContent: <p>Toto</p>
+            renderModalContentComponent: modalContent
         },
         {
             id: "modalItem",
-            label: "Item that triggers a modal w/ header & footer",
+            label: "Item that triggers a modal w/ header and footer",
             openModal: true,
-            openModal: true,
-            modalContent: <p>Toto</p>,
-            modalHeader: <h1>Header</h1>,
-            modalFooter: <Button bsStyle="primary">Button</Button>
+            renderModalContentComponent: modalContent,
+            renderModalHeaderComponent: modalHeader,
+            renderModalFooterComponent: modalFooter
         }
-    ]}
+    ]
 />`}
                             </code>
                         </pre>
@@ -204,10 +233,25 @@ const Dropdowns = () => (
     console.log("Hello !");
 };
 
+const modalContent = () => (
+    <p>
+        Toto
+    </p>
+);
+
+const modalFooter = () => (
+    <Button bsStyle="primary">Button</Button>
+);
+
+const modalHeader = () => (
+    <h1>Header</h1>
+);
+
 <Dropdown
     containerClass="btn btn-primary"
+    spanClass="fa fa-rocket"
     text="primary"
-    items={[
+    items: [
         {
             id: "item1",
             label: "Item 1",
@@ -222,19 +266,17 @@ const Dropdowns = () => (
             id: "modalItem",
             label: "Item that triggers a modal",
             openModal: true,
-            openModal: true,
-            modalContent: <p>Toto</p>
+            renderModalContentComponent: modalContent
         },
         {
             id: "modalItem",
-            label: "Item that triggers a modal w/ header & footer",
+            label: "Item that triggers a modal w/ header and footer",
             openModal: true,
-            openModal: true,
-            modalContent: <p>Toto</p>,
-            modalHeader: <h1>Header</h1>,
-            modalFooter: <Button bsStyle="primary">Button</Button>
+            renderModalContentComponent: modalContent,
+            renderModalHeaderComponent: modalHeader,
+            renderModalFooterComponent: modalFooter
         }
-    ]}
+    ]
 />`}
                             </code>
                         </pre>

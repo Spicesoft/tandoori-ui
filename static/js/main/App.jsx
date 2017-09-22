@@ -113,7 +113,7 @@ const modalContent = () => (
 
 const sayHello = () => {
     console.log("Hello !");
-}
+};
 
 const navbarData = {
     logoUrl: "public/img/logo.png",
@@ -141,7 +141,7 @@ const navbarData = {
                     id: "modalItem",
                     label: "Item that triggers a modal",
                     openModal: true,
-                    ModalContent: modalContent
+                    renderModalContentComponent: modalContent
                 }
             ]
         }

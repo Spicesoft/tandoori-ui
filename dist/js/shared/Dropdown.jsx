@@ -13,9 +13,9 @@ export default class Dropdown extends React.PureComponent {
             open: false,
             animation: null,
             showModal: false,
-            modalHeader: null,
-            modalContent: null,
-            modalFooter: null
+            renderModalContentComponent: () => null,
+            renderModalHeaderComponent: () => null,
+            renderModalFooterComponent: () => null
         });
     }
 
@@ -50,7 +50,7 @@ export default class Dropdown extends React.PureComponent {
             >
                 {this.renderModalHeader()}
                 <Modal.Body>
-                    {this.state.modalContent}
+                    {this.state.renderModalContentComponent()}
                 </Modal.Body>
                 {this.renderModalFooter()}
             </Modal>
@@ -58,20 +58,20 @@ export default class Dropdown extends React.PureComponent {
     }
 
     renderModalHeader() {
-        if(this.state.modalHeader !== null) {
+        if(this.state.renderModalHeaderComponent() !== null) {
             return (
                 <Modal.Header>
-                    {this.state.modalHeader}
+                    {this.state.renderModalHeaderComponent()}
                 </Modal.Header>
             );
         }
     }
 
     renderModalFooter() {
-        if(this.state.modalFooter !== null) {
+        if(this.state.renderModalFooterComponent() !== null) {
             return (
                 <Modal.Footer>
-                    {this.state.modalFooter}
+                    {this.state.renderModalFooterComponent()}
                 </Modal.Footer>
             );
         }
@@ -134,9 +134,15 @@ export default class Dropdown extends React.PureComponent {
         }
         else if (item.openModal) {
             this.setState({
-                modalContent: item.modalContent ? item.modalContent : null,
-                modalHeader: item.modalHeader ? item.modalHeader : null,
-                modalFooter: item.modalFooter ? item.modalFooter : null,
+                renderModalContentComponent: (item.renderModalContentComponent && item.renderModalContentComponent())
+                                        ? item.renderModalContentComponent
+                                        : () =>null,
+                renderModalHeaderComponent: (item.renderModalHeaderComponent && item.renderModalHeaderComponent())
+                                        ? item.renderModalHeaderComponent
+                                        : () => null,
+                renderModalFooterComponent: (item.renderModalFooterComponent && item.renderModalFooterComponent())
+                                        ? item.renderModalFooterComponent
+                                        : () => null,
                 showModal: true
             });
         }
@@ -193,9 +199,9 @@ Dropdown.propTypes = {
             url: T.string,
             action: T.func,
             openModal: T.bool,
-            modalContent: T.element,
-            modalHeader: T.element,
-            modalFooter: T.element
+            renderModalContentComponent: T.func,
+            renderModalFooterComponent: T.func,
+            renderModalHeaderComponent: T.func
         })
     ).isRequired,
     caret: T.bool

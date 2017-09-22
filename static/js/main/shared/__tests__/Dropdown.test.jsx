@@ -6,8 +6,16 @@ import Dropdown from "../../../../../dist/js/shared/Dropdown.jsx";
 
 let wrapper;
 
-const toto = () => (
-    <p>Toto</p>
+const modalContent = () => (
+    <p>Content</p>
+);
+
+const modalHeader = () => (
+    <h1>Header</h1>
+);
+
+const modalFooter = () => (
+    <p>Footer</p>
 );
 
 const items = [
@@ -25,9 +33,9 @@ const items = [
         id: "modal",
         label: "Open modal",
         openModal: true,
-        modalContent: toto(),
-        modalHeader: <h1>Header</h1>,
-        modalFooter: <span>Prout</span>
+        renderModalContentComponent: modalContent,
+        renderModalHeaderComponent: modalHeader,
+        renderModalFooterComponent: modalFooter
     },
     {
         id: "modal2",
@@ -178,8 +186,8 @@ describe("Desktop devices tests", () => {
         );
         wrapper.find("a").at(2).prop("onClick")();
         expect(wrapper.state("showModal")).toBe(true);
-        expect(wrapper.state("modalContent")).toEqual(<p>Toto</p>);
-        expect(wrapper.state("modalHeader")).toEqual(<h1>Header</h1>);
+        expect(wrapper.state("renderModalContentComponent")()).toEqual(<p>Content</p>);
+        expect(wrapper.state("renderModalHeaderComponent")()).toEqual(<h1>Header</h1>);
         wrapper.instance().closeModal();
         expect(wrapper.state("showModal")).toBe(false);
     });
@@ -194,8 +202,9 @@ describe("Desktop devices tests", () => {
         );
         wrapper.find("a").at(3).prop("onClick")();
         expect(wrapper.state("showModal")).toBe(true);
-        expect(wrapper.state("modalContent")).toBe(null);
-        expect(wrapper.state("modalHeader")).toBe(null);
+        expect(wrapper.state("renderModalContentComponent")()).toBe(null);
+        expect(wrapper.state("renderModalHeaderComponent")()).toBe(null);
+        expect(wrapper.state("renderModalFooterComponent")()).toBe(null);
     });
 
 });
