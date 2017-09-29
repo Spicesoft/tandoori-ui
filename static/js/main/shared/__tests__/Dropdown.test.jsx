@@ -41,6 +41,11 @@ const items = [
         id: "modal2",
         label: "Second modal",
         openModal: true
+    },
+    {
+        id: "multiligne",
+        title: "foo",
+        label: "bar"
     }
 ];
 
@@ -130,7 +135,7 @@ describe("Desktop devices tests", () => {
             />
         );
         wrapper.first().simulate("click");
-        wrapper.find("a").at(1).prop("onClick")();
+        wrapper.find("li").at(1).prop("onClick")();
         expect(mockFunc.mock.calls.length).toBe(1);
     });
 
@@ -172,7 +177,7 @@ describe("Desktop devices tests", () => {
                 items={items}
             />
         );
-        wrapper.find("a").at(2).prop("onClick")();
+        wrapper.find("li").at(2).prop("onClick")();
         expect(wrapper.state("showModal")).toBe(true);
     });
 
@@ -184,7 +189,7 @@ describe("Desktop devices tests", () => {
                 items={items}
             />
         );
-        wrapper.find("a").at(2).prop("onClick")();
+        wrapper.find("li").at(2).prop("onClick")();
         expect(wrapper.state("showModal")).toBe(true);
         expect(wrapper.state("renderModalContentComponent")()).toEqual(<p>Content</p>);
         expect(wrapper.state("renderModalHeaderComponent")()).toEqual(<h1>Header</h1>);
@@ -200,11 +205,23 @@ describe("Desktop devices tests", () => {
                 items={items}
             />
         );
-        wrapper.find("a").at(3).prop("onClick")();
+        wrapper.find("li").at(3).prop("onClick")();
         expect(wrapper.state("showModal")).toBe(true);
         expect(wrapper.state("renderModalContentComponent")()).toBe(null);
         expect(wrapper.state("renderModalHeaderComponent")()).toBe(null);
         expect(wrapper.state("renderModalFooterComponent")()).toBe(null);
+    });
+
+    test("Should have a title", () => {
+        wrapper = shallow(
+            <Dropdown
+                text="Toto"
+                spanClass="Icon"
+                items={items}
+            />
+        );
+        wrapper.find("li").at(3).prop("onClick")();
+        expect(wrapper.find("li").at(4).prop("className").split(" ")).toContainEqual("tuiv2_list-item__text--multiline");
     });
 
 });

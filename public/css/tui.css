@@ -7338,6 +7338,7 @@ input {
   max-width: 200px; }
   @media (max-width: 768px) {
     .tuiv2_dropdown-menu {
+      max-width: 100%;
       border-radius: 0;
       position: fixed;
       top: 0;
