@@ -40,8 +40,13 @@
 .#{$current}list-item__text--multiline {
   display: flex;
   flex-direction: column;
-  max-height: 40px;
   overflow: hidden;
+}
+
+.#{$current}list-item__title {
+  color: $text-color;
+  text-align: left;
+  font-weight: 700;
 }
 
 .#{$current}list-item__link {
@@ -50,6 +55,7 @@
   height: 100%;
   margin: -10px 0;
   padding: 10px 0;
+  overflow-x: hidden;
   &:hover {
     text-decoration: none;
   }
@@ -93,6 +99,10 @@
   border-bottom: 1px solid $lightgrey;
 }
 
+.#{$current}list-item__link--title {
+  display: flex;
+  flex-direction: column;
+}
 
 .#{$current}list-item__info {
   color: $grey;

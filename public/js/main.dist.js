@@ -17120,22 +17120,44 @@ var Dropdown = function (_React$PureComponent) {
                 },
                 this.renderCloseItem(),
                 this.props.items.map(function (item, index) {
-                    return _react2.default.createElement(
-                        "li",
-                        {
-                            className: "tuiv2_list-item",
-                            key: index
-                        },
-                        _react2.default.createElement(
-                            "a",
-                            {
-                                className: "tuiv2_list-item__link tuiv2_dropdown-menu__item",
-                                onClick: _this2.getItemAction.bind(_this2, item)
-                            },
-                            item.label
-                        )
-                    );
+                    return _this2.renderItem(item);
                 })
+            );
+        }
+    }, {
+        key: "renderItem",
+        value: function renderItem(item) {
+            var classNames = ["tuiv2_list-item"];
+            if (item.title) {
+                classNames.push("tuiv2_list-item__text--multiline");
+            }
+            return _react2.default.createElement(
+                "li",
+                {
+                    className: classNames.join(" "),
+                    key: item.label,
+                    onClick: this.getItemAction.bind(this, item)
+                },
+                item.title ? this.renderItemTitle(item.title) : null,
+                this.renderItemLabel(item.label)
+            );
+        }
+    }, {
+        key: "renderItemLabel",
+        value: function renderItemLabel(label) {
+            return _react2.default.createElement(
+                "a",
+                { className: "tuiv2_list-item__link" },
+                label
+            );
+        }
+    }, {
+        key: "renderItemTitle",
+        value: function renderItemTitle(title) {
+            return _react2.default.createElement(
+                "span",
+                { className: "tuiv2_list-item__title" },
+                title
             );
         }
     }, {
@@ -17215,6 +17237,7 @@ Dropdown.propTypes = {
     align: _propTypes2.default.string,
     items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
         label: _propTypes2.default.string.isRequired,
+        title: _propTypes2.default.string,
         url: _propTypes2.default.string,
         action: _propTypes2.default.func,
         openModal: _propTypes2.default.bool,
@@ -54370,6 +54393,10 @@ var exampleItem = {
         renderModalContentComponent: modalContent,
         renderModalHeaderComponent: modalHeader,
         renderModalFooterComponent: modalFooter
+    }, {
+        id: "itemWithTitle",
+        label: "I have a very very very very loooooooooong label... Hoooooooo yeah !",
+        title: "Item that has a title"
     }]
 };
 

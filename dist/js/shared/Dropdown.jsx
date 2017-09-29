@@ -112,20 +112,41 @@ export default class Dropdown extends React.PureComponent {
             >
                 {this.renderCloseItem()}
                 {this.props.items.map((item, index) => (
-                    <li
-                        className="tuiv2_list-item"
-                        key={index}
-                    >
-                        <a
-                        className="tuiv2_list-item__link tuiv2_dropdown-menu__item"
-                        onClick={this.getItemAction.bind(this, item)}
-                        >
-                            {item.label}
-                        </a>
-                    </li>
+                    this.renderItem(item)
                 ))}
             </ul>
         );
+    }
+
+    renderItem(item) {
+        const classNames = [
+            "tuiv2_list-item"
+        ];
+        if (item.title) {
+            classNames.push("tuiv2_list-item__text--multiline");
+        }
+        return (
+            <li
+                className={classNames.join(" ")}
+                key={item.label}
+                onClick={this.getItemAction.bind(this, item)}
+            >
+                {item.title ? this.renderItemTitle(item.title) : null}
+                {this.renderItemLabel(item.label)}
+            </li>
+        );
+    }
+
+    renderItemLabel(label) {
+        return (
+            <a className="tuiv2_list-item__link" >
+                {label}
+            </a>
+        );
+    }
+
+    renderItemTitle(title) {
+        return <span className="tuiv2_list-item__title">{title}</span>;
     }
 
     getItemAction(item) {
@@ -196,6 +217,7 @@ Dropdown.propTypes = {
     items: T.arrayOf(
         T.shape({
             label: T.string.isRequired,
+            title: T.string,
             url: T.string,
             action: T.func,
             openModal: T.bool,

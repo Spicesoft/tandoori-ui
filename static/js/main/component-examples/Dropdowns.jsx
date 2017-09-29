@@ -52,6 +52,11 @@ const exampleItem = {
             renderModalContentComponent: modalContent,
             renderModalHeaderComponent: modalHeader,
             renderModalFooterComponent: modalFooter
+        },
+        {
+            id: "itemWithTitle",
+            label: "I have a very very very very loooooooooong label... Hoooooooo yeah !",
+            title: "Item that has a title"
         }
     ]
 };

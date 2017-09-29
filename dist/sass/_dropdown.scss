@@ -15,10 +15,14 @@
   position: absolute;
   left: 0;
   top: 100%;
-  min-width: 200px;
+  margin: 2px 0;
+  min-width: 300px;
   box-shadow: $material-deep-shadow;
   transform-origin: 0 0;
+  border-radius: $default-radius;
+  max-width: 200px;
   @media (max-width: $sm-breakpoint) {
+    border-radius: 0;
     position: fixed;
     top: 0;
     width: 100vw;
@@ -40,6 +44,7 @@
 .#{$current}dropdown-menu__item {
   white-space: nowrap;
   line-height: $line-height-base;
+  overflow-x: hidden;
 }
 
 .#{$current}dropdown__caret {
