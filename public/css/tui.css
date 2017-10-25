@@ -6808,7 +6808,6 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   margin: 0; }
 
 .tuiv2_list-item {
-  height: 56px;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -7012,7 +7011,6 @@ input {
   margin: 0; }
 
 .tuiv2_list-item {
-  height: 56px;
   padding: 10px;
   display: flex;
   align-items: center;
